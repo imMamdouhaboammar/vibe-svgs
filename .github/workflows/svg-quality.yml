@@ -23,5 +23,8 @@ jobs:
         with:
           bun-version: 1.3.14
 
-      - name: Run tests and SVG validator
-        run: bun run check
+      - name: Run SVG contract tests
+        run: bun run test
+
+      - name: Validate migrated SVG assets
+        run: bun run validate
