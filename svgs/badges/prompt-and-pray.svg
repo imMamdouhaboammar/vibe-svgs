@@ -1,35 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 40" width="250" height="40">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-labelledby="prompt-and-pray-title prompt-and-pray-desc">
+  <title id="prompt-and-pray-title">Prompt and Pray Badge</title>
+  <desc id="prompt-and-pray-desc">Humorous community badge for prompting workflows.</desc>
   <defs>
-    <linearGradient id="badge-cyan-bg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0284c7" />
-      <stop offset="100%" stop-color="#06b6d4" />
+    <linearGradient id="prompt-and-pray-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0284C7"/>
+      <stop offset="1" stop-color="#0369A1"/>
     </linearGradient>
   </defs>
-
   <style>
-    .label-bg { fill: #0f172a; }
-    .status-bg { fill: url(#badge-cyan-bg); }
-    .pray-hands {
-      animation: float-pray 1.5s infinite ease-in-out alternate;
-      transform-origin: 145px 20px;
+    .prompt-and-pray-pulse {
+      animation: prompt-and-pray-pulse 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 100px 20px;
     }
-    @keyframes float-pray {
-      0% { transform: translateY(0) scale(1); }
-      100% { transform: translateY(-3px) scale(1.1); }
+    @keyframes prompt-and-pray-pulse {
+      0%, 100% { opacity: 0.95; }
+      50% { opacity: 1; }
     }
-    .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #cbd5e1; font-size: 12px; }
-    .text-status { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #ffffff; font-size: 12px; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
+    }
   </style>
 
-  <path d="M6 0 H125 V40 H6 A6 6 0 0 1 0 34 V6 A6 6 0 0 1 6 0 Z" class="label-bg" />
-  <path d="M125 0 H244 A6 6 0 0 1 250 6 V34 A6 6 0 0 1 244 40 H125 Z" class="status-bg" />
+  <g class="prompt-and-pray-pulse" data-animated="true">
+    <rect width="90" height="40" rx="6" fill="#1E293B"/>
+    <text x="45" y="25" font-family="system-ui, sans-serif" font-weight="bold" font-size="11" fill="#94A3B8" text-anchor="middle">METHOD</text>
 
-  <text x="16" y="25" class="text-label">testing strategy</text>
-
-  <g class="pray-hands">
-    <!-- Praying hands icon -->
-    <path d="M142 26 L147 13 C147.5 12 148.5 12 149 13 L150 17 L151 13 C151.5 12 152.5 12 153 13 L158 26 Z" fill="#ffffff" />
+    <rect x="90" width="110" height="40" rx="6" fill="url(#prompt-and-pray-bg)"/>
+    <text x="145" y="25" font-family="system-ui, sans-serif" font-weight="bold" font-size="11" fill="#FFFFFF" text-anchor="middle">PROMPT &amp; PRAY</text>
   </g>
-
-  <text x="164" y="25" class="text-status">Prompt &amp; Pray 🙏</text>
 </svg>

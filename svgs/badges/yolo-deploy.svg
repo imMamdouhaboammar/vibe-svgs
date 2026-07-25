@@ -1,35 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 40" width="250" height="40">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-labelledby="yolo-deploy-title yolo-deploy-desc">
+  <title id="yolo-deploy-title">YOLO Deploy Badge</title>
+  <desc id="yolo-deploy-desc">Humorous community badge for direct main branch deployments.</desc>
   <defs>
-    <linearGradient id="badge-pink-bg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#db2777" />
-      <stop offset="100%" stop-color="#f43f5e" />
+    <linearGradient id="yolo-deploy-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#BE185D"/>
     </linearGradient>
   </defs>
-
   <style>
-    .label-bg { fill: #18181b; }
-    .status-bg { fill: url(#badge-pink-bg); }
-    .rocket-launch {
-      animation: launch-shake 0.3s infinite ease-in-out alternate;
+    .yolo-deploy-pulse {
+      animation: yolo-deploy-pulse 2s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 100px 20px;
     }
-    @keyframes launch-shake {
-      0% { transform: translateY(0) rotate(-2deg); }
-      100% { transform: translateY(-2px) rotate(2deg); }
+    @keyframes yolo-deploy-pulse {
+      0%, 100% { opacity: 0.95; }
+      50% { opacity: 1; }
     }
-    .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #e4e4e7; font-size: 12px; }
-    .text-status { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #ffffff; font-size: 12px; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
+    }
   </style>
 
-  <path d="M6 0 H120 V40 H6 A6 6 0 0 1 0 34 V6 A6 6 0 0 1 6 0 Z" class="label-bg" />
-  <path d="M120 0 H244 A6 6 0 0 1 250 6 V34 A6 6 0 0 1 244 40 H120 Z" class="status-bg" />
+  <g class="yolo-deploy-pulse" data-animated="true">
+    <rect width="90" height="40" rx="6" fill="#1E293B"/>
+    <text x="45" y="25" font-family="system-ui, sans-serif" font-weight="bold" font-size="11" fill="#94A3B8" text-anchor="middle">DEPLOY</text>
 
-  <text x="16" y="25" class="text-label">prod deploy</text>
-
-  <!-- Shaking Rocket Icon -->
-  <g class="rocket-launch" transform="translate(135, 12)">
-    <path d="M10 2 Q16 6 16 14 L12 18 L8 18 L4 14 Q4 6 10 2 Z" fill="#ffffff" />
-    <path d="M7 18 L10 24 L13 18 Z" fill="#fde047" />
+    <rect x="90" width="110" height="40" rx="6" fill="url(#yolo-deploy-bg)"/>
+    <text x="145" y="25" font-family="system-ui, sans-serif" font-weight="bold" font-size="11" fill="#FFFFFF" text-anchor="middle">⚡ YOLO MAIN</text>
   </g>
-
-  <text x="162" y="25" class="text-status">YOLO SHIP 🚀</text>
 </svg>

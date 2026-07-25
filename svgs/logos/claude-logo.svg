@@ -1,54 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="claude-logo-title claude-logo-desc">
+  <title id="claude-logo-title">Claude Community Brand Mark</title>
+  <desc id="claude-logo-desc">A fan-made terracotta asterisk star mark representing Claude workflows.</desc>
   <defs>
-    <linearGradient id="claudeStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F4A67A" />
-      <stop offset="50%" stop-color="#E8854F" />
-      <stop offset="100%" stop-color="#B85A28" />
+    <linearGradient id="claude-logo-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7B58E"/>
+      <stop offset="0.5" stop-color="#E98452"/>
+      <stop offset="1" stop-color="#B7512A"/>
     </linearGradient>
-
-    <filter id="claudeLogoGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="1.5" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
-
   <style>
-    .star-pulse {
-      animation: pulse-star 3s infinite ease-in-out alternate;
-      transform-origin: 30px 30px;
+    .claude-logo-spin {
+      animation: claude-logo-spin 12s linear infinite;
+      transform-box: view-box;
+      transform-origin: 60px 60px;
     }
-    @keyframes pulse-star {
-      0% { transform: scale(0.96) rotate(0deg); }
-      100% { transform: scale(1.05) rotate(4deg); }
-    }
-    .brand-title {
-      font-family: system-ui, -apple-system, sans-serif;
-      font-weight: 800;
-      font-size: 24px;
-      fill: #FFFFFF;
-      letter-spacing: -0.5px;
-    }
-    .brand-tag {
-      font-family: monospace;
-      font-weight: 600;
-      font-size: 10px;
-      fill: #F4A67A;
-      letter-spacing: 1px;
+    @keyframes claude-logo-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .star-pulse { animation: none !important; }
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <!-- Clear Space Border Padding Container -->
-  <g id="icon-mark" class="star-pulse" filter="url(#claudeLogoGlow)">
-    <!-- Anthropic 8-Point Asterisk Star Logo Mark -->
-    <path d="M 30 10 L 33 23 L 46 20 L 37 30 L 46 40 L 33 37 L 30 50 L 27 37 L 14 40 L 23 30 L 14 20 L 27 23 Z" fill="url(#claudeStarGrad)" />
-  </g>
-
-  <!-- Combination Mark Text -->
-  <g id="brand-text" transform="translate(62, 35)">
-    <text x="0" y="0" class="brand-title">Claude</text>
-    <text x="0" y="16" class="brand-tag">ANTHROPIC AI</text>
+  <g class="claude-logo-spin" data-animated="true">
+    <path d="M60 20 L64.8 45 L88.3 35 L70 55 L95 60 L70 65 L88.3 85 L64.8 75 L60 100 L55.2 75 L31.7 85 L50 65 L25 60 L50 55 L31.7 35 L55.2 45 Z" fill="url(#claude-logo-gradient)"/>
   </g>
 </svg>

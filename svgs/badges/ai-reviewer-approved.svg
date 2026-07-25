@@ -1,36 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" width="290" height="40">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-labelledby="ai-reviewer-approved-title ai-reviewer-approved-desc">
+  <title id="ai-reviewer-approved-title">AI Reviewer Approved Badge</title>
+  <desc id="ai-reviewer-approved-desc">Community badge for pull requests reviewed by AI code reviewers.</desc>
   <defs>
-    <linearGradient id="badge-purple-bg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7c3aed" />
-      <stop offset="100%" stop-color="#a855f7" />
+    <linearGradient id="ai-reviewer-approved-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#6D28D9"/>
     </linearGradient>
   </defs>
-
   <style>
-    .label-bg { fill: #18181b; }
-    .status-bg { fill: url(#badge-purple-bg); }
-    .wink-eye {
-      animation: wink 3s infinite;
-      transform-origin: 162px 18px;
+    .ai-reviewer-approved-pulse {
+      animation: ai-reviewer-approved-pulse 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 100px 20px;
     }
-    @keyframes wink {
-      0%, 85%, 100% { transform: scaleY(1); }
-      90% { transform: scaleY(0.1); }
+    @keyframes ai-reviewer-approved-pulse {
+      0%, 100% { opacity: 0.95; }
+      50% { opacity: 1; }
     }
-    .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #e4e4e7; font-size: 12px; }
-    .text-status { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #ffffff; font-size: 12px; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
+    }
   </style>
 
-  <path d="M6 0 H140 V40 H6 A6 6 0 0 1 0 34 V6 A6 6 0 0 1 6 0 Z" class="label-bg" />
-  <path d="M140 0 H284 A6 6 0 0 1 290 6 V34 A6 6 0 0 1 284 40 H140 Z" class="status-bg" />
+  <g class="ai-reviewer-approved-pulse" data-animated="true">
+    <rect width="90" height="40" rx="6" fill="#1E293B"/>
+    <text x="45" y="25" font-family="system-ui, sans-serif" font-weight="bold" font-size="11" fill="#94A3B8" text-anchor="middle">AI REVIEWER</text>
 
-  <text x="16" y="25" class="text-label">AI Code Reviewer</text>
-
-  <!-- Animated Winking Checkmark -->
-  <g transform="translate(155, 12)">
-    <circle cx="10" cy="8" r="9" fill="#ffffff" opacity="0.2" />
-    <path d="M5 8 L8 12 L15 5" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="wink-eye" />
+    <rect x="90" width="110" height="40" rx="6" fill="url(#ai-reviewer-approved-bg)"/>
+    <text x="145" y="25" font-family="system-ui, sans-serif" font-weight="bold" font-size="11" fill="#FFFFFF" text-anchor="middle">✓ APPROVED</text>
   </g>
-
-  <text x="180" y="25" class="text-status">APPROVED (Didn't Read) 😉</text>
 </svg>

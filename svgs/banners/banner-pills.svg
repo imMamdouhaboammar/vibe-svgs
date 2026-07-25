@@ -1,112 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100" viewBox="0 0 800 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" role="img" aria-labelledby="banner-pills-title banner-pills-desc">
+  <title id="banner-pills-title">AI Coding Tools Community Banner</title>
+  <desc id="banner-pills-desc">A banner featuring pill badges representing community AI coding tools.</desc>
   <defs>
-    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:rgba(255,255,255,0); stop-opacity:0">
-        <animate attributeName="offset" values="-1;2" dur="2s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" style="stop-color:rgba(255,255,255,0.3); stop-opacity:0.3">
-        <animate attributeName="offset" values="-0.5;2.5" dur="2s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:rgba(255,255,255,0); stop-opacity:0">
-        <animate attributeName="offset" values="0;3" dur="2s" repeatCount="indefinite"/>
-      </stop>
+    <linearGradient id="banner-pills-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
     </linearGradient>
   </defs>
   <style>
-    .label { font-family: 'Roboto', 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: 500; fill: white; }
-    .pill { fill: #616161; }
-    .pill-light { fill: #757575; }
-    .pill-dark { fill: #424242; }
-    .shimmer-overlay { fill: url(#shimmer); }
+    .banner-pills-float {
+      animation: banner-pills-float 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 250px 50px;
+    }
+    @keyframes banner-pills-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
+    }
   </style>
 
-  <!-- Row 1 -->
-  <g transform="translate(10, 15)">
-    <!-- Claude Code -->
-    <g>
-      <rect x="0" y="0" width="95" height="28" rx="14" class="pill-dark"/>
-      <rect x="0" y="0" width="95" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="47.5" y="18" class="label" text-anchor="middle">Claude Code</text>
-    </g>
+  <rect width="500" height="100" rx="12" fill="url(#banner-pills-bg)"/>
+  <g class="banner-pills-float" data-animated="true">
+    <rect x="30" y="32" width="90" height="36" rx="18" fill="#EA8F5E"/>
+    <text x="75" y="55" font-family="system-ui, sans-serif" font-weight="bold" font-size="13" fill="#FFFFFF" text-anchor="middle">Claude</text>
 
-    <!-- Codex CLI -->
-    <g>
-      <rect x="105" y="0" width="80" height="28" rx="14" class="pill"/>
-      <rect x="105" y="0" width="80" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="145" y="18" class="label" text-anchor="middle">Codex CLI</text>
-    </g>
+    <rect x="140" y="32" width="90" height="36" rx="18" fill="#6366F1"/>
+    <text x="185" y="55" font-family="system-ui, sans-serif" font-weight="bold" font-size="13" fill="#FFFFFF" text-anchor="middle">Codex</text>
 
-    <!-- Cursor -->
-    <g>
-      <rect x="195" y="0" width="65" height="28" rx="14" class="pill-light"/>
-      <rect x="195" y="0" width="65" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="227.5" y="18" class="label" text-anchor="middle">Cursor</text>
-    </g>
+    <rect x="250" y="32" width="90" height="36" rx="18" fill="#06B6D4"/>
+    <text x="295" y="55" font-family="system-ui, sans-serif" font-weight="bold" font-size="13" fill="#0F172A" text-anchor="middle">Cursor</text>
 
-    <!-- Devin -->
-    <g>
-      <rect x="270" y="0" width="60" height="28" rx="14" class="pill-dark"/>
-      <rect x="270" y="0" width="60" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="300" y="18" class="label" text-anchor="middle">Devin</text>
-    </g>
-
-    <!-- Auggie CLI -->
-    <g>
-      <rect x="340" y="0" width="85" height="28" rx="14" class="pill"/>
-      <rect x="340" y="0" width="85" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="382.5" y="18" class="label" text-anchor="middle">Auggie CLI</text>
-    </g>
-
-    <!-- GitHub Copilot -->
-    <g>
-      <rect x="435" y="0" width="110" height="28" rx="14" class="pill-light"/>
-      <rect x="435" y="0" width="110" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="490" y="18" class="label" text-anchor="middle">GitHub Copilot</text>
-    </g>
-  </g>
-
-  <!-- Row 2 -->
-  <g transform="translate(10, 55)">
-    <!-- Droid -->
-    <g>
-      <rect x="0" y="0" width="55" height="28" rx="14" class="pill-light"/>
-      <rect x="0" y="0" width="55" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="27.5" y="18" class="label" text-anchor="middle">Droid</text>
-    </g>
-
-    <!-- OpenCode -->
-    <g>
-      <rect x="65" y="0" width="80" height="28" rx="14" class="pill-dark"/>
-      <rect x="65" y="0" width="80" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="105" y="18" class="label" text-anchor="middle">OpenCode</text>
-    </g>
-
-    <!-- Aider -->
-    <g>
-      <rect x="155" y="0" width="55" height="28" rx="14" class="pill"/>
-      <rect x="155" y="0" width="55" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="182.5" y="18" class="label" text-anchor="middle">Aider</text>
-    </g>
-
-    <!-- Gemini CLI -->
-    <g>
-      <rect x="220" y="0" width="85" height="28" rx="14" class="pill-light"/>
-      <rect x="220" y="0" width="85" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="262.5" y="18" class="label" text-anchor="middle">Gemini CLI</text>
-    </g>
-
-    <!-- OpenHands -->
-    <g>
-      <rect x="315" y="0" width="90" height="28" rx="14" class="pill-dark"/>
-      <rect x="315" y="0" width="90" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="360" y="18" class="label" text-anchor="middle">OpenHands</text>
-    </g>
-
-    <!-- Cline -->
-    <g>
-      <rect x="415" y="0" width="55" height="28" rx="14" class="pill"/>
-      <rect x="415" y="0" width="55" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="442.5" y="18" class="label" text-anchor="middle">Cline</text>
-    </g>
+    <rect x="360" y="32" width="90" height="36" rx="18" fill="#A855F7"/>
+    <text x="405" y="55" font-family="system-ui, sans-serif" font-weight="bold" font-size="13" fill="#FFFFFF" text-anchor="middle">Gemini</text>
   </g>
 </svg>

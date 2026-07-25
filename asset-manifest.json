@@ -129,7 +129,7 @@
       "type": "logo",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Claude Brand Mark",
       "description": "Community-prepared vector presentation of a Claude-related brand mark."
     },
@@ -184,7 +184,7 @@
       "type": "logo",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "OpenAI Brand Mark",
       "description": "Community-prepared vector presentation of an OpenAI-related brand mark."
     },
@@ -217,7 +217,7 @@
       "type": "logo",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Cursor Brand Mark",
       "description": "Community-prepared vector presentation of a Cursor-related brand mark."
     },
@@ -272,7 +272,7 @@
       "type": "logo",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Gemini Brand Mark",
       "description": "Community-prepared vector presentation of a Gemini-related brand mark."
     },
@@ -327,7 +327,7 @@
       "type": "banner",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "AI Coding Tools Banner",
       "description": "Community-created banner presenting AI coding product names."
     },
@@ -338,7 +338,7 @@
       "type": "banner",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "AI Models Banner",
       "description": "Community-created banner presenting model names."
     },
@@ -349,7 +349,7 @@
       "type": "banner",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Vibe Coding Arena Banner",
       "description": "Community-created animated dashboard scene."
     },
@@ -360,7 +360,7 @@
       "type": "banner",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Agentic Workflow Banner",
       "description": "Community-created humorous workflow diagram."
     },
@@ -371,7 +371,7 @@
       "type": "badge",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Zero Human Code Badge",
       "description": "Community-created humorous project badge."
     },
@@ -382,7 +382,7 @@
       "type": "badge",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Prompt and Pray Badge",
       "description": "Community-created humorous project badge."
     },
@@ -393,7 +393,7 @@
       "type": "badge",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Context Window Badge",
       "description": "Community-created humorous context warning badge."
     },
@@ -404,7 +404,7 @@
       "type": "badge",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Vibe Coding Certified Badge",
       "description": "Community-created decorative certification badge."
     },
@@ -415,7 +415,7 @@
       "type": "badge",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "AI Reviewer Badge",
       "description": "Community-created humorous review badge."
     },
@@ -426,7 +426,7 @@
       "type": "badge",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Refactored Code Badge",
       "description": "Community-created humorous refactoring badge."
     },
@@ -437,7 +437,7 @@
       "type": "badge",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "YOLO Deploy Badge",
       "description": "Community-created humorous deployment badge."
     }

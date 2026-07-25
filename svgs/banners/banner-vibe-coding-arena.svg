@@ -1,112 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" role="img" aria-labelledby="banner-vibe-coding-arena-title banner-vibe-coding-arena-desc">
+  <title id="banner-vibe-coding-arena-title">Vibe Coding Arena Banner</title>
+  <desc id="banner-vibe-coding-arena-desc">A dynamic animated arena banner presenting AI coding mascot showdowns.</desc>
   <defs>
-    <linearGradient id="arena-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d16" />
-      <stop offset="50%" stop-color="#111827" />
-      <stop offset="100%" stop-color="#030712" />
-    </linearGradient>
-    <linearGradient id="neon-border" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ea580c" />
-      <stop offset="33%" stop-color="#4f46e5" />
-      <stop offset="66%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#10a37f" />
+    <linearGradient id="banner-vibe-coding-arena-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="0.5" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E1B4B"/>
     </linearGradient>
   </defs>
-
   <style>
-    .bg { fill: url(#arena-bg); rx: 16px; stroke: url(#neon-border); stroke-width: 2px; }
-    .pulse-live {
-      animation: live-p 1.5s infinite ease-in-out alternate;
+    .banner-vibe-coding-arena-glow {
+      animation: banner-vibe-coding-arena-pulse 2.5s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 250px 60px;
     }
-    @keyframes live-p {
-      0% { opacity: 0.4; }
-      100% { opacity: 1; filter: drop-shadow(0 0 8px #22c55e); }
+    @keyframes banner-vibe-coding-arena-pulse {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.03); }
     }
-    .float-mascot {
-      animation: float-a 3.5s infinite ease-in-out alternate;
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
-    @keyframes float-a {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-8px); }
-    }
-    .grid-lines { stroke: #1f2937; stroke-width: 1; stroke-dasharray: 4 4; opacity: 0.4; }
-    .title { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; fill: #ffffff; font-size: 26px; letter-spacing: -0.5px; }
-    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; fill: #9ca3af; font-size: 13px; }
-    .pill-text { font-family: monospace; font-size: 11px; font-weight: 700; fill: #e5e7eb; }
   </style>
 
-  <rect width="800" height="240" class="bg" />
+  <rect width="500" height="120" rx="14" fill="url(#banner-vibe-coding-arena-bg)"/>
+  <rect width="494" height="114" x="3" y="3" rx="12" fill="none" stroke="#6366F1" stroke-width="1.5" opacity="0.35"/>
 
-  <!-- Sci-Fi Grid lines -->
-  <line x1="0" y1="60" x2="800" y2="60" class="grid-lines" />
-  <line x1="0" y1="180" x2="800" y2="180" class="grid-lines" />
-  <line x1="220" y1="0" x2="220" y2="240" class="grid-lines" />
-
-  <!-- Top Status Pill -->
-  <g transform="translate(40, 22)">
-    <rect width="140" height="24" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="1" />
-    <circle cx="16" cy="12" r="4" fill="#4ade80" class="pulse-live" />
-    <text x="28" y="16" class="pill-text" fill="#4ade80">VIBE MODE ACTIVE</text>
-  </g>
-
-  <!-- Title & Subtitle -->
-  <g transform="translate(40, 100)">
-    <text x="0" y="0" class="title">AGENTIC ENGINEERING ARENA 🚀</text>
-    <text x="0" y="26" class="subtitle">Official AI Mascots (Claude, Gemini, Cursor &amp; Codex) autonomous coding battlefield.</text>
-  </g>
-
-  <!-- Animated Mascot Arena Cards (Right Side) -->
-  <g transform="translate(430, 30)" class="float-mascot">
-    <!-- Claude Mascot Card -->
-    <g transform="translate(0, 0)">
-      <rect width="78" height="110" rx="10" fill="#1c1917" stroke="#ea580c" stroke-width="1.5" />
-      <!-- Miniature authentic Claude head -->
-      <rect x="19" y="16" width="40" height="32" rx="16" fill="#ea580c" />
-      <circle cx="31" cy="28" r="4" fill="#111" />
-      <circle cx="47" cy="28" r="4" fill="#111" />
-      <text x="39" y="72" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="11" fill="#fdba74">Claude</text>
-      <text x="39" y="86" text-anchor="middle" font-family="monospace" font-size="8" fill="#a8a29e">200K Context</text>
-    </g>
-
-    <!-- Gemini Mascot Card -->
-    <g transform="translate(86, 0)">
-      <rect width="78" height="110" rx="10" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" />
-      <rect x="19" y="16" width="40" height="32" rx="16" fill="#4f46e5" />
-      <circle cx="31" cy="28" r="4" fill="#fff" />
-      <circle cx="47" cy="28" r="4" fill="#fff" />
-      <text x="39" y="72" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="11" fill="#c7d2fe">Gemini</text>
-      <text x="39" y="86" text-anchor="middle" font-family="monospace" font-size="8" fill="#94a3b8">Zero-G Speed</text>
-    </g>
-
-    <!-- Cursor Mascot Card -->
-    <g transform="translate(172, 0)">
-      <rect width="78" height="110" rx="10" fill="#18181b" stroke="#10b981" stroke-width="1.5" />
-      <rect x="19" y="16" width="40" height="32" rx="16" fill="#363528" />
-      <circle cx="31" cy="28" r="4" fill="#fff" />
-      <circle cx="47" cy="28" r="4" fill="#fff" />
-      <text x="39" y="72" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="11" fill="#a7f3d0">Cursor</text>
-      <text x="39" y="86" text-anchor="middle" font-family="monospace" font-size="8" fill="#a1a1aa">Auto-Tab</text>
-    </g>
-
-    <!-- Codex Mascot Card -->
-    <g transform="translate(258, 0)">
-      <rect width="78" height="110" rx="10" fill="#0a0a0a" stroke="#a3a3a3" stroke-width="1.5" />
-      <rect x="19" y="16" width="40" height="32" rx="16" fill="#262626" />
-      <circle cx="31" cy="28" r="4" fill="#fff" />
-      <circle cx="47" cy="28" r="4" fill="#fff" />
-      <text x="39" y="72" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="11" fill="#e5e5e5">OpenAI</text>
-      <text x="39" y="86" text-anchor="middle" font-family="monospace" font-size="8" fill="#737373">GPT-5 Engine</text>
-    </g>
-  </g>
-
-  <!-- Bottom Stats Pills -->
-  <g transform="translate(40, 185)">
-    <rect width="160" height="28" rx="14" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
-    <text x="80" y="18" text-anchor="middle" class="pill-text" fill="#a5b4fc">⚡ 0ms Thinking Delay</text>
-
-    <g transform="translate(175, 0)">
-      <rect width="175" height="28" rx="14" fill="#312e81" stroke="#818cf8" stroke-width="1" />
-      <text x="87" y="18" text-anchor="middle" class="pill-text" fill="#c7d2fe">🔥 100% Vibe Coverage</text>
-    </g>
+  <g class="banner-vibe-coding-arena-glow" data-animated="true">
+    <text x="250" y="52" font-family="system-ui, sans-serif" font-weight="extrabold" font-size="22" fill="#38BDF8" text-anchor="middle">VIBE CODING ARENA</text>
+    <text x="250" y="78" font-family="system-ui, sans-serif" font-size="13" fill="#C084FC" text-anchor="middle">Multi-Agent Vector Ecosystem &amp; Community Mascots</text>
   </g>
 </svg>

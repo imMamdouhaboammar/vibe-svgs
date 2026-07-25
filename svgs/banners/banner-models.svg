@@ -1,119 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100" viewBox="0 0 800 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" role="img" aria-labelledby="banner-models-title banner-models-desc">
+  <title id="banner-models-title">AI Models Community Banner</title>
+  <desc id="banner-models-desc">A banner featuring model names in community vector artwork presentation.</desc>
   <defs>
-    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:rgba(255,255,255,0); stop-opacity:0">
-        <animate attributeName="offset" values="-1;2" dur="2s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" style="stop-color:rgba(255,255,255,0.3); stop-opacity:0.3">
-        <animate attributeName="offset" values="-0.5;2.5" dur="2s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:rgba(255,255,255,0); stop-opacity:0">
-        <animate attributeName="offset" values="0;3" dur="2s" repeatCount="indefinite"/>
-      </stop>
+    <linearGradient id="banner-models-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E1B4B"/>
+      <stop offset="1" stop-color="#311B92"/>
     </linearGradient>
   </defs>
   <style>
-    .label { font-family: 'Roboto', 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: 500; fill: white; }
-    .pill { fill: #616161; }
-    .pill-light { fill: #757575; }
-    .pill-dark { fill: #424242; }
-    .shimmer-overlay { fill: url(#shimmer); }
+    .banner-models-pulse {
+      animation: banner-models-pulse 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 250px 50px;
+    }
+    @keyframes banner-models-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
+    }
   </style>
 
-  <!-- Row 1 -->
-  <g transform="translate(10, 15)">
-    <!-- Claude Opus 4.7 -->
-    <g>
-      <rect x="0" y="0" width="115" height="28" rx="14" class="pill-dark"/>
-      <rect x="0" y="0" width="115" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="57.5" y="18" class="label" text-anchor="middle">Claude Opus 4.7</text>
-    </g>
-
-    <!-- Claude Sonnet 4.6 -->
-    <g>
-      <rect x="125" y="0" width="115" height="28" rx="14" class="pill"/>
-      <rect x="125" y="0" width="115" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="182.5" y="18" class="label" text-anchor="middle">Claude Sonnet 4.6</text>
-    </g>
-
-    <!-- Claude Haiku 4.5 -->
-    <g>
-      <rect x="250" y="0" width="110" height="28" rx="14" class="pill-light"/>
-      <rect x="250" y="0" width="110" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="305" y="18" class="label" text-anchor="middle">Claude Haiku 4.5</text>
-    </g>
-
-    <!-- GPT-5.3-Codex -->
-    <g>
-      <rect x="370" y="0" width="105" height="28" rx="14" class="pill-dark"/>
-      <rect x="370" y="0" width="105" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="422.5" y="18" class="label" text-anchor="middle">GPT-5.3-Codex</text>
-    </g>
-
-    <!-- Gemini 3 Pro -->
-    <g>
-      <rect x="485" y="0" width="100" height="28" rx="14" class="pill"/>
-      <rect x="485" y="0" width="100" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="535" y="18" class="label" text-anchor="middle">Gemini 3 Pro</text>
-    </g>
-
-    <!-- Composer 1 -->
-    <g>
-      <rect x="595" y="0" width="85" height="28" rx="14" class="pill-light"/>
-      <rect x="595" y="0" width="85" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="637.5" y="18" class="label" text-anchor="middle">Composer 1</text>
-    </g>
-  </g>
-
-  <!-- Row 2 -->
-  <g transform="translate(10, 55)">
-    <!-- Grok 4 -->
-    <g>
-      <rect x="0" y="0" width="65" height="28" rx="14" class="pill-light"/>
-      <rect x="0" y="0" width="65" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="32.5" y="18" class="label" text-anchor="middle">Grok 4</text>
-    </g>
-
-    <!-- Llama 4 Maverick -->
-    <g>
-      <rect x="75" y="0" width="120" height="28" rx="14" class="pill-dark"/>
-      <rect x="75" y="0" width="120" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="135" y="18" class="label" text-anchor="middle">Llama 4 Maverick</text>
-    </g>
-
-    <!-- Mistral Large 3 -->
-    <g>
-      <rect x="205" y="0" width="105" height="28" rx="14" class="pill"/>
-      <rect x="205" y="0" width="105" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="257.5" y="18" class="label" text-anchor="middle">Mistral Large 3</text>
-    </g>
-
-    <!-- DeepSeek V3.2 -->
-    <g>
-      <rect x="320" y="0" width="105" height="28" rx="14" class="pill-light"/>
-      <rect x="320" y="0" width="105" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="372.5" y="18" class="label" text-anchor="middle">DeepSeek V3.2</text>
-    </g>
-
-    <!-- GLM-4.7 -->
-    <g>
-      <rect x="435" y="0" width="75" height="28" rx="14" class="pill-dark"/>
-      <rect x="435" y="0" width="75" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="472.5" y="18" class="label" text-anchor="middle">GLM-4.7</text>
-    </g>
-
-    <!-- Kimi K2.5 -->
-    <g>
-      <rect x="520" y="0" width="80" height="28" rx="14" class="pill"/>
-      <rect x="520" y="0" width="80" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="560" y="18" class="label" text-anchor="middle">Kimi K2.5</text>
-    </g>
-
-    <!-- Qwen3-Max -->
-    <g>
-      <rect x="610" y="0" width="90" height="28" rx="14" class="pill-light"/>
-      <rect x="610" y="0" width="90" height="28" rx="14" class="shimmer-overlay"/>
-      <text x="655" y="18" class="label" text-anchor="middle">Qwen3-Max</text>
-    </g>
+  <rect width="500" height="100" rx="12" fill="url(#banner-models-bg)"/>
+  <g class="banner-models-pulse" data-animated="true">
+    <text x="250" y="45" font-family="system-ui, sans-serif" font-weight="bold" font-size="18" fill="#F472B6" text-anchor="middle">LLM &amp; REASONING MODELS</text>
+    <text x="250" y="68" font-family="system-ui, sans-serif" font-size="12" fill="#A7F3D0" text-anchor="middle">Claude 3.7 • Gemini 2.5 • DeepSeek R1 • GPT-4o</text>
   </g>
 </svg>
