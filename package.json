@@ -9,9 +9,13 @@
   "scripts": {
     "serve": "bunx serve .",
     "test": "bun test tests/svg-contracts.test.ts",
+    "test:all": "bun test",
+    "snapshots": "bun run scripts/visual-snapshots.ts",
+    "svgo:check": "bun run scripts/svgo-check.ts",
+    "svgo:write": "bun run scripts/svgo-check.ts --write",
     "validate": "bun run scripts/validate-svg.ts",
     "typecheck": "tsc --noEmit",
-    "check": "bun run test && bun run validate && bun run typecheck"
+    "check": "bun run test && bun run validate && bun run typecheck && bun run svgo:check"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
