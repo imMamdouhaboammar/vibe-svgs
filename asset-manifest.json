@@ -283,9 +283,9 @@
       "type": "mascot",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "DeepSeek Community Mascot",
-      "description": "Fan-made whale mascot awaiting Phase 2 migration."
+      "description": "Fan-made ocean blue whale mascot inspired by DeepSeek workflows."
     },
     {
       "id": "deepseek-diving",
