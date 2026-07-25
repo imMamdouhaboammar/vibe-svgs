@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cx-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a" />
+      <stop offset="50%" stop-color="#171717" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+
+    <linearGradient id="cxBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#333333"/>
+      <stop offset="50%" stop-color="#1A1A1A"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <radialGradient id="cxShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="cxGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .card-bg { fill: url(#cx-bg); rx: 20px; stroke: #10a37f; stroke-width: 2px; }
+    .codex-float { animation: float-cx 3.5s infinite ease-in-out alternate; }
+    @keyframes float-cx { 0% { transform: translateY(0px); } 100% { transform: translateY(-8px); } }
+    .eye-blink { animation: blink-cx 4s infinite; transform-origin: center; }
+    @keyframes blink-cx { 0%, 94%, 98%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+    .title-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; fill: #ffffff; font-size: 22px; }
+    .sub-text { font-family: monospace; fill: #a7f3d0; font-size: 13px; font-weight: 600; }
+  </style>
+
+  <rect width="500" height="280" class="card-bg" />
+
+  <!-- Platform Badge -->
+  <g transform="translate(30, 25)">
+    <rect width="140" height="28" rx="14" fill="#064e3b" stroke="#10a37f" stroke-width="1.5" />
+    <text x="70" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="12" fill="#a7f3d0">OPENAI / CODEX</text>
+  </g>
+
+  <!-- Title & Info -->
+  <g transform="translate(30, 85)">
+    <text x="0" y="0" class="title-text">OpenAI GPT-4.5 &amp; Codex</text>
+    <text x="0" y="24" class="sub-text">⚡ 100% Confident Code Generation</text>
+  </g>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="370" cy="225" rx="55" ry="9" fill="url(#cxShadowGrad)" />
+
+  <!-- 3D Mascot Character (Right Side) -->
+  <g class="codex-float" transform="translate(270, 70)" filter="url(#cxGlow)">
+    <!-- Main Body -->
+    <rect x="58" y="44" width="84" height="90" rx="36" fill="url(#cxBodyGrad)" stroke="#404040" stroke-width="1" />
+
+    <!-- Eyes -->
+    <g class="eye-blink">
+      <circle cx="86" cy="78" r="10" fill="#FFFFFF" />
+      <circle cx="87" cy="78" r="4" fill="#000000" />
+
+      <circle cx="114" cy="78" r="10" fill="#FFFFFF" />
+      <circle cx="113" cy="78" r="4" fill="#000000" />
+    </g>
+
+    <!-- Smile -->
+    <path d="M 94 96 Q 100 104 106 96" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Floating OpenAI Swirl Icon -->
+    <g transform="translate(145, 30)">
+      <circle cx="0" cy="0" r="14" fill="#10A37F" />
+      <path d="M0 -7 C-4 -7 -6 -4 -6 -1 C-6 3 4 2 4 6 C4 9 0 10 -3 9" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

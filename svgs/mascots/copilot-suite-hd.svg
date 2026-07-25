@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+
+    <linearGradient id="cpBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+
+    <radialGradient id="cpShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="cpVisorGlow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .card-bg { fill: url(#cp-bg); rx: 20px; stroke: #38bdf8; stroke-width: 2px; }
+    .copilot-float { animation: float-cp 3.5s infinite ease-in-out alternate; }
+    @keyframes float-cp { 0% { transform: translateY(0px); } 100% { transform: translateY(-8px); } }
+    .visor-scan { animation: scan-cp 2s infinite ease-in-out alternate; }
+    @keyframes scan-cp { 0% { opacity: 0.7; transform: scaleX(0.95); } 100% { opacity: 1; transform: scaleX(1.05); } }
+    .title-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; fill: #ffffff; font-size: 22px; }
+    .sub-text { font-family: monospace; fill: #7dd3fc; font-size: 13px; font-weight: 600; }
+  </style>
+
+  <rect width="500" height="280" class="card-bg" />
+
+  <!-- Platform Badge -->
+  <g transform="translate(30, 25)">
+    <rect width="160" height="28" rx="14" fill="#1e3a8a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="80" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="12" fill="#bae6fd">GITHUB COPILOT</text>
+  </g>
+
+  <!-- Title & Info -->
+  <g transform="translate(30, 85)">
+    <text x="0" y="0" class="title-text">GitHub Copilot Workspace</text>
+    <text x="0" y="24" class="sub-text">🤖 Autonomous Ghost Code Pair Programmer</text>
+  </g>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="370" cy="225" rx="55" ry="9" fill="url(#cpShadowGrad)" />
+
+  <!-- 3D Mascot Character (Right Side) -->
+  <g class="copilot-float" transform="translate(270, 60)">
+    <!-- Robot Head / Body -->
+    <rect x="38" y="44" width="84" height="90" rx="30" fill="url(#cpBodyGrad)" stroke="#60A5FA" stroke-width="1.5" />
+
+    <!-- Robot Ears / Antennas -->
+    <rect x="24" y="70" width="14" height="24" rx="5" fill="#1D4ED8" />
+    <rect x="122" y="70" width="14" height="24" rx="5" fill="#1D4ED8" />
+
+    <!-- Futuristic Glowing Visor -->
+    <rect x="48" y="60" width="64" height="30" rx="15" fill="#0F172A" stroke="#38BDF8" stroke-width="2.5" filter="url(#cpVisorGlow)" />
+
+    <!-- Visor Eye Lights -->
+    <g class="visor-scan">
+      <circle cx="64" cy="75" r="6" fill="#38BDF8" />
+      <circle cx="96" cy="75" r="6" fill="#38BDF8" />
+    </g>
+
+    <!-- Mouth Line -->
+    <line x1="70" y1="104" x2="90" y2="104" stroke="#93C5FD" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>

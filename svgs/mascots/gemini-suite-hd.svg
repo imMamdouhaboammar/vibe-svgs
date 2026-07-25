@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+
+    <linearGradient id="gmBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+
+    <linearGradient id="gmStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A5B4FC" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <radialGradient id="gmShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="gmGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .card-bg { fill: url(#gm-bg); rx: 20px; stroke: #818cf8; stroke-width: 2px; }
+    .gemini-float { animation: float-gm 3.5s infinite ease-in-out alternate; }
+    @keyframes float-gm { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-10px) rotate(1deg); } }
+    .ring-spin { animation: spin-ring 8s linear infinite; transform-origin: 350px 145px; }
+    @keyframes spin-ring { 0% { transform: rotateX(70deg) rotateZ(0deg); } 100% { transform: rotateX(70deg) rotateZ(360deg); } }
+    .title-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; fill: #ffffff; font-size: 22px; }
+    .sub-text { font-family: monospace; fill: #a5b4fc; font-size: 13px; font-weight: 600; }
+  </style>
+
+  <rect width="500" height="280" class="card-bg" />
+
+  <!-- Platform Badge -->
+  <g transform="translate(30, 25)">
+    <rect width="170" height="28" rx="14" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5" />
+    <text x="85" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="12" fill="#c7d2fe">GOOGLE ANTIGRAVITY</text>
+  </g>
+
+  <!-- Title & Info -->
+  <g transform="translate(30, 85)">
+    <text x="0" y="0" class="title-text">Google Gemini 2.0 Flash</text>
+    <text x="0" y="24" class="sub-text">🚀 Zero-Gravity High Speed Inference</text>
+  </g>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="370" cy="225" rx="55" ry="9" fill="url(#gmShadowGrad)" />
+
+  <!-- 3D Mascot Character (Right Side) -->
+  <g class="gemini-float" transform="translate(270, 60)" filter="url(#gmGlow)">
+    <!-- Orbital Ring -->
+    <ellipse cx="80" cy="85" rx="60" ry="18" fill="none" stroke="#C084FC" stroke-width="2.5" stroke-dasharray="8 4" class="ring-spin" />
+
+    <!-- Main Body -->
+    <rect x="38" y="44" width="84" height="90" rx="36" fill="url(#gmBodyGrad)" />
+
+    <!-- Eyes -->
+    <circle cx="66" cy="78" r="9" fill="#FFFFFF" />
+    <circle cx="68" cy="78" r="3.5" fill="#1E1B4B" />
+
+    <circle cx="94" cy="78" r="9" fill="#FFFFFF" />
+    <circle cx="92" cy="78" r="3.5" fill="#1E1B4B" />
+
+    <!-- Smile -->
+    <path d="M 74 96 Q 80 104 86 96" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+    <!-- 4-point Sparkle Head Floating -->
+    <g transform="translate(80, 20)">
+      <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18 Z" fill="url(#gmStarGrad)" />
+    </g>
+  </g>
+</svg>

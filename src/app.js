@@ -1,151 +1,223 @@
-// SVG Items Data Store - Authentic 3D Mascots & Actions
+// SVG Items Data Store - Organized by Platform & HD Suites
 const svgData = [
-  // Claude Code 3D Action Gallery
+  // HD Platform Suite Banners
+  {
+    id: 'claude-suite-hd',
+    title: 'Anthropic Claude 3.7 Sonnet HD Suite',
+    category: 'claude',
+    path: 'svgs/mascots/claude-suite-hd.svg',
+    desc: 'High-definition 3D Claude Code agent suite banner.'
+  },
+  {
+    id: 'codex-suite-hd',
+    title: 'OpenAI GPT-4.5 & Codex HD Suite',
+    category: 'openai',
+    path: 'svgs/mascots/codex-suite-hd.svg',
+    desc: 'High-definition 3D OpenAI / Codex agent suite banner.'
+  },
+  {
+    id: 'cursor-suite-hd',
+    title: 'Cursor IDE Auto-Tab HD Suite',
+    category: 'cursor',
+    path: 'svgs/mascots/cursor-suite-hd.svg',
+    desc: 'High-definition 3D Cursor AI agent suite banner.'
+  },
+  {
+    id: 'gemini-suite-hd',
+    title: 'Google Gemini & Antigravity HD Suite',
+    category: 'gemini',
+    path: 'svgs/mascots/gemini-suite-hd.svg',
+    desc: 'High-definition 3D Google Antigravity zero-G suite banner.'
+  },
+  {
+    id: 'deepseek-suite-hd',
+    title: 'DeepSeek V3 Ocean Reasoning HD Suite',
+    category: 'deepseek',
+    path: 'svgs/mascots/deepseek-suite-hd.svg',
+    desc: 'High-definition 3D DeepSeek whale agent suite banner.'
+  },
+  {
+    id: 'copilot-suite-hd',
+    title: 'GitHub Copilot Workspace HD Suite',
+    category: 'copilot',
+    path: 'svgs/mascots/copilot-suite-hd.svg',
+    desc: 'High-definition 3D GitHub Copilot agent suite banner.'
+  },
+
+  // Claude Platform SVGs
   {
     id: 'claude-mascot',
-    title: 'Claude Code (Official 3D Standalone)',
-    category: 'mascots',
+    title: 'Claude Code (Official 3D Mascot)',
+    category: 'claude',
     path: 'svgs/mascots/claude-mascot.svg',
-    desc: 'Official 3D Claude terracotta mascot carrying tools.'
+    desc: 'Official 3D Claude terracotta mascot carrying samurai tools.'
   },
   {
     id: 'claude-sleeping',
     title: 'Claude Sleeping on 200K Tokens',
-    category: 'mascots',
+    category: 'claude',
     path: 'svgs/mascots/claude-sleeping.svg',
-    desc: 'Claude sleeping peacefully on a pile of 200k context tokens with Zzz...'
+    desc: 'Claude sleeping peacefully on a pile of 200k context tokens.'
   },
   {
     id: 'claude-debugging',
     title: 'Claude Detective Debugging',
-    category: 'mascots',
+    category: 'claude',
     path: 'svgs/mascots/claude-debugging.svg',
-    desc: 'Claude in a Sherlock hat with a magnifying glass inspecting a burning bug.'
+    desc: 'Claude in a Sherlock hat with a magnifying glass burning a red bug.'
   },
   {
     id: 'claude-jumping',
     title: 'Claude Mascot (Animated Jumping)',
-    category: 'mascots',
+    category: 'claude',
     path: 'svgs/mascots/claude-jumping.svg',
     desc: 'Official 3D Claude mascot jumping with happiness.'
   },
   {
     id: 'claude-speaking',
     title: 'Claude Mascot (Speaking & Reasoning)',
-    category: 'mascots',
+    category: 'claude',
     path: 'svgs/mascots/claude-speaking.svg',
     desc: 'Official 3D Claude mascot speaking with an animated speech bubble.'
   },
+  {
+    id: 'claude-logo',
+    title: 'Claude Official Vector Logo',
+    category: 'claude',
+    path: 'svgs/logos/claude-logo.svg',
+    desc: 'Official Anthropic Claude star logo vector with pulse animation.'
+  },
 
-  // Codex / OpenAI 3D Action Gallery
+  // OpenAI / Codex Platform SVGs
   {
     id: 'codex-mascot',
     title: 'Codex / OpenAI Mascot (Official 3D Standalone)',
-    category: 'mascots',
+    category: 'openai',
     path: 'svgs/mascots/codex-mascot.svg',
     desc: 'Official 3D Codex agent mascot carrying tools.'
   },
   {
     id: 'codex-hallucinating',
     title: 'Codex 100% Confident Hallucination',
-    category: 'mascots',
+    category: 'openai',
     path: 'svgs/mascots/codex-hallucinating.svg',
     desc: 'Codex in a party hat floating fake math equations with 100% confidence.'
   },
   {
     id: 'codex-jumping',
     title: 'Codex Mascot (Animated Jumping)',
-    category: 'mascots',
+    category: 'openai',
     path: 'svgs/mascots/codex-jumping.svg',
     desc: 'Official 3D Codex mascot jumping happily.'
   },
   {
     id: 'codex-speaking',
     title: 'Codex Mascot (Speaking)',
-    category: 'mascots',
+    category: 'openai',
     path: 'svgs/mascots/codex-speaking.svg',
     desc: 'Official 3D Codex mascot speaking with an animated speech bubble.'
   },
+  {
+    id: 'openai-logo',
+    title: 'OpenAI Official Vector Logo',
+    category: 'openai',
+    path: 'svgs/logos/openai-logo.svg',
+    desc: 'Official OpenAI spiral vector logo with rotation animation.'
+  },
 
-  // Cursor 3D Action Gallery
+  // Cursor Platform SVGs
   {
     id: 'cursor-mascot',
     title: 'Cursor Mascot (Official 3D Standalone)',
-    category: 'mascots',
+    category: 'cursor',
     path: 'svgs/mascots/cursor-mascot.svg',
     desc: 'Official 3D Cursor dark olive mascot carrying tools.'
   },
   {
     id: 'cursor-rage-autotab',
     title: 'Cursor Gamer Headphones Auto-Tab Rampage',
-    category: 'mascots',
+    category: 'cursor',
     path: 'svgs/mascots/cursor-rage-autotab.svg',
     desc: 'Cursor wearing gamer headphones furiously slamming TAB keys with green code lightning.'
   },
+  {
+    id: 'cursor-logo',
+    title: 'Cursor Official Vector Logo',
+    category: 'cursor',
+    path: 'svgs/logos/cursor-logo.svg',
+    desc: 'Official Cursor IDE vector logo with glow animation.'
+  },
 
-  // Google Gemini / Antigravity 3D Action Gallery
+  // Google Gemini / Antigravity Platform SVGs
   {
     id: 'gemini-mascot',
     title: 'Gemini Mascot (Official 3D Standalone)',
-    category: 'mascots',
+    category: 'gemini',
     path: 'svgs/mascots/gemini-mascot.svg',
     desc: 'Official 3D Google Gemini mascot with 4-point sparkle core.'
   },
   {
     id: 'gemini-levitating',
     title: 'Google Antigravity Zero-G Levitating',
-    category: 'mascots',
+    category: 'gemini',
     path: 'svgs/mascots/gemini-levitating.svg',
     desc: 'Gemini 3D mascot levitating in zero-G with glowing orbital rings.'
   },
   {
     id: 'gemini-jumping',
     title: 'Gemini Mascot (Animated Jumping)',
-    category: 'mascots',
+    category: 'gemini',
     path: 'svgs/mascots/gemini-jumping.svg',
     desc: 'Official 3D Gemini mascot jumping with joy.'
   },
   {
     id: 'gemini-speaking',
     title: 'Gemini Mascot (Speaking)',
-    category: 'mascots',
+    category: 'gemini',
     path: 'svgs/mascots/gemini-speaking.svg',
     desc: 'Official 3D Gemini mascot speaking with a speech bubble.'
   },
+  {
+    id: 'gemini-logo',
+    title: 'Gemini Official Vector Logo',
+    category: 'gemini',
+    path: 'svgs/logos/gemini-logo.svg',
+    desc: 'Official Google Gemini 4-point star vector logo.'
+  },
 
-  // DeepSeek 3D Action Gallery
+  // DeepSeek Platform SVGs
   {
     id: 'deepseek-mascot',
     title: 'DeepSeek (Whale Mascot)',
-    category: 'mascots',
+    category: 'deepseek',
     path: 'svgs/mascots/deepseek-mascot.svg',
     desc: 'Official DeepSeek blue whale mascot with animated blowhole spout.'
   },
   {
     id: 'deepseek-diving',
     title: 'DeepSeek Scuba Goggles Deep Dive',
-    category: 'mascots',
+    category: 'deepseek',
     path: 'svgs/mascots/deepseek-diving.svg',
     desc: 'DeepSeek whale in scuba goggles diving deep into ocean code.'
   },
 
-  // GitHub Copilot 3D Action Gallery
+  // GitHub Copilot Platform SVGs
   {
     id: 'copilot-mascot',
     title: 'GitHub Copilot (Visor Mascot)',
-    category: 'mascots',
+    category: 'copilot',
     path: 'svgs/mascots/copilot-mascot.svg',
     desc: 'Official GitHub Copilot avatar with glowing cyan scanning visor.'
   },
   {
     id: 'copilot-ninja',
     title: 'GitHub Copilot Ninja Stealth',
-    category: 'mascots',
+    category: 'copilot',
     path: 'svgs/mascots/copilot-ninja.svg',
     desc: 'Copilot wearing ninja headband stealthily inserting code snippets.'
   },
 
-  // Banners & Pills
+  // Banners & Badges
   {
     id: 'banner-pills',
     title: 'AI Coding Tools Banner Pills',
@@ -174,38 +246,6 @@ const svgData = [
     path: 'svgs/banners/banner-agentic-workflow.svg',
     desc: 'Animated flowchart: Prompt ➔ Hallucination ➔ Loop ➔ Ship.'
   },
-
-  // WhatsApp Stickers
-  {
-    id: 'sticker-claude',
-    title: 'AI Claude WhatsApp Badge',
-    category: 'stickers',
-    path: 'svgs/stickers/ai-claude.svg',
-    desc: 'Official AI Claude WhatsApp community badge SVG.'
-  },
-  {
-    id: 'sticker-codex',
-    title: 'AI Codex WhatsApp Badge',
-    category: 'stickers',
-    path: 'svgs/stickers/ai-codex.svg',
-    desc: 'Official AI Codex WhatsApp community badge SVG.'
-  },
-  {
-    id: 'sticker-cursor',
-    title: 'AI Cursor WhatsApp Badge',
-    category: 'stickers',
-    path: 'svgs/stickers/ai-cursor.svg',
-    desc: 'Official AI Cursor WhatsApp community badge SVG.'
-  },
-  {
-    id: 'sticker-gemini',
-    title: 'AI Gemini WhatsApp Badge',
-    category: 'stickers',
-    path: 'svgs/stickers/ai-gemini.svg',
-    desc: 'Official AI Gemini WhatsApp community badge SVG.'
-  },
-
-  // Badges
   {
     id: 'zero-human',
     title: '0% Code Written By Human',
