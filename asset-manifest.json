@@ -206,9 +206,9 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Cursor Auto-Tab Scene",
-      "description": "Fan-made comedy scene awaiting Phase 3 migration."
+      "description": "Fan-made comedy scene with rapid auto-tab prompt floating effects."
     },
     {
       "id": "cursor-logo",
