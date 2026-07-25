@@ -294,9 +294,9 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "DeepSeek Diving Scene",
-      "description": "Fan-made diving scene awaiting Phase 3 migration."
+      "description": "Fan-made deep reasoning diving whale scene with ocean bubbles."
     },
     {
       "id": "copilot-mascot",

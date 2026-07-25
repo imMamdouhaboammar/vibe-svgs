@@ -1,52 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="deepseek-diving-title deepseek-diving-desc">
+  <title id="deepseek-diving-title">DeepSeek community whale mascot diving deep into code</title>
+  <desc id="deepseek-diving-desc">A rounded ocean-blue whale character diving downward into deep reasoning with floating water bubbles.</desc>
   <defs>
-    <linearGradient id="dsBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#4D6BFE"/>
-      <stop offset="50%" stop-color="#1E40AF"/>
-      <stop offset="100%" stop-color="#1E3A8A"/>
+    <linearGradient id="deepseek-diving-body-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="0.6" stop-color="#1E40AF"/>
+      <stop offset="1" stop-color="#1E3A8A"/>
     </linearGradient>
-    <radialGradient id="dsShadowGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    <linearGradient id="deepseek-diving-belly-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EFF6FF"/>
+      <stop offset="1" stop-color="#93C5FD"/>
+    </linearGradient>
+    <radialGradient id="deepseek-diving-shadow-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#0F172A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#0F172A" stop-opacity="0"/>
     </radialGradient>
+    <filter id="deepseek-diving-soft-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#1E3A8A" flood-opacity="0.25"/>
+    </filter>
   </defs>
-
   <style>
-    .whale-dive {
-      animation: dive-anim 4s infinite ease-in-out alternate;
+    .deepseek-diving-shadow {
+      animation: deepseek-diving-shadow-scale 3.2s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 106px;
     }
-    @keyframes dive-anim {
-      0% { transform: translateY(0px) rotate(-4deg); }
-      100% { transform: translateY(-10px) rotate(4deg); }
+    .deepseek-diving-character {
+      animation: deepseek-diving-whale-dive 3.2s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 60px;
     }
-    .bubble-float {
-      animation: bubble-up 2.5s infinite linear;
+    .deepseek-diving-bubble-1 {
+      animation: deepseek-diving-bubble-float 2.5s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 30px 70px;
     }
-    @keyframes bubble-up {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-30px); opacity: 0; }
+    .deepseek-diving-bubble-2 {
+      animation: deepseek-diving-bubble-float 2.5s ease-in-out 1.2s infinite;
+      transform-box: view-box;
+      transform-origin: 90px 65px;
+    }
+    @keyframes deepseek-diving-shadow-scale {
+      0%, 100% { transform: scaleX(1); opacity: .3; }
+      50% { transform: scaleX(.75); opacity: .18; }
+    }
+    @keyframes deepseek-diving-whale-dive {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(10px) rotate(4deg); }
+    }
+    @keyframes deepseek-diving-bubble-float {
+      0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+      30% { opacity: 0.9; }
+      80% { transform: translate(0, -25px) scale(1.1); opacity: 0.6; }
+      100% { transform: translate(0, -35px) scale(1.2); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <ellipse cx="100" cy="108" rx="50" ry="7" fill="url(#dsShadowGrad)" />
+  <ellipse class="deepseek-diving-shadow" data-animated="true" cx="60" cy="106" rx="35" ry="6" fill="url(#deepseek-diving-shadow-gradient)"/>
 
-  <g class="whale-dive">
+  <g class="deepseek-diving-character" data-animated="true" filter="url(#deepseek-diving-soft-shadow)">
     <!-- Whale Body -->
-    <path d="M 40 60 C 40 25 80 20 120 30 C 150 38 165 50 160 70 C 155 85 110 90 70 85 C 50 82 40 75 40 60 Z" fill="url(#dsBodyGrad)" />
-    <!-- Whale Tail -->
-    <path d="M 40 60 Q 20 50 10 35 Q 25 55 40 60 Q 25 65 10 85 Q 20 70 40 60 Z" fill="#1E40AF" />
+    <path d="M20 54 C20 30 50 25 82 34 C100 40 106 54 100 68 C92 82 58 84 34 78 C24 75 20 66 20 54 Z" fill="url(#deepseek-diving-body-gradient)"/>
+    <!-- Soft Belly -->
+    <path d="M34 65 C44 76 76 77 92 64 C86 73 66 80 40 76 C30 74 27 68 34 65 Z" fill="url(#deepseek-diving-belly-gradient)"/>
 
-    <!-- Scuba Goggles -->
-    <rect x="120" y="42" width="28" height="14" rx="7" fill="rgba(56, 189, 248, 0.4)" stroke="#60A5FA" stroke-width="2" />
-    <line x1="120" y1="49" x2="110" y2="49" stroke="#1E3A8A" stroke-width="2" />
+    <!-- Tail Fin up top/back -->
+    <path d="M22 50 C14 42 10 32 14 26 C20 34 25 42 26 48 Z" fill="url(#deepseek-diving-body-gradient)"/>
 
-    <!-- Eye inside goggles -->
-    <circle cx="134" cy="49" r="3.5" fill="#FFFFFF" />
-    <circle cx="135" cy="49" r="1.5" fill="#0F172A" />
+    <!-- Side Flippers -->
+    <path d="M48 64 C42 74 38 82 46 84 C52 82 56 74 54 66 Z" fill="url(#deepseek-diving-body-gradient)"/>
 
-    <!-- Underwater Bubbles -->
-    <circle cx="155" cy="40" r="3" fill="#60A5FA" class="bubble-float" />
-    <circle cx="165" cy="30" r="4" fill="#93C5FD" class="bubble-float" style="animation-delay: 0.8s;" />
-    <circle cx="175" cy="20" r="2.5" fill="#BFDBFE" class="bubble-float" style="animation-delay: 1.4s;" />
+    <!-- Eye -->
+    <circle cx="78" cy="50" r="5" fill="#0F172A"/>
+    <circle cx="76.5" cy="48.5" r="1.6" fill="#FFFFFF"/>
+
+    <!-- Blowhole Sparkle / Sprout -->
+    <path d="M58 28 Q58 20 62 20 Q58 20 58 12 Q58 20 54 20 Q58 20 58 28 Z" fill="#60A5FA"/>
   </g>
+
+  <!-- Ocean Bubbles -->
+  <circle class="deepseek-diving-bubble-1" data-animated="true" cx="30" cy="70" r="4" fill="#93C5FD" opacity="0.8"/>
+  <circle class="deepseek-diving-bubble-2" data-animated="true" cx="90" cy="65" r="3" fill="#93C5FD" opacity="0.8"/>
 </svg>
