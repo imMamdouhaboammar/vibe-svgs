@@ -228,9 +228,9 @@
       "type": "mascot",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Gemini Community Mascot",
-      "description": "Fan-made Gemini coding mascot awaiting Phase 2 migration."
+      "description": "Fan-made blue-violet coding mascot inspired by Gemini workflows."
     },
     {
       "id": "gemini-levitating",
