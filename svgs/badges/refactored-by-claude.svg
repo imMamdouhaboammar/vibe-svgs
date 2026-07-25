@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 40" width="260" height="40">
+  <defs>
+    <linearGradient id="badge-orange-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .label-bg { fill: #1c1917; }
+    .status-bg { fill: url(#badge-orange-bg); }
+    .flame-anim {
+      animation: flicker 1.2s infinite ease-in-out alternate;
+      transform-origin: 152px 22px;
+    }
+    @keyframes flicker {
+      0% { transform: scale(0.9) translateY(0); opacity: 0.8; }
+      100% { transform: scale(1.15) translateY(-2px); opacity: 1; }
+    }
+    .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #e7e5e4; font-size: 12px; }
+    .text-status { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #ffffff; font-size: 12px; }
+  </style>
+
+  <path d="M6 0 H135 V40 H6 A6 6 0 0 1 0 34 V6 A6 6 0 0 1 6 0 Z" class="label-bg" />
+  <path d="M135 0 H254 A6 6 0 0 1 260 6 V34 A6 6 0 0 1 254 40 H135 Z" class="status-bg" />
+
+  <text x="16" y="25" class="text-label">legacy codebase</text>
+
+  <!-- Animated Flame Icon -->
+  <g class="flame-anim">
+    <path d="M152 25 C147 25 145 20 148 16 C150 13 152 11 152 11 C152 11 154 14 155 17 C157 20 156 25 152 25 Z" fill="#fef08a" />
+  </g>
+
+  <text x="165" y="25" class="text-status">Refactored 🔥</text>
+</svg>

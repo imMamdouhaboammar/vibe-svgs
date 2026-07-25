@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" width="290" height="40">
+  <defs>
+    <linearGradient id="badge-purple-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .label-bg { fill: #18181b; }
+    .status-bg { fill: url(#badge-purple-bg); }
+    .wink-eye {
+      animation: wink 3s infinite;
+      transform-origin: 162px 18px;
+    }
+    @keyframes wink {
+      0%, 85%, 100% { transform: scaleY(1); }
+      90% { transform: scaleY(0.1); }
+    }
+    .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #e4e4e7; font-size: 12px; }
+    .text-status { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #ffffff; font-size: 12px; }
+  </style>
+
+  <path d="M6 0 H140 V40 H6 A6 6 0 0 1 0 34 V6 A6 6 0 0 1 6 0 Z" class="label-bg" />
+  <path d="M140 0 H284 A6 6 0 0 1 290 6 V34 A6 6 0 0 1 284 40 H140 Z" class="status-bg" />
+
+  <text x="16" y="25" class="text-label">AI Code Reviewer</text>
+
+  <!-- Animated Winking Checkmark -->
+  <g transform="translate(155, 12)">
+    <circle cx="10" cy="8" r="9" fill="#ffffff" opacity="0.2" />
+    <path d="M5 8 L8 12 L15 5" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="wink-eye" />
+  </g>
+
+  <text x="180" y="25" class="text-status">APPROVED (Didn't Read) 😉</text>
+</svg>

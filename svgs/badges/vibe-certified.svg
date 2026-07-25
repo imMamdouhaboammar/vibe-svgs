@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 40" width="260" height="40">
+  <defs>
+    <linearGradient id="badge-gold-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+    <linearGradient id="shine-anim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .label-bg { fill: #1e1b4b; }
+    .status-bg { fill: url(#badge-gold-bg); }
+    .shine-pass {
+      animation: shine-sweep 2.5s infinite linear;
+    }
+    @keyframes shine-sweep {
+      0% { transform: translateX(-100px); }
+      100% { transform: translateX(300px); }
+    }
+    .star-rotate {
+      animation: rotate-star 4s linear infinite;
+      transform-origin: 155px 20px;
+    }
+    @keyframes rotate-star {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #c7d2fe; font-size: 12px; }
+    .text-status { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; fill: #451a03; font-size: 12px; letter-spacing: 0.5px; }
+  </style>
+
+  <path d="M6 0 H130 V40 H6 A6 6 0 0 1 0 34 V6 A6 6 0 0 1 6 0 Z" class="label-bg" />
+  <path d="M130 0 H254 A6 6 0 0 1 260 6 V34 A6 6 0 0 1 254 40 H130 Z" class="status-bg" />
+
+  <!-- Shimmer sweep -->
+  <rect x="0" y="0" width="60" height="40" fill="url(#shine-anim)" class="shine-pass" />
+
+  <text x="16" y="25" class="text-label">vibe coding standard</text>
+
+  <!-- Spinning Gold Star -->
+  <g class="star-rotate">
+    <path d="M155 12 L157 17 L162 17 L158 20 L160 25 L155 22 L150 25 L152 20 L148 17 L153 17 Z" fill="#78350f" />
+  </g>
+
+  <text x="170" y="25" class="text-status">CERTIFIED ✨</text>
+</svg>

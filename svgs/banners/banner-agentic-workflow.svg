@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="flow-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .bg { fill: url(#flow-bg); rx: 16px; stroke: #334155; stroke-width: 1px; }
+    .flow-line {
+      stroke: #38bdf8;
+      stroke-width: 2.5;
+      stroke-dasharray: 8 6;
+      animation: dash-flow 1.5s linear infinite;
+    }
+    @keyframes dash-flow {
+      0% { stroke-dashoffset: 28; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .node-box {
+      rx: 12px;
+      stroke-width: 1.5px;
+    }
+    .node-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 13px; fill: #ffffff; }
+    .node-desc { font-family: monospace; font-size: 10px; fill: #94a3b8; }
+  </style>
+
+  <rect width="800" height="180" class="bg" />
+
+  <!-- Flow Connecting Lines -->
+  <line x1="180" y1="90" x2="240" y2="90" class="flow-line" />
+  <line x1="380" y1="90" x2="440" y2="90" class="flow-line" />
+  <line x1="580" y1="90" x2="640" y2="90" class="flow-line" />
+
+  <!-- Step 1: Prompt -->
+  <g transform="translate(40, 45)">
+    <rect width="140" height="90" class="node-box" fill="#1e293b" stroke="#64748b" />
+    <text x="70" y="32" text-anchor="middle" font-size="22">💬</text>
+    <text x="70" y="55" text-anchor="middle" class="node-title">1. Vibe Prompt</text>
+    <text x="70" y="72" text-anchor="middle" class="node-desc">"Make it cool &amp; fast"</text>
+  </g>
+
+  <!-- Step 2: Hallucination -->
+  <g transform="translate(240, 45)">
+    <rect width="140" height="90" class="node-box" fill="#3b0764" stroke="#a855f7" />
+    <text x="70" y="32" text-anchor="middle" font-size="22">🌀</text>
+    <text x="70" y="55" text-anchor="middle" class="node-title">2. Hallucination</text>
+    <text x="70" y="72" text-anchor="middle" class="node-desc">Inventing 4 libraries</text>
+  </g>
+
+  <!-- Step 3: Self-Fix Loop -->
+  <g transform="translate(440, 45)">
+    <rect width="140" height="90" class="node-box" fill="#451a03" stroke="#f97316" />
+    <text x="70" y="32" text-anchor="middle" font-size="22">🔄</text>
+    <text x="70" y="55" text-anchor="middle" class="node-title">3. Self-Fix Loop</text>
+    <text x="70" y="72" text-anchor="middle" class="node-desc">Infinite retry #402</text>
+  </g>
+
+  <!-- Step 4: Vibe Ship -->
+  <g transform="translate(640, 45)">
+    <rect width="140" height="90" class="node-box" fill="#064e3b" stroke="#10b981" />
+    <text x="70" y="32" text-anchor="middle" font-size="22">🚀</text>
+    <text x="70" y="55" text-anchor="middle" class="node-title">4. Vibe Ship</text>
+    <text x="70" y="72" text-anchor="middle" class="node-desc">100% Production Ready</text>
+  </g>
+</svg>

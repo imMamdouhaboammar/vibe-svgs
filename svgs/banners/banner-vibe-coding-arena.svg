@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="banner-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="neon-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="33%" stop-color="#8b5cf6" />
+      <stop offset="66%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+    <filter id="banner-glow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg { fill: url(#banner-bg); rx: 16px; stroke: url(#neon-border); stroke-width: 2px; }
+    .pulse-live {
+      animation: live-pulse 1.5s infinite ease-in-out alternate;
+    }
+    @keyframes live-pulse {
+      0% { opacity: 0.4; }
+      100% { opacity: 1; filter: drop-shadow(0 0 8px #22c55e); }
+    }
+    .float-mascot {
+      animation: float-arena 4s infinite ease-in-out alternate;
+    }
+    @keyframes float-arena {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+    .grid-lines { stroke: #1f2937; stroke-width: 1; stroke-dasharray: 4 4; opacity: 0.5; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; fill: #ffffff; font-size: 28px; letter-spacing: -0.5px; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; fill: #9ca3af; font-size: 14px; }
+    .pill-text { font-family: monospace; font-size: 12px; font-weight: 700; fill: #e5e7eb; }
+  </style>
+
+  <rect width="800" height="240" class="bg" />
+
+  <!-- Sci-Fi Grid lines -->
+  <line x1="0" y1="60" x2="800" y2="60" class="grid-lines" />
+  <line x1="0" y1="180" x2="800" y2="180" class="grid-lines" />
+  <line x1="200" y1="0" x2="200" y2="240" class="grid-lines" />
+  <line x1="600" y1="0" x2="600" y2="240" class="grid-lines" />
+
+  <!-- Top Status Pill -->
+  <g transform="translate(40, 25)">
+    <rect width="130" height="26" rx="13" fill="#14532d" stroke="#22c55e" stroke-width="1" />
+    <circle cx="16" cy="13" r="4" fill="#4ade80" class="pulse-live" />
+    <text x="28" y="17" class="pill-text" fill="#4ade80">VIBE MODE ACTIVE</text>
+  </g>
+
+  <!-- Title & Subtitle -->
+  <g transform="translate(40, 105)">
+    <text x="0" y="0" class="title">AGENTIC ENGINEERING ARENA 🚀</text>
+    <text x="0" y="28" class="subtitle">Where AI Agents write 10,000 lines of code while human developers sip coffee.</text>
+  </g>
+
+  <!-- Animated Floating AI Mascots in Arena (Right Side) -->
+  <g transform="translate(560, 40)" class="float-mascot">
+    <!-- Claude Card -->
+    <g transform="translate(0, 0)">
+      <rect width="90" height="120" rx="12" fill="#1c1917" stroke="#ea580c" stroke-width="1.5" />
+      <circle cx="45" cy="45" r="22" fill="#ea580c" opacity="0.8" />
+      <text x="45" y="50" text-anchor="middle" font-size="20">🤖</text>
+      <text x="45" y="90" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="12" fill="#fdba74">Claude</text>
+      <text x="45" y="105" text-anchor="middle" font-family="monospace" font-size="9" fill="#a8a29e">200K Tokens</text>
+    </g>
+
+    <!-- Gemini Card -->
+    <g transform="translate(105, 15)" style="animation-delay: 1s;">
+      <rect width="90" height="120" rx="12" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" />
+      <circle cx="45" cy="45" r="22" fill="#4f46e5" opacity="0.8" />
+      <text x="45" y="50" text-anchor="middle" font-size="20">✨</text>
+      <text x="45" y="90" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="12" fill="#c7d2fe">Gemini</text>
+      <text x="45" y="105" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">Zero-G Speed</text>
+    </g>
+  </g>
+
+  <!-- Bottom Stats Pills -->
+  <g transform="translate(40, 185)">
+    <!-- Pill 1 -->
+    <rect width="150" height="30" rx="15" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+    <text x="75" y="19" text-anchor="middle" class="pill-text" fill="#a5b4fc">⚡ 0ms Thinking Delay</text>
+    
+    <!-- Pill 2 -->
+    <g transform="translate(165, 0)">
+      <rect width="165" height="30" rx="15" fill="#312e81" stroke="#818cf8" stroke-width="1" />
+      <text x="82" y="19" text-anchor="middle" class="pill-text" fill="#c7d2fe">🔥 100% Vibe Coverage</text>
+    </g>
+  </g>
+</svg>

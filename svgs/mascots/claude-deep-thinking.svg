@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="claude-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b18" />
+      <stop offset="100%" stop-color="#12100e" />
+    </linearGradient>
+    <linearGradient id="claude-body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d97757" />
+      <stop offset="100%" stop-color="#b85433" />
+    </linearGradient>
+    <linearGradient id="glow-wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0" />
+      <stop offset="50%" stop-color="#fb923c" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0" />
+    </linearGradient>
+    <filter id="orange-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg { fill: url(#claude-bg); rx: 16px; }
+    .thinking-wave {
+      animation: pulse-wave 2s infinite ease-in-out;
+      transform-origin: 200px 130px;
+    }
+    .wave-2 { animation-delay: 0.6s; }
+    .wave-3 { animation-delay: 1.2s; }
+    @keyframes pulse-wave {
+      0% { transform: scale(0.85); opacity: 0.8; stroke-width: 2; }
+      50% { transform: scale(1.15); opacity: 0.3; stroke-width: 4; }
+      100% { transform: scale(1.35); opacity: 0; stroke-width: 1; }
+    }
+    .token-1 { animation: float-up 3s infinite ease-in-out; }
+    .token-2 { animation: float-up 3.5s infinite ease-in-out 1s; }
+    .token-3 { animation: float-up 2.8s infinite ease-in-out 1.8s; }
+    @keyframes float-up {
+      0% { transform: translateY(0px) scale(0.9); opacity: 0; }
+      30% { opacity: 0.9; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-45px) scale(1.1); opacity: 0; }
+    }
+    .eye-blink { animation: blink 4s infinite; transform-origin: center; }
+    @keyframes blink {
+      0%, 94%, 98%, 100% { transform: scaleY(1); }
+      96% { transform: scaleY(0.1); }
+    }
+    .sparkle { animation: spin-sparkle 4s linear infinite; transform-origin: 200px 70px; }
+    @keyframes spin-sparkle {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .claude-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #f3f4f6; font-size: 16px; }
+    .sub-text { font-family: system-ui, -apple-system, sans-serif; fill: #d1d5db; font-size: 12px; font-weight: 500; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="400" height="300" class="bg" />
+
+  <!-- Animated thinking waves -->
+  <circle cx="200" cy="130" r="60" fill="none" stroke="#f97316" class="thinking-wave" />
+  <circle cx="200" cy="130" r="60" fill="none" stroke="#fdba74" class="thinking-wave wave-2" />
+  <circle cx="200" cy="130" r="60" fill="none" stroke="#ffedd5" class="thinking-wave wave-3" />
+
+  <!-- Floating Code Tokens -->
+  <g class="token-1" transform="translate(110, 100)">
+    <rect x="-35" y="-12" width="70" height="24" rx="12" fill="#292524" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" fill="#fdba74" font-family="monospace" font-size="11">&lt;prompt&gt;</text>
+  </g>
+  <g class="token-2" transform="translate(290, 110)">
+    <rect x="-40" y="-12" width="80" height="24" rx="12" fill="#292524" stroke="#f97316" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" fill="#fed7aa" font-family="monospace" font-size="11">thinking...</text>
+  </g>
+  <g class="token-3" transform="translate(200, 60)">
+    <rect x="-45" y="-12" width="90" height="24" rx="12" fill="#292524" stroke="#fb923c" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" fill="#ffedd5" font-family="monospace" font-size="11">{ reasoning }</text>
+  </g>
+
+  <!-- Claude Body Mascot -->
+  <g transform="translate(200, 155)">
+    <!-- Base Body -->
+    <rect x="-45" y="-35" width="90" height="70" rx="24" fill="url(#claude-body)" filter="url(#orange-glow)" />
+    <!-- Inner face plate -->
+    <rect x="-35" y="-25" width="70" height="50" rx="16" fill="#1c1917" />
+    
+    <!-- Eyes -->
+    <g class="eye-blink">
+      <circle cx="-16" cy="-4" r="6" fill="#ffedd5" />
+      <circle cx="16" cy="-4" r="6" fill="#ffedd5" />
+      <circle cx="-14" cy="-6" r="2.5" fill="#1c1917" />
+      <circle cx="18" cy="-6" r="2.5" fill="#1c1917" />
+    </g>
+
+    <!-- Cute Smile -->
+    <path d="M-10 10 Q0 18 10 10" fill="none" stroke="#ffedd5" stroke-width="2.5" stroke-linecap="round" />
+    
+    <!-- Antenna/Ears -->
+    <rect x="-38" y="-45" width="10" height="15" rx="5" fill="#d97757" transform="rotate(-20 -33 -37)" />
+    <rect x="28" y="-45" width="10" height="15" rx="5" fill="#d97757" transform="rotate(20 33 -37)" />
+  </g>
+
+  <!-- Sparkle star -->
+  <g class="sparkle">
+    <path d="M200 55 L203 67 L215 70 L203 73 L200 85 L197 73 L185 70 L197 67 Z" fill="#fb923c" />
+  </g>
+
+  <!-- Text Section -->
+  <text x="200" y="240" text-anchor="middle" class="claude-text">Claude Code</text>
+  <text x="200" y="262" text-anchor="middle" class="sub-text">Deeply reasoning through 200k context...</text>
+</svg>

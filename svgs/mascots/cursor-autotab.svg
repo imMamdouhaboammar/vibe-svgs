@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cursor-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a100d" />
+      <stop offset="100%" stop-color="#020504" />
+    </linearGradient>
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="green-glow-effect">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg { fill: url(#cursor-bg); rx: 16px; }
+    .tab-press {
+      animation: tab-slam 0.6s infinite ease-in-out alternate;
+      transform-origin: 200px 140px;
+    }
+    @keyframes tab-slam {
+      0% { transform: translateY(0px) scale(1); }
+      100% { transform: translateY(8px) scale(0.96); }
+    }
+    .spark-line {
+      animation: spark-fade 0.6s infinite ease-in-out alternate;
+    }
+    @keyframes spark-fade {
+      0% { opacity: 0.2; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+    .code-typing {
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: type-code 1.8s infinite linear;
+    }
+    @keyframes type-code {
+      0% { stroke-dashoffset: 120; }
+      50%, 100% { stroke-dashoffset: 0; }
+    }
+    .cursor-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #ffffff; font-size: 16px; }
+    .cursor-sub { font-family: system-ui, -apple-system, sans-serif; fill: #6ee7b7; font-size: 12px; font-weight: 500; }
+  </style>
+
+  <rect width="400" height="300" class="bg" />
+
+  <!-- Code editor line preview background -->
+  <g transform="translate(60, 50)" opacity="0.85">
+    <rect width="280" height="70" rx="8" fill="#111c16" stroke="#059669" stroke-width="1" />
+    <text x="15" y="28" font-family="monospace" font-size="13" fill="#a7f3d0">const app = await ai.buildApp();</text>
+    <line x1="15" y1="48" x2="220" y2="48" stroke="#10b981" stroke-width="3" stroke-linecap="round" class="code-typing" />
+    <rect x="225" y="38" width="8" height="15" fill="#34d399">
+      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Animated Tab Key Slamming Mascot -->
+  <g class="tab-press" transform="translate(0, 20)">
+    <!-- 3D TAB Key -->
+    <rect x="130" y="120" width="140" height="60" rx="12" fill="#047857" />
+    <rect x="130" y="112" width="140" height="60" rx="12" fill="url(#cyan-glow)" filter="url(#green-glow-effect)" />
+    
+    <!-- Tab Text & Arrow -->
+    <text x="180" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="20" fill="#ffffff">TAB</text>
+    <path d="M220 144 L235 144 M230 138 L236 144 L230 150" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cute Eyes on Tab Key -->
+    <circle cx="150" cy="132" r="3.5" fill="#ffffff" />
+    <circle cx="150" cy="132" r="1.5" fill="#064e3b" />
+  </g>
+
+  <!-- Sparkles around TAB key -->
+  <g class="spark-line" transform="translate(200, 140)">
+    <circle cx="-85" cy="-20" r="4" fill="#34d399" />
+    <circle cx="85" cy="-20" r="4" fill="#34d399" />
+    <circle cx="-90" cy="20" r="3" fill="#6ee7b7" />
+    <circle cx="90" cy="20" r="3" fill="#6ee7b7" />
+  </g>
+
+  <!-- Typography -->
+  <text x="200" y="245" text-anchor="middle" class="cursor-title">Cursor Auto-Tab Rampage</text>
+  <text x="200" y="267" text-anchor="middle" class="cursor-sub">Accepting 5,000 multi-line edits per minute ⚡</text>
+</svg>

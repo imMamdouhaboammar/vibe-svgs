@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 40" width="270" height="40">
+  <defs>
+    <linearGradient id="badge-red-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .label-bg { fill: #18181b; }
+    .status-bg { fill: url(#badge-red-bg); }
+    .progress-fill {
+      animation: fill-bar 2s infinite ease-in-out alternate;
+    }
+    @keyframes fill-bar {
+      0% { width: 40px; }
+      100% { width: 75px; }
+    }
+    .warning-blink {
+      animation: blink-warn 0.8s infinite alternate;
+    }
+    @keyframes blink-warn {
+      0% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+    .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #e4e4e7; font-size: 12px; }
+    .text-status { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #ffffff; font-size: 12px; }
+  </style>
+
+  <path d="M6 0 H140 V40 H6 A6 6 0 0 1 0 34 V6 A6 6 0 0 1 6 0 Z" class="label-bg" />
+  <path d="M140 0 H264 A6 6 0 0 1 270 6 V34 A6 6 0 0 1 264 40 H140 Z" class="status-bg" />
+
+  <text x="16" y="25" class="text-label">context window</text>
+
+  <!-- Animated Progress Bar inside Badge -->
+  <g transform="translate(150, 15)">
+    <rect width="80" height="10" rx="5" fill="#7f1d1d" />
+    <rect width="75" height="10" rx="5" fill="#fca5a5" class="progress-fill" />
+  </g>
+
+  <text x="238" y="25" class="text-status warning-blink">99.9% ⚠️</text>
+</svg>

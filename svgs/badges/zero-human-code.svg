@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" width="280" height="40">
+  <defs>
+    <linearGradient id="badge-green-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .label-bg { fill: #18181b; }
+    .status-bg { fill: url(#badge-green-bg); filter: url(#neon-glow); }
+    .pulse-dot {
+      animation: dot-pulse 1.2s infinite ease-in-out alternate;
+    }
+    @keyframes dot-pulse {
+      0% { opacity: 0.4; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.3); }
+    }
+    .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #e4e4e7; font-size: 12px; }
+    .text-status { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #ffffff; font-size: 12px; letter-spacing: 0.3px; }
+  </style>
+
+  <!-- Left Container -->
+  <path d="M6 0 H160 V40 H6 A6 6 0 0 1 0 34 V6 A6 6 0 0 1 6 0 Z" class="label-bg" />
+  
+  <!-- Right Container -->
+  <path d="M160 0 H274 A6 6 0 0 1 280 6 V34 A6 6 0 0 1 274 40 H160 Z" class="status-bg" />
+
+  <!-- Robot Icon on Left -->
+  <g transform="translate(18, 12)">
+    <rect width="16" height="14" rx="3" fill="#10b981" />
+    <circle cx="5" cy="5" r="2" fill="#18181b" />
+    <circle cx="11" cy="5" r="2" fill="#18181b" />
+    <path d="M4 10 Q8 13 12 10" fill="none" stroke="#18181b" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Text -->
+  <text x="44" y="25" class="text-label">code written by human</text>
+
+  <!-- Pulsing Dot + 0% -->
+  <g transform="translate(178, 20)">
+    <circle cx="0" cy="0" r="4" fill="#ffffff" class="pulse-dot" />
+  </g>
+  <text x="194" y="25" class="text-status">0% ZERO</text>
+</svg>
