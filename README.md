@@ -4,7 +4,7 @@
 
 <h1 align="center">✨ Vibe SVGs & Badges ✨</h1>
 <p align="center">
-  <b>A hilarious, vector-animated collection of SVGs, badges, and AI agent mascots for Vibe Coders, AI Engineers, and Agentic Software Developers!</b>
+  <b>Official, high-quality animated vector SVGs, badges, logos, and 3D AI agent mascots for Vibe Coders, AI Engineers, and Agentic Developers!</b>
 </p>
 
 <p align="center">
@@ -17,24 +17,27 @@
 
 ---
 
-## 🚀 About Vibe SVGs
-
-Welcome to **Vibe SVGs** — the official open-source graphics library dedicated to the era of **Agentic Engineering** and **Vibe Coding**.
-
-Every SVG in this library is **standalone**, scalable, dark/light mode compatible, and embedded with pure **CSS `@keyframes` animations**. They work natively inside GitHub `README.md` files, documentation pages, and web applications!
-
----
-
-## 🤖 AI Agent Mascots
+## 🤖 Authentic 3D AI Mascots
 
 | Mascot | Preview | Markdown Copy Snippet |
 | :--- | :---: | :--- |
-| **Claude Code**<br>*(Deep Thinking)* | <img src="svgs/mascots/claude-deep-thinking.svg" width="180"> | `![Claude](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-deep-thinking.svg)` |
-| **Google Antigravity**<br>*(Zero-G Levitating)* | <img src="svgs/mascots/antigravity-levitating.svg" width="180"> | `![Antigravity](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/antigravity-levitating.svg)` |
-| **Cursor AI**<br>*(Auto-Tab Rampage)* | <img src="svgs/mascots/cursor-autotab.svg" width="180"> | `![Cursor](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/cursor-autotab.svg)` |
-| **ChatGPT**<br>*(100% Confident Hallucination)* | <img src="svgs/mascots/chatgpt-hallucinating.svg" width="180"> | `![ChatGPT](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/chatgpt-hallucinating.svg)` |
-| **GitHub Copilot**<br>*(Ghost Writer)* | <img src="svgs/mascots/copilot-ghost-writer.svg" width="180"> | `![Copilot Ghost](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/copilot-ghost-writer.svg)` |
-| **Devin**<br>*(Infinite Self-Fix Loop)* | <img src="svgs/mascots/devin-infinite-loop.svg" width="180"> | `![Devin Loop](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/devin-infinite-loop.svg)` |
+| **Claude Code**<br>*(Authentic 3D Mascot)* | <img src="svgs/mascots/claude-mascot.svg" width="180"> | `![Claude](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-mascot.svg)` |
+| **Cursor AI**<br>*(Authentic 3D Mascot)* | <img src="svgs/mascots/cursor-mascot.svg" width="180"> | `![Cursor](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/cursor-mascot.svg)` |
+| **Google Gemini**<br>*(Authentic Mascot)* | <img src="svgs/mascots/gemini-mascot.svg" width="180"> | `![Gemini](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/gemini-mascot.svg)` |
+| **OpenAI / Codex**<br>*(Authentic Mascot)* | <img src="svgs/mascots/codex-mascot.svg" width="180"> | `![Codex](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/codex-mascot.svg)` |
+| **DeepSeek**<br>*(Whale Mascot)* | <img src="svgs/mascots/deepseek-mascot.svg" width="180"> | `![DeepSeek](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/deepseek-mascot.svg)` |
+| **GitHub Copilot**<br>*(Visor Mascot)* | <img src="svgs/mascots/copilot-mascot.svg" width="180"> | `![Copilot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/copilot-mascot.svg)` |
+
+---
+
+## 🎨 Official Brand Vector Logos
+
+| Brand | Preview | Markdown Copy Snippet |
+| :--- | :---: | :--- |
+| **Claude Logo** | <img src="svgs/logos/claude-logo.svg" width="60"> | `![Claude Logo](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/claude-logo.svg)` |
+| **Cursor Logo** | <img src="svgs/logos/cursor-logo.svg" width="60"> | `![Cursor Logo](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/cursor-logo.svg)` |
+| **Gemini Logo** | <img src="svgs/logos/gemini-logo.svg" width="60"> | `![Gemini Logo](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/gemini-logo.svg)` |
+| **OpenAI Logo** | <img src="svgs/logos/openai-logo.svg" width="60"> | `![OpenAI Logo](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/openai-logo.svg)` |
 
 ---
 

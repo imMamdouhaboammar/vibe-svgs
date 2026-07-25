@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+  <defs>
+    <linearGradient id="gmBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+
+    <linearGradient id="gmStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A5B4FC" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <radialGradient id="gmEyeGrad" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E0E7FF"/>
+    </radialGradient>
+
+    <radialGradient id="gmShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="gmGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .gemini-float {
+      animation: gm-float 3.5s infinite ease-in-out alternate;
+    }
+    @keyframes gm-float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-8px) rotate(1deg); }
+    }
+    .eye-blink {
+      animation: gm-blink 4s infinite;
+      transform-origin: center;
+    }
+    @keyframes gm-blink {
+      0%, 94%, 98%, 100% { transform: scaleY(1); }
+      96% { transform: scaleY(0.1); }
+    }
+    .sparkle-pulse {
+      animation: gm-pulse 2s infinite ease-in-out alternate;
+    }
+    @keyframes gm-pulse {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      100% { transform: scale(1.15); opacity: 1; }
+    }
+  </style>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="108" rx="42" ry="7" fill="url(#gmShadowGrad)" />
+
+  <g class="gemini-float" filter="url(#gmGlow)">
+    <!-- Arms -->
+    <path d="M 60 55 Q 44 60 50 74 Q 58 76 64 66 Z" fill="#4F46E5" />
+    <path d="M 140 55 Q 156 60 150 74 Q 142 76 136 66 Z" fill="#3730A3" />
+
+    <!-- Legs -->
+    <path d="M 82 82 L 80 98 Q 88 102 92 96 L 90 82 Z" fill="#3730A3" />
+    <path d="M 110 82 L 108 96 Q 112 102 120 98 L 118 82 Z" fill="#312E81" />
+
+    <!-- Main Body -->
+    <rect x="60" y="24" width="80" height="62" rx="30" fill="url(#gmBodyGrad)" />
+
+    <!-- Eyes -->
+    <g class="eye-blink">
+      <circle cx="84" cy="48" r="7" fill="url(#gmEyeGrad)" />
+      <circle cx="85" cy="48" r="2.8" fill="#1E1B4B" />
+
+      <circle cx="116" cy="48" r="7" fill="url(#gmEyeGrad)" />
+      <circle cx="115" cy="48" r="2.8" fill="#1E1B4B" />
+    </g>
+
+    <!-- Smile -->
+    <path d="M 94 60 Q 100 66 106 60" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" />
+
+    <!-- Gemini 4-Point Sparkle Icon Head Floating -->
+    <g class="sparkle-pulse" transform="translate(100, 15)">
+      <path d="M0 -15 C2 -5 5 -2 15 0 C5 2 2 5 0 15 C-2 5 -5 2 -15 0 C-5 -2 -2 -5 0 -15 Z" fill="url(#gmStarGrad)" />
+    </g>
+  </g>
+</svg>

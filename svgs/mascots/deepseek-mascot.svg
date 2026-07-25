@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+  <defs>
+    <linearGradient id="dsBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#4D6BFE"/>
+      <stop offset="50%" stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+
+    <radialGradient id="dsShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    .whale-float {
+      animation: ds-float 3.5s infinite ease-in-out alternate;
+    }
+    @keyframes ds-float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-7px) rotate(-2deg); }
+    }
+    .sonar-wave {
+      animation: ds-sonar 2s infinite linear;
+      transform-origin: 155px 40px;
+    }
+    @keyframes ds-sonar {
+      0% { r: 6px; opacity: 1; stroke-width: 2px; }
+      100% { r: 24px; opacity: 0; stroke-width: 0.5px; }
+    }
+  </style>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="108" rx="50" ry="7" fill="url(#dsShadowGrad)" />
+
+  <g class="whale-float">
+    <!-- Whale Body -->
+    <path d="M 40 60 C 40 25 80 20 120 30 C 150 38 165 50 160 70 C 155 85 110 90 70 85 C 50 82 40 75 40 60 Z" fill="url(#dsBodyGrad)" />
+
+    <!-- Whale Tail -->
+    <path d="M 40 60 Q 20 50 10 35 Q 25 55 40 60 Q 25 65 10 85 Q 20 70 40 60 Z" fill="#1E40AF" />
+
+    <!-- Belly -->
+    <path d="M 60 70 C 80 85 120 85 145 72 C 130 82 90 85 60 70 Z" fill="#93C5FD" opacity="0.8" />
+
+    <!-- Eye -->
+    <circle cx="130" cy="48" r="4.5" fill="#FFFFFF" />
+    <circle cx="131" cy="48" r="2" fill="#0F172A" />
+
+    <!-- Cute Blowhole Spout Waves -->
+    <circle cx="120" cy="20" r="10" fill="none" stroke="#60A5FA" class="sonar-wave" />
+    <path d="M 120 30 Q 118 15 110 10 M 120 30 Q 122 15 130 10" fill="none" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>

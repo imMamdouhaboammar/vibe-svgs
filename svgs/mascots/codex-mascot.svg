@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+  <defs>
+    <linearGradient id="cxBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#333333"/>
+      <stop offset="50%" stop-color="#1A1A1A"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <radialGradient id="cxEyeGrad" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </radialGradient>
+
+    <radialGradient id="cxShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="cxGlow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .codex-float {
+      animation: cx-float 3s infinite ease-in-out alternate;
+    }
+    @keyframes cx-float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-6px); }
+    }
+    .eye-blink {
+      animation: cx-blink 4s infinite;
+      transform-origin: center;
+    }
+    @keyframes cx-blink {
+      0%, 94%, 98%, 100% { transform: scaleY(1); }
+      96% { transform: scaleY(0.1); }
+    }
+    .logo-spin {
+      animation: cx-spin 8s linear infinite;
+      transform-origin: 155px 22px;
+    }
+    @keyframes cx-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="108" rx="42" ry="7" fill="url(#cxShadowGrad)" />
+
+  <g class="codex-float" filter="url(#cxGlow)">
+    <!-- Arms -->
+    <path d="M 60 55 Q 44 60 50 74 Q 58 76 64 66 Z" fill="#262626" />
+    <path d="M 140 55 Q 156 60 150 74 Q 142 76 136 66 Z" fill="#171717" />
+
+    <!-- Legs -->
+    <path d="M 82 82 L 80 98 Q 88 102 92 96 L 90 82 Z" fill="#171717" />
+    <path d="M 110 82 L 108 96 Q 112 102 120 98 L 118 82 Z" fill="#0A0A0A" />
+
+    <!-- Body -->
+    <rect x="60" y="24" width="80" height="62" rx="30" fill="url(#cxBodyGrad)" stroke="#404040" stroke-width="1" />
+
+    <!-- Eyes -->
+    <g class="eye-blink">
+      <circle cx="84" cy="48" r="7.5" fill="url(#cxEyeGrad)" />
+      <circle cx="85" cy="48" r="3" fill="#000000" />
+
+      <circle cx="116" cy="48" r="7.5" fill="url(#cxEyeGrad)" />
+      <circle cx="115" cy="48" r="3" fill="#000000" />
+    </g>
+
+    <!-- Winking mouth -->
+    <path d="M 94 62 Q 100 67 106 62" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" />
+
+    <!-- Official OpenAI Swirl Icon floating -->
+    <g class="logo-spin">
+      <circle cx="155" cy="22" r="10" fill="#10A37F" />
+      <path d="M155 16 C152 16 150 18 150 20 C150 23 158 22 158 25 C158 27 155 28 153 27" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

@@ -1,47 +1,77 @@
-// SVG Items Data Store
+// SVG Items Data Store with Official Mascots & Logos
 const svgData = [
-  // Mascots
+  // Mascots (3D Authentic Characters)
   {
-    id: 'claude-thinking',
-    title: 'Claude Code (Deep Thinking)',
+    id: 'claude-mascot',
+    title: 'Claude Code (Authentic 3D Mascot)',
     category: 'mascots',
-    path: 'svgs/mascots/claude-deep-thinking.svg',
-    desc: 'Mascot reasoning deeply through 200k context with glowing brain waves.'
+    path: 'svgs/mascots/claude-mascot.svg',
+    desc: 'Official 3D Claude mascot character with glossy eyes & terracotta body.'
   },
   {
-    id: 'antigravity-levitate',
-    title: 'Google Antigravity Mascot',
+    id: 'cursor-mascot',
+    title: 'Cursor AI (Authentic 3D Mascot)',
     category: 'mascots',
-    path: 'svgs/mascots/antigravity-levitating.svg',
-    desc: 'Floating zero-gravity Gemini core with orbital energy rings.'
+    path: 'svgs/mascots/cursor-mascot.svg',
+    desc: 'Official 3D Cursor mascot in dark olive styling holding 3D Cursor arrow.'
   },
   {
-    id: 'cursor-autotab',
-    title: 'Cursor Auto-Tab Rampage',
+    id: 'gemini-mascot',
+    title: 'Google Gemini (Authentic Mascot)',
     category: 'mascots',
-    path: 'svgs/mascots/cursor-autotab.svg',
-    desc: 'Rapidly slamming TAB key to accept 5,000 multi-line AI edits.'
+    path: 'svgs/mascots/gemini-mascot.svg',
+    desc: 'Official Gemini mascot character with 4-point sparkle core.'
   },
   {
-    id: 'chatgpt-hallucination',
-    title: 'ChatGPT Confident Hallucination',
+    id: 'codex-mascot',
+    title: 'OpenAI / Codex (Authentic Mascot)',
     category: 'mascots',
-    path: 'svgs/mascots/chatgpt-hallucinating.svg',
-    desc: 'Delivering fake facts with 100% authority and starry eyes.'
+    path: 'svgs/mascots/codex-mascot.svg',
+    desc: 'Official OpenAI monochrome agent mascot holding OpenAI spiral logo.'
   },
   {
-    id: 'copilot-ghost',
-    title: 'Copilot Ghost Writer',
+    id: 'deepseek-mascot',
+    title: 'DeepSeek (Whale Mascot)',
     category: 'mascots',
-    path: 'svgs/mascots/copilot-ghost-writer.svg',
-    desc: 'Ghostly assistant typing code suggestions at 3 AM.'
+    path: 'svgs/mascots/deepseek-mascot.svg',
+    desc: 'Official DeepSeek blue whale mascot with animated blowhole spout.'
   },
   {
-    id: 'devin-loop',
-    title: "Devin's Infinite Self-Fix Loop",
+    id: 'copilot-mascot',
+    title: 'GitHub Copilot (Visor Mascot)',
     category: 'mascots',
-    path: 'svgs/mascots/devin-infinite-loop.svg',
-    desc: 'Trapped inside a hamster wheel running endless retries.'
+    path: 'svgs/mascots/copilot-mascot.svg',
+    desc: 'Official GitHub Copilot avatar with glowing cyan scanning visor.'
+  },
+
+  // Logos (Official Vector Logos)
+  {
+    id: 'claude-logo',
+    title: 'Claude Official Logo',
+    category: 'logos',
+    path: 'svgs/logos/claude-logo.svg',
+    desc: 'Official Anthropic Claude star logo vector with pulse effect.'
+  },
+  {
+    id: 'cursor-logo',
+    title: 'Cursor Official Logo',
+    category: 'logos',
+    path: 'svgs/logos/cursor-logo.svg',
+    desc: 'Official Cursor IDE vector logo with glow animation.'
+  },
+  {
+    id: 'gemini-logo',
+    title: 'Google Gemini Official Logo',
+    category: 'logos',
+    path: 'svgs/logos/gemini-logo.svg',
+    desc: 'Official Google Gemini 4-point star vector logo.'
+  },
+  {
+    id: 'openai-logo',
+    title: 'OpenAI Official Logo',
+    category: 'logos',
+    path: 'svgs/logos/openai-logo.svg',
+    desc: 'Official OpenAI spiral vector logo with rotation animation.'
   },
 
   // Badges
@@ -78,7 +108,7 @@ const svgData = [
     title: 'AI Code Reviewer Approved',
     category: 'badges',
     path: 'svgs/badges/ai-reviewer-approved.svg',
-    desc: 'Winking checkmark badge (It did not read the code).'
+    desc: 'Winking checkmark badge (Approved without reading).'
   },
   {
     id: 'refactored-claude',
@@ -232,10 +262,9 @@ function setupCustomBadgeGenerator() {
 
   function updateCustomBadge() {
     const labelText = labelInput.value || 'vibe coding';
-    const statusText = statusInput.value || '100% UNCHECKED';
+    const statusText = statusInput.value || '100% UNCHECKED 🚀';
     const theme = themePalettes[selectedTheme];
 
-    // Estimate width based on text length
     const labelWidth = Math.max(80, labelText.length * 8 + 20);
     const statusWidth = Math.max(100, statusText.length * 8 + 30);
     const totalWidth = labelWidth + statusWidth;

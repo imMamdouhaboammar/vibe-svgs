@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <style>
+    .claude-pulse { animation: cl-p 2.5s infinite ease-in-out alternate; transform-origin: center; }
+    @keyframes cl-p { 0% { transform: scale(0.95); } 100% { transform: scale(1.05); filter: drop-shadow(0 0 8px #d97757); } }
+  </style>
+  <g class="claude-pulse">
+    <rect width="100" height="100" rx="22" fill="#d97757" />
+    <path d="M48 22 C48 35 35 48 22 48 C35 48 48 61 48 74 C48 61 61 48 74 48 C61 48 48 35 48 22 Z" fill="#ffffff" />
+  </g>
+</svg>
