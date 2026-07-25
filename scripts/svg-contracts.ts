@@ -24,6 +24,18 @@ export type AssetManifest = {
   assets: AssetManifestEntry[];
 };
 
+const ASSET_TYPES = new Set([
+  "mascot",
+  "scene",
+  "logo",
+  "badge",
+  "banner",
+  "suite",
+]);
+
+const SAFE_ASSET_PATH =
+  /^svgs\/(?:badges|banners|logos|mascots|scenes)\/[a-z0-9][a-z0-9._-]*\.svg$/;
+
 const issue = (path: string, rule: string, message: string): SvgIssue => ({
   path,
   rule,
@@ -263,6 +275,7 @@ const isEntry = (value: unknown): value is AssetManifestEntry => {
     typeof entry.path === "string" &&
     typeof entry.category === "string" &&
     typeof entry.type === "string" &&
+    ASSET_TYPES.has(entry.type) &&
     typeof entry.animated === "boolean" &&
     typeof entry.communityArtwork === "boolean" &&
     (entry.contractVersion === 0 || entry.contractVersion === 1) &&
@@ -315,6 +328,17 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
       );
     }
     paths.add(rawEntry.path);
+
+    if (!SAFE_ASSET_PATH.test(rawEntry.path)) {
+      issues.push(
+        issue(
+          manifestPath,
+          "manifest.path-format",
+          `Asset "${rawEntry.id}" must use a local svgs/<category>/<file>.svg path.`,
+        ),
+      );
+      continue;
+    }
 
     if (/official\s+(?:3d\s+)?mascot/i.test(`${rawEntry.title} ${rawEntry.description}`)) {
       issues.push(
