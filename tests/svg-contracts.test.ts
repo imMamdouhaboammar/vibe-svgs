@@ -1,5 +1,7 @@
 import { describe, expect, test } from "bun:test";
-import { readFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import {
   namespaceSvg,
   validateManifest,
@@ -44,6 +46,39 @@ describe("SVG contracts", () => {
     expect(await validateManifest("asset-manifest.json")).toEqual([]);
   });
 
+  test("rejects remote and traversal paths in the manifest", async () => {
+    const directory = await mkdtemp(join(tmpdir(), "vibe-svgs-manifest-"));
+    const manifestPath = join(directory, "asset-manifest.json");
+    const unsafeEntries = ["https://example.com/asset.svg", "../secret.svg"];
+
+    try {
+      await writeFile(
+        manifestPath,
+        JSON.stringify({
+          version: 1,
+          assets: unsafeEntries.map((path, index) => ({
+            id: `unsafe-${index}`,
+            path,
+            category: "claude",
+            type: "mascot",
+            animated: false,
+            communityArtwork: true,
+            contractVersion: 0,
+            title: `Unsafe ${index}`,
+            description: "Unsafe test fixture."
+          })),
+        }),
+      );
+
+      const issues = await validateManifest(manifestPath);
+      expect(
+        issues.filter((issue) => issue.rule === "manifest.path-format"),
+      ).toHaveLength(2);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+
   test("package and README identify a community SVG project", async () => {
     const pkg = JSON.parse(await readFile("package.json", "utf8"));
     const readme = await readFile("README.md", "utf8");
@@ -55,11 +90,12 @@ describe("SVG contracts", () => {
     expect(readme.toLowerCase()).not.toContain("official 3d mascot");
   });
 
-  test("gallery consumes the manifest and avoids official mascot claims", async () => {
+  test("gallery consumes only safe local paths from the manifest", async () => {
     const app = await readFile("src/app.js", "utf8");
 
     expect(app).toContain("asset-manifest.json");
     expect(app).toContain("loadAssetManifest");
+    expect(app).toContain("isSafeAssetPath");
     expect(app.toLowerCase()).not.toContain("official 3d");
   });
 });
