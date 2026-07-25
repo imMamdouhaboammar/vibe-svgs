@@ -196,7 +196,7 @@ function setupSearchEvent() {
 
 // Copy Markdown Helper
 window.copyMarkdown = (title, path) => {
-  const rawUrl = `https://raw.githubusercontent.com/imMamdouhaboammar/dokion/main/${path}`;
+  const rawUrl = `https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/${path}`;
   const markdown = `![${title}](${rawUrl})`;
   navigator.clipboard.writeText(markdown).then(() => {
     showToast('Markdown snippet copied to clipboard! 📋');
