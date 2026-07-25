@@ -195,9 +195,9 @@
       "type": "mascot",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Cursor Community Mascot",
-      "description": "Fan-made Cursor coding mascot awaiting Phase 2 migration."
+      "description": "Fan-made dark graphite coding mascot inspired by Cursor workflows."
     },
     {
       "id": "cursor-rage-autotab",
