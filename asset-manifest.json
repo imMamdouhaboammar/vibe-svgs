@@ -162,7 +162,7 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Codex Jumping Scene",
       "description": "Fan-made jumping mascot scene awaiting a later migration."
     },
@@ -173,7 +173,7 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Codex Speaking Scene",
       "description": "Fan-made speaking mascot scene awaiting a later migration."
     },
