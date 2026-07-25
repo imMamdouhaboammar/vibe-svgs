@@ -25,6 +25,21 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+function isSafeAssetPath(path) {
+  return typeof path === 'string' &&
+    /^svgs\/(?:badges|banners|logos|mascots|scenes)\/[a-z0-9][a-z0-9._-]*\.svg$/.test(path);
+}
+
+function isManifestAsset(asset) {
+  return Boolean(asset) &&
+    typeof asset.id === 'string' &&
+    typeof asset.title === 'string' &&
+    typeof asset.description === 'string' &&
+    typeof asset.category === 'string' &&
+    (asset.contractVersion === 0 || asset.contractVersion === 1) &&
+    isSafeAssetPath(asset.path);
+}
+
 async function loadAssetManifest() {
   const response = await fetch('asset-manifest.json', { cache: 'no-store' });
   if (!response.ok) {
@@ -34,6 +49,11 @@ async function loadAssetManifest() {
   const manifest = await response.json();
   if (manifest.version !== 1 || !Array.isArray(manifest.assets)) {
     throw new Error('The asset manifest does not match version 1.');
+  }
+
+  const invalidIndex = manifest.assets.findIndex((asset) => !isManifestAsset(asset));
+  if (invalidIndex !== -1) {
+    throw new Error(`Asset manifest entry ${invalidIndex} contains invalid metadata or an unsafe path.`);
   }
 
   svgData = manifest.assets.map((asset) => ({
