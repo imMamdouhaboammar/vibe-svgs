@@ -1,207 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 100 120" width="140" height="168">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="gemini-jumping-title gemini-jumping-desc">
+  <title id="gemini-jumping-title">Gemini community mascot jumping</title>
+  <desc id="gemini-jumping-desc">A rounded blue-violet character leaping with energetic motion and dynamic floor shadow.</desc>
   <defs>
-    <!-- 3D enhanced Gemini gradient (lighter top) -->
-    <linearGradient id="gjBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#6AA3FF"/>
-      <stop offset="20%" stop-color="#4285F4"/>
-      <stop offset="50%" stop-color="#7B68EE"/>
-      <stop offset="80%" stop-color="#EA4335"/>
-      <stop offset="100%" stop-color="#B82A22"/>
+    <linearGradient id="gemini-jumping-body-gradient" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#3B82F6"/>
     </linearGradient>
-
-    <!-- 3D gradient for border -->
-    <linearGradient id="gjBorderGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6AA3FF"/>
-      <stop offset="25%" stop-color="#4285F4"/>
-      <stop offset="50%" stop-color="#9080F0"/>
-      <stop offset="75%" stop-color="#EA4335"/>
-      <stop offset="100%" stop-color="#C03028"/>
+    <linearGradient id="gemini-jumping-limb-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9333EA"/>
+      <stop offset="1" stop-color="#2563EB"/>
     </linearGradient>
-
-    <!-- Inner panel gradient (dark with depth) -->
-    <linearGradient id="gjInnerGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#282840"/>
-      <stop offset="50%" stop-color="#1a1a2e"/>
-      <stop offset="100%" stop-color="#0E0E1A"/>
-    </linearGradient>
-
-    <!-- Arm gradient (3D colorful) -->
-    <linearGradient id="gjArmL" x1="0" y1="0" x2="1" y2="0.5">
-      <stop offset="0%" stop-color="#3570D0"/>
-      <stop offset="50%" stop-color="#5A78E0"/>
-      <stop offset="100%" stop-color="#7B68EE"/>
-    </linearGradient>
-
-    <linearGradient id="gjArmR" x1="0" y1="0" x2="1" y2="0.5">
-      <stop offset="0%" stop-color="#D04535"/>
-      <stop offset="50%" stop-color="#EA4335"/>
-      <stop offset="100%" stop-color="#C03028"/>
-    </linearGradient>
-
-    <!-- Leg gradient -->
-    <linearGradient id="gjLegL" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#4285F4"/>
-      <stop offset="50%" stop-color="#6A58D0"/>
-      <stop offset="100%" stop-color="#5040A0"/>
-    </linearGradient>
-
-    <linearGradient id="gjLegR" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#B84030"/>
-      <stop offset="50%" stop-color="#EA4335"/>
-      <stop offset="100%" stop-color="#D03828"/>
-    </linearGradient>
-
-    <!-- Eye white gradient (glossy) -->
-    <radialGradient id="gjEyeGrad" cx="35%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="60%" stop-color="#F0F0F0"/>
-      <stop offset="100%" stop-color="#D8D8D8"/>
+    <radialGradient id="gemini-jumping-shadow-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#1E1B4B" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#1E1B4B" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Chevron 3D gradient -->
-    <linearGradient id="gjChevronGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6AA3FF"/>
-      <stop offset="30%" stop-color="#4285F4"/>
-      <stop offset="60%" stop-color="#9080F0"/>
-      <stop offset="100%" stop-color="#EA4335"/>
-    </linearGradient>
-
-    <!-- Ground shadow radial -->
-    <radialGradient id="gjShadowGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#000" stop-opacity="0.35"/>
-      <stop offset="60%" stop-color="#000" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Drop shadow filter -->
-    <filter id="gjDropShadow" x="-15%" y="-15%" width="130%" height="140%">
-      <feDropShadow dx="1.5" dy="2.5" stdDeviation="1.8" flood-color="#000" flood-opacity="0.28"/>
-    </filter>
-
-    <!-- Inner depth for body -->
-    <filter id="gjInnerDepth" x="-5%" y="-5%" width="110%" height="110%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
-      <feOffset dx="0" dy="1.5" result="off"/>
-      <feFlood flood-color="#000" flood-opacity="0.2" result="color"/>
-      <feComposite in="color" in2="off" operator="in" result="shadow"/>
-      <feMerge>
-        <feMergeNode in="shadow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Chevron glow -->
-    <filter id="gjChevronGlow" x="-15%" y="-15%" width="130%" height="130%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="gemini-jumping-soft-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#312E81" flood-opacity="0.22"/>
     </filter>
   </defs>
-
   <style>
-    .gemini-body {
-      animation: jump 0.5s ease-in-out infinite;
-      transform-origin: 42px 86px;
+    .gemini-jumping-shadow {
+      animation: gemini-jumping-shadow-motion 1.1s cubic-bezier(.38,.02,.2,1) infinite;
+      transform-box: view-box;
+      transform-origin: 60px 106px;
     }
-    .shadow {
-      animation: shadow-scale 0.5s ease-in-out infinite;
+    .gemini-jumping-character-position {
+      animation: gemini-jumping-pos-motion 1.1s cubic-bezier(.38,.02,.2,1) infinite;
+      transform-box: view-box;
+      transform-origin: 60px 100px;
     }
-    .left-arm {
-      animation: wave-left 0.5s ease-in-out infinite;
-      transform-origin: 18px 45px;
+    .gemini-jumping-character-squash {
+      animation: gemini-jumping-squash-motion 1.1s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 96px;
     }
-    .right-arm {
-      animation: wave-right 0.5s ease-in-out infinite;
-      transform-origin: 66px 45px;
+    .gemini-jumping-left-arm {
+      animation: gemini-jumping-larm-motion 1.1s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 32px 60px;
     }
-    .left-leg {
-      animation: leg-bounce 0.5s ease-in-out infinite;
-      transform-origin: 30px 72px;
+    .gemini-jumping-right-arm {
+      animation: gemini-jumping-rarm-motion 1.1s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 88px 60px;
     }
-    .right-leg {
-      animation: leg-bounce 0.5s ease-in-out infinite 0.1s;
-      transform-origin: 54px 72px;
+    @keyframes gemini-jumping-shadow-motion {
+      0%, 12%, 100% { transform: scaleX(1); opacity: .35; }
+      40%, 58% { transform: scaleX(.48); opacity: .12; }
+      78% { transform: scaleX(1.08); opacity: .38; }
     }
-    @keyframes jump {
-      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
-      30% { transform: translateY(-16px) scaleY(1.1) scaleX(0.95); }
-      50% { transform: translateY(-18px) scaleY(1.05) scaleX(0.98); }
-      80% { transform: translateY(-5px) scaleY(0.95) scaleX(1.05); }
+    @keyframes gemini-jumping-pos-motion {
+      0%, 12%, 100% { transform: translateY(0); }
+      22% { transform: translateY(-4px); }
+      45%, 55% { transform: translateY(-26px); }
+      72% { transform: translateY(-6px); }
+      78% { transform: translateY(1px); }
     }
-    @keyframes shadow-scale {
-      0%, 100% { transform: scaleX(1); opacity: 0.35; }
-      50% { transform: scaleX(0.7); opacity: 0.25; }
+    @keyframes gemini-jumping-squash-motion {
+      0%, 100% { transform: scale(1); }
+      12% { transform: scale(1.08,.86); }
+      26% { transform: scale(.94,1.08); }
+      52% { transform: scale(.98,1.03); }
+      78% { transform: scale(1.08,.85); }
+      88% { transform: scale(.98,1.04); }
     }
-    @keyframes wave-left {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-25deg); }
+    @keyframes gemini-jumping-larm-motion {
+      0%, 12%, 100% { transform: rotate(8deg); }
+      38%, 58% { transform: rotate(-40deg); }
+      78% { transform: rotate(16deg); }
     }
-    @keyframes wave-right {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(25deg); }
+    @keyframes gemini-jumping-rarm-motion {
+      0%, 12%, 100% { transform: rotate(-8deg); }
+      38%, 58% { transform: rotate(40deg); }
+      78% { transform: rotate(-16deg); }
     }
-    @keyframes leg-bounce {
-      0%, 100% { transform: scaleY(1); }
-      40% { transform: scaleY(1.15); }
-      60% { transform: scaleY(0.88); }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <!-- Shadow -->
-  <ellipse class="shadow" cx="42" cy="92" rx="20" ry="4" fill="url(#gjShadowGrad)"/>
+  <ellipse class="gemini-jumping-shadow" data-animated="true" cx="60" cy="106" rx="33" ry="6.5" fill="url(#gemini-jumping-shadow-gradient)"/>
 
-  <!-- Gemini Character Group -->
-  <g class="gemini-body" filter="url(#gjDropShadow)">
-    <!-- Left arm -->
-    <rect class="left-arm" x="6" y="42" width="12" height="6" rx="2" fill="url(#gjArmL)"/>
-    <rect class="left-arm" x="7" y="43" width="4" height="2" fill="#8AB8FF" opacity="0.3" rx="0.5"/>
-
-    <!-- Right arm -->
-    <rect class="right-arm" x="66" y="42" width="12" height="6" rx="2" fill="url(#gjArmR)"/>
-    <rect class="right-arm" x="67" y="43" width="4" height="2" fill="#F08070" opacity="0.25" rx="0.5"/>
-
-    <!-- Left leg -->
-    <rect class="left-leg" x="26" y="72" width="8" height="14" rx="2" fill="url(#gjLegL)"/>
-    <rect class="left-leg" x="27" y="73" width="3" height="7" fill="#6AA3FF" opacity="0.3" rx="0.5"/>
-
-    <!-- Right leg -->
-    <rect class="right-leg" x="50" y="72" width="8" height="14" rx="2" fill="url(#gjLegR)"/>
-    <rect class="right-leg" x="51" y="73" width="3" height="7" fill="#F08070" opacity="0.25" rx="0.5"/>
-
-    <!-- Gemini CLI Icon - Rounded rectangle with gradient border -->
-    <g transform="translate(10, 8)" filter="url(#gjInnerDepth)">
-      <!-- Outer gradient border (3D enhanced) -->
-      <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#gjBorderGrad)"/>
-      <!-- Border highlight (top edge shine) -->
-      <rect x="2" y="1" width="40" height="3" rx="2" fill="#8AB8FF" opacity="0.3"/>
-
-      <!-- Inner dark background (3D depth) -->
-      <rect x="5" y="5" width="54" height="54" rx="10" fill="url(#gjInnerGrad)"/>
-      <!-- Inner panel top highlight -->
-      <rect x="8" y="7" width="28" height="4" rx="2" fill="#3A3A58" opacity="0.4"/>
-
-      <!-- Chevron ">" symbol - thick terminal style (3D glow) -->
-      <g transform="translate(14, 16)" filter="url(#gjChevronGlow)">
-        <!-- Top arm of chevron -->
-        <polygon points="0,14 20,0 24,5 10,16" fill="url(#gjChevronGrad)"/>
-        <!-- Bottom arm of chevron -->
-        <polygon points="0,18 10,16 24,27 20,32" fill="url(#gjChevronGrad)"/>
-        <!-- Chevron highlight -->
-        <polygon points="1,14.5 18,2 20,4 9,14" fill="#9CC0FF" opacity="0.25"/>
+  <g class="gemini-jumping-character-position" data-animated="true">
+    <g class="gemini-jumping-character-squash" data-animated="true" filter="url(#gemini-jumping-soft-shadow)">
+      <!-- Legs -->
+      <g aria-hidden="true">
+        <path d="M40 82 C38 90 39 98 44 102 C48 105 53 102 53 97 L52 82 Z" fill="url(#gemini-jumping-limb-gradient)"/>
+        <ellipse cx="47" cy="100" rx="8.5" ry="4" fill="#1E1B4B"/>
+        <path d="M68 82 L67 97 C67 102 72 105 76 102 C82 98 82 89 79 82 Z" fill="url(#gemini-jumping-limb-gradient)"/>
+        <ellipse cx="74" cy="100" rx="8.5" ry="4" fill="#1E1B4B"/>
       </g>
+
+      <!-- Arms -->
+      <g class="gemini-jumping-left-arm" data-animated="true">
+        <path d="M34 56 C22 56 16 64 18 72 C20 78 28 80 34 74 L40 66 Z" fill="url(#gemini-jumping-limb-gradient)"/>
+        <circle cx="21" cy="71" r="5.2" fill="#F472B6"/>
+      </g>
+      <g class="gemini-jumping-right-arm" data-animated="true">
+        <path d="M86 56 C98 56 104 64 102 72 C100 78 92 80 86 74 L80 66 Z" fill="url(#gemini-jumping-limb-gradient)"/>
+        <circle cx="99" cy="71" r="5.2" fill="#F472B6"/>
+      </g>
+
+      <!-- Main Body -->
+      <rect x="28" y="30" width="64" height="60" rx="24" fill="url(#gemini-jumping-body-gradient)"/>
+      <path d="M34 40 C45 30 71 28 86 39 C74 35 55 37 42 45 C38 48 34 47 34 40 Z" fill="#F0ABFC" opacity=".35"/>
+
+      <!-- Eyes -->
+      <ellipse cx="49" cy="53" rx="5.6" ry="7" fill="#0F172A"/>
+      <ellipse cx="71" cy="53" rx="5.6" ry="7" fill="#0F172A"/>
+      <circle cx="47.4" cy="50.8" r="1.8" fill="#F472B6"/>
+      <circle cx="69.4" cy="50.8" r="1.8" fill="#F472B6"/>
+
+      <!-- Sparkle Core on Chest -->
+      <path d="M60 67 Q60 72 65 72 Q60 72 60 77 Q60 72 55 72 Q60 72 60 67 Z" fill="#FFFFFF"/>
     </g>
-
-    <!-- Eyes positioned on the icon - happy bouncing -->
-    <rect x="24" y="28" width="8" height="12" rx="2" fill="url(#gjEyeGrad)"/>
-    <!-- Left eye highlights -->
-    <rect x="25" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.8" rx="0.5"/>
-    <rect x="29" y="35" width="1.2" height="1.2" fill="#fff" opacity="0.35" rx="0.3"/>
-
-    <rect x="44" y="28" width="8" height="12" rx="2" fill="url(#gjEyeGrad)"/>
-    <!-- Right eye highlights -->
-    <rect x="45" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.8" rx="0.5"/>
-    <rect x="49" y="35" width="1.2" height="1.2" fill="#fff" opacity="0.35" rx="0.3"/>
   </g>
 </svg>

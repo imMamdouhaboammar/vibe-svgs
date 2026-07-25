@@ -1,72 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="gemini-levitating-title gemini-levitating-desc">
+  <title id="gemini-levitating-title">Gemini community mascot levitating in zero-gravity</title>
+  <desc id="gemini-levitating-desc">A rounded blue-violet character floating gracefully above the ground with a glowing four-point sparkle core.</desc>
   <defs>
-    <linearGradient id="gmBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#818CF8"/>
-      <stop offset="50%" stop-color="#4F46E5"/>
-      <stop offset="100%" stop-color="#3730A3"/>
+    <linearGradient id="gemini-levitating-body-gradient" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#3B82F6"/>
     </linearGradient>
-    <linearGradient id="gmStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#A5B4FC" />
-      <stop offset="50%" stop-color="#818CF8" />
-      <stop offset="100%" stop-color="#C084FC" />
+    <linearGradient id="gemini-levitating-limb-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9333EA"/>
+      <stop offset="1" stop-color="#2563EB"/>
     </linearGradient>
-    <radialGradient id="gmShadowGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    <radialGradient id="gemini-levitating-shadow-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#1E1B4B" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#1E1B4B" stop-opacity="0"/>
     </radialGradient>
-    <filter id="gmGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    <filter id="gemini-levitating-soft-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#312E81" flood-opacity="0.22"/>
     </filter>
   </defs>
-
   <style>
-    .zero-g-float {
-      animation: zero-g 3.5s infinite ease-in-out alternate;
+    .gemini-levitating-shadow {
+      animation: gemini-levitating-shadow-float 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 106px;
     }
-    @keyframes zero-g {
-      0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(-14px) rotate(3deg); }
+    .gemini-levitating-character {
+      animation: gemini-levitating-char-float 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 85px;
     }
-    .ring-spin {
-      animation: spin-r 8s linear infinite;
-      transform-origin: 50px 44px;
+    .gemini-levitating-sparkle {
+      animation: gemini-levitating-sparkle-pulse 2.4s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 73px;
     }
-    @keyframes spin-r {
-      0% { transform: rotateX(70deg) rotateZ(0deg); }
-      100% { transform: rotateX(70deg) rotateZ(360deg); }
+    @keyframes gemini-levitating-shadow-float {
+      0%, 100% { transform: scaleX(1); opacity: .32; }
+      50% { transform: scaleX(.65); opacity: .15; }
+    }
+    @keyframes gemini-levitating-char-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+    @keyframes gemini-levitating-sparkle-pulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.25) rotate(90deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <!-- Shadow pulses with levitation -->
-  <ellipse cx="50" cy="88" rx="20" ry="4" fill="url(#gmShadowGrad)" opacity="0.5">
-    <animate attributeName="rx" values="20;12;20" dur="3.5s" repeatCount="indefinite" />
-  </ellipse>
+  <ellipse class="gemini-levitating-shadow" data-animated="true" cx="60" cy="106" rx="32" ry="6" fill="url(#gemini-levitating-shadow-gradient)"/>
 
-  <g class="zero-g-float" filter="url(#gmGlow)">
-    <!-- Glowing Orbital Ring around Body -->
-    <ellipse cx="50" cy="44" rx="48" ry="14" fill="none" stroke="#C084FC" stroke-width="2" stroke-dasharray="6 4" class="ring-spin" />
-
-    <!-- Main Body -->
-    <rect x="14" y="28" width="72" height="32" fill="url(#gmBodyGrad)" />
-
-    <!-- Eyes -->
-    <rect x="38" y="34" width="8" height="10" fill="#FFFFFF"/>
-    <circle cx="42" cy="39" r="2" fill="#1E1B4B" />
-
-    <rect x="68" y="34" width="8" height="10" fill="#FFFFFF"/>
-    <circle cx="72" cy="39" r="2" fill="#1E1B4B" />
-
-    <!-- Winking Smile -->
-    <path d="M 44 48 Q 50 54 56 48" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
-
-    <!-- Floating 4-point Gemini star above head -->
-    <g transform="translate(50, 10)">
-      <path d="M0 -12 C2 -4 4 -2 12 0 C4 2 2 4 0 12 C-2 4 -4 2 -12 0 C-4 -2 -2 -4 0 -12 Z" fill="url(#gmStarGrad)" />
+  <g class="gemini-levitating-character" data-animated="true" filter="url(#gemini-levitating-soft-shadow)">
+    <!-- Legs floating slightly dangling -->
+    <g aria-hidden="true">
+      <path d="M40 82 C38 90 41 98 46 101 C50 104 54 100 53 95 L52 82 Z" fill="url(#gemini-levitating-limb-gradient)"/>
+      <ellipse cx="47" cy="99" rx="7.5" ry="3.8" fill="#1E1B4B"/>
+      <path d="M68 82 L67 95 C66 100 70 104 74 101 C79 98 82 90 79 82 Z" fill="url(#gemini-levitating-limb-gradient)"/>
+      <ellipse cx="73" cy="99" rx="7.5" ry="3.8" fill="#1E1B4B"/>
     </g>
 
-    <!-- Floating Stars -->
-    <circle cx="110" cy="20" r="3" fill="#A5B4FC" />
-    <circle cx="130" cy="50" r="2" fill="#C084FC" />
+    <!-- Arms spread open levitating -->
+    <path d="M34 56 C22 52 14 58 16 66 C18 72 26 74 34 68 Z" fill="url(#gemini-levitating-limb-gradient)"/>
+    <path d="M86 56 C98 52 106 58 104 66 C102 72 94 74 86 68 Z" fill="url(#gemini-levitating-limb-gradient)"/>
+
+    <!-- Main Body -->
+    <rect x="28" y="30" width="64" height="60" rx="24" fill="url(#gemini-levitating-body-gradient)"/>
+    <path d="M34 40 C45 30 71 28 86 39 C74 35 55 37 42 45 C38 48 34 47 34 40 Z" fill="#F0ABFC" opacity=".35"/>
+
+    <!-- Eyes with curious sparkle reflection -->
+    <ellipse cx="49" cy="53" rx="5.6" ry="7" fill="#0F172A"/>
+    <ellipse cx="71" cy="53" rx="5.6" ry="7" fill="#0F172A"/>
+    <circle cx="47.4" cy="50.8" r="1.8" fill="#F472B6"/>
+    <circle cx="69.4" cy="50.8" r="1.8" fill="#F472B6"/>
+
+    <!-- Serene Smile -->
+    <path d="M53 64 C57 67 63 67 67 64" fill="none" stroke="#F0ABFC" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Glowing Four-Point Sparkle Core on Chest -->
+    <g class="gemini-levitating-sparkle" data-animated="true">
+      <path d="M60 67 Q60 73 66 73 Q60 73 60 79 Q60 73 54 73 Q60 73 60 67 Z" fill="#FFFFFF"/>
+    </g>
   </g>
 </svg>

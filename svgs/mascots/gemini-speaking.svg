@@ -1,271 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 160 120" width="224" height="168">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="gemini-speaking-title gemini-speaking-desc">
+  <title id="gemini-speaking-title">Claude and Gemini community mascot speaking</title>
+  <desc id="gemini-speaking-desc">A rounded blue-violet character speaking with an animated speech bubble containing sparkling star symbols.</desc>
   <defs>
-    <!-- 3D enhanced Gemini gradient (lighter top) -->
-    <linearGradient id="gsBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#6AA3FF"/>
-      <stop offset="20%" stop-color="#4285F4"/>
-      <stop offset="50%" stop-color="#7B68EE"/>
-      <stop offset="80%" stop-color="#EA4335"/>
-      <stop offset="100%" stop-color="#B82A22"/>
+    <linearGradient id="gemini-speaking-body-gradient" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#3B82F6"/>
     </linearGradient>
-
-    <!-- 3D gradient for border -->
-    <linearGradient id="gsBorderGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6AA3FF"/>
-      <stop offset="25%" stop-color="#4285F4"/>
-      <stop offset="50%" stop-color="#9080F0"/>
-      <stop offset="75%" stop-color="#EA4335"/>
-      <stop offset="100%" stop-color="#C03028"/>
+    <linearGradient id="gemini-speaking-limb-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9333EA"/>
+      <stop offset="1" stop-color="#2563EB"/>
     </linearGradient>
-
-    <!-- Inner panel gradient -->
-    <linearGradient id="gsInnerGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#282840"/>
-      <stop offset="50%" stop-color="#1a1a2e"/>
-      <stop offset="100%" stop-color="#0E0E1A"/>
-    </linearGradient>
-
-    <!-- Arm gradients -->
-    <linearGradient id="gsArmL" x1="0" y1="0" x2="1" y2="0.5">
-      <stop offset="0%" stop-color="#3570D0"/>
-      <stop offset="50%" stop-color="#5A78E0"/>
-      <stop offset="100%" stop-color="#7B68EE"/>
-    </linearGradient>
-
-    <linearGradient id="gsArmR" x1="0" y1="0" x2="1" y2="0.5">
-      <stop offset="0%" stop-color="#D04535"/>
-      <stop offset="50%" stop-color="#EA4335"/>
-      <stop offset="100%" stop-color="#C03028"/>
-    </linearGradient>
-
-    <!-- Leg gradients -->
-    <linearGradient id="gsLegL" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#4285F4"/>
-      <stop offset="50%" stop-color="#6A58D0"/>
-      <stop offset="100%" stop-color="#5040A0"/>
-    </linearGradient>
-
-    <linearGradient id="gsLegR" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#B84030"/>
-      <stop offset="50%" stop-color="#EA4335"/>
-      <stop offset="100%" stop-color="#D03828"/>
-    </linearGradient>
-
-    <!-- Eye white gradient -->
-    <radialGradient id="gsEyeGrad" cx="35%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="60%" stop-color="#F0F0F0"/>
-      <stop offset="100%" stop-color="#D8D8D8"/>
+    <radialGradient id="gemini-speaking-shadow-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#1E1B4B" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#1E1B4B" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Chevron gradient -->
-    <linearGradient id="gsChevronGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6AA3FF"/>
-      <stop offset="30%" stop-color="#4285F4"/>
-      <stop offset="60%" stop-color="#9080F0"/>
-      <stop offset="100%" stop-color="#EA4335"/>
-    </linearGradient>
-
-    <!-- Ground shadow -->
-    <radialGradient id="gsShadowGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#000" stop-opacity="0.35"/>
-      <stop offset="60%" stop-color="#000" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Drop shadow filter -->
-    <filter id="gsDropShadow" x="-15%" y="-15%" width="130%" height="140%">
-      <feDropShadow dx="1.5" dy="2.5" stdDeviation="1.8" flood-color="#000" flood-opacity="0.28"/>
-    </filter>
-
-    <!-- Inner depth -->
-    <filter id="gsInnerDepth" x="-5%" y="-5%" width="110%" height="110%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
-      <feOffset dx="0" dy="1.5" result="off"/>
-      <feFlood flood-color="#000" flood-opacity="0.2" result="color"/>
-      <feComposite in="color" in2="off" operator="in" result="shadow"/>
-      <feMerge>
-        <feMergeNode in="shadow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Chevron glow -->
-    <filter id="gsChevronGlow" x="-15%" y="-15%" width="130%" height="130%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Sound wave glow -->
-    <filter id="gsSoundGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="1.2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Note glow -->
-    <filter id="gsNoteGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="gemini-speaking-soft-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#312E81" flood-opacity="0.22"/>
     </filter>
   </defs>
-
   <style>
-    .gemini-body {
-      animation: bob 0.8s ease-in-out infinite;
-      transform-origin: 42px 86px;
+    .gemini-speaking-shadow {
+      animation: gemini-speaking-shadow-idle 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 106px;
     }
-    @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
+    .gemini-speaking-character {
+      animation: gemini-speaking-char-gesture 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 96px;
     }
-
-    .shadow {
-      animation: shadow-pulse 0.8s ease-in-out infinite;
+    .gemini-speaking-bubble {
+      animation: gemini-speaking-bubble-pulse 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 85px 32px;
     }
-    @keyframes shadow-pulse {
-      0%, 100% { transform: scaleX(1); opacity: 0.35; }
-      50% { transform: scaleX(0.9); opacity: 0.25; }
+    .gemini-speaking-sparkle-1 {
+      animation: gemini-speaking-sparkle-bounce 1.6s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 77px 31px;
     }
-
-    .mouth {
-      animation: talk 0.3s ease-in-out infinite;
-      transform-origin: 42px 50px;
+    .gemini-speaking-sparkle-2 {
+      animation: gemini-speaking-sparkle-bounce 1.6s ease-in-out 0.3s infinite;
+      transform-box: view-box;
+      transform-origin: 90px 31px;
     }
-    @keyframes talk {
-      0%, 100% { transform: scaleY(1); }
-      50% { transform: scaleY(0.5); }
+    @keyframes gemini-speaking-shadow-idle {
+      0%, 100% { transform: scaleX(1); opacity: .35; }
+      50% { transform: scaleX(1.03); opacity: .38; }
     }
-
-    .sound-wave-1 {
-      animation: wave-expand 0.8s ease-out infinite;
-      transform-origin: left center;
+    @keyframes gemini-speaking-char-gesture {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-2deg); }
     }
-    .sound-wave-2 {
-      animation: wave-expand 0.8s ease-out infinite 0.2s;
-      transform-origin: left center;
+    @keyframes gemini-speaking-bubble-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
-    .sound-wave-3 {
-      animation: wave-expand 0.8s ease-out infinite 0.4s;
-      transform-origin: left center;
+    @keyframes gemini-speaking-sparkle-bounce {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-2px) scale(1.2); }
     }
-    @keyframes wave-expand {
-      0% { opacity: 0.8; transform: scaleX(0.3) scaleY(0.8); }
-      100% { opacity: 0; transform: scaleX(1.2) scaleY(1); }
-    }
-
-    .music-note-1 {
-      animation: float-note-1 1.5s ease-out infinite;
-    }
-    .music-note-2 {
-      animation: float-note-2 1.5s ease-out infinite 0.3s;
-    }
-    .music-note-3 {
-      animation: float-note-3 1.5s ease-out infinite 0.6s;
-    }
-    @keyframes float-note-1 {
-      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
-      100% { opacity: 0; transform: translate(15px, -25px) rotate(15deg); }
-    }
-    @keyframes float-note-2 {
-      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
-      100% { opacity: 0; transform: translate(20px, -30px) rotate(-10deg); }
-    }
-    @keyframes float-note-3 {
-      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
-      100% { opacity: 0; transform: translate(10px, -35px) rotate(20deg); }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <!-- Shadow -->
-  <ellipse class="shadow" cx="42" cy="92" rx="20" ry="4" fill="url(#gsShadowGrad)"/>
+  <ellipse class="gemini-speaking-shadow" data-animated="true" cx="60" cy="106" rx="33" ry="6.5" fill="url(#gemini-speaking-shadow-gradient)"/>
 
-  <!-- Gemini Character Group -->
-  <g class="gemini-body" filter="url(#gsDropShadow)">
-    <!-- Left arm - stable/resting -->
-    <rect x="6" y="42" width="12" height="6" rx="2" fill="url(#gsArmL)"/>
-    <rect x="7" y="43" width="4" height="2" fill="#8AB8FF" opacity="0.3" rx="0.5"/>
-
-    <!-- Right arm - stable/resting -->
-    <rect x="66" y="42" width="12" height="6" rx="2" fill="url(#gsArmR)"/>
-    <rect x="67" y="43" width="4" height="2" fill="#F08070" opacity="0.25" rx="0.5"/>
-
-    <!-- Left leg - stable -->
-    <rect x="26" y="72" width="8" height="14" rx="2" fill="url(#gsLegL)"/>
-    <rect x="27" y="73" width="3" height="7" fill="#6AA3FF" opacity="0.3" rx="0.5"/>
-
-    <!-- Right leg - stable -->
-    <rect x="50" y="72" width="8" height="14" rx="2" fill="url(#gsLegR)"/>
-    <rect x="51" y="73" width="3" height="7" fill="#F08070" opacity="0.25" rx="0.5"/>
-
-    <!-- Gemini CLI Icon -->
-    <g transform="translate(10, 8)" filter="url(#gsInnerDepth)">
-      <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#gsBorderGrad)"/>
-      <rect x="2" y="1" width="40" height="3" rx="2" fill="#8AB8FF" opacity="0.3"/>
-
-      <rect x="5" y="5" width="54" height="54" rx="10" fill="url(#gsInnerGrad)"/>
-      <rect x="8" y="7" width="28" height="4" rx="2" fill="#3A3A58" opacity="0.4"/>
-
-      <!-- Chevron ">" - shifted up to leave room for mouth -->
-      <g transform="translate(14, 10)" filter="url(#gsChevronGlow)">
-        <polygon points="0,10 14,0 17,3.5 7,11.5" fill="url(#gsChevronGrad)"/>
-        <polygon points="0,13 7,11.5 17,19.5 14,23" fill="url(#gsChevronGrad)"/>
-        <polygon points="0.5,10.5 12.5,1.5 14,3 6.5,10" fill="#9CC0FF" opacity="0.25"/>
-      </g>
+  <g class="gemini-speaking-character" data-animated="true" filter="url(#gemini-speaking-soft-shadow)">
+    <!-- Legs -->
+    <g aria-hidden="true">
+      <path d="M40 82 C38 90 39 98 44 102 C48 105 53 102 53 97 L52 82 Z" fill="url(#gemini-speaking-limb-gradient)"/>
+      <ellipse cx="47" cy="100" rx="8.5" ry="4" fill="#1E1B4B"/>
+      <path d="M68 82 L67 97 C67 102 72 105 76 102 C82 98 82 89 79 82 Z" fill="url(#gemini-speaking-limb-gradient)"/>
+      <ellipse cx="74" cy="100" rx="8.5" ry="4" fill="#1E1B4B"/>
     </g>
 
+    <!-- Arms -->
+    <path d="M34 56 C24 60 22 70 30 76 C36 80 42 74 38 66 Z" fill="url(#gemini-speaking-limb-gradient)"/>
+    <path d="M86 56 C96 50 104 54 100 64 C96 70 90 72 84 64 Z" fill="url(#gemini-speaking-limb-gradient)"/>
+
+    <!-- Main Body -->
+    <rect x="28" y="30" width="64" height="60" rx="24" fill="url(#gemini-speaking-body-gradient)"/>
+    <path d="M34 40 C45 30 71 28 86 39 C74 35 55 37 42 45 C38 48 34 47 34 40 Z" fill="#F0ABFC" opacity=".35"/>
+
     <!-- Eyes -->
-    <rect x="24" y="28" width="8" height="12" rx="2" fill="url(#gsEyeGrad)"/>
-    <rect x="25" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.8" rx="0.5"/>
-    <rect x="29" y="35" width="1.2" height="1.2" fill="#fff" opacity="0.35" rx="0.3"/>
+    <ellipse cx="49" cy="53" rx="5.6" ry="7" fill="#0F172A"/>
+    <ellipse cx="71" cy="53" rx="5.6" ry="7" fill="#0F172A"/>
+    <circle cx="47.4" cy="50.8" r="1.8" fill="#F472B6"/>
+    <circle cx="69.4" cy="50.8" r="1.8" fill="#F472B6"/>
 
-    <rect x="44" y="28" width="8" height="12" rx="2" fill="url(#gsEyeGrad)"/>
-    <rect x="45" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.8" rx="0.5"/>
-    <rect x="49" y="35" width="1.2" height="1.2" fill="#fff" opacity="0.35" rx="0.3"/>
+    <!-- Speaking Open Mouth -->
+    <path d="M52 66 C56 73 64 73 68 66 Z" fill="#0F172A"/>
 
-    <!-- Mouth - animated speaking -->
-    <ellipse class="mouth" cx="42" cy="50" rx="6" ry="3" fill="#0E0E1A"/>
-    <ellipse cx="42" cy="49" rx="3.5" ry="1" fill="#6AA3FF" opacity="0.3"/>
+    <!-- Sparkle Core on Chest -->
+    <path d="M60 74 Q60 77 63 77 Q60 77 60 80 Q60 77 57 77 Q60 77 60 74 Z" fill="#FFFFFF"/>
   </g>
 
-  <!-- ========== VOICE / MUSIC EFFECTS ========== -->
-
-  <!-- Sound wave arcs emanating from mouth -->
-  <g filter="url(#gsSoundGlow)">
-    <path class="sound-wave-1" d="M78,50 Q90,42 78,34" fill="none" stroke="#6AA3FF" stroke-width="2.2" stroke-linecap="round"/>
-    <path class="sound-wave-2" d="M82,52 Q98,42 82,32" fill="none" stroke="#4285F4" stroke-width="2.0" stroke-linecap="round"/>
-    <path class="sound-wave-3" d="M86,54 Q106,42 86,30" fill="none" stroke="#7B68EE" stroke-width="1.8" stroke-linecap="round"/>
-  </g>
-
-  <!-- Music notes floating out -->
-  <!-- Note 1: eighth note (blue) -->
-  <g class="music-note-1" filter="url(#gsNoteGlow)">
-    <circle cx="95" cy="24" r="2.8" fill="#4285F4"/>
-    <line x1="97.8" y1="24" x2="97.8" y2="14" stroke="#4285F4" stroke-width="1.6" stroke-linecap="round"/>
-    <path d="M97.8,14 Q101.5,12.5 100,16" fill="#4285F4" stroke="none"/>
-  </g>
-
-  <!-- Note 2: quarter note (purple) -->
-  <g class="music-note-2" filter="url(#gsNoteGlow)">
-    <circle cx="110" cy="12" r="2.5" fill="#7B68EE"/>
-    <line x1="112.5" y1="12" x2="112.5" y2="3" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M112.5,3 Q116,1.5 114.5,5" fill="#7B68EE" stroke="none"/>
-  </g>
-
-  <!-- Note 3: beamed eighth notes (red) -->
-  <g class="music-note-3" filter="url(#gsNoteGlow)">
-    <circle cx="118" cy="22" r="2.5" fill="#EA4335"/>
-    <circle cx="125" cy="20" r="2.5" fill="#EA4335"/>
-    <line x1="120.5" y1="22" x2="120.5" y2="13" stroke="#EA4335" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="127.5" y1="20" x2="127.5" y2="11" stroke="#EA4335" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="120.5" y1="13" x2="127.5" y2="11" stroke="#EA4335" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Speech Bubble with sparkles -->
+  <g class="gemini-speaking-bubble" data-animated="true" filter="url(#gemini-speaking-soft-shadow)">
+    <path d="M65 32 C65 22 75 16 85 16 C95 16 105 22 105 32 C105 40 97 46 87 46 C84 46 81 48 78 51 C79 47 77 46 75 45 C69 43 65 38 65 32 Z" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="2.5"/>
+    <path class="gemini-speaking-sparkle-1" data-animated="true" d="M77 27 Q77 31 80 31 Q77 31 77 35 Q77 31 74 31 Q77 31 77 27 Z" fill="#8B5CF6"/>
+    <path class="gemini-speaking-sparkle-2" data-animated="true" Q77 31 d="M90 27 Q90 31 93 31 Q90 31 90 35 Q90 31 87 31 Q90 31 90 27 Z" fill="#EC4899"/>
   </g>
 </svg>

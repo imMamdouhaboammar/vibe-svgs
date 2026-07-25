@@ -239,9 +239,9 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Gemini Levitating Scene",
-      "description": "Fan-made zero-gravity scene awaiting Phase 3 migration."
+      "description": "Fan-made zero-gravity levitation scene with floating sparkle core."
     },
     {
       "id": "gemini-jumping",
@@ -250,9 +250,9 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Gemini Jumping Scene",
-      "description": "Fan-made jumping scene awaiting Phase 2 migration."
+      "description": "Fan-made energetic jumping scene with vertical motion and dynamic shadow."
     },
     {
       "id": "gemini-speaking",
@@ -261,9 +261,9 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Gemini Speaking Scene",
-      "description": "Fan-made speaking scene awaiting Phase 3 migration."
+      "description": "Fan-made speaking scene with animated sparkle talk bubble."
     },
     {
       "id": "gemini-logo",
