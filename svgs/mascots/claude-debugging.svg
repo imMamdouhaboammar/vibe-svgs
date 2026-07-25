@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#F4A67A"/>
+      <stop offset="30%" stop-color="#E8854F"/>
+      <stop offset="65%" stop-color="#E07C4C"/>
+      <stop offset="100%" stop-color="#B85A28"/>
+    </linearGradient>
+    <linearGradient id="earGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0966A"/>
+      <stop offset="100%" stop-color="#C0612E"/>
+    </linearGradient>
+    <linearGradient id="legGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E07C4C"/>
+      <stop offset="50%" stop-color="#C86030"/>
+      <stop offset="100%" stop-color="#A04D1E"/>
+    </linearGradient>
+    <radialGradient id="eyeGrad" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#3A3A3A"/>
+      <stop offset="50%" stop-color="#111"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="1.5" dy="2.5" stdDeviation="1.8" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <style>
+    .glass-search {
+      animation: search-anim 2s ease-in-out infinite alternate;
+      transform-origin: 100px 45px;
+    }
+    @keyframes search-anim {
+      0% { transform: rotate(-8deg); }
+      100% { transform: rotate(12deg); }
+    }
+    .bug-flicker {
+      animation: flicker-bug 0.6s infinite ease-in-out alternate;
+    }
+    @keyframes flicker-bug {
+      0% { opacity: 0.7; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1.1); }
+    }
+  </style>
+
+  <ellipse cx="50" cy="82" rx="22" ry="5" fill="url(#shadowGrad)"/>
+
+  <g filter="url(#dropShadow)">
+    <!-- Ears -->
+    <rect x="22" y="10" width="8" height="14" fill="url(#earGrad)"/>
+    <rect x="70" y="10" width="8" height="14" fill="url(#earGrad)"/>
+
+    <!-- Detective Sherlock Hat -->
+    <path d="M 12 24 Q 50 10 88 24 L 80 18 Q 50 8 20 18 Z" fill="#78350F" />
+
+    <!-- Main Body -->
+    <rect x="14" y="28" width="72" height="32" fill="url(#bodyGrad)" />
+
+    <!-- Focused Eyes looking through magnifying glass -->
+    <rect x="38" y="34" width="8" height="10" fill="url(#eyeGrad)"/>
+    <rect x="39" y="35" width="3" height="3" fill="#fff" opacity="0.7"/>
+
+    <rect x="68" y="34" width="8" height="10" fill="url(#eyeGrad)"/>
+    <rect x="69" y="35" width="3" height="3" fill="#fff" opacity="0.7"/>
+
+    <!-- Mouth -->
+    <path d="M 50 48 Q 56 52 62 48" fill="none" stroke="#2A180E" stroke-width="2" />
+
+    <!-- Magnifying Glass Arm -->
+    <g class="glass-search">
+      <line x1="86" y1="40" x2="115" y2="40" stroke="#78350F" stroke-width="4" stroke-linecap="round" />
+      <circle cx="125" cy="40" r="14" fill="rgba(56, 189, 248, 0.2)" stroke="#E2E8F0" stroke-width="3" />
+      
+      <!-- Burning Red Bug inside glass -->
+      <g class="bug-flicker" transform="translate(125, 40)">
+        <circle cx="0" cy="0" r="6" fill="#EF4444" />
+        <line x1="-8" y1="-4" x2="8" y2="4" stroke="#7F1D1D" stroke-width="1.5" />
+        <line x1="-8" y1="4" x2="8" y2="-4" stroke="#7F1D1D" stroke-width="1.5" />
+        <text x="0" y="3" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FFF">🐛</text>
+      </g>
+    </g>
+
+    <!-- Legs -->
+    <rect x="24" y="60" width="12" height="14" fill="url(#legGrad)"/>
+    <rect x="64" y="60" width="12" height="14" fill="url(#legGrad)"/>
+  </g>
+</svg>

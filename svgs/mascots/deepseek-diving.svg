@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+  <defs>
+    <linearGradient id="dsBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#4D6BFE"/>
+      <stop offset="50%" stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <radialGradient id="dsShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    .whale-dive {
+      animation: dive-anim 4s infinite ease-in-out alternate;
+    }
+    @keyframes dive-anim {
+      0% { transform: translateY(0px) rotate(-4deg); }
+      100% { transform: translateY(-10px) rotate(4deg); }
+    }
+    .bubble-float {
+      animation: bubble-up 2.5s infinite linear;
+    }
+    @keyframes bubble-up {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-30px); opacity: 0; }
+    }
+  </style>
+
+  <ellipse cx="100" cy="108" rx="50" ry="7" fill="url(#dsShadowGrad)" />
+
+  <g class="whale-dive">
+    <!-- Whale Body -->
+    <path d="M 40 60 C 40 25 80 20 120 30 C 150 38 165 50 160 70 C 155 85 110 90 70 85 C 50 82 40 75 40 60 Z" fill="url(#dsBodyGrad)" />
+    <!-- Whale Tail -->
+    <path d="M 40 60 Q 20 50 10 35 Q 25 55 40 60 Q 25 65 10 85 Q 20 70 40 60 Z" fill="#1E40AF" />
+
+    <!-- Scuba Goggles -->
+    <rect x="120" y="42" width="28" height="14" rx="7" fill="rgba(56, 189, 248, 0.4)" stroke="#60A5FA" stroke-width="2" />
+    <line x1="120" y1="49" x2="110" y2="49" stroke="#1E3A8A" stroke-width="2" />
+
+    <!-- Eye inside goggles -->
+    <circle cx="134" cy="49" r="3.5" fill="#FFFFFF" />
+    <circle cx="135" cy="49" r="1.5" fill="#0F172A" />
+
+    <!-- Underwater Bubbles -->
+    <circle cx="155" cy="40" r="3" fill="#60A5FA" class="bubble-float" />
+    <circle cx="165" cy="30" r="4" fill="#93C5FD" class="bubble-float" style="animation-delay: 0.8s;" />
+    <circle cx="175" cy="20" r="2.5" fill="#BFDBFE" class="bubble-float" style="animation-delay: 1.4s;" />
+  </g>
+</svg>

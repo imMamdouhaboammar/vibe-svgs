@@ -5,10 +5,10 @@
 <h1 align="center">✨ Agentic Engineering & Vibe Coding SVGs ✨</h1>
 
 <p align="center">
-  <img src="svgs/mascots/claude-mascot.svg" alt="Claude Mascot" width="180">
-  <img src="svgs/mascots/codex-mascot.svg" alt="Codex Mascot" width="180">
-  <img src="svgs/mascots/cursor-mascot.svg" alt="Cursor Mascot" width="180">
-  <img src="svgs/mascots/gemini-mascot.svg" alt="Gemini Mascot" width="180">
+  <img src="svgs/mascots/claude-mascot.svg" alt="Claude Mascot" width="160">
+  <img src="svgs/mascots/codex-mascot.svg" alt="Codex Mascot" width="160">
+  <img src="svgs/mascots/cursor-mascot.svg" alt="Cursor Mascot" width="160">
+  <img src="svgs/mascots/gemini-mascot.svg" alt="Gemini Mascot" width="160">
 </p>
 
 <p align="center">
@@ -25,18 +25,26 @@
 
 ---
 
-## 🤖 Official 3D AI Mascots Gallery
+## 🤖 Official 3D AI Mascots Action Gallery
 
-| Mascot | Standalone | Animated Jumping | Speaking & Reasoning |
-| :--- | :---: | :---: | :---: |
-| **Claude Code** | <img src="svgs/mascots/claude-mascot.svg" width="120"> | <img src="svgs/mascots/claude-jumping.svg" width="120"> | <img src="svgs/mascots/claude-speaking.svg" width="120"> |
-| **OpenAI / Codex** | <img src="svgs/mascots/codex-mascot.svg" width="120"> | <img src="svgs/mascots/codex-jumping.svg" width="120"> | <img src="svgs/mascots/codex-speaking.svg" width="120"> |
-| **Google Gemini** | <img src="svgs/mascots/gemini-mascot.svg" width="120"> | <img src="svgs/mascots/gemini-jumping.svg" width="120"> | <img src="svgs/mascots/gemini-speaking.svg" width="120"> |
-| **Cursor AI** | <img src="svgs/mascots/cursor-mascot.svg" width="120"> | — | — |
+| AI Mascot | Action / Scenario | Preview | Markdown Copy Snippet |
+| :--- | :--- | :---: | :--- |
+| **Claude Code** | **Claude Sleeping on 200K Tokens** | <img src="svgs/mascots/claude-sleeping.svg" width="140"> | `![Claude Sleeping](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-sleeping.svg)` |
+| **Claude Code** | **Sherlock Detective Debugging** | <img src="svgs/mascots/claude-debugging.svg" width="140"> | `![Claude Debugging](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-debugging.svg)` |
+| **Claude Code** | **Official 3D Katana Mascot** | <img src="svgs/mascots/claude-mascot.svg" width="140"> | `![Claude Mascot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-mascot.svg)` |
+| **Claude Code** | **Jumping with Happiness** | <img src="svgs/mascots/claude-jumping.svg" width="140"> | `![Claude Jumping](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-jumping.svg)` |
+| **OpenAI / Codex** | **100% Confident Hallucination** | <img src="svgs/mascots/codex-hallucinating.svg" width="140"> | `![Codex Hallucinating](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/codex-hallucinating.svg)` |
+| **OpenAI / Codex** | **Official 3D Sword Agent** | <img src="svgs/mascots/codex-mascot.svg" width="140"> | `![Codex Mascot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/codex-mascot.svg)` |
+| **Cursor AI** | **Gamer Headphones Auto-Tab Rampage** | <img src="svgs/mascots/cursor-rage-autotab.svg" width="140"> | `![Cursor Rage](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/cursor-rage-autotab.svg)` |
+| **Cursor AI** | **Official 3D Dark Olive Mascot** | <img src="svgs/mascots/cursor-mascot.svg" width="140"> | `![Cursor Mascot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/cursor-mascot.svg)` |
+| **Google Gemini** | **Zero-G Levitating Orbit** | <img src="svgs/mascots/gemini-levitating.svg" width="140"> | `![Gemini Levitating](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/gemini-levitating.svg)` |
+| **Google Gemini** | **Official 3D Sparkle Mascot** | <img src="svgs/mascots/gemini-mascot.svg" width="140"> | `![Gemini Mascot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/gemini-mascot.svg)` |
+| **DeepSeek** | **Scuba Goggles Deep Dive** | <img src="svgs/mascots/deepseek-diving.svg" width="140"> | `![DeepSeek Diving](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/deepseek-diving.svg)` |
+| **GitHub Copilot** | **Ninja Headband Stealth** | <img src="svgs/mascots/copilot-ninja.svg" width="140"> | `![Copilot Ninja](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/copilot-ninja.svg)` |
 
 ---
 
-## 💬 AI Community WhatsApp Stickers (SVG)
+## 💬 WhatsApp Community Stickers (SVG)
 
 <p align="center">
   <img src="svgs/stickers/ai-claude.svg" width="160">
@@ -58,15 +66,6 @@
 | **AI Reviewer Approved** | <img src="svgs/badges/ai-reviewer-approved.svg" width="220"> | `![AI Reviewer](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/badges/ai-reviewer-approved.svg)` |
 | **Refactored Legacy Code** | <img src="svgs/badges/refactored-by-claude.svg" width="200"> | `![Refactored](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/badges/refactored-by-claude.svg)` |
 | **YOLO Production Deploy** | <img src="svgs/badges/yolo-deploy.svg" width="190"> | `![YOLO Deploy](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/badges/yolo-deploy.svg)` |
-
----
-
-## 📊 Flowcharts & Banners
-
-<p align="center">
-  <b>Agentic Engineering Workflow Flowchart</b><br>
-  <img src="svgs/banners/banner-agentic-workflow.svg" width="100%">
-</p>
 
 ---
 

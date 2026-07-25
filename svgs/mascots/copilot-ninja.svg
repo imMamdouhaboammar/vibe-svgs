@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+  <defs>
+    <linearGradient id="cpBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <radialGradient id="cpShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cpVisorGlow">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .ninja-dash {
+      animation: dash-anim 0.5s infinite ease-in-out alternate;
+    }
+    @keyframes dash-anim {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-4px); }
+    }
+    .headband-trail {
+      animation: trail-anim 1s infinite ease-in-out alternate;
+    }
+    @keyframes trail-anim {
+      0% { transform: rotate(-5deg); }
+      100% { transform: rotate(10deg); }
+    }
+  </style>
+
+  <ellipse cx="100" cy="108" rx="40" ry="7" fill="url(#cpShadowGrad)" />
+
+  <g class="ninja-dash">
+    <!-- Ninja Headband Trails -->
+    <path d="M 52 35 Q 35 30 20 40 L 30 45 Z" fill="#0F172A" class="headband-trail" />
+
+    <!-- Robot Head / Body -->
+    <rect x="62" y="24" width="76" height="62" rx="24" fill="url(#cpBodyGrad)" stroke="#60A5FA" stroke-width="1.5" />
+
+    <!-- Ninja Headband Across Forehead -->
+    <rect x="62" y="32" width="76" height="14" fill="#0F172A" />
+
+    <!-- Futuristic Glowing Visor -->
+    <rect x="72" y="44" width="56" height="20" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="2" filter="url(#cpVisorGlow)" />
+
+    <!-- Ninja Eyes inside Visor -->
+    <circle cx="86" cy="54" r="4" fill="#38BDF8" />
+    <circle cx="114" cy="54" r="4" fill="#38BDF8" />
+
+    <!-- Ninja Shuriken Star in Hand -->
+    <g transform="translate(145, 60)">
+      <polygon points="0,-8 3,-2 9,0 3,2 0,8 -3,2 -9,0 -3,-2" fill="#E2E8F0" />
+    </g>
+  </g>
+</svg>

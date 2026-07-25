@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+  <defs>
+    <linearGradient id="gmBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+    <linearGradient id="gmStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A5B4FC" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+    <radialGradient id="gmShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gmGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .zero-g-float {
+      animation: zero-g 3.5s infinite ease-in-out alternate;
+    }
+    @keyframes zero-g {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-14px) rotate(3deg); }
+    }
+    .ring-spin {
+      animation: spin-r 8s linear infinite;
+      transform-origin: 50px 44px;
+    }
+    @keyframes spin-r {
+      0% { transform: rotateX(70deg) rotateZ(0deg); }
+      100% { transform: rotateX(70deg) rotateZ(360deg); }
+    }
+  </style>
+
+  <!-- Shadow pulses with levitation -->
+  <ellipse cx="50" cy="88" rx="20" ry="4" fill="url(#gmShadowGrad)" opacity="0.5">
+    <animate attributeName="rx" values="20;12;20" dur="3.5s" repeatCount="indefinite" />
+  </ellipse>
+
+  <g class="zero-g-float" filter="url(#gmGlow)">
+    <!-- Glowing Orbital Ring around Body -->
+    <ellipse cx="50" cy="44" rx="48" ry="14" fill="none" stroke="#C084FC" stroke-width="2" stroke-dasharray="6 4" class="ring-spin" />
+
+    <!-- Main Body -->
+    <rect x="14" y="28" width="72" height="32" fill="url(#gmBodyGrad)" />
+
+    <!-- Eyes -->
+    <rect x="38" y="34" width="8" height="10" fill="#FFFFFF"/>
+    <circle cx="42" cy="39" r="2" fill="#1E1B4B" />
+
+    <rect x="68" y="34" width="8" height="10" fill="#FFFFFF"/>
+    <circle cx="72" cy="39" r="2" fill="#1E1B4B" />
+
+    <!-- Winking Smile -->
+    <path d="M 44 48 Q 50 54 56 48" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Floating 4-point Gemini star above head -->
+    <g transform="translate(50, 10)">
+      <path d="M0 -12 C2 -4 4 -2 12 0 C4 2 2 4 0 12 C-2 4 -4 2 -12 0 C-4 -2 -2 -4 0 -12 Z" fill="url(#gmStarGrad)" />
+    </g>
+
+    <!-- Floating Stars -->
+    <circle cx="110" cy="20" r="3" fill="#A5B4FC" />
+    <circle cx="130" cy="50" r="2" fill="#C084FC" />
+  </g>
+</svg>

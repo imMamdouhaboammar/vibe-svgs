@@ -1,5 +1,150 @@
-// SVG Items Data Store - Direct Exact Assets from agentic-engineering & lobe-icons
+// SVG Items Data Store - Authentic 3D Mascots & Actions
 const svgData = [
+  // Claude Code 3D Action Gallery
+  {
+    id: 'claude-mascot',
+    title: 'Claude Code (Official 3D Standalone)',
+    category: 'mascots',
+    path: 'svgs/mascots/claude-mascot.svg',
+    desc: 'Official 3D Claude terracotta mascot carrying tools.'
+  },
+  {
+    id: 'claude-sleeping',
+    title: 'Claude Sleeping on 200K Tokens',
+    category: 'mascots',
+    path: 'svgs/mascots/claude-sleeping.svg',
+    desc: 'Claude sleeping peacefully on a pile of 200k context tokens with Zzz...'
+  },
+  {
+    id: 'claude-debugging',
+    title: 'Claude Detective Debugging',
+    category: 'mascots',
+    path: 'svgs/mascots/claude-debugging.svg',
+    desc: 'Claude in a Sherlock hat with a magnifying glass inspecting a burning bug.'
+  },
+  {
+    id: 'claude-jumping',
+    title: 'Claude Mascot (Animated Jumping)',
+    category: 'mascots',
+    path: 'svgs/mascots/claude-jumping.svg',
+    desc: 'Official 3D Claude mascot jumping with happiness.'
+  },
+  {
+    id: 'claude-speaking',
+    title: 'Claude Mascot (Speaking & Reasoning)',
+    category: 'mascots',
+    path: 'svgs/mascots/claude-speaking.svg',
+    desc: 'Official 3D Claude mascot speaking with an animated speech bubble.'
+  },
+
+  // Codex / OpenAI 3D Action Gallery
+  {
+    id: 'codex-mascot',
+    title: 'Codex / OpenAI Mascot (Official 3D Standalone)',
+    category: 'mascots',
+    path: 'svgs/mascots/codex-mascot.svg',
+    desc: 'Official 3D Codex agent mascot carrying tools.'
+  },
+  {
+    id: 'codex-hallucinating',
+    title: 'Codex 100% Confident Hallucination',
+    category: 'mascots',
+    path: 'svgs/mascots/codex-hallucinating.svg',
+    desc: 'Codex in a party hat floating fake math equations with 100% confidence.'
+  },
+  {
+    id: 'codex-jumping',
+    title: 'Codex Mascot (Animated Jumping)',
+    category: 'mascots',
+    path: 'svgs/mascots/codex-jumping.svg',
+    desc: 'Official 3D Codex mascot jumping happily.'
+  },
+  {
+    id: 'codex-speaking',
+    title: 'Codex Mascot (Speaking)',
+    category: 'mascots',
+    path: 'svgs/mascots/codex-speaking.svg',
+    desc: 'Official 3D Codex mascot speaking with an animated speech bubble.'
+  },
+
+  // Cursor 3D Action Gallery
+  {
+    id: 'cursor-mascot',
+    title: 'Cursor Mascot (Official 3D Standalone)',
+    category: 'mascots',
+    path: 'svgs/mascots/cursor-mascot.svg',
+    desc: 'Official 3D Cursor dark olive mascot carrying tools.'
+  },
+  {
+    id: 'cursor-rage-autotab',
+    title: 'Cursor Gamer Headphones Auto-Tab Rampage',
+    category: 'mascots',
+    path: 'svgs/mascots/cursor-rage-autotab.svg',
+    desc: 'Cursor wearing gamer headphones furiously slamming TAB keys with green code lightning.'
+  },
+
+  // Google Gemini / Antigravity 3D Action Gallery
+  {
+    id: 'gemini-mascot',
+    title: 'Gemini Mascot (Official 3D Standalone)',
+    category: 'mascots',
+    path: 'svgs/mascots/gemini-mascot.svg',
+    desc: 'Official 3D Google Gemini mascot with 4-point sparkle core.'
+  },
+  {
+    id: 'gemini-levitating',
+    title: 'Google Antigravity Zero-G Levitating',
+    category: 'mascots',
+    path: 'svgs/mascots/gemini-levitating.svg',
+    desc: 'Gemini 3D mascot levitating in zero-G with glowing orbital rings.'
+  },
+  {
+    id: 'gemini-jumping',
+    title: 'Gemini Mascot (Animated Jumping)',
+    category: 'mascots',
+    path: 'svgs/mascots/gemini-jumping.svg',
+    desc: 'Official 3D Gemini mascot jumping with joy.'
+  },
+  {
+    id: 'gemini-speaking',
+    title: 'Gemini Mascot (Speaking)',
+    category: 'mascots',
+    path: 'svgs/mascots/gemini-speaking.svg',
+    desc: 'Official 3D Gemini mascot speaking with a speech bubble.'
+  },
+
+  // DeepSeek 3D Action Gallery
+  {
+    id: 'deepseek-mascot',
+    title: 'DeepSeek (Whale Mascot)',
+    category: 'mascots',
+    path: 'svgs/mascots/deepseek-mascot.svg',
+    desc: 'Official DeepSeek blue whale mascot with animated blowhole spout.'
+  },
+  {
+    id: 'deepseek-diving',
+    title: 'DeepSeek Scuba Goggles Deep Dive',
+    category: 'mascots',
+    path: 'svgs/mascots/deepseek-diving.svg',
+    desc: 'DeepSeek whale in scuba goggles diving deep into ocean code.'
+  },
+
+  // GitHub Copilot 3D Action Gallery
+  {
+    id: 'copilot-mascot',
+    title: 'GitHub Copilot (Visor Mascot)',
+    category: 'mascots',
+    path: 'svgs/mascots/copilot-mascot.svg',
+    desc: 'Official GitHub Copilot avatar with glowing cyan scanning visor.'
+  },
+  {
+    id: 'copilot-ninja',
+    title: 'GitHub Copilot Ninja Stealth',
+    category: 'mascots',
+    path: 'svgs/mascots/copilot-ninja.svg',
+    desc: 'Copilot wearing ninja headband stealthily inserting code snippets.'
+  },
+
   // Banners & Pills
   {
     id: 'banner-pills',
@@ -28,84 +173,6 @@ const svgData = [
     category: 'banners',
     path: 'svgs/banners/banner-agentic-workflow.svg',
     desc: 'Animated flowchart: Prompt ➔ Hallucination ➔ Loop ➔ Ship.'
-  },
-
-  // Claude Mascots
-  {
-    id: 'claude-mascot',
-    title: 'Claude Mascot (Official 3D Standalone)',
-    category: 'mascots',
-    path: 'svgs/mascots/claude-mascot.svg',
-    desc: 'Official 3D Claude terracotta mascot carrying tools.'
-  },
-  {
-    id: 'claude-jumping',
-    title: 'Claude Mascot (Animated Jumping)',
-    category: 'mascots',
-    path: 'svgs/mascots/claude-jumping.svg',
-    desc: 'Official 3D Claude mascot jumping with happiness.'
-  },
-  {
-    id: 'claude-speaking',
-    title: 'Claude Mascot (Speaking & Reasoning)',
-    category: 'mascots',
-    path: 'svgs/mascots/claude-speaking.svg',
-    desc: 'Official 3D Claude mascot speaking with an animated speech bubble.'
-  },
-
-  // Codex Mascots
-  {
-    id: 'codex-mascot',
-    title: 'Codex / OpenAI Mascot (Official 3D Standalone)',
-    category: 'mascots',
-    path: 'svgs/mascots/codex-mascot.svg',
-    desc: 'Official 3D Codex agent mascot carrying tools.'
-  },
-  {
-    id: 'codex-jumping',
-    title: 'Codex Mascot (Animated Jumping)',
-    category: 'mascots',
-    path: 'svgs/mascots/codex-jumping.svg',
-    desc: 'Official 3D Codex mascot jumping happily.'
-  },
-  {
-    id: 'codex-speaking',
-    title: 'Codex Mascot (Speaking)',
-    category: 'mascots',
-    path: 'svgs/mascots/codex-speaking.svg',
-    desc: 'Official 3D Codex mascot speaking with an animated speech bubble.'
-  },
-
-  // Cursor Mascots
-  {
-    id: 'cursor-mascot',
-    title: 'Cursor Mascot (Official 3D Standalone)',
-    category: 'mascots',
-    path: 'svgs/mascots/cursor-mascot.svg',
-    desc: 'Official 3D Cursor dark olive mascot carrying tools.'
-  },
-
-  // Gemini Mascots
-  {
-    id: 'gemini-mascot',
-    title: 'Gemini Mascot (Official 3D Standalone)',
-    category: 'mascots',
-    path: 'svgs/mascots/gemini-mascot.svg',
-    desc: 'Official 3D Google Gemini mascot with 4-point sparkle core.'
-  },
-  {
-    id: 'gemini-jumping',
-    title: 'Gemini Mascot (Animated Jumping)',
-    category: 'mascots',
-    path: 'svgs/mascots/gemini-jumping.svg',
-    desc: 'Official 3D Gemini mascot jumping with joy.'
-  },
-  {
-    id: 'gemini-speaking',
-    title: 'Gemini Mascot (Speaking)',
-    category: 'mascots',
-    path: 'svgs/mascots/gemini-speaking.svg',
-    desc: 'Official 3D Gemini mascot speaking with a speech bubble.'
   },
 
   // WhatsApp Stickers
