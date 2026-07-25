@@ -43,4 +43,15 @@ describe("SVG contracts", () => {
   test("manifest entries resolve and use community artwork language", async () => {
     expect(await validateManifest("asset-manifest.json")).toEqual([]);
   });
+
+  test("package and README identify a community SVG project", async () => {
+    const pkg = JSON.parse(await readFile("package.json", "utf8"));
+    const readme = await readFile("README.md", "utf8");
+
+    expect(pkg.name).toBe("vibe-svgs");
+    expect(pkg.private).toBe(true);
+    expect(pkg.scripts.validate).toBe("bun run scripts/validate-svg.ts");
+    expect(readme).toContain("community-created");
+    expect(readme.toLowerCase()).not.toContain("official 3d mascot");
+  });
 });
