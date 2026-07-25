@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>AI Community — Claude · Codex · Gemini · Cursor</title>
+
+  <defs>
+    <!-- ===== Spotlights per mascot ===== -->
+    <radialGradient id="spotClaude" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E07C4C" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#E07C4C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spotCodex" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9333EA" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spotGemini" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7B68EE" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#7B68EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spotCursor" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3A3928" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#3A3928" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ===== Title styling ===== -->
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFE3A0"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFE3A0"/>
+    </linearGradient>
+    <filter id="titleShadow" x="-10%" y="-50%" width="120%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- ===== Center "AI" badge ===== -->
+    <linearGradient id="badgeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD166"/>
+      <stop offset="100%" stop-color="#F38B3F"/>
+    </linearGradient>
+
+    <!-- =====================================================================
+         CODEX mascot defs (prefixed cx-)
+         ===================================================================== -->
+    <linearGradient id="cx-body" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#9333EA"/>
+      <stop offset="30%" stop-color="#7C3AED"/>
+      <stop offset="55%" stop-color="#5B6CF0"/>
+      <stop offset="80%" stop-color="#3B9AEE"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="cx-arm" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <linearGradient id="cx-leg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <radialGradient id="cx-eye" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+    <!-- Cloud silhouette built from overlapping circles -->
+    <clipPath id="cx-cloud">
+      <circle cx="128" cy="68" r="56"/>
+      <circle cx="192" cy="100" r="54"/>
+      <circle cx="188" cy="168" r="54"/>
+      <circle cx="128" cy="192" r="54"/>
+      <circle cx="68"  cy="168" r="54"/>
+      <circle cx="64"  cy="100" r="54"/>
+      <circle cx="128" cy="130" r="60"/>
+    </clipPath>
+
+    <!-- =====================================================================
+         GEMINI mascot defs (prefixed gm-)
+         ===================================================================== -->
+    <linearGradient id="gm-border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6AA3FF"/>
+      <stop offset="25%" stop-color="#4285F4"/>
+      <stop offset="50%" stop-color="#9080F0"/>
+      <stop offset="75%" stop-color="#EA4335"/>
+      <stop offset="100%" stop-color="#C03028"/>
+    </linearGradient>
+    <linearGradient id="gm-inner" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#282840"/>
+      <stop offset="50%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0E0E1A"/>
+    </linearGradient>
+    <linearGradient id="gm-chev" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6AA3FF"/>
+      <stop offset="30%" stop-color="#4285F4"/>
+      <stop offset="60%" stop-color="#9080F0"/>
+      <stop offset="100%" stop-color="#EA4335"/>
+    </linearGradient>
+    <linearGradient id="gm-armL" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#3570D0"/>
+      <stop offset="100%" stop-color="#7B68EE"/>
+    </linearGradient>
+    <linearGradient id="gm-armR" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#D04535"/>
+      <stop offset="100%" stop-color="#C03028"/>
+    </linearGradient>
+    <linearGradient id="gm-legL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="100%" stop-color="#5040A0"/>
+    </linearGradient>
+    <linearGradient id="gm-legR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B84030"/>
+      <stop offset="100%" stop-color="#D03828"/>
+    </linearGradient>
+    <radialGradient id="gm-eye" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+
+    <!-- =====================================================================
+         CURSOR mascot defs (prefixed cr-)
+         ===================================================================== -->
+    <linearGradient id="cr-body" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#4A493A"/>
+      <stop offset="50%" stop-color="#363528"/>
+      <stop offset="100%" stop-color="#141410"/>
+    </linearGradient>
+    <radialGradient id="cr-eye" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+    <linearGradient id="cr-arm" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#1E1D18"/>
+      <stop offset="50%" stop-color="#333228"/>
+      <stop offset="100%" stop-color="#1A1A14"/>
+    </linearGradient>
+    <linearGradient id="cr-leg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#333228"/>
+      <stop offset="100%" stop-color="#111110"/>
+    </linearGradient>
+
+    <!-- Soft drop-shadow used by all mascots -->
+    <filter id="mascotShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- ============================================================
+       BACKGROUND — solid warm cream
+       ============================================================ -->
+  <rect x="0" y="0" width="1024" height="1024" rx="120" fill="#F2EAD8"/>
+
+  <!-- Inner subtle frame (dark stroke at low opacity for cream BG) -->
+  <rect x="40" y="40" width="944" height="944" rx="92" fill="none" stroke="rgba(20,16,36,0.10)" stroke-width="2"/>
+
+  <!-- ============================================================
+       QUADRANT DIVIDERS (very subtle)
+       ============================================================ -->
+  <line x1="120" y1="540" x2="904" y2="540" stroke="rgba(20,16,36,0.08)" stroke-width="1"/>
+  <line x1="512" y1="160" x2="512" y2="920" stroke="rgba(20,16,36,0.08)" stroke-width="1"/>
+
+  <!-- ============================================================
+       SPOTLIGHTS (under each mascot stage)
+       ============================================================ -->
+  <circle cx="256" cy="360" r="220" fill="url(#spotClaude)"/>
+  <circle cx="768" cy="360" r="220" fill="url(#spotCodex)"/>
+  <circle cx="256" cy="720" r="220" fill="url(#spotGemini)"/>
+  <circle cx="768" cy="720" r="220" fill="url(#spotCursor)"/>
+
+  <!-- ============================================================
+       MASCOT 1 — CLAUDE  (top-left, target center 256,360)
+       Content ~100×82. Scale 3.2 → 320×262. translate(96, 229) puts visual center at (256, 360).
+       ============================================================ -->
+  <g transform="translate(96, 229) scale(3.2)" filter="url(#mascotShadow)">
+    <!-- ground shadow -->
+    <ellipse cx="50" cy="80" rx="22" ry="4.5" fill="#000" opacity="0.30"/>
+
+    <!-- Claude body (Anthropic orange #E07C4C) -->
+    <g>
+      <rect x="22" y="10" width="8" height="14" fill="#E07C4C"/>
+      <rect x="70" y="10" width="8" height="14" fill="#E07C4C"/>
+      <rect x="18" y="24" width="64" height="4" fill="#E07C4C"/>
+      <rect x="14" y="28" width="72" height="32" fill="#E07C4C"/>
+      <rect x="18" y="29" width="64" height="2" fill="#FFB48A" opacity="0.45"/>
+      <!-- eyes (looking forward) -->
+      <rect x="28" y="36" width="8" height="10" fill="#000"/>
+      <rect x="58" y="36" width="8" height="10" fill="#000"/>
+      <rect x="29" y="37" width="2" height="2" fill="#fff" opacity="0.9"/>
+      <rect x="59" y="37" width="2" height="2" fill="#fff" opacity="0.9"/>
+      <!-- smile -->
+      <path d="M 38 51 Q 50 56 62 51" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- arms -->
+      <rect x="2"  y="36" width="12" height="8" fill="#E07C4C"/>
+      <rect x="86" y="36" width="14" height="8" fill="#E07C4C"/>
+      <!-- legs + shoes -->
+      <rect x="24" y="60" width="12" height="10" fill="#E07C4C"/>
+      <rect x="22" y="70" width="16" height="6" rx="1" fill="#1a1a1a"/>
+      <rect x="64" y="60" width="12" height="10" fill="#E07C4C"/>
+      <rect x="62" y="70" width="16" height="6" rx="1" fill="#1a1a1a"/>
+    </g>
+
+  </g>
+
+  <!-- ============================================================
+       MASCOT 2 — CODEX (top-right, target center 768,360)
+       viewBox 100×110. Content center y ≈ 50. Scale 3.2:
+       tx = 768 - 50*3.2 = 608.  ty = 360 - 50*3.2 = 200.
+       ============================================================ -->
+  <g transform="translate(608, 200) scale(3.2)" filter="url(#mascotShadow)">
+    <!-- ground shadow -->
+    <ellipse cx="42" cy="102" rx="18" ry="4" fill="#4C1D95" opacity="0.30"/>
+
+    <!-- Codex body group -->
+    <g>
+      <!-- Cloud body — gradient rect clipped by overlapping-circles cloud silhouette -->
+      <g transform="translate(10, 18) scale(0.25)">
+        <rect x="0" y="0" width="256" height="256" fill="url(#cx-body)" clip-path="url(#cx-cloud)"/>
+      </g>
+
+      <!-- Specular highlight on cloud body -->
+      <rect x="16" y="24" width="14" height="8" fill="#C4B5FD" opacity="0.20" rx="2"/>
+      <rect x="18" y="26" width="8"  height="4" fill="#DDD6FE" opacity="0.15" rx="1"/>
+
+      <!-- Terminal "> _" on belly -->
+      <line x1="30" y1="60" x2="36" y2="66" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.90"/>
+      <line x1="36" y1="66" x2="30" y2="72" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.90"/>
+      <line x1="40" y1="72" x2="52" y2="72" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.90"/>
+
+      <!-- Eyes (forward, friendly) -->
+      <rect x="24" y="42" width="8" height="12" rx="2" fill="url(#cx-eye)" stroke="#4C1D95" stroke-width="1.5"/>
+      <rect x="44" y="42" width="8" height="12" rx="2" fill="url(#cx-eye)" stroke="#4C1D95" stroke-width="1.5"/>
+      <circle cx="28" cy="49" r="2.2" fill="#1A0A2E"/>
+      <circle cx="48" cy="49" r="2.2" fill="#1A0A2E"/>
+      <rect x="25" y="43" width="2.5" height="2.5" fill="#fff" opacity="0.85" rx="0.5"/>
+      <rect x="45" y="43" width="2.5" height="2.5" fill="#fff" opacity="0.85" rx="0.5"/>
+    </g>
+
+    <!-- Arms -->
+    <rect x="6"  y="48" width="12" height="6" rx="2" fill="url(#cx-arm)"/>
+    <rect x="66" y="48" width="12" height="6" rx="2" fill="url(#cx-arm)"/>
+    <rect x="7"  y="49" width="4" height="2" fill="#A78BFA" opacity="0.30" rx="0.5"/>
+    <rect x="67" y="49" width="4" height="2" fill="#A78BFA" opacity="0.30" rx="0.5"/>
+
+    <!-- Legs -->
+    <rect x="26" y="82" width="8" height="14" rx="2" fill="url(#cx-leg)"/>
+    <rect x="50" y="82" width="8" height="14" rx="2" fill="url(#cx-leg)"/>
+    <rect x="27" y="83" width="3" height="7" fill="#A78BFA" opacity="0.30" rx="0.5"/>
+    <rect x="51" y="83" width="3" height="7" fill="#A78BFA" opacity="0.30" rx="0.5"/>
+  </g>
+
+  <!-- ============================================================
+       MASCOT 3 — GEMINI (bottom-left, target center 256,720)
+       100×100 viewBox. Scale 3.2 → 320×320. translate(96, 560).
+       ============================================================ -->
+  <g transform="translate(96, 560) scale(3.2)" filter="url(#mascotShadow)">
+    <ellipse cx="42" cy="96" rx="20" ry="4" fill="#000" opacity="0.28"/>
+
+    <g transform="translate(10, 8)">
+      <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#gm-border)"/>
+      <rect x="2" y="1" width="40" height="3" rx="2" fill="#8AB8FF" opacity="0.3"/>
+      <rect x="5" y="5" width="54" height="54" rx="10" fill="url(#gm-inner)"/>
+      <rect x="8" y="7" width="28" height="4" rx="2" fill="#3A3A58" opacity="0.4"/>
+      <g transform="translate(14, 16)">
+        <polygon points="0,14 20,0 24,5 10,16" fill="url(#gm-chev)"/>
+        <polygon points="0,18 10,16 24,27 20,32" fill="url(#gm-chev)"/>
+        <polygon points="1,14.5 18,2 20,4 9,14" fill="#9CC0FF" opacity="0.25"/>
+      </g>
+    </g>
+
+    <!-- Eyes (forward) -->
+    <rect x="24" y="28" width="8" height="12" rx="2" fill="url(#gm-eye)"/>
+    <rect x="44" y="28" width="8" height="12" rx="2" fill="url(#gm-eye)"/>
+    <circle cx="28" cy="35" r="2.2" fill="#0A0A20"/>
+    <circle cx="48" cy="35" r="2.2" fill="#0A0A20"/>
+    <rect x="25" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.85" rx="0.5"/>
+    <rect x="45" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.85" rx="0.5"/>
+
+    <rect x="6"  y="42" width="12" height="6" rx="2" fill="url(#gm-armL)"/>
+    <rect x="66" y="42" width="12" height="6" rx="2" fill="url(#gm-armR)"/>
+    <rect x="7"  y="43" width="4" height="2" fill="#8AB8FF" opacity="0.3" rx="0.5"/>
+    <rect x="67" y="43" width="4" height="2" fill="#F08070" opacity="0.25" rx="0.5"/>
+
+    <rect x="26" y="72" width="8" height="14" rx="2" fill="url(#gm-legL)"/>
+    <rect x="50" y="72" width="8" height="14" rx="2" fill="url(#gm-legR)"/>
+    <rect x="27" y="73" width="3" height="7" fill="#6AA3FF" opacity="0.3" rx="0.5"/>
+    <rect x="51" y="73" width="3" height="7" fill="#F08070" opacity="0.25" rx="0.5"/>
+  </g>
+
+  <!-- ============================================================
+       MASCOT 4 — CURSOR (bottom-right, target center 768,720)
+       100×100 viewBox. Scale 3.2 → 320×320. translate(608, 560).
+       ============================================================ -->
+  <g transform="translate(608, 560) scale(3.2)" filter="url(#mascotShadow)">
+    <ellipse cx="42" cy="96" rx="20" ry="4" fill="#000" opacity="0.28"/>
+
+    <g transform="translate(10, 8) scale(0.13)">
+      <path fill="url(#cr-body)" d="M457.43,125.94L244.42,2.96c-6.84-3.95-15.28-3.95-22.12,0L9.3,125.94c-5.75,3.32-9.3,9.46-9.3,16.11v247.99c0,6.65,3.55,12.79,9.3,16.11l213.01,122.98c6.84,3.95,15.28,3.95,22.12,0l213.01-122.98c5.75-3.32,9.3-9.46,9.3-16.11v-247.99c0-6.65-3.55-12.79-9.3-16.11h-.01ZM444.05,151.99l-205.63,356.16c-1.39,2.4-5.06,1.42-5.06-1.36v-233.21c0-4.66-2.49-8.97-6.53-11.31L24.87,145.67c-2.4-1.39-1.42-5.06,1.36-5.06h411.26c5.84,0,9.49,6.33,6.57,11.39h-.01Z"/>
+    </g>
+
+    <!-- Eyes (forward, friendly) -->
+    <rect x="26" y="34" width="9" height="13" rx="2.5" fill="url(#cr-eye)"/>
+    <rect x="46" y="34" width="9" height="13" rx="2.5" fill="url(#cr-eye)"/>
+    <circle cx="30.5" cy="41" r="2.4" fill="#0A0A05"/>
+    <circle cx="50.5" cy="41" r="2.4" fill="#0A0A05"/>
+    <rect x="27" y="35" width="2.6" height="2.6" fill="#fff" opacity="0.85" rx="0.5"/>
+    <rect x="47" y="35" width="2.6" height="2.6" fill="#fff" opacity="0.85" rx="0.5"/>
+
+    <rect x="14" y="14" width="16" height="8" fill="#5A5948" opacity="0.25" rx="2"/>
+    <rect x="16" y="16" width="8" height="4" fill="#6A6958" opacity="0.18" rx="1"/>
+
+    <rect x="6"  y="42" width="12" height="6" rx="2" fill="url(#cr-arm)"/>
+    <rect x="66" y="42" width="12" height="6" rx="2" fill="url(#cr-arm)"/>
+    <rect x="7"  y="43" width="4" height="2" fill="#4A493A" opacity="0.3" rx="0.5"/>
+    <rect x="67" y="43" width="4" height="2" fill="#4A493A" opacity="0.3" rx="0.5"/>
+
+    <rect x="26" y="72" width="8" height="14" rx="2" fill="url(#cr-leg)"/>
+    <rect x="50" y="72" width="8" height="14" rx="2" fill="url(#cr-leg)"/>
+    <rect x="27" y="73" width="3" height="7" fill="#3A3928" opacity="0.3" rx="0.5"/>
+    <rect x="51" y="73" width="3" height="7" fill="#3A3928" opacity="0.3" rx="0.5"/>
+  </g>
+
+  <!-- ============================================================
+       CENTER "AI" BADGE  (covers grid intersection)
+       ============================================================ -->
+  <g transform="translate(512, 540)">
+    <circle r="68" fill="#1A1024" opacity="0.85"/>
+    <circle r="60" fill="url(#badgeGrad)" stroke="#fff" stroke-width="3"/>
+    <text y="17" text-anchor="middle"
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+          font-size="54" font-weight="900" fill="#1A1024" letter-spacing="2">AI</text>
+    <!-- Orbiting dots: one per mascot, color-matched to its quadrant -->
+    <circle cx="0"   cy="-68" r="2.5" fill="#E07C4C"/> <!-- Claude up    -->
+    <circle cx="68"  cy="0"   r="2.5" fill="#9333EA"/> <!-- Codex right  -->
+    <circle cx="0"   cy="68"  r="2.5" fill="#7B68EE"/> <!-- Gemini down  -->
+    <circle cx="-68" cy="0"   r="2.5" fill="#3A3928"/> <!-- Cursor left  -->
+  </g>
+</svg>

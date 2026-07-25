@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <defs>
+    <linearGradient id="cloudGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#9333EA"/>
+      <stop offset="30%" stop-color="#7C3AED"/>
+      <stop offset="55%" stop-color="#5B6CF0"/>
+      <stop offset="80%" stop-color="#3B9AEE"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <clipPath id="cloudClip">
+      <circle cx="128" cy="68" r="56"/>
+      <circle cx="192" cy="100" r="54"/>
+      <circle cx="188" cy="168" r="54"/>
+      <circle cx="128" cy="192" r="54"/>
+      <circle cx="68" cy="168" r="54"/>
+      <circle cx="64" cy="100" r="54"/>
+      <!-- Center fill to close the gap -->
+      <circle cx="128" cy="130" r="60"/>
+    </clipPath>
+  </defs>
+
+  <!-- Unified cloud shape -->
+  <rect x="0" y="0" width="256" height="256" fill="url(#cloudGrad)" clip-path="url(#cloudClip)"/>
+
+  <!-- Terminal chevron ">" -->
+  <line x1="82" y1="108" x2="106" y2="132" stroke="white" stroke-width="10" stroke-linecap="round"/>
+  <line x1="106" y1="132" x2="82" y2="156" stroke="white" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Underscore "_" -->
+  <line x1="126" y1="156" x2="162" y2="156" stroke="white" stroke-width="10" stroke-linecap="round"/>
+</svg>

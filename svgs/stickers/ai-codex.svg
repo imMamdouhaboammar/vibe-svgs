@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>AI Community — Codex</title>
+
+  <defs>
+    <linearGradient id="cx-body" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#9333EA"/>
+      <stop offset="30%" stop-color="#7C3AED"/>
+      <stop offset="55%" stop-color="#5B6CF0"/>
+      <stop offset="80%" stop-color="#3B9AEE"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="cx-arm" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <linearGradient id="cx-leg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <radialGradient id="cx-eye" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+    <clipPath id="cx-cloud">
+      <circle cx="128" cy="68" r="56"/>
+      <circle cx="192" cy="100" r="54"/>
+      <circle cx="188" cy="168" r="54"/>
+      <circle cx="128" cy="192" r="54"/>
+      <circle cx="68"  cy="168" r="54"/>
+      <circle cx="64"  cy="100" r="54"/>
+      <circle cx="128" cy="130" r="60"/>
+    </clipPath>
+
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9333EA" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#22D3EE" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mascotShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#4C1D95" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <!-- Background: warm cream -->
+  <rect x="0" y="0" width="1024" height="1024" rx="120" fill="#F2EAD8"/>
+
+  <!-- Inner subtle frame -->
+  <rect x="40" y="40" width="944" height="944" rx="92" fill="none" stroke="rgba(20,16,36,0.10)" stroke-width="2"/>
+
+  <!-- Spotlight halo behind mascot -->
+  <circle cx="512" cy="512" r="440" fill="url(#halo)"/>
+
+  <!-- Decorative accent dots (Codex purple) -->
+  <g fill="#7C3AED" opacity="0.45">
+    <circle cx="120" cy="160" r="5"/>
+    <circle cx="904" cy="160" r="5"/>
+    <circle cx="120" cy="864" r="5"/>
+    <circle cx="904" cy="864" r="5"/>
+    <circle cx="180" cy="220" r="3" fill="#22D3EE"/>
+    <circle cx="844" cy="220" r="3" fill="#22D3EE"/>
+    <circle cx="180" cy="804" r="3" fill="#22D3EE"/>
+    <circle cx="844" cy="804" r="3" fill="#22D3EE"/>
+  </g>
+
+  <!-- ============================================================
+       CODEX mascot — centered, scale 9.5
+       Content center ≈ (42, 52) in 100×110 viewBox.
+       tx = 512 - 42*9.5 = 113
+       ty = 512 - 52*9.5 = 18
+       ============================================================ -->
+  <g transform="translate(113, 18) scale(9.5)" filter="url(#mascotShadow)">
+    <!-- ground shadow -->
+    <ellipse cx="42" cy="102" rx="18" ry="4" fill="#4C1D95" opacity="0.30"/>
+
+    <g>
+      <!-- Cloud body — gradient rect clipped by overlapping-circles cloud -->
+      <g transform="translate(10, 18) scale(0.25)">
+        <rect x="0" y="0" width="256" height="256" fill="url(#cx-body)" clip-path="url(#cx-cloud)"/>
+      </g>
+
+      <!-- Specular highlight on cloud body -->
+      <rect x="16" y="24" width="14" height="8" fill="#C4B5FD" opacity="0.20" rx="2"/>
+      <rect x="18" y="26" width="8"  height="4" fill="#DDD6FE" opacity="0.15" rx="1"/>
+
+      <!-- Terminal "> _" on belly -->
+      <line x1="30" y1="60" x2="36" y2="66" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.90"/>
+      <line x1="36" y1="66" x2="30" y2="72" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.90"/>
+      <line x1="40" y1="72" x2="52" y2="72" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.90"/>
+
+      <!-- Eyes -->
+      <rect x="24" y="42" width="8" height="12" rx="2" fill="url(#cx-eye)" stroke="#4C1D95" stroke-width="1.5"/>
+      <rect x="44" y="42" width="8" height="12" rx="2" fill="url(#cx-eye)" stroke="#4C1D95" stroke-width="1.5"/>
+      <circle cx="28" cy="49" r="2.2" fill="#1A0A2E"/>
+      <circle cx="48" cy="49" r="2.2" fill="#1A0A2E"/>
+      <rect x="25" y="43" width="2.5" height="2.5" fill="#fff" opacity="0.85" rx="0.5"/>
+      <rect x="45" y="43" width="2.5" height="2.5" fill="#fff" opacity="0.85" rx="0.5"/>
+    </g>
+
+    <!-- Arms -->
+    <rect x="6"  y="48" width="12" height="6" rx="2" fill="url(#cx-arm)"/>
+    <rect x="66" y="48" width="12" height="6" rx="2" fill="url(#cx-arm)"/>
+    <rect x="7"  y="49" width="4" height="2" fill="#A78BFA" opacity="0.30" rx="0.5"/>
+    <rect x="67" y="49" width="4" height="2" fill="#A78BFA" opacity="0.30" rx="0.5"/>
+
+    <!-- Legs -->
+    <rect x="26" y="82" width="8" height="14" rx="2" fill="url(#cx-leg)"/>
+    <rect x="50" y="82" width="8" height="14" rx="2" fill="url(#cx-leg)"/>
+    <rect x="27" y="83" width="3" height="7" fill="#A78BFA" opacity="0.30" rx="0.5"/>
+    <rect x="51" y="83" width="3" height="7" fill="#A78BFA" opacity="0.30" rx="0.5"/>
+  </g>
+</svg>

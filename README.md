@@ -1,10 +1,18 @@
 <p align="center">
-  <img src="svgs/banners/banner-vibe-coding-arena.svg" alt="Vibe Coding Arena Banner" width="100%">
+  <img src="svgs/banners/banner-pills.svg" alt="AI Coding Tools" width="100%">
 </p>
 
-<h1 align="center">✨ Vibe SVGs & Badges ✨</h1>
+<h1 align="center">✨ Agentic Engineering & Vibe Coding SVGs ✨</h1>
+
 <p align="center">
-  <b>Official, high-quality animated vector SVGs, badges, logos, and 3D AI agent mascots for Vibe Coders, AI Engineers, and Agentic Developers!</b>
+  <img src="svgs/mascots/claude-mascot.svg" alt="Claude Mascot" width="180">
+  <img src="svgs/mascots/codex-mascot.svg" alt="Codex Mascot" width="180">
+  <img src="svgs/mascots/cursor-mascot.svg" alt="Cursor Mascot" width="180">
+  <img src="svgs/mascots/gemini-mascot.svg" alt="Gemini Mascot" width="180">
+</p>
+
+<p align="center">
+  <img src="svgs/banners/banner-models.svg" alt="AI Models" width="100%">
 </p>
 
 <p align="center">
@@ -17,27 +25,25 @@
 
 ---
 
-## 🤖 Authentic 3D AI Mascots
+## 🤖 Official 3D AI Mascots Gallery
 
-| Mascot | Preview | Markdown Copy Snippet |
-| :--- | :---: | :--- |
-| **Claude Code**<br>*(Authentic 3D Mascot)* | <img src="svgs/mascots/claude-mascot.svg" width="180"> | `![Claude](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-mascot.svg)` |
-| **Cursor AI**<br>*(Authentic 3D Mascot)* | <img src="svgs/mascots/cursor-mascot.svg" width="180"> | `![Cursor](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/cursor-mascot.svg)` |
-| **Google Gemini**<br>*(Authentic Mascot)* | <img src="svgs/mascots/gemini-mascot.svg" width="180"> | `![Gemini](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/gemini-mascot.svg)` |
-| **OpenAI / Codex**<br>*(Authentic Mascot)* | <img src="svgs/mascots/codex-mascot.svg" width="180"> | `![Codex](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/codex-mascot.svg)` |
-| **DeepSeek**<br>*(Whale Mascot)* | <img src="svgs/mascots/deepseek-mascot.svg" width="180"> | `![DeepSeek](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/deepseek-mascot.svg)` |
-| **GitHub Copilot**<br>*(Visor Mascot)* | <img src="svgs/mascots/copilot-mascot.svg" width="180"> | `![Copilot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/copilot-mascot.svg)` |
+| Mascot | Standalone | Animated Jumping | Speaking & Reasoning |
+| :--- | :---: | :---: | :---: |
+| **Claude Code** | <img src="svgs/mascots/claude-mascot.svg" width="120"> | <img src="svgs/mascots/claude-jumping.svg" width="120"> | <img src="svgs/mascots/claude-speaking.svg" width="120"> |
+| **OpenAI / Codex** | <img src="svgs/mascots/codex-mascot.svg" width="120"> | <img src="svgs/mascots/codex-jumping.svg" width="120"> | <img src="svgs/mascots/codex-speaking.svg" width="120"> |
+| **Google Gemini** | <img src="svgs/mascots/gemini-mascot.svg" width="120"> | <img src="svgs/mascots/gemini-jumping.svg" width="120"> | <img src="svgs/mascots/gemini-speaking.svg" width="120"> |
+| **Cursor AI** | <img src="svgs/mascots/cursor-mascot.svg" width="120"> | — | — |
 
 ---
 
-## 🎨 Official Brand Vector Logos
+## 💬 AI Community WhatsApp Stickers (SVG)
 
-| Brand | Preview | Markdown Copy Snippet |
-| :--- | :---: | :--- |
-| **Claude Logo** | <img src="svgs/logos/claude-logo.svg" width="60"> | `![Claude Logo](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/claude-logo.svg)` |
-| **Cursor Logo** | <img src="svgs/logos/cursor-logo.svg" width="60"> | `![Cursor Logo](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/cursor-logo.svg)` |
-| **Gemini Logo** | <img src="svgs/logos/gemini-logo.svg" width="60"> | `![Gemini Logo](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/gemini-logo.svg)` |
-| **OpenAI Logo** | <img src="svgs/logos/openai-logo.svg" width="60"> | `![OpenAI Logo](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/openai-logo.svg)` |
+<p align="center">
+  <img src="svgs/stickers/ai-claude.svg" width="160">
+  <img src="svgs/stickers/ai-codex.svg" width="160">
+  <img src="svgs/stickers/ai-cursor.svg" width="160">
+  <img src="svgs/stickers/ai-gemini.svg" width="160">
+</p>
 
 ---
 
@@ -55,7 +61,7 @@
 
 ---
 
-## 📊 Banners & Flowcharts
+## 📊 Flowcharts & Banners
 
 <p align="center">
   <b>Agentic Engineering Workflow Flowchart</b><br>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>AI Community — Claude</title>
+
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E07C4C" stop-opacity="0.30"/>
+      <stop offset="60%" stop-color="#E07C4C" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#E07C4C" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mascotShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+
+  <!-- Background: warm cream -->
+  <rect x="0" y="0" width="1024" height="1024" rx="120" fill="#F2EAD8"/>
+
+  <!-- Inner subtle frame -->
+  <rect x="40" y="40" width="944" height="944" rx="92" fill="none" stroke="rgba(20,16,36,0.10)" stroke-width="2"/>
+
+  <!-- Spotlight halo behind mascot -->
+  <circle cx="512" cy="512" r="440" fill="url(#halo)"/>
+
+  <!-- Decorative accent dots (Claude orange) -->
+  <g fill="#E07C4C" opacity="0.45">
+    <circle cx="120" cy="160" r="5"/>
+    <circle cx="904" cy="160" r="5"/>
+    <circle cx="120" cy="864" r="5"/>
+    <circle cx="904" cy="864" r="5"/>
+    <circle cx="180" cy="220" r="3"/>
+    <circle cx="844" cy="220" r="3"/>
+    <circle cx="180" cy="804" r="3"/>
+    <circle cx="844" cy="804" r="3"/>
+  </g>
+
+  <!-- ============================================================
+       CLAUDE mascot — centered, scale 7.5
+       Content center ≈ (50, 41) in 160×82 viewBox.
+       tx = 512 - 50*7.5 = 137
+       ty = 512 - 41*7.5 = 204.5
+       ============================================================ -->
+  <g transform="translate(137, 205) scale(7.5)" filter="url(#mascotShadow)">
+    <!-- ground shadow -->
+    <ellipse cx="50" cy="80" rx="22" ry="4.5" fill="#000" opacity="0.30"/>
+
+    <!-- Claude body (Anthropic orange) -->
+    <g>
+      <!-- ears -->
+      <rect x="22" y="10" width="8" height="14" fill="#E07C4C"/>
+      <rect x="70" y="10" width="8" height="14" fill="#E07C4C"/>
+      <!-- body -->
+      <rect x="18" y="24" width="64" height="4" fill="#E07C4C"/>
+      <rect x="14" y="28" width="72" height="32" fill="#E07C4C"/>
+      <rect x="18" y="29" width="64" height="2" fill="#FFB48A" opacity="0.45"/>
+      <!-- eyes -->
+      <rect x="28" y="36" width="8" height="10" fill="#000"/>
+      <rect x="58" y="36" width="8" height="10" fill="#000"/>
+      <rect x="29" y="37" width="2" height="2" fill="#fff" opacity="0.9"/>
+      <rect x="59" y="37" width="2" height="2" fill="#fff" opacity="0.9"/>
+      <!-- smile -->
+      <path d="M 38 51 Q 50 56 62 51" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- arms -->
+      <rect x="2"  y="36" width="12" height="8" fill="#E07C4C"/>
+      <rect x="86" y="36" width="14" height="8" fill="#E07C4C"/>
+      <!-- legs + shoes -->
+      <rect x="24" y="60" width="12" height="10" fill="#E07C4C"/>
+      <rect x="22" y="70" width="16" height="6" rx="1" fill="#1a1a1a"/>
+      <rect x="64" y="60" width="12" height="10" fill="#E07C4C"/>
+      <rect x="62" y="70" width="16" height="6" rx="1" fill="#1a1a1a"/>
+    </g>
+  </g>
+</svg>

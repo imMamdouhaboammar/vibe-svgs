@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>AI Community — Cursor</title>
+
+  <defs>
+    <linearGradient id="cr-body" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#4A493A"/>
+      <stop offset="50%" stop-color="#363528"/>
+      <stop offset="100%" stop-color="#141410"/>
+    </linearGradient>
+    <radialGradient id="cr-eye" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+    <linearGradient id="cr-arm" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#1E1D18"/>
+      <stop offset="50%" stop-color="#333228"/>
+      <stop offset="100%" stop-color="#1A1A14"/>
+    </linearGradient>
+    <linearGradient id="cr-leg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#333228"/>
+      <stop offset="100%" stop-color="#111110"/>
+    </linearGradient>
+
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3A3928" stop-opacity="0.26"/>
+      <stop offset="60%" stop-color="#3A3928" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#3A3928" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mascotShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <!-- Background: warm cream -->
+  <rect x="0" y="0" width="1024" height="1024" rx="120" fill="#F2EAD8"/>
+
+  <!-- Inner subtle frame -->
+  <rect x="40" y="40" width="944" height="944" rx="92" fill="none" stroke="rgba(20,16,36,0.10)" stroke-width="2"/>
+
+  <!-- Spotlight halo behind mascot -->
+  <circle cx="512" cy="512" r="440" fill="url(#halo)"/>
+
+  <!-- Decorative accent dots (Cursor olive) -->
+  <g fill="#3A3928" opacity="0.55">
+    <circle cx="120" cy="160" r="5"/>
+    <circle cx="904" cy="160" r="5"/>
+    <circle cx="120" cy="864" r="5"/>
+    <circle cx="904" cy="864" r="5"/>
+    <circle cx="180" cy="220" r="3"/>
+    <circle cx="844" cy="220" r="3"/>
+    <circle cx="180" cy="804" r="3"/>
+    <circle cx="844" cy="804" r="3"/>
+  </g>
+
+  <!-- ============================================================
+       CURSOR mascot — centered, scale 9.5
+       Visual content center ≈ (42, 47) in 100×100 viewBox.
+       tx = 512 - 42*9.5 = 113
+       ty = 512 - 47*9.5 = 65.5
+       ============================================================ -->
+  <g transform="translate(113, 66) scale(9.5)" filter="url(#mascotShadow)">
+    <!-- ground shadow -->
+    <ellipse cx="42" cy="96" rx="20" ry="4" fill="#000" opacity="0.28"/>
+
+    <g transform="translate(10, 8) scale(0.13)">
+      <path fill="url(#cr-body)" d="M457.43,125.94L244.42,2.96c-6.84-3.95-15.28-3.95-22.12,0L9.3,125.94c-5.75,3.32-9.3,9.46-9.3,16.11v247.99c0,6.65,3.55,12.79,9.3,16.11l213.01,122.98c6.84,3.95,15.28,3.95,22.12,0l213.01-122.98c5.75-3.32,9.3-9.46,9.3-16.11v-247.99c0-6.65-3.55-12.79-9.3-16.11h-.01ZM444.05,151.99l-205.63,356.16c-1.39,2.4-5.06,1.42-5.06-1.36v-233.21c0-4.66-2.49-8.97-6.53-11.31L24.87,145.67c-2.4-1.39-1.42-5.06,1.36-5.06h411.26c5.84,0,9.49,6.33,6.57,11.39h-.01Z"/>
+    </g>
+
+    <!-- Eyes -->
+    <rect x="26" y="34" width="9" height="13" rx="2.5" fill="url(#cr-eye)"/>
+    <rect x="46" y="34" width="9" height="13" rx="2.5" fill="url(#cr-eye)"/>
+    <circle cx="30.5" cy="41" r="2.4" fill="#0A0A05"/>
+    <circle cx="50.5" cy="41" r="2.4" fill="#0A0A05"/>
+    <rect x="27" y="35" width="2.6" height="2.6" fill="#fff" opacity="0.85" rx="0.5"/>
+    <rect x="47" y="35" width="2.6" height="2.6" fill="#fff" opacity="0.85" rx="0.5"/>
+
+    <rect x="14" y="14" width="16" height="8" fill="#5A5948" opacity="0.25" rx="2"/>
+    <rect x="16" y="16" width="8" height="4" fill="#6A6958" opacity="0.18" rx="1"/>
+
+    <rect x="6"  y="42" width="12" height="6" rx="2" fill="url(#cr-arm)"/>
+    <rect x="66" y="42" width="12" height="6" rx="2" fill="url(#cr-arm)"/>
+    <rect x="7"  y="43" width="4" height="2" fill="#4A493A" opacity="0.3" rx="0.5"/>
+    <rect x="67" y="43" width="4" height="2" fill="#4A493A" opacity="0.3" rx="0.5"/>
+
+    <rect x="26" y="72" width="8" height="14" rx="2" fill="url(#cr-leg)"/>
+    <rect x="50" y="72" width="8" height="14" rx="2" fill="url(#cr-leg)"/>
+    <rect x="27" y="73" width="3" height="7" fill="#3A3928" opacity="0.3" rx="0.5"/>
+    <rect x="51" y="73" width="3" height="7" fill="#3A3928" opacity="0.3" rx="0.5"/>
+  </g>
+</svg>

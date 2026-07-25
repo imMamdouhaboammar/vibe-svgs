@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>AI Community — Gemini</title>
+
+  <defs>
+    <linearGradient id="gm-border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6AA3FF"/>
+      <stop offset="25%" stop-color="#4285F4"/>
+      <stop offset="50%" stop-color="#9080F0"/>
+      <stop offset="75%" stop-color="#EA4335"/>
+      <stop offset="100%" stop-color="#C03028"/>
+    </linearGradient>
+    <linearGradient id="gm-inner" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#282840"/>
+      <stop offset="50%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0E0E1A"/>
+    </linearGradient>
+    <linearGradient id="gm-chev" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6AA3FF"/>
+      <stop offset="30%" stop-color="#4285F4"/>
+      <stop offset="60%" stop-color="#9080F0"/>
+      <stop offset="100%" stop-color="#EA4335"/>
+    </linearGradient>
+    <linearGradient id="gm-armL" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#3570D0"/>
+      <stop offset="100%" stop-color="#7B68EE"/>
+    </linearGradient>
+    <linearGradient id="gm-armR" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#D04535"/>
+      <stop offset="100%" stop-color="#C03028"/>
+    </linearGradient>
+    <linearGradient id="gm-legL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="100%" stop-color="#5040A0"/>
+    </linearGradient>
+    <linearGradient id="gm-legR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B84030"/>
+      <stop offset="100%" stop-color="#D03828"/>
+    </linearGradient>
+    <radialGradient id="gm-eye" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7B68EE" stop-opacity="0.26"/>
+      <stop offset="60%" stop-color="#EA4335" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#EA4335" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mascotShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+
+  <!-- Background: warm cream -->
+  <rect x="0" y="0" width="1024" height="1024" rx="120" fill="#F2EAD8"/>
+
+  <!-- Inner subtle frame -->
+  <rect x="40" y="40" width="944" height="944" rx="92" fill="none" stroke="rgba(20,16,36,0.10)" stroke-width="2"/>
+
+  <!-- Spotlight halo behind mascot -->
+  <circle cx="512" cy="512" r="440" fill="url(#halo)"/>
+
+  <!-- Decorative accent dots (Gemini brand colors) -->
+  <g opacity="0.55">
+    <circle cx="120" cy="160" r="5" fill="#4285F4"/>
+    <circle cx="904" cy="160" r="5" fill="#EA4335"/>
+    <circle cx="120" cy="864" r="5" fill="#EA4335"/>
+    <circle cx="904" cy="864" r="5" fill="#4285F4"/>
+    <circle cx="180" cy="220" r="3" fill="#9080F0"/>
+    <circle cx="844" cy="220" r="3" fill="#9080F0"/>
+    <circle cx="180" cy="804" r="3" fill="#9080F0"/>
+    <circle cx="844" cy="804" r="3" fill="#9080F0"/>
+  </g>
+
+  <!-- ============================================================
+       GEMINI mascot — centered, scale 9.5
+       Visual content center ≈ (42, 47) in 100×100 viewBox.
+       tx = 512 - 42*9.5 = 113
+       ty = 512 - 47*9.5 = 65.5
+       ============================================================ -->
+  <g transform="translate(113, 66) scale(9.5)" filter="url(#mascotShadow)">
+    <!-- ground shadow -->
+    <ellipse cx="42" cy="96" rx="20" ry="4" fill="#000" opacity="0.28"/>
+
+    <g transform="translate(10, 8)">
+      <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#gm-border)"/>
+      <rect x="2" y="1" width="40" height="3" rx="2" fill="#8AB8FF" opacity="0.3"/>
+      <rect x="5" y="5" width="54" height="54" rx="10" fill="url(#gm-inner)"/>
+      <rect x="8" y="7" width="28" height="4" rx="2" fill="#3A3A58" opacity="0.4"/>
+      <g transform="translate(14, 16)">
+        <polygon points="0,14 20,0 24,5 10,16" fill="url(#gm-chev)"/>
+        <polygon points="0,18 10,16 24,27 20,32" fill="url(#gm-chev)"/>
+        <polygon points="1,14.5 18,2 20,4 9,14" fill="#9CC0FF" opacity="0.25"/>
+      </g>
+    </g>
+
+    <!-- Eyes -->
+    <rect x="24" y="28" width="8" height="12" rx="2" fill="url(#gm-eye)"/>
+    <rect x="44" y="28" width="8" height="12" rx="2" fill="url(#gm-eye)"/>
+    <circle cx="28" cy="35" r="2.2" fill="#0A0A20"/>
+    <circle cx="48" cy="35" r="2.2" fill="#0A0A20"/>
+    <rect x="25" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.85" rx="0.5"/>
+    <rect x="45" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.85" rx="0.5"/>
+
+    <rect x="6"  y="42" width="12" height="6" rx="2" fill="url(#gm-armL)"/>
+    <rect x="66" y="42" width="12" height="6" rx="2" fill="url(#gm-armR)"/>
+    <rect x="7"  y="43" width="4" height="2" fill="#8AB8FF" opacity="0.3" rx="0.5"/>
+    <rect x="67" y="43" width="4" height="2" fill="#F08070" opacity="0.25" rx="0.5"/>
+
+    <rect x="26" y="72" width="8" height="14" rx="2" fill="url(#gm-legL)"/>
+    <rect x="50" y="72" width="8" height="14" rx="2" fill="url(#gm-legR)"/>
+    <rect x="27" y="73" width="3" height="7" fill="#6AA3FF" opacity="0.3" rx="0.5"/>
+    <rect x="51" y="73" width="3" height="7" fill="#F08070" opacity="0.25" rx="0.5"/>
+  </g>
+</svg>
