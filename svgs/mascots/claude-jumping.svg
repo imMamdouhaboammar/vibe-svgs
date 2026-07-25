@@ -1,88 +1,152 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" width="140" height="126">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="claude-jumping-title claude-jumping-desc">
+  <title id="claude-jumping-title">Claude community mascot jumping</title>
+  <desc id="claude-jumping-desc">A rounded terracotta coding character anticipates, lifts, reaches an apex, lands with compression, and recovers while the shadow reacts to height.</desc>
+  <defs>
+    <linearGradient id="claude-jumping-body-gradient" x1="0.1" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#F7B58E"/>
+      <stop offset="0.5" stop-color="#E98452"/>
+      <stop offset="1" stop-color="#B7512A"/>
+    </linearGradient>
+    <linearGradient id="claude-jumping-limb-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EA8F5E"/>
+      <stop offset="1" stop-color="#AA4524"/>
+    </linearGradient>
+    <radialGradient id="claude-jumping-shadow-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#3C2118" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#3C2118" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="claude-jumping-soft-shadow" x="-25%" y="-25%" width="150%" height="165%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#552718" flood-opacity="0.2"/>
+    </filter>
+  </defs>
   <style>
-    .claude-body {
-      animation: jump 0.5s ease-in-out infinite;
-      transform-origin: center bottom;
+    .claude-jumping-shadow {
+      animation: claude-jumping-shadow-motion 1.05s cubic-bezier(.38,.02,.2,1) infinite;
+      transform-box: view-box;
+      transform-origin: 60px 108px;
     }
-    .shadow {
-      animation: shadow-scale 0.5s ease-in-out infinite;
+    .claude-jumping-character-position {
+      animation: claude-jumping-position-motion 1.05s cubic-bezier(.38,.02,.2,1) infinite;
+      transform-box: view-box;
+      transform-origin: 60px 103px;
     }
-    .left-arm {
-      animation: wave-left 0.5s ease-in-out infinite;
-      transform-origin: right center;
+    .claude-jumping-character-rotation {
+      animation: claude-jumping-rotation-motion 1.05s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 76px;
     }
-    .right-arm {
-      animation: wave-right 0.5s ease-in-out infinite;
-      transform-origin: left center;
+    .claude-jumping-character-squash {
+      animation: claude-jumping-squash-motion 1.05s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 98px;
     }
-    .left-ear {
-      animation: ear-bounce 0.5s ease-in-out infinite;
-      transform-origin: center bottom;
+    .claude-jumping-left-arm {
+      animation: claude-jumping-left-arm-motion 1.05s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 31px 61px;
     }
-    .right-ear {
-      animation: ear-bounce 0.5s ease-in-out infinite 0.1s;
-      transform-origin: center bottom;
+    .claude-jumping-right-arm {
+      animation: claude-jumping-right-arm-motion 1.05s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 89px 61px;
     }
-    @keyframes jump {
-      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
-      30% { transform: translateY(-16px) scaleY(1.1) scaleX(0.95); }
-      50% { transform: translateY(-18px) scaleY(1.05) scaleX(0.98); }
-      80% { transform: translateY(-5px) scaleY(0.95) scaleX(1.05); }
+    .claude-jumping-left-leg {
+      animation: claude-jumping-left-leg-motion 1.05s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 47px 91px;
     }
-    @keyframes shadow-scale {
-      0%, 100% { transform: scaleX(1); opacity: 0.25; }
-      50% { transform: scaleX(0.4); opacity: 0.08; }
+    .claude-jumping-right-leg {
+      animation: claude-jumping-right-leg-motion 1.05s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 73px 91px;
     }
-    @keyframes wave-left {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-25deg); }
+    @keyframes claude-jumping-shadow-motion {
+      0%, 12%, 100% { transform: scaleX(1); opacity: .34; }
+      40%, 58% { transform: scaleX(.48); opacity: .12; }
+      78% { transform: scaleX(1.08); opacity: .38; }
     }
-    @keyframes wave-right {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(25deg); }
+    @keyframes claude-jumping-position-motion {
+      0%, 12%, 100% { transform: translateY(0); }
+      22% { transform: translateY(-4px); }
+      45%, 55% { transform: translateY(-28px); }
+      72% { transform: translateY(-7px); }
+      78% { transform: translateY(1px); }
     }
-    @keyframes ear-bounce {
-      0%, 100% { transform: scaleY(1); }
-      40% { transform: scaleY(1.2); }
-      60% { transform: scaleY(0.85); }
+    @keyframes claude-jumping-rotation-motion {
+      0%, 12%, 100% { transform: rotate(0deg); }
+      28% { transform: rotate(-4deg); }
+      52% { transform: rotate(2deg); }
+      78% { transform: rotate(0deg); }
+    }
+    @keyframes claude-jumping-squash-motion {
+      0%, 100% { transform: scale(1); }
+      12% { transform: scale(1.08,.87); }
+      26% { transform: scale(.95,1.08); }
+      52% { transform: scale(.98,1.03); }
+      78% { transform: scale(1.1,.84); }
+      88% { transform: scale(.98,1.04); }
+    }
+    @keyframes claude-jumping-left-arm-motion {
+      0%, 12%, 100% { transform: rotate(8deg); }
+      38%, 58% { transform: rotate(-42deg); }
+      78% { transform: rotate(18deg); }
+    }
+    @keyframes claude-jumping-right-arm-motion {
+      0%, 12%, 100% { transform: rotate(-8deg); }
+      38%, 58% { transform: rotate(42deg); }
+      78% { transform: rotate(-18deg); }
+    }
+    @keyframes claude-jumping-left-leg-motion {
+      0%, 12%, 100% { transform: rotate(0deg); }
+      38%, 58% { transform: rotate(18deg); }
+      78% { transform: rotate(-8deg); }
+    }
+    @keyframes claude-jumping-right-leg-motion {
+      0%, 12%, 100% { transform: rotate(0deg); }
+      38%, 58% { transform: rotate(-18deg); }
+      78% { transform: rotate(8deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <!-- Shadow -->
-  <ellipse class="shadow" cx="50" cy="82" rx="22" ry="5" fill="#000"/>
+  <ellipse class="claude-jumping-shadow" data-animated="true" cx="60" cy="108" rx="31" ry="6.5" fill="url(#claude-jumping-shadow-gradient)"/>
 
-  <!-- Claude Character Group -->
-  <g class="claude-body">
-    <!-- Claude Orange: #E07C4C -->
+  <g class="claude-jumping-character-position" data-animated="true">
+    <g class="claude-jumping-character-rotation" data-animated="true">
+      <g class="claude-jumping-character-squash" data-animated="true" filter="url(#claude-jumping-soft-shadow)">
+        <g aria-hidden="true">
+          <g class="claude-jumping-left-leg" data-animated="true">
+            <path d="M40 84 C38 92 39 101 44 104 C48 107 53 104 53 99 L52 84 Z" fill="url(#claude-jumping-limb-gradient)"/>
+            <ellipse cx="47" cy="102" rx="8.5" ry="4" fill="#8D3921"/>
+          </g>
+          <g class="claude-jumping-right-leg" data-animated="true">
+            <path d="M68 84 L67 99 C67 104 72 107 76 104 C82 100 82 91 79 84 Z" fill="url(#claude-jumping-limb-gradient)"/>
+            <ellipse cx="74" cy="102" rx="8.5" ry="4" fill="#8D3921"/>
+          </g>
+        </g>
 
-    <!-- Left ear -->
-    <rect class="left-ear" x="22" y="10" width="8" height="14" fill="#E07C4C"/>
+        <g class="claude-jumping-left-arm" data-animated="true">
+          <path d="M34 55 C22 56 16 63 18 72 C20 79 27 81 33 76 L40 68 Z" fill="url(#claude-jumping-limb-gradient)"/>
+          <circle cx="21" cy="71" r="5.3" fill="#D86D43"/>
+        </g>
+        <g class="claude-jumping-right-arm" data-animated="true">
+          <path d="M86 55 C98 56 104 63 102 72 C100 79 93 81 87 76 L80 68 Z" fill="url(#claude-jumping-limb-gradient)"/>
+          <circle cx="99" cy="71" r="5.3" fill="#D86D43"/>
+        </g>
 
-    <!-- Right ear -->
-    <rect class="right-ear" x="70" y="10" width="8" height="14" fill="#E07C4C"/>
+        <rect x="29" y="29" width="62" height="59" rx="23" fill="url(#claude-jumping-body-gradient)"/>
+        <path d="M35 39 C46 29 70 27 84 38 C72 34 54 36 42 44 C38 47 35 46 35 39 Z" fill="#FFD2B7" opacity=".34"/>
+        <path d="M31 69 C44 82 74 89 89 67 L89 77 C83 87 73 90 60 90 C45 90 36 85 31 77 Z" fill="#8F3A20" opacity=".18"/>
 
-    <!-- Main body - top row (narrower) -->
-    <rect x="18" y="24" width="64" height="4" fill="#E07C4C"/>
-
-    <!-- Main body - full block -->
-    <rect x="14" y="28" width="72" height="32" fill="#E07C4C"/>
-
-    <!-- Left eye (smaller, positioned higher) -->
-    <rect x="30" y="34" width="8" height="10" fill="#000000"/>
-
-    <!-- Right eye (smaller, positioned higher) -->
-    <rect x="62" y="34" width="8" height="10" fill="#000000"/>
-
-    <!-- Left arm -->
-    <rect class="left-arm" x="2" y="36" width="12" height="8" fill="#E07C4C"/>
-
-    <!-- Right arm -->
-    <rect class="right-arm" x="86" y="36" width="12" height="8" fill="#E07C4C"/>
-
-    <!-- Left leg -->
-    <rect x="24" y="60" width="12" height="14" fill="#E07C4C"/>
-
-    <!-- Right leg -->
-    <rect x="64" y="60" width="12" height="14" fill="#E07C4C"/>
+        <ellipse cx="49" cy="55" rx="5.6" ry="7" fill="#21150F"/>
+        <ellipse cx="71" cy="55" rx="5.6" ry="7" fill="#21150F"/>
+        <circle cx="47.4" cy="52.8" r="1.7" fill="#FFF" opacity=".9"/>
+        <circle cx="69.4" cy="52.8" r="1.7" fill="#FFF" opacity=".9"/>
+        <path d="M50 70 C56 76 65 76 71 70" fill="none" stroke="#71311D" stroke-width="3" stroke-linecap="round"/>
+        <path d="M60 36 L62.4 43.5 L70 41.2 L64.4 47 L70 52.8 L62.4 50.5 L60 58 L57.6 50.5 L50 52.8 L55.6 47 L50 41.2 L57.6 43.5 Z" fill="#FFF3EA" opacity=".13"/>
+      </g>
+    </g>
   </g>
 </svg>
