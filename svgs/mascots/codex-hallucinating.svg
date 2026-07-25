@@ -1,79 +1,184 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" role="img" aria-labelledby="codex-hallucinating-title codex-hallucinating-desc">
+  <title id="codex-hallucinating-title">Codex community mascot confidently hallucinating</title>
+  <desc id="codex-hallucinating-desc">A rounded violet and cyan coding mascot wears a party hat while unsupported visual equations float upward in a controlled comedy loop.</desc>
   <defs>
-    <linearGradient id="cxBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#333333"/>
-      <stop offset="50%" stop-color="#1A1A1A"/>
-      <stop offset="100%" stop-color="#000000"/>
+    <linearGradient id="codex-hallucinating-body-gradient" x1="0.08" y1="0.04" x2="0.9" y2="0.96">
+      <stop offset="0" stop-color="#B58CFF"/>
+      <stop offset="0.48" stop-color="#7257E8"/>
+      <stop offset="1" stop-color="#27C6D9"/>
     </linearGradient>
-    <radialGradient id="cxEyeGrad" cx="30%" cy="25%" r="70%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#E5E7EB"/>
+    <linearGradient id="codex-hallucinating-limb-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8065EC"/>
+      <stop offset="1" stop-color="#289DB9"/>
+    </linearGradient>
+    <linearGradient id="codex-hallucinating-hat-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF7CCB"/>
+      <stop offset="1" stop-color="#E83D8E"/>
+    </linearGradient>
+    <radialGradient id="codex-hallucinating-shadow-gradient" cx="50%" cy="48%" r="54%">
+      <stop offset="0" stop-color="#1C163E" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#1C163E" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="cxShadowGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="cxGlow">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    <filter id="codex-hallucinating-soft-shadow" x="-25%" y="-25%" width="150%" height="165%">
+      <feDropShadow dx="0" dy="2.4" stdDeviation="2.4" flood-color="#251B54" flood-opacity=".24"/>
     </filter>
   </defs>
-
   <style>
-    .math-float {
-      animation: math-anim 2s infinite linear;
+    .codex-hallucinating-shadow {
+      animation: codex-hallucinating-shadow-motion 1.6s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 58px 108px;
     }
-    @keyframes math-anim {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-25px) rotate(15deg); opacity: 0; }
+    .codex-hallucinating-character-position {
+      animation: codex-hallucinating-position-motion 1.6s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 58px 101px;
     }
-    .eye-spin {
-      animation: spin-eye 3s linear infinite;
-      transform-origin: center;
+    .codex-hallucinating-character-rotation {
+      animation: codex-hallucinating-rotation-motion 1.6s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 58px 70px;
     }
-    @keyframes spin-eye {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .codex-hallucinating-character-squash {
+      animation: codex-hallucinating-squash-motion 1.6s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 58px 98px;
+    }
+    .codex-hallucinating-left-arm {
+      animation: codex-hallucinating-left-arm-motion .8s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 30px 62px;
+    }
+    .codex-hallucinating-right-arm {
+      animation: codex-hallucinating-right-arm-motion .8s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 86px 62px;
+    }
+    .codex-hallucinating-left-spiral {
+      animation: codex-hallucinating-left-eye-motion 2s linear infinite;
+      transform-box: view-box;
+      transform-origin: 49px 58px;
+    }
+    .codex-hallucinating-right-spiral {
+      animation: codex-hallucinating-right-eye-motion 2s linear infinite;
+      transform-box: view-box;
+      transform-origin: 68px 58px;
+    }
+    .codex-hallucinating-equation-one {
+      animation: codex-hallucinating-equation-one-motion 2.4s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 128px 74px;
+    }
+    .codex-hallucinating-equation-two {
+      animation: codex-hallucinating-equation-two-motion 2.4s ease-in-out .8s infinite;
+      transform-box: view-box;
+      transform-origin: 148px 93px;
+    }
+    @keyframes codex-hallucinating-shadow-motion {
+      0%, 100% { transform: scaleX(1); opacity: .34; }
+      50% { transform: scaleX(.88); opacity: .25; }
+    }
+    @keyframes codex-hallucinating-position-motion {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes codex-hallucinating-rotation-motion {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes codex-hallucinating-squash-motion {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(.98,1.025); }
+    }
+    @keyframes codex-hallucinating-left-arm-motion {
+      0%, 100% { transform: rotate(15deg); }
+      50% { transform: rotate(-18deg); }
+    }
+    @keyframes codex-hallucinating-right-arm-motion {
+      0%, 100% { transform: rotate(-15deg); }
+      50% { transform: rotate(18deg); }
+    }
+    @keyframes codex-hallucinating-left-eye-motion {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes codex-hallucinating-right-eye-motion {
+      to { transform: rotate(-360deg); }
+    }
+    @keyframes codex-hallucinating-equation-one-motion {
+      0% { transform: translateY(8px) rotate(-4deg); opacity: .15; }
+      35%, 65% { opacity: .95; }
+      100% { transform: translateY(-18px) rotate(7deg); opacity: .1; }
+    }
+    @keyframes codex-hallucinating-equation-two-motion {
+      0% { transform: translateY(7px) rotate(5deg); opacity: .12; }
+      35%, 65% { opacity: .9; }
+      100% { transform: translateY(-16px) rotate(-8deg); opacity: .08; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <ellipse cx="50" cy="82" rx="22" ry="5" fill="url(#cxShadowGrad)"/>
+  <ellipse class="codex-hallucinating-shadow" data-animated="true" cx="58" cy="108" rx="31" ry="6.5" fill="url(#codex-hallucinating-shadow-gradient)"/>
 
-  <!-- Floating Hallucinated Equations -->
-  <g class="math-float" transform="translate(100, 30)">
-    <text x="0" y="0" font-family="monospace" font-weight="bold" font-size="11" fill="#A855F7">2 + 2 = 5 ✨</text>
+  <g class="codex-hallucinating-equation-one" data-animated="true">
+    <rect x="111" y="47" width="40" height="25" rx="8" fill="#17152E" stroke="#8CF5FF" stroke-width="1.5" opacity=".92"/>
+    <circle cx="119" cy="57" r="2.4" fill="#B99AFF"/>
+    <circle cx="125" cy="57" r="2.4" fill="#B99AFF"/>
+    <path d="M130 57 H136 M133 54 V60" stroke="#8CF5FF" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="141" cy="57" r="2.4" fill="#67DDEB"/>
+    <path d="M117 65 H125 M132 65 H140" stroke="#EEF9FF" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="145" cy="65" r="1.7" fill="#FF81C8"/>
   </g>
-  <g class="math-float" transform="translate(130, 45)" style="animation-delay: 1s;">
-    <text x="0" y="0" font-family="monospace" font-weight="bold" font-size="10" fill="#38BDF8">π = 3.0000</text>
+
+  <g class="codex-hallucinating-equation-two" data-animated="true">
+    <rect x="132" y="79" width="31" height="22" rx="7" fill="#17152E" stroke="#B99AFF" stroke-width="1.4" opacity=".9"/>
+    <path d="M140 90 C143 84 148 84 151 90 C148 96 143 96 140 90 Z" fill="none" stroke="#8CF5FF" stroke-width="1.5"/>
+    <path d="M154 87 H159 M154 93 H159" stroke="#FF81C8" stroke-width="1.5" stroke-linecap="round"/>
   </g>
 
-  <g filter="url(#cxGlow)">
-    <!-- Main Codex 3D Body -->
-    <rect x="14" y="28" width="72" height="32" fill="url(#cxBodyGrad)" stroke="#404040" stroke-width="1" />
+  <g class="codex-hallucinating-character-position" data-animated="true">
+    <g class="codex-hallucinating-character-rotation" data-animated="true">
+      <g class="codex-hallucinating-character-squash" data-animated="true" filter="url(#codex-hallucinating-soft-shadow)">
+        <g aria-hidden="true">
+          <path d="M37 84 C35 92 36 101 41 104 C45 107 50 104 50 100 L50 84 Z" fill="url(#codex-hallucinating-limb-gradient)"/>
+          <path d="M66 84 L66 100 C66 105 71 107 75 104 C80 100 81 91 78 84 Z" fill="url(#codex-hallucinating-limb-gradient)"/>
+          <ellipse cx="44" cy="102" rx="8.5" ry="4.2" fill="#31578D"/>
+          <ellipse cx="73" cy="102" rx="8.5" ry="4.2" fill="#27647F"/>
+        </g>
 
-    <!-- Party Hat -->
-    <polygon points="50,6 38,28 62,28" fill="#EC4899" stroke="#F43F5E" stroke-width="1" />
-    <circle cx="50" cy="5" r="3" fill="#FDE047" />
+        <g class="codex-hallucinating-left-arm" data-animated="true">
+          <path d="M32 56 C20 56 14 64 17 73 C19 79 26 81 32 75 L38 68 Z" fill="url(#codex-hallucinating-limb-gradient)"/>
+          <circle cx="19" cy="72" r="5.3" fill="#6C65D8"/>
+        </g>
+        <g class="codex-hallucinating-right-arm" data-animated="true">
+          <path d="M84 56 C96 56 102 64 99 73 C97 79 90 81 84 75 L78 68 Z" fill="url(#codex-hallucinating-limb-gradient)"/>
+          <circle cx="97" cy="72" r="5.3" fill="#37A8C3"/>
+        </g>
 
-    <!-- Spiral Hallucinating Eyes -->
-    <g class="eye-spin">
-      <rect x="38" y="34" width="8" height="10" fill="url(#cxEyeGrad)"/>
-      <circle cx="42" cy="39" r="2" fill="#A855F7" />
+        <path d="M35 31 C40 25 48 23 55 25 C61 20 72 22 76 28 C85 29 92 37 90 46 C97 53 94 65 87 70 C89 81 80 90 69 90 L43 90 C32 90 24 82 26 72 C18 67 16 56 22 49 C19 40 26 32 35 31 Z" fill="url(#codex-hallucinating-body-gradient)"/>
+        <path d="M34 37 C46 26 67 27 80 38 C66 33 48 35 37 43 C33 46 31 43 34 37 Z" fill="#E9DEFF" opacity=".34"/>
+        <path d="M29 70 C41 83 73 90 88 68 C86 82 78 90 67 91 L44 91 C35 90 29 83 29 70 Z" fill="#243D88" opacity=".2"/>
 
-      <rect x="68" y="34" width="8" height="10" fill="url(#cxEyeGrad)"/>
-      <circle cx="72" cy="39" r="2" fill="#A855F7" />
+        <g aria-hidden="true">
+          <path d="M58 10 L43 31 H73 Z" fill="url(#codex-hallucinating-hat-gradient)" stroke="#FF9DD8" stroke-width="1.4"/>
+          <path d="M48 24 L68 24" stroke="#FFD166" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="58" cy="8" r="4" fill="#FFD166"/>
+        </g>
+
+        <rect x="36" y="43" width="44" height="30" rx="14" fill="#17152E" opacity=".94"/>
+        <rect x="41" y="48" width="34" height="4" rx="2" fill="#76F2FF" opacity=".78"/>
+
+        <g class="codex-hallucinating-left-spiral" data-animated="true">
+          <circle cx="48" cy="59" r="6.2" fill="#EDF9FF"/>
+          <path d="M48 55 C53 55 53 63 48 63 C44 63 44 57 48 57 C50 57 50 61 48 61" fill="none" stroke="#7257E8" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+        <g class="codex-hallucinating-right-spiral" data-animated="true">
+          <circle cx="68" cy="59" r="6.2" fill="#EDF9FF"/>
+          <path d="M68 55 C73 55 73 63 68 63 C64 63 64 57 68 57 C70 57 70 61 68 61" fill="none" stroke="#27B7CF" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+        <path d="M47 70 C53 77 64 77 70 70" fill="none" stroke="#8CF5FF" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
     </g>
-
-    <!-- Broad Confident Smile -->
-    <path d="M 44 48 Q 50 56 56 48" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
-
-    <!-- Arms -->
-    <rect x="2" y="36" width="12" height="8" fill="#262626"/>
-    <rect x="86" y="36" width="14" height="8" fill="#171717"/>
-
-    <!-- Legs -->
-    <rect x="24" y="60" width="12" height="14" fill="#171717"/>
-    <rect x="64" y="60" width="12" height="14" fill="#0A0A0A"/>
   </g>
 </svg>

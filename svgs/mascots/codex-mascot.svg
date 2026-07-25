@@ -1,200 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="140" height="154">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="codex-mascot-title codex-mascot-desc">
+  <title id="codex-mascot-title">Codex community mascot holding a keyboard key</title>
+  <desc id="codex-mascot-desc">A rounded violet and cyan coding character with connected limbs, a dark face panel, terminal cue, and a small keyboard key attached to its hand.</desc>
   <defs>
-    <!-- Purple-to-cyan body gradient (matching new codex.svg) -->
-    <linearGradient id="cxBodyGrad" x1="0.5" y1="0" x2="0.5" y2="1">
-      <stop offset="0%" stop-color="#9333EA"/>
-      <stop offset="30%" stop-color="#7C3AED"/>
-      <stop offset="55%" stop-color="#5B6CF0"/>
-      <stop offset="80%" stop-color="#3B9AEE"/>
-      <stop offset="100%" stop-color="#22D3EE"/>
+    <linearGradient id="codex-mascot-body-gradient" x1="0.08" y1="0.05" x2="0.88" y2="0.95">
+      <stop offset="0" stop-color="#B58CFF"/>
+      <stop offset="0.48" stop-color="#7257E8"/>
+      <stop offset="1" stop-color="#27C6D9"/>
     </linearGradient>
-
-    <!-- Arm left gradient (purple) -->
-    <linearGradient id="cxArmL" x1="0" y1="0" x2="1" y2="0.5">
-      <stop offset="0%" stop-color="#6D28D9"/>
-      <stop offset="50%" stop-color="#7C3AED"/>
-      <stop offset="100%" stop-color="#5B21B6"/>
+    <linearGradient id="codex-mascot-limb-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8065EC"/>
+      <stop offset="1" stop-color="#289DB9"/>
     </linearGradient>
-
-    <!-- Arm right gradient (purple) -->
-    <linearGradient id="cxArmR" x1="0" y1="0" x2="1" y2="0.5">
-      <stop offset="0%" stop-color="#7C3AED"/>
-      <stop offset="50%" stop-color="#6D28D9"/>
-      <stop offset="100%" stop-color="#5B21B6"/>
+    <linearGradient id="codex-mascot-key-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7FBFF"/>
+      <stop offset="1" stop-color="#A8B7C7"/>
     </linearGradient>
-
-    <!-- Leg gradient (purple-blue) -->
-    <linearGradient id="cxLimbGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#7C3AED"/>
-      <stop offset="50%" stop-color="#6D28D9"/>
-      <stop offset="100%" stop-color="#5B21B6"/>
-    </linearGradient>
-
-    <!-- Eye white gradient (glossy) -->
-    <radialGradient id="cxEyeGrad" cx="35%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="60%" stop-color="#F0F0F0"/>
-      <stop offset="100%" stop-color="#D8D8D8"/>
+    <radialGradient id="codex-mascot-shadow-gradient" cx="50%" cy="48%" r="54%">
+      <stop offset="0" stop-color="#1C163E" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#1C163E" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Ground shadow radial (purple-tinted) -->
-    <radialGradient id="cxShadowGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#4C1D95" stop-opacity="0.35"/>
-      <stop offset="60%" stop-color="#4C1D95" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#4C1D95" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Drop shadow filter (purple-tinted) -->
-    <filter id="cxDropShadow" x="-15%" y="-15%" width="130%" height="140%">
-      <feDropShadow dx="1.5" dy="2.5" stdDeviation="1.8" flood-color="#4C1D95" flood-opacity="0.3"/>
+    <filter id="codex-mascot-soft-shadow" x="-24%" y="-24%" width="148%" height="160%">
+      <feDropShadow dx="0" dy="2.4" stdDeviation="2.4" flood-color="#251B54" flood-opacity="0.24"/>
     </filter>
-
-    <!-- Inner depth for body -->
-    <filter id="cxInnerDepth" x="-5%" y="-5%" width="110%" height="110%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
-      <feOffset dx="0" dy="2" result="off"/>
-      <feFlood flood-color="#3B0764" flood-opacity="0.25" result="color"/>
-      <feComposite in="color" in2="off" operator="in" result="shadow"/>
-      <feMerge>
-        <feMergeNode in="shadow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Cloud clip path (from codex.svg) -->
-    <clipPath id="cxCloudClip">
-      <circle cx="128" cy="68" r="56"/>
-      <circle cx="192" cy="100" r="54"/>
-      <circle cx="188" cy="168" r="54"/>
-      <circle cx="128" cy="192" r="54"/>
-      <circle cx="68" cy="168" r="54"/>
-      <circle cx="64" cy="100" r="54"/>
-      <circle cx="128" cy="130" r="60"/>
-    </clipPath>
   </defs>
-
   <style>
-    .codex-body {
-      animation: frightened-bounce 0.3s ease-in-out infinite, tremble 0.08s linear infinite, tilt-sway 0.6s ease-in-out infinite;
-      transform-origin: 42px 80px;
-      animation-delay: 0.05s;
+    .codex-mascot-idle {
+      animation: codex-mascot-idle-motion 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 99px;
     }
-    .left-leg {
-      animation: panic-run-left 0.25s ease-in-out infinite;
-      transform-origin: 30px 82px;
-      animation-delay: 0.05s;
+    .codex-mascot-left-arm {
+      animation: codex-mascot-key-wave 2.8s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 30px 61px;
     }
-    .right-leg {
-      animation: panic-run-right 0.25s ease-in-out infinite;
-      transform-origin: 54px 82px;
-      animation-delay: 0.05s;
+    .codex-mascot-visor {
+      animation: codex-mascot-visor-pulse 2.2s ease-in-out infinite;
     }
-    .left-arm {
-      animation: flail-left 0.2s ease-in-out infinite;
-      transform-origin: 18px 51px;
-      animation-delay: 0.05s;
+    @keyframes codex-mascot-idle-motion {
+      0%, 100% { transform: translateY(0) scaleY(1); }
+      50% { transform: translateY(-1.2px) scaleY(1.016); }
     }
-    .right-arm {
-      animation: flail-right 0.2s ease-in-out infinite;
-      transform-origin: 66px 51px;
-      animation-delay: 0.05s;
+    @keyframes codex-mascot-key-wave {
+      0%, 20%, 100% { transform: rotate(7deg); }
+      50% { transform: rotate(-7deg); }
+      70% { transform: rotate(-2deg); }
     }
-    @keyframes frightened-bounce {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      25% { transform: translateY(-6px) translateX(2px); }
-      50% { transform: translateY(-3px) translateX(-1px); }
-      75% { transform: translateY(-8px) translateX(1px); }
+    @keyframes codex-mascot-visor-pulse {
+      0%, 100% { opacity: .68; }
+      50% { opacity: 1; }
     }
-    @keyframes tremble {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-1px); }
-      75% { transform: translateX(1px); }
-    }
-    @keyframes tilt-sway {
-      0%, 100% { transform: rotate(8deg); }
-      30% { transform: rotate(12deg); }
-      60% { transform: rotate(5deg); }
-    }
-    @keyframes panic-run-left {
-      0%, 100% { transform: rotate(-35deg); }
-      50% { transform: rotate(35deg); }
-    }
-    @keyframes panic-run-right {
-      0%, 100% { transform: rotate(35deg); }
-      50% { transform: rotate(-35deg); }
-    }
-    @keyframes flail-left {
-      0%, 100% { transform: rotate(30deg) translateY(-2px); }
-      50% { transform: rotate(-25deg) translateY(2px); }
-    }
-    @keyframes flail-right {
-      0%, 100% { transform: rotate(-30deg) translateY(2px); }
-      50% { transform: rotate(25deg) translateY(-2px); }
-    }
-    .eye {
-      animation: nervous-blink 0.5s ease-in-out infinite;
-      animation-delay: 0.1s;
-    }
-    @keyframes nervous-blink {
-      0%, 30%, 40%, 70%, 80%, 100% { transform: scaleY(1); }
-      35%, 75% { transform: scaleY(0.1); }
-    }
-    .shadow {
-      animation: shadow-pulse 0.3s ease-in-out infinite;
-      animation-delay: 0.05s;
-    }
-    @keyframes shadow-pulse {
-      0%, 100% { transform: scale(1, 1); opacity: 0.25; }
-      50% { transform: scale(0.9, 0.8); opacity: 0.15; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <!-- Shadow -->
-  <ellipse class="shadow" cx="42" cy="102" rx="18" ry="4" fill="url(#cxShadowGrad)"/>
+  <ellipse cx="60" cy="106" rx="32" ry="7" fill="url(#codex-mascot-shadow-gradient)"/>
 
-  <!-- Codex Character Group -->
-  <g class="codex-body" filter="url(#cxDropShadow)">
-    <!-- Cloud body from codex.svg, scaled to mascot size -->
-    <g transform="translate(10, 18) scale(0.25)" filter="url(#cxInnerDepth)">
-      <rect x="0" y="0" width="256" height="256" fill="url(#cxBodyGrad)" clip-path="url(#cxCloudClip)"/>
+  <g class="codex-mascot-idle" data-animated="true" filter="url(#codex-mascot-soft-shadow)">
+    <g aria-hidden="true">
+      <path d="M39 84 C36 91 37 100 42 104 C46 107 51 104 51 100 L51 84 Z" fill="url(#codex-mascot-limb-gradient)"/>
+      <path d="M69 84 L69 100 C69 105 74 107 78 104 C83 100 84 91 81 84 Z" fill="url(#codex-mascot-limb-gradient)"/>
+      <ellipse cx="45" cy="102" rx="8.8" ry="4.4" fill="#31578D"/>
+      <ellipse cx="76" cy="102" rx="8.8" ry="4.4" fill="#27647F"/>
     </g>
 
-    <!-- Specular highlight on cloud body -->
-    <rect x="16" y="24" width="14" height="8" fill="#C4B5FD" opacity="0.2" rx="2"/>
-    <rect x="18" y="26" width="8" height="4" fill="#DDD6FE" opacity="0.15" rx="1"/>
+    <g class="codex-mascot-left-arm" data-animated="true">
+      <path d="M34 56 C22 56 16 64 19 73 C21 79 28 81 34 75 L40 68 Z" fill="url(#codex-mascot-limb-gradient)"/>
+      <circle cx="21" cy="72" r="5.4" fill="#6C65D8"/>
+      <g transform="translate(16 68) rotate(-12)">
+        <rect x="-8" y="-12" width="16" height="14" rx="4" fill="url(#codex-mascot-key-gradient)" stroke="#56687A" stroke-width="1.2"/>
+        <path d="M-3 -7 L0 -4 L3 -7" fill="none" stroke="#4F5F70" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
 
-    <!-- Terminal chevron ">" on belly -->
-    <line x1="30" y1="60" x2="36" y2="66" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
-    <line x1="36" y1="66" x2="30" y2="72" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <g aria-hidden="true">
+      <path d="M86 56 C98 56 104 64 101 73 C99 79 92 81 86 75 L80 68 Z" fill="url(#codex-mascot-limb-gradient)"/>
+      <circle cx="99" cy="72" r="5.4" fill="#37A8C3"/>
+    </g>
 
-    <!-- Underscore "_" on belly -->
-    <line x1="40" y1="72" x2="52" y2="72" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <path d="M37 31 C42 25 50 23 57 25 C63 20 74 22 78 28 C87 29 94 37 92 46 C99 53 96 65 89 70 C91 81 82 90 71 90 L45 90 C34 90 26 82 28 72 C20 67 18 56 24 49 C21 40 28 32 37 31 Z" fill="url(#codex-mascot-body-gradient)"/>
+    <path d="M36 37 C48 26 69 27 82 38 C68 33 50 35 39 43 C35 46 33 43 36 37 Z" fill="#E9DEFF" opacity=".34"/>
+    <path d="M31 70 C43 83 75 90 90 68 C88 82 80 90 69 91 L46 91 C37 90 31 83 31 70 Z" fill="#243D88" opacity=".2"/>
 
-    <!-- Eyes positioned on cloud - looking back scared -->
-    <rect class="eye" x="24" y="42" width="8" height="12" rx="2" fill="url(#cxEyeGrad)" stroke="#4C1D95" stroke-width="1.5" style="transform-origin: 28px 48px;"/>
-    <!-- Left eye highlights -->
-    <rect x="25" y="43" width="2.5" height="2.5" fill="#fff" opacity="0.8" rx="0.5"/>
-    <rect x="29" y="49" width="1.2" height="1.2" fill="#fff" opacity="0.35" rx="0.3"/>
-
-    <rect class="eye" x="44" y="42" width="8" height="12" rx="2" fill="url(#cxEyeGrad)" stroke="#4C1D95" stroke-width="1.5" style="transform-origin: 48px 48px;"/>
-    <!-- Right eye highlights -->
-    <rect x="45" y="43" width="2.5" height="2.5" fill="#fff" opacity="0.8" rx="0.5"/>
-    <rect x="49" y="49" width="1.2" height="1.2" fill="#fff" opacity="0.35" rx="0.3"/>
+    <rect x="38" y="43" width="44" height="30" rx="14" fill="#17152E" opacity=".94"/>
+    <rect class="codex-mascot-visor" data-animated="true" x="43" y="48" width="34" height="4" rx="2" fill="#76F2FF" opacity=".8"/>
+    <ellipse cx="50" cy="58" rx="4.6" ry="5.6" fill="#E8FAFF"/>
+    <ellipse cx="70" cy="58" rx="4.6" ry="5.6" fill="#E8FAFF"/>
+    <circle cx="49" cy="57" r="1.6" fill="#4A4BD0"/>
+    <circle cx="69" cy="57" r="1.6" fill="#29B8CE"/>
+    <path d="M48 67 L53 71 L48 75" fill="none" stroke="#8AF7FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M58 75 H70" fill="none" stroke="#8AF7FF" stroke-width="2.2" stroke-linecap="round"/>
   </g>
-
-  <!-- Left arm -->
-  <rect class="left-arm" x="6" y="48" width="12" height="6" rx="2" fill="url(#cxArmL)"/>
-  <rect class="left-arm" x="7" y="49" width="4" height="2" fill="#A78BFA" opacity="0.25" rx="0.5"/>
-
-  <!-- Right arm -->
-  <rect class="right-arm" x="66" y="48" width="12" height="6" rx="2" fill="url(#cxArmR)"/>
-  <rect class="right-arm" x="67" y="49" width="4" height="2" fill="#A78BFA" opacity="0.25" rx="0.5"/>
-
-  <!-- Left leg -->
-  <rect class="left-leg" x="26" y="82" width="8" height="14" rx="2" fill="url(#cxLimbGrad)"/>
-  <rect class="left-leg" x="27" y="83" width="3" height="7" fill="#A78BFA" opacity="0.25" rx="0.5"/>
-
-  <!-- Right leg -->
-  <rect class="right-leg" x="50" y="82" width="8" height="14" rx="2" fill="url(#cxLimbGrad)"/>
-  <rect class="right-leg" x="51" y="83" width="3" height="7" fill="#A78BFA" opacity="0.25" rx="0.5"/>
 </svg>
