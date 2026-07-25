@@ -54,4 +54,12 @@ describe("SVG contracts", () => {
     expect(readme).toContain("community-created");
     expect(readme.toLowerCase()).not.toContain("official 3d mascot");
   });
+
+  test("gallery consumes the manifest and avoids official mascot claims", async () => {
+    const app = await readFile("src/app.js", "utf8");
+
+    expect(app).toContain("asset-manifest.json");
+    expect(app).toContain("loadAssetManifest");
+    expect(app.toLowerCase()).not.toContain("official 3d");
+  });
 });
