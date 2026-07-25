@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient -->
+    <!-- Background Gradient with SMIL Animated Color Shift -->
     <linearGradient id="c-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e1512" />
+      <stop offset="0%" stop-color="#1e1512">
+        <animate attributeName="stop-color" values="#1e1512;#2d1810;#1e1512" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
+      </stop>
       <stop offset="50%" stop-color="#2a1a14" />
       <stop offset="100%" stop-color="#120c09" />
     </linearGradient>
@@ -69,6 +71,10 @@
     @keyframes token-anim { 0% { transform: translateY(0); opacity: 0; } 40% { opacity: 1; } 100% { transform: translateY(-30px); opacity: 0; } }
     .title-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; fill: #ffffff; font-size: 22px; }
     .sub-text { font-family: monospace; fill: #fdba74; font-size: 13px; font-weight: 600; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .claude-float, .eye-blink, .token-float { animation: none !important; }
+    }
   </style>
 
   <rect width="500" height="280" class="card-bg" />
@@ -85,11 +91,15 @@
     <text x="0" y="24" class="sub-text">⚡ 200,000 Token Reasoning Engine</text>
   </g>
 
-  <!-- Ground Shadow -->
-  <ellipse cx="370" cy="225" rx="55" ry="9" fill="url(#cShadowGrad)" />
+  <!-- Ground Shadow with SMIL animation fallback -->
+  <ellipse cx="370" cy="225" rx="55" ry="9" fill="url(#cShadowGrad)">
+    <animate attributeName="rx" values="55;42;55" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
+  </ellipse>
 
-  <!-- 3D Mascot Character (Right Side) -->
+  <!-- 3D Mascot Character (Right Side) with Native SMIL + CSS support -->
   <g class="claude-float" transform="translate(270, 70)" filter="url(#cOrangeGlow)">
+    <animateTransform attributeName="transform" type="translate" values="270 70; 270 62; 270 70" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
+    
     <!-- Ears -->
     <rect x="68" y="28" width="12" height="20" fill="url(#cEarGrad)"/>
     <rect x="120" y="28" width="12" height="20" fill="url(#cEarGrad)"/>
@@ -118,8 +128,10 @@
     <rect x="108" y="130" width="16" height="22" rx="8" fill="url(#cLegGrad)" />
   </g>
 
-  <!-- Floating Tokens -->
+  <!-- Floating Tokens with SMIL + CSS -->
   <g class="token-float" transform="translate(410, 80)">
+    <animateTransform attributeName="transform" type="translate" values="410 80; 410 50; 410 80" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
+    <animate attributeName="opacity" values="0; 1; 0" dur="3s" repeatCount="indefinite" />
     <rect width="70" height="22" rx="11" fill="#292524" stroke="#fb923c" stroke-width="1" />
     <text x="35" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#fed7aa">&lt;reasoning&gt;</text>
   </g>

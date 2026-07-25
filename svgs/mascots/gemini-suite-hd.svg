@@ -1,7 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="100%" height="100%">
   <defs>
     <linearGradient id="gm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="0%" stop-color="#0b0f19">
+        <animate attributeName="stop-color" values="#0b0f19;#181028;#0b0f19" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
+      </stop>
       <stop offset="50%" stop-color="#111827" />
       <stop offset="100%" stop-color="#030712" />
     </linearGradient>
@@ -37,6 +39,10 @@
     @keyframes spin-ring { 0% { transform: rotateX(70deg) rotateZ(0deg); } 100% { transform: rotateX(70deg) rotateZ(360deg); } }
     .title-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; fill: #ffffff; font-size: 22px; }
     .sub-text { font-family: monospace; fill: #a5b4fc; font-size: 13px; font-weight: 600; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gemini-float, .ring-spin { animation: none !important; }
+    }
   </style>
 
   <rect width="500" height="280" class="card-bg" />
@@ -54,12 +60,18 @@
   </g>
 
   <!-- Ground Shadow -->
-  <ellipse cx="370" cy="225" rx="55" ry="9" fill="url(#gmShadowGrad)" />
+  <ellipse cx="370" cy="225" rx="55" ry="9" fill="url(#gmShadowGrad)">
+    <animate attributeName="rx" values="55;40;55" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
+  </ellipse>
 
   <!-- 3D Mascot Character (Right Side) -->
   <g class="gemini-float" transform="translate(270, 60)" filter="url(#gmGlow)">
-    <!-- Orbital Ring -->
-    <ellipse cx="80" cy="85" rx="60" ry="18" fill="none" stroke="#C084FC" stroke-width="2.5" stroke-dasharray="8 4" class="ring-spin" />
+    <animateTransform attributeName="transform" type="translate" values="270 60; 270 50; 270 60" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
+    
+    <!-- Orbital Ring with SMIL animateTransform -->
+    <ellipse cx="80" cy="85" rx="60" ry="18" fill="none" stroke="#C084FC" stroke-width="2.5" stroke-dasharray="8 4" class="ring-spin">
+      <animateTransform attributeName="transform" type="rotate" from="0 80 85" to="360 80 85" dur="8s" repeatCount="indefinite" />
+    </ellipse>
 
     <!-- Main Body -->
     <rect x="38" y="44" width="84" height="90" rx="36" fill="url(#gmBodyGrad)" />
@@ -76,6 +88,7 @@
 
     <!-- 4-point Sparkle Head Floating -->
     <g transform="translate(80, 20)">
+      <animateTransform attributeName="transform" type="scale" values="1; 1.15; 1" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
       <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18 Z" fill="url(#gmStarGrad)" />
     </g>
   </g>
