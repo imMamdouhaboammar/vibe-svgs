@@ -32,19 +32,19 @@ Rebuild Vibe SVGs as a coherent 2.5D mascot and badge library that is:
 - testable through static checks and rendered snapshots;
 - clearly presented as community artwork, not official brand assets.
 
-## 3. Success criteria
+## 3. Phase 1 success criteria
 
 The first implementation milestone is successful when:
 
 1. A shared mascot construction system is documented and used by the pilot assets.
-2. Claude, Codex, Gemini, Cursor, DeepSeek, and Copilot each have one rebuilt standalone mascot.
+2. Claude and Codex each have one rebuilt standalone mascot.
 3. Claude jumping and Codex hallucinating are rebuilt as motion reference assets.
 4. No animated element has competing declarations that overwrite the same `transform` property.
 5. Props remain visibly attached to the intended hand throughout the animation cycle.
 6. Contact shadows react to jump height, body compression, and horizontal movement.
-7. All SVG IDs are unique after the same asset is embedded more than once.
+7. IDs are unique within each file and across different assets, with a documented instance-namespacing path for repeated inline copies of the same asset.
 8. Every animated SVG contains a reduced-motion fallback.
-9. The project includes automated SVG validation and rendered snapshot checks.
+9. The project includes automated SVG validation and rendered snapshot checks for the pilot assets.
 10. Repository metadata, documentation, and claims match the actual project.
 
 ## 4. Considered approaches
@@ -254,7 +254,15 @@ claude-mascot-v2-body-gradient
 claude-mascot-v2-shadow-filter
 ```
 
-Validation must reject duplicate IDs inside a file and unprefixed reusable IDs.
+Embedding behavior is defined as follows:
+
+1. Assets loaded through `<img>` or isolated documents have their own SVG document scope. Filename prefixes are still required for consistency and inspection.
+2. A single inline copy uses the filename-derived prefix directly.
+3. Repeated inline copies of the same asset must pass through an instance-namespacing helper that appends a caller-provided token to every ID and rewrites all `url(#...)`, `href`, `xlink:href`, and ARIA references.
+
+Phase 1 must include a small `namespace-svg.mjs` helper or equivalent documented build function. The test fixture must render two inline copies of the same asset and confirm that gradients, filters, titles, and animation references remain isolated.
+
+Validation must reject duplicate IDs inside a file, unprefixed reusable IDs, and broken references.
 
 ### 7.3 Filters and gradients
 
@@ -300,6 +308,7 @@ src/
   styles.css
 scripts/
   validate-svg.mjs
+  namespace-svg.mjs
   render-snapshots.mjs
   check-asset-manifest.mjs
 tests/
@@ -392,11 +401,11 @@ SVG behavior must not depend on browser-specific transform defaults.
 
 Replace Dokion metadata with Vibe SVGs metadata.
 
-Expected package direction:
+Phase 1 package metadata is explicit:
 
-- name: `vibe-svgs` or an available scoped package name;
+- name: `vibe-svgs`;
 - description: open-source animated SVG mascot, badge, and banner library;
-- private status decided before publishing;
+- `private: true` until a package publishing decision is made;
 - scripts for serve, validate, test, snapshot, and format;
 - remove Dokion CLI and contract scripts from the SVG project package metadata.
 
@@ -421,6 +430,7 @@ The repository can remain MIT licensed for original code and artwork, but tradem
 - repair package metadata;
 - add manifest;
 - add validation scripts;
+- add instance-namespacing helper;
 - add CI workflow;
 - document the visual and motion system;
 - rebuild Claude mascot;
@@ -467,6 +477,10 @@ Inspect CSS rules and reject known patterns such as several animations writing t
 ### Manifest tests
 
 Ensure every public asset has one manifest record and every manifest path exists.
+
+### Inline-instance tests
+
+Namespace and render two copies of the same SVG in one HTML document, then verify that their IDs and references do not overlap.
 
 ### Snapshot tests
 
@@ -523,6 +537,7 @@ A mascot is accepted only when:
 - the shadow matches body movement;
 - the static reduced-motion frame is composed correctly;
 - IDs are prefixed and valid;
+- repeated inline use works through the documented namespace helper;
 - XML and manifest validation pass;
 - all approved snapshots match;
 - documentation uses accurate community-artwork language.
