@@ -305,9 +305,9 @@
       "type": "mascot",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Copilot Community Mascot",
-      "description": "Fan-made visor robot mascot awaiting Phase 2 migration."
+      "description": "Fan-made visor robot coding mascot inspired by Copilot workflows."
     },
     {
       "id": "copilot-ninja",
