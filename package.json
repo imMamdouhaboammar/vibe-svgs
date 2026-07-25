@@ -1,27 +1,20 @@
 {
-  "name": "dokion",
+  "name": "vibe-svgs",
   "version": "0.1.0",
-  "description": "User-directed software hardening orchestrator",
+  "description": "Open-source animated SVG mascot, badge, and banner library.",
   "type": "module",
-  "private": false,
+  "private": true,
   "license": "MIT",
   "packageManager": "bun@1.3.14",
-  "bin": {
-    "dokion": "./src/cli.ts"
-  },
   "scripts": {
+    "serve": "bunx serve .",
     "test": "bun test",
-    "typecheck": "tsc --noEmit",
-    "build": "bun build src/cli.ts --compile --outfile dist/dokion",
-    "validate:contracts": "python3 schemas/conformance_test.py && bun run src/cli.ts validate --catalog-only"
-  },
-  "dependencies": {
-    "ajv": "8.20.0",
-    "ajv-formats": "3.0.1"
+    "validate": "bun run scripts/validate-svg.ts",
+    "check": "bun test && bun run validate"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
-    "typescript": "7.0.2"
+    "typescript": "^7.0.2"
   },
   "engines": {
     "bun": ">=1.3.14"
