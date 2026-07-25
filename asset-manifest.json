@@ -8,20 +8,20 @@
       "type": "suite",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
-      "title": "Claude Community Suite",
-      "description": "Fan-made Claude workflow scene awaiting Phase 3 migration."
+      "contractVersion": 1,
+      "title": "Claude Suite HD Banner",
+      "description": "Fan-made terracotta suite banner featuring Claude mascots and scenes."
     },
     {
       "id": "codex-suite-hd",
       "path": "svgs/mascots/codex-suite-hd.svg",
-      "category": "openai",
+      "category": "codex",
       "type": "suite",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
-      "title": "Codex Community Suite",
-      "description": "Fan-made Codex workflow scene awaiting Phase 3 migration."
+      "contractVersion": 1,
+      "title": "Codex Suite HD Banner",
+      "description": "Fan-made violet-cyan suite banner featuring Codex mascots and scenes."
     },
     {
       "id": "cursor-suite-hd",
@@ -30,9 +30,9 @@
       "type": "suite",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
-      "title": "Cursor Community Suite",
-      "description": "Fan-made Cursor workflow scene awaiting Phase 3 migration."
+      "contractVersion": 1,
+      "title": "Cursor Suite HD Banner",
+      "description": "Fan-made dark graphite suite banner featuring Cursor mascots and scenes."
     },
     {
       "id": "gemini-suite-hd",
@@ -41,9 +41,9 @@
       "type": "suite",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
-      "title": "Gemini Community Suite",
-      "description": "Fan-made Gemini workflow scene awaiting Phase 3 migration."
+      "contractVersion": 1,
+      "title": "Gemini Suite HD Banner",
+      "description": "Fan-made blue-violet suite banner featuring Gemini mascots and scenes."
     },
     {
       "id": "deepseek-suite-hd",
@@ -52,9 +52,9 @@
       "type": "suite",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
-      "title": "DeepSeek Community Suite",
-      "description": "Fan-made DeepSeek workflow scene awaiting Phase 3 migration."
+      "contractVersion": 1,
+      "title": "DeepSeek Suite HD Banner",
+      "description": "Fan-made ocean blue suite banner featuring DeepSeek whale mascot and scenes."
     },
     {
       "id": "copilot-suite-hd",
@@ -63,9 +63,9 @@
       "type": "suite",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
-      "title": "Copilot Community Suite",
-      "description": "Fan-made Copilot workflow scene awaiting Phase 3 migration."
+      "contractVersion": 1,
+      "title": "Copilot Suite HD Banner",
+      "description": "Fan-made robot suite banner featuring Copilot mascots and scenes."
     },
     {
       "id": "claude-mascot",
