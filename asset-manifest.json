@@ -316,7 +316,7 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Copilot Ninja Scene",
       "description": "Fan-made stealth coding scene awaiting Phase 3 migration."
     },

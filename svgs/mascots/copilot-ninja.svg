@@ -1,59 +1,92 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="280" height="168">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="copilot-ninja-title copilot-ninja-desc">
+  <title id="copilot-ninja-title">Copilot community mascot as a stealth ninja robot</title>
+  <desc id="copilot-ninja-desc">A dark rounded robot wearing a red ninja headband with a glowing cyan visor and animated code slash effect.</desc>
   <defs>
-    <linearGradient id="cpBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="50%" stop-color="#2563EB"/>
-      <stop offset="100%" stop-color="#1D4ED8"/>
+    <linearGradient id="copilot-ninja-body-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#475569"/>
+      <stop offset="0.5" stop-color="#334155"/>
+      <stop offset="1" stop-color="#0F172A"/>
     </linearGradient>
-    <radialGradient id="cpShadowGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    <linearGradient id="copilot-ninja-limb-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <radialGradient id="copilot-ninja-shadow-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#020617" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
     </radialGradient>
-    <filter id="cpVisorGlow">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    <filter id="copilot-ninja-soft-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#0F172A" flood-opacity="0.3"/>
     </filter>
   </defs>
-
   <style>
-    .ninja-dash {
-      animation: dash-anim 0.5s infinite ease-in-out alternate;
+    .copilot-ninja-shadow {
+      animation: copilot-ninja-shadow-pulse 2.4s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 106px;
     }
-    @keyframes dash-anim {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-4px); }
+    .copilot-ninja-character {
+      animation: copilot-ninja-char-stealth 2.4s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 96px;
     }
-    .headband-trail {
-      animation: trail-anim 1s infinite ease-in-out alternate;
+    .copilot-ninja-slash {
+      animation: copilot-ninja-slash-anim 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      transform-box: view-box;
+      transform-origin: 60px 60px;
     }
-    @keyframes trail-anim {
-      0% { transform: rotate(-5deg); }
-      100% { transform: rotate(10deg); }
+    @keyframes copilot-ninja-shadow-pulse {
+      0%, 100% { transform: scaleX(1); opacity: .4; }
+      50% { transform: scaleX(1.04); opacity: .45; }
+    }
+    @keyframes copilot-ninja-char-stealth {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-2px) rotate(-1deg); }
+    }
+    @keyframes copilot-ninja-slash-anim {
+      0% { stroke-dasharray: 0 100; opacity: 0; }
+      20% { stroke-dasharray: 100 0; opacity: 1; }
+      60% { opacity: 0.8; }
+      100% { stroke-dasharray: 0 100; opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <ellipse cx="100" cy="108" rx="40" ry="7" fill="url(#cpShadowGrad)" />
+  <ellipse class="copilot-ninja-shadow" data-animated="true" cx="60" cy="106" rx="34" ry="7" fill="url(#copilot-ninja-shadow-gradient)"/>
 
-  <g class="ninja-dash">
-    <!-- Ninja Headband Trails -->
-    <path d="M 52 35 Q 35 30 20 40 L 30 45 Z" fill="#0F172A" class="headband-trail" />
-
-    <!-- Robot Head / Body -->
-    <rect x="62" y="24" width="76" height="62" rx="24" fill="url(#cpBodyGrad)" stroke="#60A5FA" stroke-width="1.5" />
-
-    <!-- Ninja Headband Across Forehead -->
-    <rect x="62" y="32" width="76" height="14" fill="#0F172A" />
-
-    <!-- Futuristic Glowing Visor -->
-    <rect x="72" y="44" width="56" height="20" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="2" filter="url(#cpVisorGlow)" />
-
-    <!-- Ninja Eyes inside Visor -->
-    <circle cx="86" cy="54" r="4" fill="#38BDF8" />
-    <circle cx="114" cy="54" r="4" fill="#38BDF8" />
-
-    <!-- Ninja Shuriken Star in Hand -->
-    <g transform="translate(145, 60)">
-      <polygon points="0,-8 3,-2 9,0 3,2 0,8 -3,2 -9,0 -3,-2" fill="#E2E8F0" />
+  <g class="copilot-ninja-character" data-animated="true" filter="url(#copilot-ninja-soft-shadow)">
+    <!-- Legs -->
+    <g aria-hidden="true">
+      <path d="M40 82 C38 90 39 98 44 102 C48 105 53 102 53 97 L52 82 Z" fill="url(#copilot-ninja-limb-gradient)"/>
+      <ellipse cx="47" cy="100" rx="8.5" ry="4" fill="#020617"/>
+      <path d="M68 82 L67 97 C67 102 72 105 76 102 C82 98 82 89 79 82 Z" fill="url(#copilot-ninja-limb-gradient)"/>
+      <ellipse cx="74" cy="100" rx="8.5" ry="4" fill="#020617"/>
     </g>
+
+    <!-- Arms Ninja Stance -->
+    <path d="M34 56 C24 62 18 70 28 76 C36 78 40 70 36 64 Z" fill="url(#copilot-ninja-limb-gradient)"/>
+    <path d="M86 56 C96 52 104 58 100 66 C96 72 90 72 84 64 Z" fill="url(#copilot-ninja-limb-gradient)"/>
+
+    <!-- Main Body -->
+    <rect x="28" y="30" width="64" height="60" rx="24" fill="url(#copilot-ninja-body-gradient)"/>
+    <path d="M34 40 C45 30 71 28 86 39 C74 35 55 37 42 45 C38 48 34 47 34 40 Z" fill="#94A3B8" opacity=".3"/>
+
+    <!-- Ninja Red Headband -->
+    <rect x="26" y="44" width="68" height="9" rx="3" fill="#EF4444"/>
+    <!-- Headband Ribbon trailing -->
+    <path d="M26 48 C16 48 12 56 14 64" fill="none" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Glowing Cyan Visor -->
+    <rect x="36" y="45" width="48" height="7" rx="3.5" fill="#06B6D4"/>
+    <rect x="39" y="46.5" width="42" height="4" rx="2" fill="#67E8F9"/>
+
+    <!-- Robot Companion Antenna -->
+    <circle cx="60" cy="24" r="3.5" fill="#06B6D4"/>
+    <line x1="60" y1="275" x2="60" y2="30" stroke="#06B6D4" stroke-width="2"/>
   </g>
+
+  <!-- Cyan Code Slash Effect -->
+  <path class="copilot-ninja-slash" data-animated="true" d="M15 85 L105 35" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round"/>
 </svg>
