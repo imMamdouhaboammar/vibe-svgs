@@ -1,17 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
   <defs>
-    <linearGradient id="gmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4f46e5" />
-      <stop offset="50%" stop-color="#818cf8" />
-      <stop offset="100%" stop-color="#c084fc" />
+    <linearGradient id="geminiLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A5B4FC" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
     </linearGradient>
+
+    <filter id="geminiLogoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
+
   <style>
-    .gemini-pulse { animation: gm-p 2.5s infinite ease-in-out alternate; transform-origin: center; }
-    @keyframes gm-p { 0% { transform: scale(0.95); } 100% { transform: scale(1.05); filter: drop-shadow(0 0 8px #818cf8); } }
+    .star-scale {
+      animation: scale-star 2.5s infinite ease-in-out alternate;
+      transform-origin: 30px 30px;
+    }
+    @keyframes scale-star {
+      0% { transform: scale(0.92); }
+      100% { transform: scale(1.08); }
+    }
+    .brand-title {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      fill: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+    .brand-tag {
+      font-family: monospace;
+      font-weight: 600;
+      font-size: 10px;
+      fill: #A5B4FC;
+      letter-spacing: 1px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .star-scale { animation: none !important; }
+    }
   </style>
-  <g class="gemini-pulse">
-    <rect width="100" height="100" rx="22" fill="#0f172a" stroke="#1e293b" stroke-width="2" />
-    <path d="M50 15 C54 35 65 46 85 50 C65 54 54 65 50 85 C46 65 35 54 15 50 C35 46 46 35 50 15 Z" fill="url(#gmGrad)" />
+
+  <!-- Google Gemini 4-Point Sparkle Mark -->
+  <g id="icon-mark" class="star-scale" filter="url(#geminiLogoGlow)">
+    <path d="M30 10 C33 22 38 27 50 30 C38 33 33 38 30 50 C27 38 22 33 10 30 C22 27 27 22 30 10 Z" fill="url(#geminiLogoGrad)" />
+  </g>
+
+  <!-- Combination Mark Text -->
+  <g id="brand-text" transform="translate(62, 35)">
+    <text x="0" y="0" class="brand-title">Gemini</text>
+    <text x="0" y="16" class="brand-tag">GOOGLE ANTIGRAVITY</text>
   </g>
 </svg>
