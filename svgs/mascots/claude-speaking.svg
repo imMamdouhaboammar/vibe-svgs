@@ -1,155 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 90" width="196" height="126">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="claude-speaking-title claude-speaking-desc">
+  <title id="claude-speaking-title">Claude community mascot speaking</title>
+  <desc id="claude-speaking-desc">A rounded terracotta character expressing ideas with an animated speech bubble.</desc>
+  <defs>
+    <linearGradient id="claude-speaking-body-gradient" x1="0.1" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#F7B58E"/>
+      <stop offset="0.5" stop-color="#E98452"/>
+      <stop offset="1" stop-color="#B7512A"/>
+    </linearGradient>
+    <linearGradient id="claude-speaking-limb-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EA8F5E"/>
+      <stop offset="1" stop-color="#AA4524"/>
+    </linearGradient>
+    <radialGradient id="claude-speaking-shadow-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#3C2118" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#3C2118" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="claude-speaking-soft-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#552718" flood-opacity="0.2"/>
+    </filter>
+  </defs>
   <style>
-    .claude-body {
-      animation: bob 0.8s ease-in-out infinite;
-      transform-origin: center bottom;
+    .claude-speaking-shadow {
+      animation: claude-speaking-shadow-idle 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 106px;
     }
-    .shadow {
-      animation: shadow-pulse 0.8s ease-in-out infinite;
+    .claude-speaking-character {
+      animation: claude-speaking-char-gesture 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 60px 96px;
     }
-    .mouth {
-      animation: talk 0.3s ease-in-out infinite;
-      transform-origin: center center;
+    .claude-speaking-bubble {
+      animation: claude-speaking-bubble-pop 3s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 85px 35px;
     }
-    .left-ear {
-      animation: ear-tilt-left 0.8s ease-in-out infinite;
-      transform-origin: center bottom;
+    .claude-speaking-dot-1 {
+      animation: claude-speaking-dot-bounce 1.5s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 75px 32px;
     }
-    .right-ear {
-      animation: ear-tilt-right 0.8s ease-in-out infinite;
-      transform-origin: center bottom;
+    .claude-speaking-dot-2 {
+      animation: claude-speaking-dot-bounce 1.5s ease-in-out 0.2s infinite;
+      transform-box: view-box;
+      transform-origin: 85px 32px;
     }
-    .wave-1 {
-      animation: wave-expand 0.8s ease-out infinite;
-      transform-origin: left center;
+    .claude-speaking-dot-3 {
+      animation: claude-speaking-dot-bounce 1.5s ease-in-out 0.4s infinite;
+      transform-box: view-box;
+      transform-origin: 95px 32px;
     }
-    .wave-2 {
-      animation: wave-expand 0.8s ease-out infinite 0.2s;
-      transform-origin: left center;
+    @keyframes claude-speaking-shadow-idle {
+      0%, 100% { transform: scaleX(1); opacity: .36; }
+      50% { transform: scaleX(1.03); opacity: .39; }
     }
-    .wave-3 {
-      animation: wave-expand 0.8s ease-out infinite 0.4s;
-      transform-origin: left center;
+    @keyframes claude-speaking-char-gesture {
+      0%, 100% { transform: rotate(0deg); }
+      30% { transform: rotate(2deg); }
+      70% { transform: rotate(-1deg); }
     }
-    .note-1 {
-      animation: float-note-1 1.5s ease-out infinite;
+    @keyframes claude-speaking-bubble-pop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
     }
-    .note-2 {
-      animation: float-note-2 1.5s ease-out infinite 0.3s;
-    }
-    .note-3 {
-      animation: float-note-3 1.5s ease-out infinite 0.6s;
-    }
-    @keyframes bob {
+    @keyframes claude-speaking-dot-bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-3px); }
     }
-    @keyframes shadow-pulse {
-      0%, 100% { transform: scaleX(1); opacity: 0.25; }
-      50% { transform: scaleX(0.9); opacity: 0.2; }
-    }
-    @keyframes talk {
-      0%, 100% { transform: scaleY(1); }
-      50% { transform: scaleY(0.5); }
-    }
-    @keyframes ear-tilt-left {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-5deg); }
-    }
-    @keyframes ear-tilt-right {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(5deg); }
-    }
-    @keyframes wave-expand {
-      0% { opacity: 0.8; transform: scaleX(0.3) scaleY(0.8); }
-      100% { opacity: 0; transform: scaleX(1.2) scaleY(1); }
-    }
-    @keyframes float-note-1 {
-      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
-      100% { opacity: 0; transform: translate(15px, -25px) rotate(15deg); }
-    }
-    @keyframes float-note-2 {
-      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
-      100% { opacity: 0; transform: translate(20px, -30px) rotate(-10deg); }
-    }
-    @keyframes float-note-3 {
-      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
-      100% { opacity: 0; transform: translate(10px, -35px) rotate(20deg); }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animated] { animation: none !important; }
     }
   </style>
 
-  <!-- Shadow -->
-  <ellipse class="shadow" cx="50" cy="82" rx="22" ry="5" fill="#000"/>
+  <ellipse class="claude-speaking-shadow" data-animated="true" cx="60" cy="106" rx="34" ry="7" fill="url(#claude-speaking-shadow-gradient)"/>
 
-  <!-- Sound Waves (curved arcs) -->
-  <g class="wave-1">
-    <path d="M 92 44 Q 100 44, 100 52 Q 100 60, 92 60" fill="none" stroke="#E07C4C" stroke-width="3" stroke-linecap="round"/>
-  </g>
-  <g class="wave-2">
-    <path d="M 96 38 Q 108 38, 108 52 Q 108 66, 96 66" fill="none" stroke="#E07C4C" stroke-width="3" stroke-linecap="round"/>
-  </g>
-  <g class="wave-3">
-    <path d="M 100 32 Q 116 32, 116 52 Q 116 72, 100 72" fill="none" stroke="#E07C4C" stroke-width="3" stroke-linecap="round"/>
-  </g>
+  <g class="claude-speaking-character" data-animated="true" filter="url(#claude-speaking-soft-shadow)">
+    <!-- Legs -->
+    <g aria-hidden="true">
+      <path d="M40 82 C38 90 39 98 44 102 C48 105 53 102 53 97 L52 82 Z" fill="url(#claude-speaking-limb-gradient)"/>
+      <ellipse cx="47" cy="100" rx="8.5" ry="4" fill="#8D3921"/>
+      <path d="M68 82 L67 97 C67 102 72 105 76 102 C82 98 82 89 79 82 Z" fill="url(#claude-speaking-limb-gradient)"/>
+      <ellipse cx="74" cy="100" rx="8.5" ry="4" fill="#8D3921"/>
+    </g>
 
-  <!-- Musical Notes -->
-  <!-- Note 1 - Eighth note -->
-  <g class="note-1">
-    <ellipse cx="108" cy="28" rx="4" ry="3" fill="#E07C4C" transform="rotate(-20, 108, 28)"/>
-    <rect x="111" y="12" width="2" height="16" fill="#E07C4C"/>
-    <path d="M 113 12 Q 118 14, 118 18 Q 118 22, 113 20" fill="#E07C4C"/>
-  </g>
+    <!-- Arms Gesturing -->
+    <path d="M32 58 C22 56 16 64 20 72 C24 78 32 76 36 68 Z" fill="url(#claude-speaking-limb-gradient)"/>
+    <path d="M88 58 C96 52 104 56 100 66 C96 72 90 74 84 66 Z" fill="url(#claude-speaking-limb-gradient)"/>
 
-  <!-- Note 2 - Quarter note -->
-  <g class="note-2">
-    <ellipse cx="122" cy="22" rx="4" ry="3" fill="#E07C4C" transform="rotate(-20, 122, 22)"/>
-    <rect x="125" y="6" width="2" height="16" fill="#E07C4C"/>
-  </g>
+    <!-- Main Body -->
+    <rect x="29" y="32" width="62" height="59" rx="23" fill="url(#claude-speaking-body-gradient)"/>
+    <!-- Specular Highlight -->
+    <path d="M35 42 C46 32 70 30 84 41 C72 37 54 39 42 47 C38 50 35 49 35 42 Z" fill="#FFD2B7" opacity=".34"/>
+    <path d="M31 72 C44 85 74 92 89 70 L89 80 C83 90 73 93 60 93 C45 93 36 88 31 80 Z" fill="#8F3A20" opacity=".18"/>
 
-  <!-- Note 3 - Double eighth note (beamed) -->
-  <g class="note-3">
-    <ellipse cx="115" cy="42" rx="3" ry="2.5" fill="#E07C4C" transform="rotate(-20, 115, 42)"/>
-    <ellipse cx="125" cy="40" rx="3" ry="2.5" fill="#E07C4C" transform="rotate(-20, 125, 40)"/>
-    <rect x="117" y="26" width="2" height="16" fill="#E07C4C"/>
-    <rect x="127" y="24" width="2" height="16" fill="#E07C4C"/>
-    <rect x="117" y="26" width="12" height="2" fill="#E07C4C"/>
+    <!-- Expressive Open Eyes -->
+    <ellipse cx="49" cy="54" rx="5.6" ry="7" fill="#21150F"/>
+    <ellipse cx="71" cy="54" rx="5.6" ry="7" fill="#21150F"/>
+    <circle cx="47.4" cy="51.8" r="1.7" fill="#FFF" opacity=".9"/>
+    <circle cx="69.4" cy="51.8" r="1.7" fill="#FFF" opacity=".9"/>
+
+    <!-- Speaking Open Mouth -->
+    <path d="M50 67 C54 75 66 75 70 67 Z" fill="#21150F"/>
+    <path d="M54 71 C58 74 62 74 66 71" fill="#E25F38"/>
   </g>
 
-  <!-- Claude Character Group -->
-  <g class="claude-body">
-    <!-- Claude Orange: #E07C4C -->
-
-    <!-- Left ear -->
-    <rect class="left-ear" x="22" y="10" width="8" height="14" fill="#E07C4C"/>
-
-    <!-- Right ear -->
-    <rect class="right-ear" x="70" y="10" width="8" height="14" fill="#E07C4C"/>
-
-    <!-- Main body - top row (narrower) -->
-    <rect x="18" y="24" width="64" height="4" fill="#E07C4C"/>
-
-    <!-- Main body - full block -->
-    <rect x="14" y="28" width="72" height="32" fill="#E07C4C"/>
-
-    <!-- Left eye (smaller, positioned higher) -->
-    <rect x="30" y="34" width="8" height="10" fill="#000000"/>
-
-    <!-- Right eye (smaller, positioned higher) -->
-    <rect x="62" y="34" width="8" height="10" fill="#000000"/>
-
-    <!-- Mouth (animated open/close) -->
-    <rect class="mouth" x="44" y="50" width="12" height="6" fill="#000000"/>
-
-    <!-- Left arm (resting) -->
-    <rect x="2" y="40" width="12" height="8" fill="#E07C4C"/>
-
-    <!-- Right arm (resting) -->
-    <rect x="86" y="40" width="12" height="8" fill="#E07C4C"/>
-
-    <!-- Left leg -->
-    <rect x="24" y="60" width="12" height="14" fill="#E07C4C"/>
-
-    <!-- Right leg -->
-    <rect x="64" y="60" width="12" height="14" fill="#E07C4C"/>
+  <!-- Speech Bubble -->
+  <g class="claude-speaking-bubble" data-animated="true">
+    <path d="M65 32 C65 22 75 16 85 16 C95 16 105 22 105 32 C105 40 97 46 87 46 C84 46 81 48 78 51 C79 47 77 46 75 45 C69 43 65 38 65 32 Z" fill="#FFFFFF" stroke="#E98452" stroke-width="2.5" filter="url(#claude-speaking-soft-shadow)"/>
+    <!-- Animated typing dots -->
+    <circle class="claude-speaking-dot-1" data-animated="true" cx="77" cy="31" r="2.8" fill="#B7512A"/>
+    <circle class="claude-speaking-dot-2" data-animated="true" cx="85" cy="31" r="2.8" fill="#B7512A"/>
+    <circle class="claude-speaking-dot-3" data-animated="true" cx="93" cy="31" r="2.8" fill="#B7512A"/>
   </g>
 </svg>

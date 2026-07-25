@@ -85,9 +85,9 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Claude Sleeping Scene",
-      "description": "Fan-made sleeping mascot scene awaiting Phase 3 migration."
+      "description": "Fan-made peaceful sleeping scene with gentle zzz floating effects."
     },
     {
       "id": "claude-debugging",
@@ -96,9 +96,9 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Claude Debugging Scene",
-      "description": "Fan-made detective debugging scene awaiting Phase 3 migration."
+      "description": "Fan-made focused debugging scene with magnifying glass and bug prop."
     },
     {
       "id": "claude-jumping",
@@ -109,7 +109,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Jumping Community Mascot",
-      "description": "Fan-made terracotta mascot with a physically staged jump cycle."
+      "description": "Fan-made energetic jumping mascot with vertical motion and dynamic shadow."
     },
     {
       "id": "claude-speaking",
@@ -118,9 +118,9 @@
       "type": "scene",
       "animated": true,
       "communityArtwork": true,
-      "contractVersion": 0,
+      "contractVersion": 1,
       "title": "Claude Speaking Scene",
-      "description": "Fan-made speaking mascot scene awaiting Phase 3 migration."
+      "description": "Fan-made speaking scene with animated talk bubble."
     },
     {
       "id": "claude-logo",
