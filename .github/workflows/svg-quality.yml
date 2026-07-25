@@ -23,8 +23,14 @@ jobs:
         with:
           bun-version: 1.3.14
 
+      - name: Install Bun dependencies
+        run: bun install --frozen-lockfile
+
       - name: Run SVG contract tests
         run: bun run test
 
       - name: Validate migrated SVG assets
         run: bun run validate
+
+      - name: SVGO check
+        run: bun run svgo:check
