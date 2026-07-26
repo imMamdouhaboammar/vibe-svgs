@@ -19,29 +19,31 @@
 
 <!-- project-story:start -->
 <details open>
-  <summary><strong>Why I built Vibe SVGs</strong></summary>
+  <summary><strong>Problem to project: Why I built Vibe SVGs</strong></summary>
   <br />
+  <p align="center"><img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/profile/project-badges.svg" width="488" alt="Real friction, building in public, daily pulse" /></p>
   <table>
     <tr>
-      <td width="118" align="center" valign="top">
-        <img src="./assets/readme/project-mark.svg" width="88" alt="Vibe SVGs repository mark" />
-      </td>
-      <td valign="top">
-        <p><strong>What is Vibe SVGs?</strong> An accessible collection of animated 2.5D SVG assets for developer documentation and project pages.</p>
-        <p><strong>Built from a recurring problem:</strong> Developer READMEs often rely on generic badges or inconsistent AI-made illustrations that break accessibility, motion, or inline SVG safety.</p>
-        <p><strong>Practical goal:</strong> Provide expressive reusable SVG mascots, badges, scenes, and banners with clear accessibility and technical contracts.</p>
-        <p><strong>Who it is for:</strong> Open-source maintainers, developer-tool builders, technical writers, and AI-assisted design workflows.</p>
-        <p><strong>Topics:</strong> developer README SVG · animated coding mascots · accessible SVG assets · AI developer illustrations</p>
-      </td>
+      <td width="104" align="center" valign="middle"><img src="./assets/readme/project-mark.svg" width="76" alt="Vibe SVGs repository mark" /></td>
+      <td valign="middle"><strong>Vibe SVGs</strong><br />An accessible collection of animated 2.5D SVG assets for developer documentation and project pages.</td>
     </tr>
   </table>
-  <p><strong>Daily development summary</strong></p>
+  <table>
+    <tr>
+      <td width="50%" valign="top"><strong>Recurring problem</strong><br />Developer READMEs often rely on generic badges or inconsistent AI-made illustrations that break accessibility, motion, or inline SVG safety.</td>
+      <td width="50%" valign="top"><strong>Practical goal</strong><br />Provide expressive reusable SVG mascots, badges, scenes, and banners with clear accessibility and technical contracts.</td>
+    </tr>
+    <tr>
+      <td width="50%" valign="top"><strong>Built for</strong><br />Open-source maintainers, developer-tool builders, technical writers, and AI-assisted design workflows.</td>
+      <td width="50%" valign="top"><strong>Search terms</strong><br />developer README SVG · animated coding mascots · accessible SVG assets · AI developer illustrations</td>
+    </tr>
+  </table>
+  <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>60 commits landed: docs: categorize and display all SVGs in README with previews; style: apply SVGO optimization preserving contract rules.</li>
-      <li>2 pull requests updated, led by #2: feat: rebuild Phase 1 SVG foundation and pilot mascots.</li>
-      <li>Daily summary covers 62 public activity items from the last 1 day.</li>
+      <li>62 commits landed: ci: refresh minimal story card after workflow changes; docs: add dynamic project story card (#3).</li>
+      <li>4 pull requests updated, led by #4: docs: add dynamic project story card.</li>
+      <li>Daily summary covers 66 public activity items from the last 1 day.</li>
   </ul>
-  <p><sub>Updated 2026-07-26T06:35:07.087Z · Deterministic public-activity summary</sub></p>
 </details>
 <!-- project-story:end -->
 
