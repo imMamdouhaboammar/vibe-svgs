@@ -16,6 +16,35 @@
   <img src="svgs/badges/yolo-deploy.svg" alt="YOLO Deploy">
 </p>
 
+
+<!-- project-story:start -->
+<details open>
+  <summary><strong>Why I built Vibe SVGs</strong></summary>
+  <br />
+  <table>
+    <tr>
+      <td width="118" align="center" valign="top">
+        <img src="./assets/readme/project-mark.svg" width="88" alt="Vibe SVGs repository mark" />
+      </td>
+      <td valign="top">
+        <p><strong>What is Vibe SVGs?</strong> An accessible collection of animated 2.5D SVG assets for developer documentation and project pages.</p>
+        <p><strong>Built from a recurring problem:</strong> Developer READMEs often rely on generic badges or inconsistent AI-made illustrations that break accessibility, motion, or inline SVG safety.</p>
+        <p><strong>Practical goal:</strong> Provide expressive reusable SVG mascots, badges, scenes, and banners with clear accessibility and technical contracts.</p>
+        <p><strong>Who it is for:</strong> Open-source maintainers, developer-tool builders, technical writers, and AI-assisted design workflows.</p>
+        <p><strong>Topics:</strong> developer README SVG · animated coding mascots · accessible SVG assets · AI developer illustrations</p>
+      </td>
+    </tr>
+  </table>
+  <p><strong>Daily development summary</strong></p>
+  <ul>
+      <li>60 commits landed: docs: categorize and display all SVGs in README with previews; style: apply SVGO optimization preserving contract rules.</li>
+      <li>2 pull requests updated, led by #2: feat: rebuild Phase 1 SVG foundation and pilot mascots.</li>
+      <li>Daily summary covers 62 public activity items from the last 1 day.</li>
+  </ul>
+  <p><sub>Updated 2026-07-26T06:35:07.087Z · Deterministic public-activity summary</sub></p>
+</details>
+<!-- project-story:end -->
+
 ---
 
 ## 🎨 Asset Gallery & Categories
