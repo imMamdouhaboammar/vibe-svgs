@@ -1,6 +1,11 @@
 name: Daily README story card
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/readme-story-card.yml"
   schedule:
     - cron: "39 4 * * *"
   workflow_dispatch:
