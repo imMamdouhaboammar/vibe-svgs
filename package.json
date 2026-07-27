@@ -20,7 +20,8 @@
     "generate:claude-code": "python3 scripts/generate_claude_code_scenes.py && bun run svgo:write",
     "motion:bounds": "bun run scripts/audit-motion-bounds.ts claude-code-manifest.json --require-mascot",
     "motion:bounds:all": "bun run scripts/audit-motion-bounds.ts asset-manifest.json",
-    "animator:setup": "bash svg-mascot-animator/scripts/setup.sh"
+    "animator:setup": "bash svg-mascot-animator/scripts/setup.sh",
+    "generate:mascot-packs": "bun svg-mascot-animator/scripts/generate-mascot-packs.mjs"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
