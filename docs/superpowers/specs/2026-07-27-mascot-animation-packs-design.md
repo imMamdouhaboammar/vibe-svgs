@@ -9,7 +9,7 @@ Turn every newly supplied pixel-art mascot source in `svgs/mascots` into a reusa
 The repository contains 96 mascot SVG files.
 
 - 20 existing animated vector mascots already follow the repository contract.
-- 61 newly supplied static pixel-art scenes use a `2000 2000` viewBox and are built entirely from rectangles.
+- 61 newly supplied static pixel-art scenes use a `2000 2000` viewBox. The set is rectangle-dominant, with one preserved polygon in the padlock source.
 - 15 `artboard-*` files form five groups of three alternate illustrations.
 - Two MP4 references show the intended motion language: short readable stories, pixel-frame swaps, body weight, anticipation, impact, prop attachment, and unequal frame holds.
 

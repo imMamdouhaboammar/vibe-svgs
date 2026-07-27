@@ -1,0 +1,710 @@
+{
+  "version": 1,
+  "generatedFrom": "supplied local files on 2026-07-27",
+  "svgSources": [
+    {
+      "path": "svgs/mascots/angry-at-laptop.svg",
+      "kind": "scene-source",
+      "bytes": 18781,
+      "sha256": "c93e636b4bd18049d527200361fabd626b1dd7b9137e98f1fbadc7b07fa4cac2",
+      "rectCount": 230,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/angry-pixel-coffee.svg",
+      "kind": "scene-source",
+      "bytes": 18524,
+      "sha256": "19a5415f7ac88d5de7f241ba9b3e2357d94f53391d8e285f606717872f95fb20",
+      "rectCount": 226,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/angry-powerful-lightning.svg",
+      "kind": "scene-source",
+      "bytes": 16840,
+      "sha256": "d2b0d3b8b2042673aaa070279e7e03ac11669bfa0e68ccfe558da5ee6b684019",
+      "rectCount": 206,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/api-success-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 23506,
+      "sha256": "ea8dd613d109867346fc738e69a559efbb62c40c4ab206d84a298453b709e195",
+      "rectCount": 289,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-24cla.svg",
+      "kind": "artboard-frame",
+      "bytes": 17914,
+      "sha256": "e1ca771da475a9e1463d98abc745eb9d0ac4ed2cbc96f2e4d8be570a2ce74d42",
+      "rectCount": 219,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-24cla2.svg",
+      "kind": "artboard-frame",
+      "bytes": 12142,
+      "sha256": "522acea569cbfe98e97d98f47d9f655e838c9f13f1db1bffaadda13da9baa3e6",
+      "rectCount": 148,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-24cla3.svg",
+      "kind": "artboard-frame",
+      "bytes": 19374,
+      "sha256": "8ffa551919119c4ac724b0c26a8ac984c435dffcb0ae4ac6d49a286db9e43d41",
+      "rectCount": 237,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-25cla.svg",
+      "kind": "artboard-frame",
+      "bytes": 18676,
+      "sha256": "33525e8ae13351c8d100263f35c7f4e024c1cef4b6345603558d5e7fd47a1f21",
+      "rectCount": 229,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-25cla2.svg",
+      "kind": "artboard-frame",
+      "bytes": 17054,
+      "sha256": "49a1c6d289d13b60ef851a38e9e4b799533b9d33d380d9909d194bdcb24dde20",
+      "rectCount": 208,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-25cla3.svg",
+      "kind": "artboard-frame",
+      "bytes": 15055,
+      "sha256": "0f80b35c44de24e64d3a1e37a093b651dcfdcd918bbd5622b6cdf2f086f56530",
+      "rectCount": 184,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-2cla.svg",
+      "kind": "artboard-frame",
+      "bytes": 16950,
+      "sha256": "dfd09c3d9548e7ab8116856a7511ff26b4165fb5457f89afbf3744ed07deb827",
+      "rectCount": 207,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-2cla2.svg",
+      "kind": "artboard-frame",
+      "bytes": 17300,
+      "sha256": "c906579d6b7683f6e5b2e85de8ec6e7d0a5bb92a2467ef6527998cacec304964",
+      "rectCount": 212,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-2cla3.svg",
+      "kind": "artboard-frame",
+      "bytes": 14665,
+      "sha256": "1bfcd52af60236c87e2f449abd44ef6562c2f37fd246a8e1363ae9f43ee7e31e",
+      "rectCount": 179,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-3cla.svg",
+      "kind": "artboard-frame",
+      "bytes": 21909,
+      "sha256": "486fd59be0e8360533846e6b182428704066c8e70e38933a8427c47ac0173710",
+      "rectCount": 269,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-3cla2.svg",
+      "kind": "artboard-frame",
+      "bytes": 14600,
+      "sha256": "68cf4bb82c59dc39b6bf546c40f8c6c763f1700db221f702873a7f3139e2e334",
+      "rectCount": 178,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-3cla3.svg",
+      "kind": "artboard-frame",
+      "bytes": 13807,
+      "sha256": "75ec1a171f64968e5be164ca4ecdfd4c29bf5af8e5692b80ecd651e8a0b2bdbc",
+      "rectCount": 168,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-4cla.svg",
+      "kind": "artboard-frame",
+      "bytes": 17658,
+      "sha256": "692a294b5faf2fcbe21c00eebf78f4a9d0943fa5dae3e93ac9265f39ea98ca46",
+      "rectCount": 216,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-4cla2.svg",
+      "kind": "artboard-frame",
+      "bytes": 16850,
+      "sha256": "25d6f7f0110afea8d3fc05ba7a235e27916ff228d812a1f7e1ec088ab07654ac",
+      "rectCount": 206,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/artboard-4cla3.svg",
+      "kind": "artboard-frame",
+      "bytes": 15404,
+      "sha256": "477a4038fea9be6360af181be6495a07f62da8a8623c23422026344be536bef1",
+      "rectCount": 188,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/baking-steaming-pie.svg",
+      "kind": "scene-source",
+      "bytes": 17671,
+      "sha256": "de466bfe6a8a3fd42506a11b4cc061cec59226fad1d6900e1c401ba863c619d1",
+      "rectCount": 216,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/broken-heart-sad.svg",
+      "kind": "scene-source",
+      "bytes": 14252,
+      "sha256": "9f2876fc38973a5df5199dc6f49f2801c1322a067632e7e089f1b133fdcd3c84",
+      "rectCount": 174,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/building-colorful-blocks.svg",
+      "kind": "scene-source",
+      "bytes": 25101,
+      "sha256": "00660229d59152b9787ee5de538628bb0d6ac0a5ded9e8753213a35bbb7f5331",
+      "rectCount": 308,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/confusion-spiral-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 16803,
+      "sha256": "84d32457fef30b9712c1de5e1d61d9b887d9b6fe269c3af59ae58896fc6e6fc9",
+      "rectCount": 205,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/crying-sad-reaction.svg",
+      "kind": "scene-source",
+      "bytes": 15227,
+      "sha256": "7feb8f594f92abb1474c7a4562ba91ea21363df894a537f3566f21e849eac8ab",
+      "rectCount": 186,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/data-blocks-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 15944,
+      "sha256": "3f62aee53da931f6cb39ced8059933c2b00c66f2bf3a0b79358e4c1a084b75fa",
+      "rectCount": 195,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/debugging-system-bugs.svg",
+      "kind": "scene-source",
+      "bytes": 17102,
+      "sha256": "f7a208930185be600104352eb3c8a0349f1006823eda077283b434ebe33db0cd",
+      "rectCount": 209,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/developer-pair-programming-scene.svg",
+      "kind": "scene-source",
+      "bytes": 23874,
+      "sha256": "de3cb463ab36103beeb2dc8fdb72fc4a2b1fc6f1f6eb9a3e3174fc95650848b4",
+      "rectCount": 292,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/disconnected-plug-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 16466,
+      "sha256": "5c26a6ede49e39bac338b90f8cc90b80b6e36ea8e39cfcc38421fd7b388043ac",
+      "rectCount": 201,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/dizzy-failed-state.svg",
+      "kind": "scene-source",
+      "bytes": 18022,
+      "sha256": "46b64eb2a9f0da748dfff80819d168968be8b3c23057230663f34efd53c743a6",
+      "rectCount": 221,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/error-state-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 19632,
+      "sha256": "6db8556f8b3cec1c40efd000f946038621abf7891820b87fb09a5ca8a080544e",
+      "rectCount": 241,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/examining-green-globe.svg",
+      "kind": "scene-source",
+      "bytes": 15476,
+      "sha256": "af8cde7473925559bc4abe1a4c54ca5e799f97ea65c5b3c6030e0f0cc6d246c7",
+      "rectCount": 189,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/failed-process-error.svg",
+      "kind": "scene-source",
+      "bytes": 30492,
+      "sha256": "b5da7bab20992bfec8d81644cd4b42b56d3af46a1d00106a37b51b993020f0f5",
+      "rectCount": 233,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/fast-performance-trail.svg",
+      "kind": "scene-source",
+      "bytes": 14573,
+      "sha256": "9f892c16c30b9bfbb38b9728e29bc041d9414025099b022cca442137a728a648",
+      "rectCount": 178,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/fine-under-pressure.svg",
+      "kind": "scene-source",
+      "bytes": 32845,
+      "sha256": "b1d0960d0279ea462497de8ce24db39f67ba484704048de500f472a2cefaa8a0",
+      "rectCount": 404,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/growing-pixel-nature.svg",
+      "kind": "scene-source",
+      "bytes": 20168,
+      "sha256": "574a7f440414fb20552433584d326604a28c66b69a4bbfcd42088c2b65f6da09",
+      "rectCount": 247,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/happy-pixel-celebrating.svg",
+      "kind": "scene-source",
+      "bytes": 16779,
+      "sha256": "62006324d35a9ed0bb63b790849b7139ad3c2382d3495f4ab17545f05b694aba",
+      "rectCount": 205,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/holding-ancient-scroll.svg",
+      "kind": "scene-source",
+      "bytes": 25602,
+      "sha256": "0d364cb5db76c0cdbf143b9c655aa0289a10c38df1eec2dee949fcb0e2021bf3",
+      "rectCount": 195,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/holding-green-leaf.svg",
+      "kind": "scene-source",
+      "bytes": 12628,
+      "sha256": "12ea8e4e84e700e7ea8d53aae553a19b82e962c30bdd95173f45fb048584699a",
+      "rectCount": 154,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/idea-lightbulb-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 28630,
+      "sha256": "33a58ffa938618280ddf6a285904b3e99914dcedf03268e7b57e517bb97e3061",
+      "rectCount": 218,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/in-constant-loop.svg",
+      "kind": "scene-source",
+      "bytes": 17958,
+      "sha256": "1f080db46d6894e7c27e4a686c82f4cb6ff8dc1aee7511e07576eb7882459460",
+      "rectCount": 220,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/in-glowing-aura.svg",
+      "kind": "scene-source",
+      "bytes": 16662,
+      "sha256": "453d84e32104083396e8f59cac505229fddbdaa0b5654b8f999cda9e4bc057c9",
+      "rectCount": 206,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/infrastructure-server-stacks.svg",
+      "kind": "scene-source",
+      "bytes": 22256,
+      "sha256": "7a5703768e2474de4ab5513065b0c4dbfec1113abbbc03862413e7b2d40ae90a",
+      "rectCount": 273,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/it-depends-sign.svg",
+      "kind": "scene-source",
+      "bytes": 27281,
+      "sha256": "984ab2be3d630829fe1978651824ae381b960553c59086a5e4b8f9d59443fec6",
+      "rectCount": 335,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/lab-science-testing.svg",
+      "kind": "scene-source",
+      "bytes": 15972,
+      "sha256": "e03bdf717869b98fb6b2a2d36657b558997d3469da432324e42389ec1839edb1",
+      "rectCount": 195,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/lifting-heavy-barbell.svg",
+      "kind": "scene-source",
+      "bytes": 16351,
+      "sha256": "821a4801dca78e8c121d05cb269b91f3ec231ee892f08f6ffb78d2c3cb535e35",
+      "rectCount": 200,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/love-cloud-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 29838,
+      "sha256": "ecea0b398524c996b92298fd5fca00ac97a43ba17c1694da6d1eeb85fe55a69a",
+      "rectCount": 366,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/malware-detection-window.svg",
+      "kind": "scene-source",
+      "bytes": 27591,
+      "sha256": "837e8cd80cd6104436d70aca11ab44b5299316cc0f14703d445cdcd9ee2f4785",
+      "rectCount": 341,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/managing-server-rack.svg",
+      "kind": "scene-source",
+      "bytes": 23420,
+      "sha256": "b7b200e88ffde1d2435962fe3973e0169c2f02e4de159af47a500407661a79e9",
+      "rectCount": 287,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/marking-critical-error.svg",
+      "kind": "scene-source",
+      "bytes": 19273,
+      "sha256": "a7b14964f3e0536a3ef4e7da4c5bae568acbdcd033bc68f17f4d3f45d9e8642b",
+      "rectCount": 236,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/mascot,pixel art,happy,celebrate,sparkles,icon,developer tool,claude.svg",
+      "kind": "scene-source",
+      "bytes": 16392,
+      "sha256": "a2ec772f7ebd10953ac624aa397422cc882193b91157c2b2550df117ed587671",
+      "rectCount": 205,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/multi-window-workflow.svg",
+      "kind": "scene-source",
+      "bytes": 29218,
+      "sha256": "4d3816264dec80a79958c809b8d1f26da3467235c3953d67408e33f39b25de4c",
+      "rectCount": 359,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/nature-growth-mushrooms.svg",
+      "kind": "scene-source",
+      "bytes": 17657,
+      "sha256": "d3f784391cebfc63c63c75623ec09032ae2d86eca2f900f1f579d6160aeaec4e",
+      "rectCount": 216,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/planting-small-trees.svg",
+      "kind": "scene-source",
+      "bytes": 13367,
+      "sha256": "2fb9f61f75046761ea1905196849e768604ed291a9530cd057849f7983388f1d",
+      "rectCount": 163,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/processing-logic-symbols.svg",
+      "kind": "scene-source",
+      "bytes": 16876,
+      "sha256": "b9cc25b9ca7eb30c76fac56b214c1a0524e25ed9a7ad6bad140aa2bb96813362",
+      "rectCount": 206,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/professional-documentation-audit.svg",
+      "kind": "scene-source",
+      "bytes": 18007,
+      "sha256": "147067ad961cbf7569789ff4a91beef0f457bc73ba46779ab53eebaaa8b67267",
+      "rectCount": 221,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/reading-data-document.svg",
+      "kind": "scene-source",
+      "bytes": 13584,
+      "sha256": "93299b8ff89a30fa04e1e85e4aa6897d83a41f335d0677158aaf7feb9d30bc4c",
+      "rectCount": 166,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/refresh-sync-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 14656,
+      "sha256": "3684353da7c0f0e50280f2053bf6f1858869b47e2cedf17c008830ccab28a19d",
+      "rectCount": 179,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/repairing-with-tools.svg",
+      "kind": "scene-source",
+      "bytes": 22019,
+      "sha256": "ca0b0ded632e4e688c93b22ca3bde84717dd106ca5f7adc8d0d3d10e5f56ac99",
+      "rectCount": 270,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/reviewing-long-data-log.svg",
+      "kind": "scene-source",
+      "bytes": 24043,
+      "sha256": "a47d17ace1409265d63f10e4d9ee8d9de02e2628bc057ce179fe5bd659fa9fdc",
+      "rectCount": 295,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/rocket-launch-success.svg",
+      "kind": "scene-source",
+      "bytes": 16523,
+      "sha256": "3748595690d73a40dc27cc77e9bd76c0c066d219638ed28dd8a25f965ce3f698",
+      "rectCount": 202,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/secure-access-padlock.svg",
+      "kind": "scene-source",
+      "bytes": 19419,
+      "sha256": "2487b51ed540e0567b41ef85d165017abf9831443cb958a4666252113b835565",
+      "rectCount": 237,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 1
+    },
+    {
+      "path": "svgs/mascots/server-stack-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 39216,
+      "sha256": "b630aea4c5a714fd4bfed15b27fec3e9ae4cff3d0f8a1a47672488844e2da421",
+      "rectCount": 300,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/sleeping-soundly.svg",
+      "kind": "scene-source",
+      "bytes": 14925,
+      "sha256": "f1272dadf7164b981c8a305d5bb20080206f46697923213878b166842240ebc4",
+      "rectCount": 182,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/stealth-ninja-security.svg",
+      "kind": "scene-source",
+      "bytes": 13605,
+      "sha256": "28c337943697ee286a7b9a0300a0c54b86a95a7d1a2b87756e6bde3a67d16756",
+      "rectCount": 166,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/success-achievement-milestone.svg",
+      "kind": "scene-source",
+      "bytes": 15073,
+      "sha256": "d15d4dbb4e16021c5df906509cf9639380edfbc6f6119677e41b27c02c09f398",
+      "rectCount": 184,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/system-error-alert.svg",
+      "kind": "scene-source",
+      "bytes": 47155,
+      "sha256": "e4333cc209c70dcb9fc90a082a7e309bf4fcca434272b570603e5ab75db1a253",
+      "rectCount": 361,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/system-monitoring-dashboard.svg",
+      "kind": "scene-source",
+      "bytes": 26492,
+      "sha256": "8e05fbf486f95cc6c9f1c020c66285393b683054b47b1a2be6f90614fd6d7a0a",
+      "rectCount": 325,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/thinking-in-code.svg",
+      "kind": "scene-source",
+      "bytes": 14022,
+      "sha256": "4090b1e52d0bba6310b691101e802aec5c919309d2ef473a9062b48be02062e7",
+      "rectCount": 171,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/thinking-pixel-bubble.svg",
+      "kind": "scene-source",
+      "bytes": 17600,
+      "sha256": "2054147962430f646df8b2bb9ad13f4fe0a7d31d83eb478f936ca2e17ad47321",
+      "rectCount": 215,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/tracking-multiple-locations.svg",
+      "kind": "scene-source",
+      "bytes": 17538,
+      "sha256": "c3a83e67e7e725148f2d3e68f6eb1fe7347ea4ebe841fd6df00f2a98031506f9",
+      "rectCount": 214,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/trending-up-pixel.svg",
+      "kind": "scene-source",
+      "bytes": 17823,
+      "sha256": "ed9ed39e1ef1ad023b379147532ed07547f4e782497fe92e48c0e9b447144c24",
+      "rectCount": 218,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/user-profile-settings.svg",
+      "kind": "scene-source",
+      "bytes": 21413,
+      "sha256": "f69d9c69e1257106d6df575ddffc99926472503ead7f0081dd4372b71009ef09",
+      "rectCount": 263,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/visualizing-tree-data.svg",
+      "kind": "scene-source",
+      "bytes": 14662,
+      "sha256": "fbf801cadd38458d3a148e3ab5d526e962be2d763bc4d0c058bd9a350ae5b7ac",
+      "rectCount": 179,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/welcome-pixel-banner.svg",
+      "kind": "scene-source",
+      "bytes": 17503,
+      "sha256": "5799c4555644406341bb8c5ca26afea8e172f4c984f08cbb118cbfa93848efa8",
+      "rectCount": 214,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/with-success-checkmark.svg",
+      "kind": "scene-source",
+      "bytes": 19255,
+      "sha256": "ef9ccbbcb082dc2b8f28d77be86cecd5a7bc0a726014bb985d395eaec07c4384",
+      "rectCount": 236,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    },
+    {
+      "path": "svgs/mascots/writing-software-code.svg",
+      "kind": "scene-source",
+      "bytes": 14495,
+      "sha256": "3935cc86007627ccca59a894f213d0d1d98da6c5260a4af848e9837cfe6bc987",
+      "rectCount": 177,
+      "viewBox": "0 0 2000 2000",
+      "polygonCount": 0
+    }
+  ],
+  "videoReferences": [
+    {
+      "path": "svgs/mascots/1775512169485-Claued-Code-Mascot-animated.mp4",
+      "bytes": 237896,
+      "sha256": "469312572afab560bd1ecae0c9a4ec438c86fbdeda78aa6af714f23570ec65da",
+      "durationSeconds": 6.042,
+      "width": 800,
+      "height": 800,
+      "purpose": "Nine compact looping story references shown in a tiled composition."
+    },
+    {
+      "path": "svgs/mascots/copy_9B2864B4-A459-46F6-8830-E1F16648191B.mp4",
+      "bytes": 842977,
+      "sha256": "e712ebd71dc8cabf63a4f9a35a7ec76749b41eb7700e16441b63547750baa712",
+      "durationSeconds": 20.827,
+      "width": 1920,
+      "height": 772,
+      "purpose": "Four concurrent sprite and continuous-motion references with jumps, flags, effort holds, and confetti."
+    }
+  ]
+}
