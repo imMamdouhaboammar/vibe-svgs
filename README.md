@@ -60,7 +60,6 @@
 | **Claude Sleeping** | <img src="svgs/mascots/claude-sleeping.svg" width="120" alt="Claude Sleeping"> | `![Claude Sleeping](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-sleeping.svg)` |
 | **Claude Debugging** | <img src="svgs/mascots/claude-debugging.svg" width="120" alt="Claude Debugging"> | `![Claude Debugging](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-debugging.svg)` |
 | **Claude Speaking** | <img src="svgs/mascots/claude-speaking.svg" width="120" alt="Claude Speaking"> | `![Claude Speaking](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-speaking.svg)` |
-| **Claude HD Suite** | <img src="svgs/mascots/claude-suite-hd.svg" width="220" alt="Claude HD Suite"> | `![Claude HD Suite](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-suite-hd.svg)` |
 
 
 ### <img src="svgs/logos/claudecode-color.svg" width="24" height="24" alt="" align="absmiddle"> Claude Code Motion Collection
@@ -94,7 +93,6 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 | **Codex Hallucinating** | <img src="svgs/mascots/codex-hallucinating.svg" width="140" alt="Codex Hallucinating"> | `![Codex Hallucinating](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/codex-hallucinating.svg)` |
 | **Codex Jumping** | <img src="svgs/mascots/codex-jumping.svg" width="120" alt="Codex Jumping"> | `![Codex Jumping](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/codex-jumping.svg)` |
 | **Codex Speaking** | <img src="svgs/mascots/codex-speaking.svg" width="120" alt="Codex Speaking"> | `![Codex Speaking](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/codex-speaking.svg)` |
-| **Codex HD Suite** | <img src="svgs/mascots/codex-suite-hd.svg" width="220" alt="Codex HD Suite"> | `![Codex HD Suite](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/codex-suite-hd.svg)` |
 
 ---
 
@@ -104,7 +102,6 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 | :--- | :---: | :--- |
 | **Cursor Mascot** | <img src="svgs/mascots/cursor-mascot.svg" width="120" alt="Cursor Mascot"> | `![Cursor Mascot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/cursor-mascot.svg)` |
 | **Cursor Auto-Tab / Rage** | <img src="svgs/mascots/cursor-rage-autotab.svg" width="120" alt="Cursor Auto-Tab"> | `![Cursor Auto-Tab](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/cursor-rage-autotab.svg)` |
-| **Cursor HD Suite** | <img src="svgs/mascots/cursor-suite-hd.svg" width="220" alt="Cursor HD Suite"> | `![Cursor HD Suite](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/cursor-suite-hd.svg)` |
 
 ---
 
@@ -116,7 +113,6 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 | **Gemini Levitating** | <img src="svgs/mascots/gemini-levitating.svg" width="120" alt="Gemini Levitating"> | `![Gemini Levitating](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/gemini-levitating.svg)` |
 | **Gemini Jumping** | <img src="svgs/mascots/gemini-jumping.svg" width="120" alt="Gemini Jumping"> | `![Gemini Jumping](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/gemini-jumping.svg)` |
 | **Gemini Speaking** | <img src="svgs/mascots/gemini-speaking.svg" width="120" alt="Gemini Speaking"> | `![Gemini Speaking](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/gemini-speaking.svg)` |
-| **Gemini HD Suite** | <img src="svgs/mascots/gemini-suite-hd.svg" width="220" alt="Gemini HD Suite"> | `![Gemini HD Suite](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/gemini-suite-hd.svg)` |
 
 ---
 
@@ -136,7 +132,6 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 | :--- | :---: | :--- |
 | **Copilot Mascot** | <img src="svgs/mascots/copilot-mascot.svg" width="120" alt="Copilot Mascot"> | `![Copilot Mascot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/copilot-mascot.svg)` |
 | **Copilot Ninja** | <img src="svgs/mascots/copilot-ninja.svg" width="120" alt="Copilot Ninja"> | `![Copilot Ninja](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/copilot-ninja.svg)` |
-| **Copilot HD Suite** | <img src="svgs/mascots/copilot-suite-hd.svg" width="220" alt="Copilot HD Suite"> | `![Copilot HD Suite](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/copilot-suite-hd.svg)` |
 
 ---
 

@@ -2,50 +2,6 @@
   "version": 1,
   "assets": [
     {
-      "id": "claude-suite-hd",
-      "path": "svgs/mascots/claude-suite-hd.svg",
-      "category": "claude",
-      "type": "suite",
-      "animated": true,
-      "communityArtwork": true,
-      "contractVersion": 1,
-      "title": "Claude Suite HD Banner",
-      "description": "Fan-made terracotta suite banner featuring Claude mascots and scenes."
-    },
-    {
-      "id": "codex-suite-hd",
-      "path": "svgs/mascots/codex-suite-hd.svg",
-      "category": "codex",
-      "type": "suite",
-      "animated": true,
-      "communityArtwork": true,
-      "contractVersion": 1,
-      "title": "Codex Suite HD Banner",
-      "description": "Fan-made violet-cyan suite banner featuring Codex mascots and scenes."
-    },
-    {
-      "id": "cursor-suite-hd",
-      "path": "svgs/mascots/cursor-suite-hd.svg",
-      "category": "cursor",
-      "type": "suite",
-      "animated": true,
-      "communityArtwork": true,
-      "contractVersion": 1,
-      "title": "Cursor Suite HD Banner",
-      "description": "Fan-made dark graphite suite banner featuring Cursor mascots and scenes."
-    },
-    {
-      "id": "gemini-suite-hd",
-      "path": "svgs/mascots/gemini-suite-hd.svg",
-      "category": "gemini",
-      "type": "suite",
-      "animated": true,
-      "communityArtwork": true,
-      "contractVersion": 1,
-      "title": "Gemini Suite HD Banner",
-      "description": "Fan-made blue-violet suite banner featuring Gemini mascots and scenes."
-    },
-    {
       "id": "deepseek-suite-hd",
       "path": "svgs/mascots/deepseek-suite-hd.svg",
       "category": "deepseek",
@@ -55,17 +11,6 @@
       "contractVersion": 1,
       "title": "DeepSeek Suite HD Banner",
       "description": "Fan-made ocean blue suite banner featuring DeepSeek whale mascot and scenes."
-    },
-    {
-      "id": "copilot-suite-hd",
-      "path": "svgs/mascots/copilot-suite-hd.svg",
-      "category": "copilot",
-      "type": "suite",
-      "animated": true,
-      "communityArtwork": true,
-      "contractVersion": 1,
-      "title": "Copilot Suite HD Banner",
-      "description": "Fan-made robot suite banner featuring Copilot mascots and scenes."
     },
     {
       "id": "claude-mascot",
