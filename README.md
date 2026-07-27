@@ -62,6 +62,22 @@
 | **Claude Speaking** | <img src="svgs/mascots/claude-speaking.svg" width="120" alt="Claude Speaking"> | `![Claude Speaking](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-speaking.svg)` |
 | **Claude HD Suite** | <img src="svgs/mascots/claude-suite-hd.svg" width="220" alt="Claude HD Suite"> | `![Claude HD Suite](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-suite-hd.svg)` |
 
+
+<!-- claude-stories:start -->
+### Claude Stories
+
+| Story | Preview | Raw Markdown |
+| :--- | :---: | :--- |
+| **Claude Orchestrating** | <img src="svgs/scenes/claude-orchestrating.svg" width="140" alt="Claude Orchestrating"> | `![Claude Orchestrating](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-orchestrating.svg)` |
+| **Claude Context Overflow** | <img src="svgs/scenes/claude-context-overflow.svg" width="140" alt="Claude Context Overflow"> | `![Claude Context Overflow](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-context-overflow.svg)` |
+| **Claude Refactoring** | <img src="svgs/scenes/claude-refactoring.svg" width="140" alt="Claude Refactoring"> | `![Claude Refactoring](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-refactoring.svg)` |
+| **Claude Deep Thinking** | <img src="svgs/scenes/claude-deep-thinking.svg" width="140" alt="Claude Deep Thinking"> | `![Claude Deep Thinking](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-deep-thinking.svg)` |
+| **Claude Pair Programming** | <img src="svgs/scenes/claude-pair-programming.svg" width="140" alt="Claude Pair Programming"> | `![Claude Pair Programming](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-pair-programming.svg)` |
+| **Claude Shipping** | <img src="svgs/scenes/claude-shipping.svg" width="140" alt="Claude Shipping"> | `![Claude Shipping](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-shipping.svg)` |
+| **Claude Code Review** | <img src="svgs/scenes/claude-code-review.svg" width="140" alt="Claude Code Review"> | `![Claude Code Review](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-review.svg)` |
+| **Claude Coffee Break** | <img src="svgs/scenes/claude-coffee-break.svg" width="140" alt="Claude Coffee Break"> | `![Claude Coffee Break](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-coffee-break.svg)` |
+<!-- claude-stories:end -->
+
 ---
 
 ### 💜 Codex Family
