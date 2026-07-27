@@ -19,7 +19,8 @@
     "validate:claude-code": "bun run scripts/validate-svg.ts claude-code-manifest.json",
     "generate:claude-code": "python3 scripts/generate_claude_code_scenes.py && bun run svgo:write",
     "motion:bounds": "bun run scripts/audit-motion-bounds.ts claude-code-manifest.json --require-mascot",
-    "motion:bounds:all": "bun run scripts/audit-motion-bounds.ts asset-manifest.json"
+    "motion:bounds:all": "bun run scripts/audit-motion-bounds.ts asset-manifest.json",
+    "animator:setup": "bash svg-mascot-animator/scripts/setup.sh"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "ajv": "^8.20.0",
-    "ajv-formats": "^3.0.1"
+    "ajv-formats": "^3.0.1",
+    "animejs": "4.5.0"
   }
 }

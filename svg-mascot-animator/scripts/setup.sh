@@ -6,15 +6,13 @@ set -e
 
 PIN="${ANIMEJS_VERSION:-4.5.0}"
 
-if ! command -v node >/dev/null 2>&1; then
-  echo "node is not available."
-  echo "Runtime track: import from https://esm.sh/animejs@${PIN} directly in the browser."
-  echo "Static track: use scripts/physics.py, which needs only python3."
-  exit 0
+if ! command -v bun >/dev/null 2>&1; then
+  echo "Bun is required to install the pinned animation engine."
+  exit 1
 fi
 
 echo "installing animejs@${PIN}"
-npm install "animejs@${PIN}" --silent
+bun add "animejs@${PIN}" --exact --silent
 
 node -e "
 import('animejs').then(m => {
