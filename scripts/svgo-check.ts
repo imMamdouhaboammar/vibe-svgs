@@ -3,6 +3,34 @@ import { optimize } from "svgo";
 // @ts-ignore
 import svgoConfig from "../svgo.config.js";
 
+const preserveClaudeCodePath = (filePath: string): boolean =>
+  filePath.startsWith("svgs/scenes/claude-code-") &&
+  filePath !== "svgs/scenes/claude-code-review.svg";
+
+const configForFile = (filePath: string) => ({
+  ...svgoConfig,
+  plugins: (svgoConfig.plugins ?? []).map((plugin: any) => {
+    if (
+      !preserveClaudeCodePath(filePath) ||
+      typeof plugin === "string" ||
+      plugin.name !== "preset-default"
+    ) {
+      return plugin;
+    }
+
+    return {
+      ...plugin,
+      params: {
+        ...(plugin.params ?? {}),
+        overrides: {
+          ...(plugin.params?.overrides ?? {}),
+          convertPathData: false,
+        },
+      },
+    };
+  }),
+});
+
 async function runSvgo(writeMode: boolean = false) {
   const svgFiles: string[] = [];
   const glob = new Bun.Glob("svgs/**/*.svg");
@@ -16,7 +44,7 @@ async function runSvgo(writeMode: boolean = false) {
     const original = await readFile(filePath, "utf8");
     const result = optimize(original, {
       path: filePath,
-      ...svgoConfig,
+      ...configForFile(filePath),
     });
 
     if (result.data !== original) {

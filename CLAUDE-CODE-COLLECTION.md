@@ -1,0 +1,55 @@
+<p align="center">
+  <img src="svgs/logos/claudecode-color.svg" width="56" height="56" alt="Claude Code">
+</p>
+
+<h1 align="center">Claude Code Motion Collection</h1>
+
+<p align="center">
+  Twenty community-created animated SVG stories built around the supplied Claude Code mark.
+</p>
+
+## Motion contract
+
+Every scene keeps the supplied mascot path unchanged:
+
+```text
+M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z
+```
+
+The collection uses separate nested transform owners for body motion, props, secondary motion, and contact shadows. Timing is designed around anticipation, acceleration, impact, overshoot, damping, drag, pendulum motion, and ballistic fall. Every animated asset includes a `prefers-reduced-motion` fallback.
+
+## Gallery
+
+| Story | Preview | Raw Markdown |
+| :--- | :---: | :--- |
+| **Terminal Sprint** | <img src="svgs/scenes/claude-code-terminal-sprint.svg" width="150" alt="Claude Code Terminal Sprint"> | `![Claude Code Terminal Sprint](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-terminal-sprint.svg)` |
+| **Bug Hunt** | <img src="svgs/scenes/claude-code-bug-hunt.svg" width="150" alt="Claude Code Bug Hunt"> | `![Claude Code Bug Hunt](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-bug-hunt.svg)` |
+| **Git Merge** | <img src="svgs/scenes/claude-code-git-merge.svg" width="150" alt="Claude Code Git Merge"> | `![Claude Code Git Merge](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-git-merge.svg)` |
+| **Context Juggle** | <img src="svgs/scenes/claude-code-context-juggle.svg" width="150" alt="Claude Code Context Juggle"> | `![Claude Code Context Juggle](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-context-juggle.svg)` |
+| **Release Launch** | <img src="svgs/scenes/claude-code-release-launch.svg" width="150" alt="Claude Code Release Launch"> | `![Claude Code Release Launch](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-release-launch.svg)` |
+| **Review Pass** | <img src="svgs/scenes/claude-code-review-pass.svg" width="150" alt="Claude Code Review Pass"> | `![Claude Code Review Pass](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-review-pass.svg)` |
+| **Pair Session** | <img src="svgs/scenes/claude-code-pair-session.svg" width="150" alt="Claude Code Pair Session"> | `![Claude Code Pair Session](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-pair-session.svg)` |
+| **Refactor Pull** | <img src="svgs/scenes/claude-code-refactor-pull.svg" width="150" alt="Claude Code Refactor Pull"> | `![Claude Code Refactor Pull](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-refactor-pull.svg)` |
+| **Test Lab** | <img src="svgs/scenes/claude-code-test-lab.svg" width="150" alt="Claude Code Test Lab"> | `![Claude Code Test Lab](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-test-lab.svg)` |
+| **Coffee Compile** | <img src="svgs/scenes/claude-code-coffee-compile.svg" width="150" alt="Claude Code Coffee Compile"> | `![Claude Code Coffee Compile](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-coffee-compile.svg)` |
+| **Focus Lock** | <img src="svgs/scenes/claude-code-focus-lock.svg" width="150" alt="Claude Code Focus Lock"> | `![Claude Code Focus Lock](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-focus-lock.svg)` |
+| **Memory Search** | <img src="svgs/scenes/claude-code-memory-search.svg" width="150" alt="Claude Code Memory Search"> | `![Claude Code Memory Search](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-memory-search.svg)` |
+| **Package Drop** | <img src="svgs/scenes/claude-code-package-drop.svg" width="150" alt="Claude Code Package Drop"> | `![Claude Code Package Drop](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-package-drop.svg)` |
+| **Incident Response** | <img src="svgs/scenes/claude-code-incident-response.svg" width="150" alt="Claude Code Incident Response"> | `![Claude Code Incident Response](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-incident-response.svg)` |
+| **Branch Swing** | <img src="svgs/scenes/claude-code-branch-swing.svg" width="150" alt="Claude Code Branch Swing"> | `![Claude Code Branch Swing](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-branch-swing.svg)` |
+| **Token Rain** | <img src="svgs/scenes/claude-code-token-rain.svg" width="150" alt="Claude Code Token Rain"> | `![Claude Code Token Rain](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-token-rain.svg)` |
+| **Prompt Fishing** | <img src="svgs/scenes/claude-code-prompt-fishing.svg" width="150" alt="Claude Code Prompt Fishing"> | `![Claude Code Prompt Fishing](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-prompt-fishing.svg)` |
+| **Agent Conductor** | <img src="svgs/scenes/claude-code-agent-conductor.svg" width="150" alt="Claude Code Agent Conductor"> | `![Claude Code Agent Conductor](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-agent-conductor.svg)` |
+| **Build Sleep** | <img src="svgs/scenes/claude-code-build-sleep.svg" width="150" alt="Claude Code Build Sleep"> | `![Claude Code Build Sleep](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-build-sleep.svg)` |
+| **Victory Dance** | <img src="svgs/scenes/claude-code-victory-dance.svg" width="150" alt="Claude Code Victory Dance"> | `![Claude Code Victory Dance](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-victory-dance.svg)` |
+
+## Verification
+
+```bash
+bun test tests/claude-code-collection.test.ts
+bun run scripts/validate-svg.ts claude-code-manifest.json
+```
+
+## Trademark note
+
+Claude Code and its mark belong to their respective owner. The surrounding scenes and motion treatments are community-created and are not presented as endorsed artwork.

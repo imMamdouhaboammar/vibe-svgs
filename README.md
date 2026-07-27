@@ -63,6 +63,12 @@
 | **Claude HD Suite** | <img src="svgs/mascots/claude-suite-hd.svg" width="220" alt="Claude HD Suite"> | `![Claude HD Suite](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/mascots/claude-suite-hd.svg)` |
 
 
+### <img src="svgs/logos/claudecode-color.svg" width="24" height="24" alt="" align="absmiddle"> Claude Code Motion Collection
+
+Twenty physics-driven animated stories built around the supplied Claude Code mascot path.
+
+[View all 20 Claude Code animations](CLAUDE-CODE-COLLECTION.md)
+
 <!-- claude-stories:start -->
 ### Claude Stories
 
