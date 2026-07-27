@@ -11,15 +11,17 @@ async function loadSuppliedSourcePaths(): Promise<Set<string>> {
   return new Set((inventory.svgSources ?? []).map((entry: { path: string }) => entry.path));
 }
 
+const preserveAnimatedPackPath = (filePath: string): boolean => filePath.startsWith("svgs/packs/");
+
 const preserveClaudeCodePath = (filePath: string): boolean =>
   filePath.startsWith("svgs/scenes/claude-code-") &&
   filePath !== "svgs/scenes/claude-code-review.svg";
 
-const configForFile = (filePath: string) => ({
+export const configForFile = (filePath: string) => ({
   ...svgoConfig,
   plugins: (svgoConfig.plugins ?? []).map((plugin: any) => {
     if (
-      !preserveClaudeCodePath(filePath) ||
+      (!preserveClaudeCodePath(filePath) && !preserveAnimatedPackPath(filePath)) ||
       typeof plugin === "string" ||
       plugin.name !== "preset-default"
     ) {
@@ -33,9 +35,12 @@ const configForFile = (filePath: string) => ({
         overrides: {
           ...(plugin.params?.overrides ?? {}),
           convertPathData: false,
+          convertShapeToPath: false,
           convertTransform: false,
           moveElemsAttrsToGroup: false,
           moveGroupAttrsToElems: false,
+          removeHiddenElems: false,
+          removeEmptyContainers: false,
         },
       },
     };
@@ -83,5 +88,7 @@ async function runSvgo(writeMode: boolean = false) {
   }
 }
 
-const isWrite = process.argv.includes("--write");
-runSvgo(isWrite);
+if (import.meta.main) {
+  const isWrite = process.argv.includes("--write");
+  await runSvgo(isWrite);
+}

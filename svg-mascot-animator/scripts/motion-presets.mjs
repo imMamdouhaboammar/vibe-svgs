@@ -12,6 +12,11 @@ for (const preset of ["failed"]) FAMILY_BY_PRESET.set(preset, "fail");
 for (const preset of ["ninja"]) FAMILY_BY_PRESET.set(preset, "ninja");
 FAMILY_BY_PRESET.set("lift", "lift");
 FAMILY_BY_PRESET.set("sleep", "sleep");
+FAMILY_BY_PRESET.set("sprite-recovery", "impact");
+FAMILY_BY_PRESET.set("sprite-celebration", "jump");
+FAMILY_BY_PRESET.set("sprite-deadline", "pulse");
+FAMILY_BY_PRESET.set("sprite-defense", "float");
+FAMILY_BY_PRESET.set("sprite-mission", "work");
 
 const rest = Object.freeze({ x: 0, y: 0, rotate: 0, scaleX: 1, scaleY: 1 });
 const state = (overrides = {}) => ({ ...rest, ...overrides });

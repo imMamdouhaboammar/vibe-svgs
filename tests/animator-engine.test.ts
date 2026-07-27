@@ -26,3 +26,9 @@ test("the animator setup script installs with Bun rather than npm", async () => 
   expect(setup).toContain('bun add "animejs@${PIN}"');
   expect(setup).not.toContain("npm install");
 });
+
+
+test("keeps the bake CLI inert when imported by pack generators", async () => {
+  const bake = await readFile("svg-mascot-animator/scripts/bake.mjs", "utf8");
+  expect(bake).toContain("if (import.meta.main && argv.length)");
+});

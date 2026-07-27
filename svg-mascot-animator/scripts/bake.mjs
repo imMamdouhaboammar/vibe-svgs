@@ -103,7 +103,7 @@ export const PHYSICAL_EASES = {
 
 // ---------------------------------------------------------------- CLI
 const argv = process.argv.slice(2);
-if (argv.length) {
+if (import.meta.main && argv.length) {
   const cmd = argv[0];
   const arg = (k, d) => {
     const i = argv.indexOf(`--${k}`);
