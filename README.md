@@ -51,7 +51,7 @@
 
 ## 🎨 Asset Gallery & Categories
 
-### 🧡 Claude Family
+### <img src="assets/readme/claude-color.svg" width="24" height="24" alt="" align="absmiddle"> Claude Family
 
 | Asset | Preview | Raw Markdown |
 | :--- | :---: | :--- |
