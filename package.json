@@ -21,7 +21,8 @@
     "motion:bounds": "bun run scripts/audit-motion-bounds.ts claude-code-manifest.json --require-mascot",
     "motion:bounds:all": "bun run scripts/audit-motion-bounds.ts asset-manifest.json",
     "animator:setup": "bash svg-mascot-animator/scripts/setup.sh",
-    "generate:mascot-packs": "bun svg-mascot-animator/scripts/generate-mascot-packs.mjs"
+    "generate:mascot-packs": "bun svg-mascot-animator/scripts/generate-mascot-packs.mjs",
+    "motion:bounds:packs": "bun run scripts/audit-motion-bounds.ts --glob 'svgs/packs/**/*.svg' --require-actor --samples 48"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
