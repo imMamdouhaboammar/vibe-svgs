@@ -10,7 +10,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Terminal Sprint",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code types rapidly at a terminal. Key presses, cursor timing, body recoil, and contact shadow are synchronized."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code makes a short physically sampled hop while rapid key presses, cursor timing, landing squash, and contact shadow remain synchronized inside the frame."
     },
     {
       "id": "claude-code-bug-hunt",
@@ -21,7 +21,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Bug Hunt",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code follows a scuttling bug with a damped magnifying-glass swing and grounded pursuit motion."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code pursues a scuttling bug with bounded body travel, alternating hops, a damped lens swing, and no element crossing the scene edge."
     },
     {
       "id": "claude-code-git-merge",
@@ -32,7 +32,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Git Merge",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Two Git branches accelerate toward a springy merge while Claude Code reacts with anticipation and recovery."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code braces and transfers force into two Git branches that converge with overshoot and settle entirely inside the safe area."
     },
     {
       "id": "claude-code-context-juggle",
@@ -43,7 +43,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Context Juggle",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Three context cards follow staggered parabolic arcs with rotational inertia while Claude Code maintains balance."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code shifts its weight while three context cards follow staggered bounded arcs with rotation, anticipation, and recoveries that never leave the viewBox."
     },
     {
       "id": "claude-code-release-launch",
@@ -54,7 +54,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Release Launch",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code braces for a rocket launch with anticipation, recoil, accelerating ascent, exhaust flicker, and expanding smoke."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code anticipates and recoils while a rocket accelerates upward to a bounded apex, followed by damped settling and smoke that expands without crossing the frame."
     },
     {
       "id": "claude-code-review-pass",
@@ -65,7 +65,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Review Pass",
-      "description": "Community-created animated scene using the supplied Claude Code mark. A review sheet slides in under friction, comments resolve, a check draws, and Claude Code answers with a damped nod."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code performs a damped approval nod as a review sheet settles under friction and its check draws inside the panel."
     },
     {
       "id": "claude-code-pair-session",
@@ -76,7 +76,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Pair Session",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code pairs with a terminal through timed message exchanges, cursor rhythm, and subtle attention shifts."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code rocks gently toward a terminal while two timed responses exchange in sequence, keeping the character and conversation inside the frame."
     },
     {
       "id": "claude-code-refactor-pull",
@@ -87,7 +87,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Refactor Pull",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code leans against a tensioned code rope, collapsing a tangle into three orderly modules with spring recovery."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code leans into a tensioned code rope and releases stored energy as three modules overshoot and settle within the safe zone."
     },
     {
       "id": "claude-code-test-lab",
@@ -98,7 +98,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Test Lab",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Three test cards fall under gravity, compress on contact, settle, and light green while Claude Code watches."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code braces while test cards accelerate under gravity, compress briefly on contact, rebound once, and settle without starting outside the frame."
     },
     {
       "id": "claude-code-coffee-compile",
@@ -109,7 +109,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Coffee Compile",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code sips during a compile. The cup tilts while the liquid counter-rotates to stay level and steam rises buoyantly."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code leans toward a cup with counterweighted rotation while steam rises in harmonic motion and the compile panel remains fixed inside the frame."
     },
     {
       "id": "claude-code-focus-lock",
@@ -120,7 +120,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Focus Lock",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code breathes at center while distraction cards orbit, decelerate, shrink, and disappear into focus mode."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code breathes at center while bounded distraction cards orbit a focus target, shrink under damping, and return without touching the frame."
     },
     {
       "id": "claude-code-memory-search",
@@ -131,7 +131,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Memory Search",
-      "description": "Community-created animated scene using the supplied Claude Code mark. A magnifying lens scans memory cards with damped travel; each card lifts as the scan passes over it."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code tracks a lens that scans three memory cards with damped travel; each card lifts only when the scan reaches it and all geometry stays bounded."
     },
     {
       "id": "claude-code-package-drop",
@@ -142,7 +142,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Package Drop",
-      "description": "Community-created animated scene using the supplied Claude Code mark. A package accelerates downward, compresses at impact, rebounds, and transfers energy into a secondary lid bounce."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code braces as a package accelerates from an in-frame start, compresses on contact, rebounds once, and transfers energy into a damped lid rotation."
     },
     {
       "id": "claude-code-incident-response",
@@ -153,7 +153,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Incident Response",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code dashes toward an incident and fires an extinguishing blast that displaces flame and releases fading smoke."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code executes a bounded two-hop dash and releases an extinguishing blast that displaces and damps the flame without any off-canvas reset."
     },
     {
       "id": "claude-code-branch-swing",
@@ -164,7 +164,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Branch Swing",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code swings from a Git branch as a pendulum; the body counter-rotates to preserve balance and the shadow tracks arc position."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code swings from a branch with a pendulum-derived period of 4.28 seconds, counter-rotation for balance, and a shadow driven by arc position."
     },
     {
       "id": "claude-code-token-rain",
@@ -175,7 +175,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Token Rain",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Tokens accelerate under gravity and spin at different rates while an umbrella compresses on impact over Claude Code."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code compresses under a bounded umbrella while tokens fall from visible in-frame starts under constant acceleration and fade before resetting."
     },
     {
       "id": "claude-code-prompt-fishing",
@@ -186,7 +186,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Prompt Fishing",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code waits for a prompt bite, then loads the rod, stretches the line, and lifts a catch with elastic overshoot."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code loads the rod in anticipation, stretches the line, and lifts a prompt card with elastic overshoot while every point remains inside the scene."
     },
     {
       "id": "claude-code-agent-conductor",
@@ -197,7 +197,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Agent Conductor",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code conducts three task cards through a synchronized pipeline with baton rhythm and phase-shifted card motion."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code conducts three task cards through a synchronized bounded pipeline, with the body and baton sharing one rhythm and each card settling on cue."
     },
     {
       "id": "claude-code-build-sleep",
@@ -208,7 +208,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Build Sleep",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code sleeps through a build with slow breathing, synchronized shadow expansion, buoyant Zs, and a gentle success notification."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code breathes slowly while sleeping through a build; buoyant Zs and a damped success message remain fully inside the frame."
     },
     {
       "id": "claude-code-victory-dance",
@@ -219,7 +219,7 @@
       "communityArtwork": true,
       "contractVersion": 1,
       "title": "Claude Code Victory Dance",
-      "description": "Community-created animated scene using the supplied Claude Code mark. Claude Code performs a squash-and-stretch victory dance with two airborne beats, responsive shadowing, expanding energy ring, and falling confetti."
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code performs a sampled jump with velocity-linked squash, rotation, responsive shadowing, an impact ring, and confetti that falls entirely within the frame."
     }
   ]
 }

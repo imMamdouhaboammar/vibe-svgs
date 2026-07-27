@@ -149,7 +149,7 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 
 ---
 
-### 🖼️ Banners
+### Banners
 
 | Banner | Preview | Raw Markdown |
 | :--- | :---: | :--- |
@@ -178,20 +178,20 @@ The gallery uses the supplied platform and tool logo files directly. No replacem
 
 ---
 
-## 🛠️ System Architecture & Features
+## System Architecture and Quality Gates
 
-Every asset in this library satisfies `contractVersion: 1`:
+Every migrated animated asset satisfies `contractVersion: 1`. Supplied platform logos remain source artwork and are registered separately:
 
-- **2.5D Illustration System**: Connected rounded body silhouettes, soft contact shadows, upper-left lighting keying, and multi-stop gradients.
+- **Physics-driven mascot rig**: One transform owner per motion concern, sampled ballistic arcs, damped arrivals, velocity-linked squash and synchronized contact shadows.
 - **Accessibility Gate**: Root `<svg role="img" aria-labelledby="...">` with `<title id="...">` and `<desc id="...">`.
 - **DOM ID Safety**: Reusable IDs are scoped with `<filename-stem>-` prefixes to eliminate ID collisions when inlining multiple SVGs.
 - **Motion Accessibility**: `@media (prefers-reduced-motion: reduce)` fallbacks present on all animated SVGs.
-- **Visual Regression Engine**: Playwright automated snapshot pipeline rendering PNG snapshots at 96px, 160px, and 320px across light, dark, and transparent backdrops.
+- **Motion Bounds Gate**: Playwright samples each Claude Code animation across its full loop and fails when a visible animated component crosses the viewBox or the mascot remains static.
 - **Repository SVGO Engine**: Custom `svgo.config.js` preserving viewBox, keyframes, title/desc, and accessibility attributes.
 
 ---
 
-## 💻 Development & Verification
+## Development and Verification
 
 Requires **Bun 1.3.14** or later.
 

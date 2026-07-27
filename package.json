@@ -15,8 +15,11 @@
     "svgo:write": "bun run scripts/svgo-check.ts --write",
     "validate": "bun run scripts/validate-svg.ts",
     "typecheck": "tsc --noEmit",
-    "check": "bun run test && bun run validate && bun run validate:claude-code && bun run typecheck && bun run svgo:check",
-    "validate:claude-code": "bun run scripts/validate-svg.ts claude-code-manifest.json"
+    "check": "bun run test && bun run validate && bun run validate:claude-code && bun run motion:bounds && bun run typecheck && bun run svgo:check",
+    "validate:claude-code": "bun run scripts/validate-svg.ts claude-code-manifest.json",
+    "generate:claude-code": "python3 scripts/generate_claude_code_scenes.py && bun run svgo:write",
+    "motion:bounds": "bun run scripts/audit-motion-bounds.ts claude-code-manifest.json --require-mascot",
+    "motion:bounds:all": "bun run scripts/audit-motion-bounds.ts asset-manifest.json"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",

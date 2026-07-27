@@ -16,7 +16,7 @@ Every scene keeps the supplied mascot path unchanged:
 M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z
 ```
 
-The collection uses separate nested transform owners for body motion, props, secondary motion, and contact shadows. Timing is designed around anticipation, acceleration, impact, overshoot, damping, drag, pendulum motion, and ballistic fall. Every animated asset includes a `prefers-reduced-motion` fallback.
+The collection uses separate nested transform owners for horizontal travel, vertical travel, rotation, scale, props, and contact shadows. Ballistic arcs and the pendulum period are generated from `svg-mascot-animator/scripts/physics.py`. Every scene uses a `360 × 240` frame, keeps visible motion inside the viewBox across the complete loop, moves the mascot itself by at least two rendered pixels, and includes a `prefers-reduced-motion` fallback.
 
 ## Gallery
 
@@ -46,8 +46,10 @@ The collection uses separate nested transform owners for body motion, props, sec
 ## Verification
 
 ```bash
+bun run generate:claude-code
 bun test tests/claude-code-collection.test.ts
-bun run scripts/validate-svg.ts claude-code-manifest.json
+bun run validate:claude-code
+bun run motion:bounds
 ```
 
 ## Trademark note

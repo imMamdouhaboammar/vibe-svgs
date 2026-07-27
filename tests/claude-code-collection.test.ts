@@ -49,10 +49,24 @@ describe("Claude Code motion collection", () => {
   test("every scene preserves the supplied mascot path and SVG contract", async () => {
     for (const path of claudeCodeScenePaths) {
       const source = await readFile(path, "utf8");
+      expect(source).toContain('width="360"');
+      expect(source).toContain('height="240"');
+      expect(source).toContain('viewBox="0 0 360 240"');
+      expect(source).toContain('data-mascot="true"');
       expect(source).toContain(claudeCodePath);
       expect(source.match(new RegExp(claudeCodePath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"))).toHaveLength(1);
       expect(validateSvgSource(path, source)).toEqual([]);
     }
+  });
+
+  test("uses the shared physics generator and motion bounds gate", async () => {
+    const generator = await readFile("scripts/generate_claude_code_scenes.py", "utf8");
+    const audit = await readFile("scripts/audit-motion-bounds.ts", "utf8");
+    expect(generator).toContain("svg-mascot-animator/scripts/physics.py");
+    expect(generator).toContain("physics.projectile");
+    expect(generator).toContain("physics.pendulum_period");
+    expect(audit).toContain("mascot motion");
+    expect(audit).toContain("overflow");
   });
 
   test("collection manifest resolves every scene", async () => {

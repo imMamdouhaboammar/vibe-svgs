@@ -25,6 +25,9 @@ const configForFile = (filePath: string) => ({
         overrides: {
           ...(plugin.params?.overrides ?? {}),
           convertPathData: false,
+          convertTransform: false,
+          moveElemsAttrsToGroup: false,
+          moveGroupAttrsToElems: false,
         },
       },
     };
