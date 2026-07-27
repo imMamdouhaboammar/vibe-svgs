@@ -1,46 +1,50 @@
-# Agent Logos Library
+# Supplied Platform and Tool Logos
 
-Official AI coding agent brand SVGs used across agent-kernel docs, the
-landing page, and the README agent strip.
+32 source logo files used by the gallery and documentation. These files identify their respective platforms and tools; they are not mascot artwork.
 
 ## Usage
 
-Each file is a monochrome or color SVG sized to a `1em` viewBox, so it
-scales cleanly with the surrounding `font-size`. Reference directly with
-`currentColor` for mono variants, or as inline `<img>` for color variants.
-
 ```html
-<!-- mono (inherits color) -->
-<img src="./docs/brand/agent-logos/claudecode-color.svg" width="20" height="20" alt="Claude Code" />
-
-<!-- color (uses the brand's own colors) -->
-<img src="./docs/brand/agent-logos/antigravity-color.svg" width="20" height="20" alt="Antigravity" />
+<img src="svgs/logos/claudecode-color.svg" width="20" height="20" alt="Claude Code">
 ```
 
-## Files
+## Catalog
 
-| File | Color? | Notes |
-|---|---|---|
-| `claudecode-color.svg` | yes | Claude Code brand mark |
-| `codex-color.svg` | yes | OpenAI Codex brand mark |
-| `cursor.svg` | mono | Cursor editor mark |
-| `opencode.svg` | mono | OpenCode CLI mark |
-| `antigravity-color.svg` | yes | Antigravity brand mark |
-| `geminicli-color.svg` | yes | Gemini CLI brand mark |
-| `kilocode.svg` | mono | Kilo Code extension mark |
-| `kiro-color.svg` | yes | Kiro IDE mark |
-| `minimax-color.svg` | yes | MiniMax mark |
-| `openai.svg` | mono | OpenAI corporate mark |
-| `openclaw-color.svg` | yes | OpenClaw mark |
+| Platform or tool | File |
+|---|---|
+| Antigravity | `antigravity-color.svg` |
+| Claude Code | `claudecode-color.svg` |
+| Cline | `cline.svg` |
+| Coqui | `coqui-color.svg` |
+| Coze | `coze.svg` |
+| Cursor | `cursor.svg` |
+| DeepSeek | `deepseek-color.svg` |
+| Gemini CLI | `geminicli-color.svg` |
+| GitHub | `github.svg` |
+| GitHub Copilot | `githubcopilot.svg` |
+| Glama | `glama.svg` |
+| Hermes Agent | `hermesagent.svg` |
+| Hugging Face | `huggingface-color.svg` |
+| InternLM | `internlm-color.svg` |
+| Kilo Code | `kilocode.svg` |
+| Kiro | `kiro-color.svg` |
+| LLM API | `llmapi-color.svg` |
+| LobeHub | `lobehub-color.svg` |
+| Lovable | `lovable-color.svg` |
+| Manus | `manus.svg` |
+| MiniMax | `minimax-color.svg` |
+| Nano Banana | `nanobanana-color.svg` |
+| Ollama | `ollama.svg` |
+| OpenAI | `openai.svg` |
+| OpenAI Codex | `codex-color.svg` |
+| OpenClaw | `openclaw-color.svg` |
+| OpenCode | `opencode.svg` |
+| Pruna AI | `prunaai-color.svg` |
+| Sora | `sora-color.svg` |
+| SpeedAI | `speedai-color.svg` |
+| Yuanbao | `yuanbao-color.svg` |
+| ZenMux | `zenmux.svg` |
 
-## Provenance
+## Trademark note
 
-Sourced from `voices/logos/` and the official brand asset packs. Each
-SVG is committed to the repo as the canonical copy — do not edit
-in-place; re-export from the source brand kit if a refresh is needed.
-
-## License
-
-Each brand mark is the property of its respective owner. Use only in
-the context of identifying or describing that agent. See the
-upstream brand guidelines for redistribution terms.
+Each platform or tool mark belongs to its respective owner. Keep the supplied file intact when using it to identify that platform or tool. The repository license covers the surrounding code and community-created artwork, not third-party marks.

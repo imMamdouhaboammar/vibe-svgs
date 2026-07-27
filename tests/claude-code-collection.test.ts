@@ -41,7 +41,7 @@ describe("Claude Code motion collection", () => {
 
     const canonical = JSON.parse(await readFile("asset-manifest.json", "utf8"));
     const registered = canonical.assets
-      .filter((entry: { category: string }) => entry.category === "claude-code")
+      .filter((entry: { category: string; type: string }) => entry.category === "claude-code" && entry.type === "scene")
       .map((entry: { path: string }) => entry.path);
     expect(registered).toEqual(claudeCodeScenePaths);
   });

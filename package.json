@@ -8,7 +8,7 @@
   "packageManager": "bun@1.3.14",
   "scripts": {
     "serve": "bunx serve .",
-    "test": "bun test tests/svg-contracts.test.ts tests/claude-code-collection.test.ts",
+    "test": "bun test tests/svg-contracts.test.ts tests/claude-code-collection.test.ts tests/official-logo-catalog.test.ts",
     "test:all": "bun test",
     "snapshots": "bun run scripts/visual-snapshots.ts",
     "svgo:check": "bun run scripts/svgo-check.ts",

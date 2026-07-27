@@ -85,7 +85,7 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 
 ---
 
-### 💜 Codex Family
+### <img src="svgs/logos/codex-color.svg" width="24" height="24" alt="" align="absmiddle"> Codex Family
 
 | Asset | Preview | Raw Markdown |
 | :--- | :---: | :--- |
@@ -96,7 +96,7 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 
 ---
 
-### 🩵 Cursor Family
+### <img src="svgs/logos/cursor.svg" width="24" height="24" alt="" align="absmiddle"> Cursor Family
 
 | Asset | Preview | Raw Markdown |
 | :--- | :---: | :--- |
@@ -105,7 +105,7 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 
 ---
 
-### ✨ Gemini Family
+### <img src="svgs/logos/geminicli-color.svg" width="24" height="24" alt="" align="absmiddle"> Gemini Family
 
 | Asset | Preview | Raw Markdown |
 | :--- | :---: | :--- |
@@ -116,7 +116,7 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 
 ---
 
-### 🐋 DeepSeek Family
+### <img src="svgs/logos/deepseek-color.svg" width="24" height="24" alt="" align="absmiddle"> DeepSeek Family
 
 | Asset | Preview | Raw Markdown |
 | :--- | :---: | :--- |
@@ -126,7 +126,7 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 
 ---
 
-### 🤖 Copilot Family
+### <img src="svgs/logos/githubcopilot.svg" width="24" height="24" alt="" align="absmiddle"> Copilot Family
 
 | Asset | Preview | Raw Markdown |
 | :--- | :---: | :--- |
@@ -160,14 +160,21 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 
 ---
 
-### 🔖 Brand Marks & Logos
+### Platform and Tool Logos
 
-| Brand Mark | Preview | Raw Markdown |
+The gallery uses the supplied platform and tool logo files directly. No replacement mascot or invented mark is used for these categories.
+
+| Platform | Preview | Raw Markdown |
 | :--- | :---: | :--- |
-| **Claude Brand Mark** | <img src="svgs/logos/claude-logo.svg" width="60" alt="Claude Mark"> | `![Claude Mark](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/claude-logo.svg)` |
-| **OpenAI Brand Mark** | <img src="svgs/logos/openai-logo.svg" width="60" alt="OpenAI Mark"> | `![OpenAI Mark](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/openai-logo.svg)` |
-| **Cursor Brand Mark** | <img src="svgs/logos/cursor-logo.svg" width="60" alt="Cursor Mark"> | `![Cursor Mark](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/cursor-logo.svg)` |
-| **Gemini Brand Mark** | <img src="svgs/logos/gemini-logo.svg" width="60" alt="Gemini Mark"> | `![Gemini Mark](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/gemini-logo.svg)` |
+| **Claude Code** | <img src="svgs/logos/claudecode-color.svg" width="60" alt="Claude Code"> | `![Claude Code](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/claudecode-color.svg)` |
+| **OpenAI** | <img src="svgs/logos/openai.svg" width="60" alt="OpenAI"> | `![OpenAI](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/openai.svg)` |
+| **Codex** | <img src="svgs/logos/codex-color.svg" width="60" alt="Codex"> | `![Codex](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/codex-color.svg)` |
+| **Cursor** | <img src="svgs/logos/cursor.svg" width="60" alt="Cursor"> | `![Cursor](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/cursor.svg)` |
+| **Gemini CLI** | <img src="svgs/logos/geminicli-color.svg" width="60" alt="Gemini CLI"> | `![Gemini CLI](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/geminicli-color.svg)` |
+| **DeepSeek** | <img src="svgs/logos/deepseek-color.svg" width="60" alt="DeepSeek"> | `![DeepSeek](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/deepseek-color.svg)` |
+| **GitHub Copilot** | <img src="svgs/logos/githubcopilot.svg" width="60" alt="GitHub Copilot"> | `![GitHub Copilot](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/logos/githubcopilot.svg)` |
+
+[Browse the complete supplied logo catalog](svgs/logos/README.md)
 
 ---
 
