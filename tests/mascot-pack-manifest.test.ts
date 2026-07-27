@@ -1,6 +1,7 @@
 import { expect, test } from "bun:test";
 import { readFile } from "node:fs/promises";
 
+import { isManifestEntry } from "../scripts/svg-contracts";
 import { loadStoryRegistry } from "../svg-mascot-animator/scripts/story-registry.mjs";
 
 const manifestPath = "mascot-packs-manifest.json";
@@ -23,6 +24,7 @@ test("publishes all 66 generated stories through a dedicated manifest", async ()
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   const stories = [...registry.independent, ...registry.spriteStories];
 
+  expect(manifest.assets.every(isManifestEntry)).toBe(true);
   expect(manifest.version).toBe(1);
   expect(manifest.assets).toHaveLength(66);
   expect(new Set(manifest.assets.map((asset: { id: string }) => asset.id)).size).toBe(66);

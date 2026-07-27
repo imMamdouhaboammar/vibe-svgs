@@ -11,12 +11,14 @@ export type AssetManifestEntry = {
   id: string;
   path: string;
   category: string;
-  type: "mascot" | "scene" | "logo" | "badge" | "banner" | "suite";
+  type: "mascot" | "scene" | "logo" | "badge" | "banner" | "suite" | "pack-scene" | "sprite-story";
   animated: boolean;
   communityArtwork: boolean;
   contractVersion: 0 | 1;
   title: string;
   description: string;
+  pack?: string;
+  motionPreset?: string;
 };
 
 export type AssetManifest = {
@@ -31,10 +33,12 @@ const ASSET_TYPES = new Set([
   "badge",
   "banner",
   "suite",
+  "pack-scene",
+  "sprite-story",
 ]);
 
 const SAFE_ASSET_PATH =
-  /^svgs\/(?:badges|banners|logos|mascots|scenes)\/[a-z0-9][a-z0-9._-]*\.svg$/;
+  /^(?:svgs\/(?:badges|banners|logos|mascots|scenes)\/[a-z0-9][a-z0-9._-]*\.svg|svgs\/packs\/[a-z0-9-]+\/[a-z0-9][a-z0-9._-]*\.svg)$/;
 
 const issue = (path: string, rule: string, message: string): SvgIssue => ({
   path,
@@ -267,9 +271,16 @@ export function validateSvgSource(path: string, source: string): SvgIssue[] {
   return issues;
 }
 
-const isEntry = (value: unknown): value is AssetManifestEntry => {
+export const isManifestEntry = (value: unknown): value is AssetManifestEntry => {
   if (!value || typeof value !== "object") return false;
   const entry = value as Record<string, unknown>;
+  const packMetadataValid = entry.category !== "mascot-packs" || (
+    typeof entry.pack === "string" &&
+    /^[a-z0-9-]+$/.test(entry.pack) &&
+    typeof entry.motionPreset === "string" &&
+    /^[a-z][a-z0-9-]+$/.test(entry.motionPreset) &&
+    (entry.type === "pack-scene" || entry.type === "sprite-story")
+  );
   return (
     typeof entry.id === "string" &&
     typeof entry.path === "string" &&
@@ -280,7 +291,8 @@ const isEntry = (value: unknown): value is AssetManifestEntry => {
     typeof entry.communityArtwork === "boolean" &&
     (entry.contractVersion === 0 || entry.contractVersion === 1) &&
     typeof entry.title === "string" &&
-    typeof entry.description === "string"
+    typeof entry.description === "string" &&
+    packMetadataValid
   );
 };
 
@@ -310,7 +322,7 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
   const paths = new Set<string>();
 
   for (const rawEntry of manifest.assets) {
-    if (!isEntry(rawEntry)) {
+    if (!isManifestEntry(rawEntry)) {
       issues.push(
         issue(manifestPath, "manifest.entry", "Every asset entry must satisfy the version 1 schema."),
       );
