@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 230" width="380" height="230" role="img" aria-labelledby="swing-t swing-d">
+<title id="swing-t">Claude Code mascot swinging between two feature branches</title>
+<desc id="swing-d">The mascot hangs from the main branch and swings as a pendulum, pausing at each extreme and moving fastest at the lowest point, with the body lagging slightly behind the rope.</desc>
+<defs><g id="swing-m" transform="translate(-12,-20)"><path clip-rule="evenodd" fill-rule="evenodd" fill="#D97757" d="M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z"/></g></defs>
+<style>
+svg{--ink:#6E6C66;--dim:#C8C5BD}
+@media (prefers-color-scheme:dark){svg{--ink:#A9A69D;--dim:#46443F}}
+.swing-sw{animation:swing-sw 1.0s cubic-bezier(.37,0,.63,1) infinite alternate;transform-box:fill-box;transform-origin:50% 0%}
+.swing-lag{animation:swing-lag 1.0s cubic-bezier(.37,0,.63,1) infinite alternate;animation-delay:-0.09s;transform-box:fill-box;transform-origin:50% 0%}
+.swing-ten{animation:swing-ten 0.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+.swing-rope{animation:swing-rope 0.5s cubic-bezier(.37,0,.63,1) infinite alternate;transform-box:fill-box;transform-origin:50% 0%}
+.swing-dl,.swing-dr{transform-box:fill-box;transform-origin:50% 50%;animation:swing-pop 2s infinite}
+.swing-dr{animation-delay:1.0s}
+@keyframes swing-sw{from{transform:rotate(-26.0deg)}to{transform:rotate(26.0deg)}}
+@keyframes swing-lag{from{transform:rotate(5deg)}to{transform:rotate(-5deg)}}
+@keyframes swing-ten{from{transform:translateY(0)}to{transform:translateY(1.6px)}}
+@keyframes swing-rope{from{transform:scaleY(1)}to{transform:scaleY(1.02)}}
+@keyframes swing-pop{0%{transform:scale(0);opacity:0}6%{transform:scale(1.5);opacity:1;animation-timing-function:cubic-bezier(.3,.8,.4,1)}12%{transform:scale(1)}45%{transform:scale(1);opacity:1}55%,100%{transform:scale(1);opacity:0}}
+@media (prefers-reduced-motion:reduce){.swing-sw,.swing-lag,.swing-ten,.swing-rope,.swing-dl,.swing-dr{animation:none}.swing-dl,.swing-dr{opacity:1}}
+</style>
+<line x1="40" y1="32" x2="340" y2="32" stroke="var(--dim)" stroke-width="3" stroke-linecap="round"/>
+<g fill="var(--ink)"><circle cx="70" cy="32" r="5"/><circle cx="190" cy="32" r="5"/><circle cx="310" cy="32" r="5"/></g>
+<polyline points="137.4,139.86 139.86,141.02 142.34,142.13 144.85,143.18 147.39,144.18 149.94,145.12 152.52,146 155.12,146.82 157.73,147.58 160.36,148.28 163.01,148.92 165.67,149.51 168.34,150.03 171.02,150.49 173.71,150.89 176.42,151.23 179.12,151.51 181.84,151.72 184.56,151.88 187.28,151.97 190,152 192.72,151.97 195.44,151.88 198.16,151.72 200.88,151.51 203.58,151.23 206.29,150.89 208.98,150.49 211.66,150.03 214.33,149.51 216.99,148.92 219.64,148.28 222.27,147.58 224.88,146.82 227.48,146 230.06,145.12 232.61,144.18 235.15,143.18 237.66,142.13 240.14,141.02 242.6,139.86" fill="none" stroke="var(--dim)" stroke-width="1.5" stroke-dasharray="3 6" opacity=".8"/>
+<rect x="115.4" y="141" width="44" height="6" rx="3" fill="var(--dim)"/>
+<rect x="220.6" y="141" width="44" height="6" rx="3" fill="var(--dim)"/>
+<circle class="swing-dl" cx="137.4" cy="129" r="4" fill="#D97757" opacity="0"/>
+<circle class="swing-dr" cx="242.6" cy="129" r="4" fill="#D97757" opacity="0"/>
+<g fill="var(--ink)" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">
+<text x="40" y="22">main</text>
+<text x="137.4" y="165" text-anchor="middle">feature/a</text>
+<text x="242.6" y="165" text-anchor="middle">feature/b</text></g>
+<g class="swing-sw">
+<rect class="swing-rope" x="188.5" y="32" width="3" height="81" fill="var(--ink)"/>
+<g class="swing-ten"><g class="swing-lag"><use href="#swing-m" transform="translate(190,152) scale(2.6)"/></g></g>
+</g></svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 200" width="460" height="200" role="img" aria-labelledby="ship-t ship-d">
+<title id="ship-t">Claude Code mascot launching from local to prod</title>
+<desc id="ship-d">The mascot crouches, launches along a gravity arc, lands with a squash and one smaller rebound, then a check mark appears over the prod marker.</desc>
+<defs><g id="ship-m" transform="translate(-12,-20)"><path clip-rule="evenodd" fill-rule="evenodd" fill="#D97757" d="M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z"/></g></defs>
+<style>
+svg{--ink:#6E6C66;--dim:#C8C5BD}
+@media (prefers-color-scheme:dark){svg{--ink:#A9A69D;--dim:#46443F}}
+.ship-x{animation:ship-x 5.0s linear infinite}
+.ship-y{animation:ship-y 5.0s linear infinite}
+.ship-r{animation:ship-r 5.0s linear infinite;transform-box:fill-box;transform-origin:50% 50%}
+.ship-s{animation:ship-s 5.0s infinite;transform-box:fill-box;transform-origin:50% 100%}
+.ship-sh{animation:ship-sh 5.0s linear infinite}
+.ship-act{animation:ship-fade 5.0s linear infinite}
+.ship-tick{animation:ship-tick 5.0s infinite;transform-box:fill-box;transform-origin:50% 50%}
+.ship-p{animation:ship-puff 5.0s linear infinite;transform-box:fill-box;transform-origin:50% 50%;opacity:0}
+.ship-p2{animation:ship-puff2 5.0s linear infinite;transform-box:fill-box;transform-origin:50% 50%;opacity:0}
+@keyframes ship-x{0%,19%{transform:translateX(78px)}37%,39%{transform:translateX(356px)}49%,96.9%{transform:translateX(382px)}97%,100%{transform:translateX(78px)}}
+@keyframes ship-y{0%{transform:translateY(0px)}20%{transform:translateY(0px)}22.12%{transform:translateY(-41.56px)}24.25%{transform:translateY(-71.25px)}26.38%{transform:translateY(-89.06px)}28.5%{transform:translateY(-95px)}30.63%{transform:translateY(-89.06px)}32.75%{transform:translateY(-71.25px)}34.88%{transform:translateY(-41.56px)}37%{transform:translateY(0px)}39%{transform:translateY(0px)}40.25%{transform:translateY(-16.62px)}41.5%{transform:translateY(-28.5px)}42.75%{transform:translateY(-35.62px)}44%{transform:translateY(-38px)}45.25%{transform:translateY(-35.62px)}46.5%{transform:translateY(-28.5px)}47.75%{transform:translateY(-16.62px)}49%{transform:translateY(0px)}100%{transform:translateY(0px)}}
+@keyframes ship-r{0%,19%{transform:rotate(0)}20%{transform:rotate(-7deg)}37%{transform:rotate(9deg)}38.6%{transform:rotate(-3deg)}40%,100%{transform:rotate(0)}}
+@keyframes ship-s{0%{transform:scale(1,1);animation-timing-function:linear}6%{transform:scale(1,1);animation-timing-function:cubic-bezier(.25,.7,.35,1)}12.4%{transform:scale(1.14,0.8);animation-timing-function:linear}16.4%{transform:scale(1.14,0.8);animation-timing-function:cubic-bezier(.5,0,.75,1)}19%{transform:scale(0.88,1.22);animation-timing-function:linear}20%{transform:scale(0.94,1.12);animation-timing-function:cubic-bezier(.3,0,.7,1)}26%{transform:scale(1,1);animation-timing-function:linear}33%{transform:scale(1,1);animation-timing-function:cubic-bezier(.4,0,1,.6)}36.4%{transform:scale(0.9,1.12);animation-timing-function:cubic-bezier(.2,0,.4,1)}37%{transform:scale(1.22,0.7);animation-timing-function:cubic-bezier(.2,.9,.3,1)}38.4%{transform:scale(0.94,1.07);animation-timing-function:linear}39%{transform:scale(1,1);animation-timing-function:linear}48.4%{transform:scale(1,1);animation-timing-function:cubic-bezier(.2,.9,.3,1)}49%{transform:scale(1.13,0.85);animation-timing-function:cubic-bezier(.2,.9,.3,1)}50.4%{transform:scale(0.96,1.04);animation-timing-function:linear}52%{transform:scale(1,1);animation-timing-function:linear}100%{transform:scale(1,1);animation-timing-function:linear}}
+@keyframes ship-sh{0%{rx:34px;opacity:0.3}20%{rx:34px;opacity:0.3}20%{rx:34px;opacity:0.3}22.12%{rx:25.69px;opacity:0.212}24.25%{rx:19.75px;opacity:0.15}26.38%{rx:16.19px;opacity:0.112}28.5%{rx:15px;opacity:0.1}30.63%{rx:16.19px;opacity:0.112}32.75%{rx:19.75px;opacity:0.15}34.88%{rx:25.69px;opacity:0.212}37%{rx:34px;opacity:0.3}39%{rx:34px;opacity:0.3}39%{rx:34px;opacity:0.3}40.25%{rx:30.68px;opacity:0.265}41.5%{rx:28.3px;opacity:0.24}42.75%{rx:26.88px;opacity:0.225}44%{rx:26.4px;opacity:0.22}45.25%{rx:26.88px;opacity:0.225}46.5%{rx:28.3px;opacity:0.24}47.75%{rx:30.68px;opacity:0.265}49%{rx:34px;opacity:0.3}100%{rx:34px;opacity:0.3}}
+@keyframes ship-fade{0%,2%{opacity:0}4%,93%{opacity:1}97%,100%{opacity:0}}
+@keyframes ship-tick{0%,38.9%{transform:scale(0);opacity:0}41.5%{transform:scale(1.25);opacity:1;animation-timing-function:cubic-bezier(.3,.8,.4,1)}43.5%,93%{transform:scale(1);opacity:1}96%,100%{transform:scale(1);opacity:0}}
+@keyframes ship-puff{0%,18.9%{transform:scale(.2);opacity:0}20%{opacity:.5}26%,100%{transform:scale(2.6);opacity:0}}
+@keyframes ship-puff2{0%,36.9%{transform:scale(.2);opacity:0}38%{opacity:.55}45%,100%{transform:scale(3);opacity:0}}
+@media (prefers-reduced-motion:reduce){
+ .ship-x,.ship-y,.ship-r,.ship-s,.ship-sh,.ship-act,.ship-tick,.ship-p,.ship-p2{animation:none}
+ .ship-x{transform:translateX(382px)}.ship-tick{opacity:1}.ship-p,.ship-p2{opacity:0}}
+</style>
+<line x1="24" y1="152" x2="436" y2="152" stroke="var(--dim)" stroke-width="2"/>
+<g fill="var(--ink)" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">
+<text x="78" y="172" text-anchor="middle">local</text>
+<text x="382" y="172" text-anchor="middle">prod</text></g>
+<g class="ship-act">
+<circle class="ship-p" cx="65" cy="149" r="4" fill="var(--ink)" opacity=".45"/><circle class="ship-p" cx="90" cy="147" r="3.4" fill="var(--ink)" opacity=".45"/><circle class="ship-p" cx="76" cy="144" r="2.8" fill="var(--ink)" opacity=".45"/><circle class="ship-p2" cx="343" cy="149" r="4" fill="var(--ink)" opacity=".45"/><circle class="ship-p2" cx="368" cy="147" r="3.4" fill="var(--ink)" opacity=".45"/><circle class="ship-p2" cx="354" cy="144" r="2.8" fill="var(--ink)" opacity=".45"/>
+<g class="ship-x" transform="translate(78,0)"><ellipse class="ship-sh" cx="0" cy="152" rx="34" ry="5" fill="#000" opacity=".30"/></g>
+<g class="ship-x" transform="translate(78,0)"><g class="ship-y"><g class="ship-r"><g class="ship-s">
+<use href="#ship-m" transform="translate(0,152) scale(2.6)"/>
+</g></g></g></g>
+<g class="ship-tick" transform="translate(382,96)"><path d="M-9 1 L-3 8 L10 -8" fill="none" stroke="#4E9A6B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</g></svg>
