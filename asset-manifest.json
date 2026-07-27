@@ -123,6 +123,94 @@
       "description": "Fan-made speaking scene with animated talk bubble."
     },
     {
+      "id": "claude-orchestrating",
+      "path": "svgs/scenes/claude-orchestrating.svg",
+      "title": "Claude Orchestrating Story",
+      "description": "Fan-made Claude workflow scene conducting task cards through an agent pipeline.",
+      "category": "claude",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1
+    },
+    {
+      "id": "claude-context-overflow",
+      "path": "svgs/scenes/claude-context-overflow.svg",
+      "title": "Claude Context Overflow Story",
+      "description": "Fan-made Claude workflow scene balancing context cards while one slips away.",
+      "category": "claude",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1
+    },
+    {
+      "id": "claude-refactoring",
+      "path": "svgs/scenes/claude-refactoring.svg",
+      "title": "Claude Refactoring Story",
+      "description": "Fan-made Claude workflow scene pulling tangled code into a clean module.",
+      "category": "claude",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1
+    },
+    {
+      "id": "claude-deep-thinking",
+      "path": "svgs/scenes/claude-deep-thinking.svg",
+      "title": "Claude Deep Thinking Story",
+      "description": "Fan-made Claude reasoning scene with orbiting tokens converging into an insight.",
+      "category": "claude",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1
+    },
+    {
+      "id": "claude-pair-programming",
+      "path": "svgs/scenes/claude-pair-programming.svg",
+      "title": "Claude Pair Programming Story",
+      "description": "Fan-made Claude collaboration scene working beside a Codex terminal companion.",
+      "category": "claude",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1
+    },
+    {
+      "id": "claude-shipping",
+      "path": "svgs/scenes/claude-shipping.svg",
+      "title": "Claude Shipping Story",
+      "description": "Fan-made Claude delivery scene launching a small release rocket.",
+      "category": "claude",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1
+    },
+    {
+      "id": "claude-code-review",
+      "path": "svgs/scenes/claude-code-review.svg",
+      "title": "Claude Code Review Story",
+      "description": "Fan-made Claude review scene scanning a diff and applying an approval check.",
+      "category": "claude",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1
+    },
+    {
+      "id": "claude-coffee-break",
+      "path": "svgs/scenes/claude-coffee-break.svg",
+      "title": "Claude Coffee Break Story",
+      "description": "Fan-made Claude break scene lifting a warm cup with drifting steam.",
+      "category": "claude",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1
+    },
+    {
       "id": "claude-logo",
       "path": "svgs/logos/claude-logo.svg",
       "category": "claude",
