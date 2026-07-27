@@ -42,7 +42,7 @@
   <ul>
       <li>62 commits landed: ci: refresh minimal story card after workflow changes; docs: add dynamic project story card (#3).</li>
       <li>4 pull requests updated, led by #4: docs: add dynamic project story card.</li>
-      <li>Daily summary covers 66 public activity items from the last 1 day.</li>
+      <li>Daily summary covers 66 public activity items from the last 7 days.</li>
   </ul>
 </details>
 <!-- project-story:end -->
