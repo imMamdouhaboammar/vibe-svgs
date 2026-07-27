@@ -8,8 +8,20 @@ const categoryMeta = {
   deepseek: { label: 'DeepSeek', logo: 'svgs/logos/deepseek-color.svg' },
   copilot: { label: 'GitHub Copilot', logo: 'svgs/logos/githubcopilot.svg' },
   logos: { label: 'Official Logos', logo: 'svgs/logos/github.svg' },
+  'mascot-packs': { label: 'Mascot Packs' },
   badges: { label: 'Badges' },
   banners: { label: 'Banners' },
+};
+
+const packLabels = {
+  reactions: 'Reactions',
+  work: 'Work',
+  systems: 'Systems',
+  security: 'Security',
+  growth: 'Growth',
+  celebration: 'Celebration',
+  daily: 'Daily',
+  'sprite-stories': 'Sprite Stories',
 };
 
 const themePalettes = {
@@ -40,11 +52,15 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 function isSafeAssetPath(path) {
-  return typeof path === 'string' &&
-    /^svgs\/(?:badges|banners|logos|mascots|scenes)\/[a-z0-9][a-z0-9._-]*\.svg$/.test(path);
+  return typeof path === 'string' && (
+    /^svgs\/(?:badges|banners|logos|mascots|scenes)\/[a-z0-9][a-z0-9._-]*\.svg$/.test(path) ||
+    /^svgs\/packs\/[a-z0-9-]+\/[a-z0-9][a-z0-9._-]*\.svg$/.test(path)
+  );
 }
 
 function isManifestAsset(asset) {
+  const hasValidPack = asset?.category !== 'mascot-packs' ||
+    (typeof asset.pack === 'string' && Boolean(packLabels[asset.pack]));
   return Boolean(asset) &&
     typeof asset.id === 'string' &&
     typeof asset.title === 'string' &&
@@ -52,6 +68,7 @@ function isManifestAsset(asset) {
     typeof asset.category === 'string' &&
     typeof asset.type === 'string' &&
     (asset.contractVersion === 0 || asset.contractVersion === 1) &&
+    hasValidPack &&
     isSafeAssetPath(asset.path);
 }
 
@@ -77,6 +94,8 @@ async function loadAssetManifest() {
     category: asset.category,
     type: asset.type,
     path: asset.path,
+    pack: asset.pack || '',
+    packLabel: packLabels[asset.pack] || '',
     desc: asset.description,
     migrated: asset.contractVersion === 1
   }));
@@ -92,7 +111,8 @@ function renderGallery() {
     const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
     const matchesSearch = !normalizedQuery ||
       item.title.toLowerCase().includes(normalizedQuery) ||
-      item.desc.toLowerCase().includes(normalizedQuery);
+      item.desc.toLowerCase().includes(normalizedQuery) ||
+      item.packLabel.toLowerCase().includes(normalizedQuery);
     return matchesCategory && matchesSearch;
   });
 
@@ -126,21 +146,26 @@ function createGalleryCard(item) {
   const category = document.createElement('span');
   category.className = 'card-category';
   const categoryInfo = categoryMeta[item.category] || { label: item.category };
+  const categoryLabel = item.category === 'mascot-packs' && packLabels[item.pack]
+    ? `${categoryInfo.label} · ${packLabels[item.pack]}`
+    : categoryInfo.label;
   if (categoryInfo.logo) {
     const categoryLogo = document.createElement('img');
     categoryLogo.src = categoryInfo.logo;
     categoryLogo.alt = '';
     categoryLogo.width = 14;
     categoryLogo.height = 14;
-    category.append(categoryLogo, document.createTextNode(categoryInfo.label));
+    category.append(categoryLogo, document.createTextNode(categoryLabel));
   } else {
-    category.textContent = categoryInfo.label;
+    category.textContent = categoryLabel;
   }
 
   header.append(title, category);
 
   const preview = document.createElement('div');
-  preview.className = item.type === 'logo' ? 'card-preview logo-preview' : 'card-preview';
+  preview.className = 'card-preview';
+  if (item.type === 'logo') preview.classList.add('logo-preview');
+  if (item.category === 'mascot-packs') preview.classList.add('pack-preview');
 
   const image = document.createElement('img');
   image.src = item.path;
@@ -158,7 +183,9 @@ function createGalleryCard(item) {
   qualityState.style.fontSize = '11px';
   qualityState.style.marginBottom = '16px';
   qualityState.style.color = item.migrated ? 'var(--success, #10b981)' : 'var(--text-muted)';
-  qualityState.textContent = item.migrated ? 'Verified SVG contract' : 'Source artwork';
+  qualityState.textContent = item.category === 'mascot-packs'
+    ? 'Verified motion pack'
+    : item.migrated ? 'Verified SVG contract' : 'Source artwork';
 
   const actions = document.createElement('div');
   actions.className = 'card-actions';

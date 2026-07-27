@@ -49,6 +49,12 @@
 
 ---
 
+## Mascot Animation Packs
+
+The library includes 66 physics-driven pixel mascot animations across reactions, work, systems, security, growth, celebration, daily scenes, and hybrid sprite stories.
+
+[Browse the complete pack catalog and usage guide](MASCOT-PACKS.md)
+
 ## 🎨 Asset Gallery & Categories
 
 ### <img src="assets/readme/claude-color.svg" width="24" height="24" alt="" align="absmiddle"> Claude Family
