@@ -3,6 +3,14 @@ import { optimize } from "svgo";
 // @ts-ignore
 import svgoConfig from "../svgo.config.js";
 
+
+async function loadSuppliedSourcePaths(): Promise<Set<string>> {
+  const inventoryPath = "references/mascot-motion/source-inventory.json";
+  if (!(await Bun.file(inventoryPath).exists())) return new Set();
+  const inventory = JSON.parse(await readFile(inventoryPath, "utf8"));
+  return new Set((inventory.svgSources ?? []).map((entry: { path: string }) => entry.path));
+}
+
 const preserveClaudeCodePath = (filePath: string): boolean =>
   filePath.startsWith("svgs/scenes/claude-code-") &&
   filePath !== "svgs/scenes/claude-code-review.svg";
@@ -35,6 +43,7 @@ const configForFile = (filePath: string) => ({
 });
 
 async function runSvgo(writeMode: boolean = false) {
+  const suppliedSourcePaths = await loadSuppliedSourcePaths();
   const svgFiles: string[] = [];
   const glob = new Bun.Glob("svgs/**/*.svg");
   for await (const file of glob.scan(".")) {
@@ -42,8 +51,11 @@ async function runSvgo(writeMode: boolean = false) {
   }
 
   let unoptimizedCount = 0;
+  let checkedCount = 0;
 
   for (const filePath of svgFiles) {
+    if (suppliedSourcePaths.has(filePath)) continue;
+    checkedCount++;
     const original = await readFile(filePath, "utf8");
     const result = optimize(original, {
       path: filePath,
@@ -67,7 +79,7 @@ async function runSvgo(writeMode: boolean = false) {
     );
     process.exit(1);
   } else {
-    console.log(`SVGO check complete. All ${svgFiles.length} SVG files satisfy SVGO configuration.`);
+    console.log(`SVGO check complete. ${checkedCount} generated or maintained SVG files satisfy configuration; ${suppliedSourcePaths.size} supplied source SVGs were preserved.`);
   }
 }
 

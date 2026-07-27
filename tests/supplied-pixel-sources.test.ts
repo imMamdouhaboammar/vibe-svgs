@@ -40,3 +40,10 @@ test("records every supplied pixel source and MP4 reference without modification
     expect(source.byteLength).toBe(entry.bytes);
   }
 });
+
+
+test("keeps supplied source SVGs outside destructive SVGO writes", async () => {
+  const script = await readFile("scripts/svgo-check.ts", "utf8");
+  expect(script).toContain("references/mascot-motion/source-inventory.json");
+  expect(script).toContain("suppliedSourcePaths.has(filePath)");
+});
