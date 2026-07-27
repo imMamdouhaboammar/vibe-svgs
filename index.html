@@ -6,11 +6,6 @@
   <title>Vibe SVGs - Animated SVGs &amp; Badges for AI &amp; Vibe Coding</title>
   <meta name="description" content="Hilarious, animated vector SVGs, badges, banners, and AI mascots for AI engineers, vibe coders, and agentic software developers." />
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="src/styles.css" />
 </head>
 <body>
@@ -18,15 +13,15 @@
   <header class="app-header">
     <div class="header-container">
       <div class="logo">
-        <span class="logo-icon">✨</span>
+        <img class="logo-mark" src="assets/readme/project-mark.svg" width="28" height="28" alt="">
         <span class="logo-title">Vibe<span class="highlight">SVGs</span></span>
         <span class="badge-tag">OPEN SOURCE</span>
       </div>
 
       <div class="header-actions">
-        <a href="#custom-builder" class="btn btn-secondary">⚡ Custom Badge Builder</a>
+        <a href="#custom-builder" class="btn btn-secondary">Custom Badge Builder</a>
         <a href="https://github.com/imMamdouhaboammar/vibe-svgs" target="_blank" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+<img src="svgs/logos/github.svg" width="16" height="16" alt="">
           GitHub Repo
         </a>
       </div>
@@ -37,9 +32,9 @@
     <!-- Hero Banner Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <span class="hero-pill">🔥 100% Vibe Coding Approved</span>
+        <span class="hero-pill">Curated animated SVG library</span>
         <h1>Animated SVGs &amp; Badges for <span class="gradient-text">AI Engineers &amp; Vibe Coders</span></h1>
-        <p>A hilarous open-source vector graphics library designed for your GitHub READMEs, AI project docs, and web apps.</p>
+        <p>An open-source collection of supplied platform logos and physics-driven mascot stories for READMEs, documentation, and web interfaces.</p>
       </div>
 
       <div class="hero-banner-container">
@@ -49,17 +44,19 @@
 
     <!-- Gallery Controls (Filter & Search) -->
     <section class="controls-section">
-      <div class="filter-tabs">
+      <div class="filter-tabs" aria-label="Asset filters">
         <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="claude">🟠 Claude</button>
-        <button class="filter-btn" data-category="claude-code"><img src="svgs/logos/claudecode-color.svg" width="16" height="16" alt=""> Claude Code</button>
-        <button class="filter-btn" data-category="openai">⬛ OpenAI</button>
-        <button class="filter-btn" data-category="cursor">🟢 Cursor</button>
-        <button class="filter-btn" data-category="gemini">🟣 Gemini</button>
-        <button class="filter-btn" data-category="deepseek">🔵 DeepSeek</button>
-        <button class="filter-btn" data-category="copilot">🔷 Copilot</button>
-        <button class="filter-btn" data-category="badges">🏷️ Badges</button>
-        <button class="filter-btn" data-category="banners">🚀 Banners</button>
+        <button class="filter-btn" data-category="claude"><img src="svgs/logos/claudecode-color.svg" alt="">Claude</button>
+        <button class="filter-btn" data-category="claude-code"><img src="svgs/logos/claudecode-color.svg" alt="">Claude Code</button>
+        <button class="filter-btn" data-category="openai"><img src="svgs/logos/openai.svg" alt="">OpenAI</button>
+        <button class="filter-btn" data-category="codex"><img src="svgs/logos/codex-color.svg" alt="">Codex</button>
+        <button class="filter-btn" data-category="cursor"><img src="svgs/logos/cursor.svg" alt="">Cursor</button>
+        <button class="filter-btn" data-category="gemini"><img src="svgs/logos/geminicli-color.svg" alt="">Gemini</button>
+        <button class="filter-btn" data-category="deepseek"><img src="svgs/logos/deepseek-color.svg" alt="">DeepSeek</button>
+        <button class="filter-btn" data-category="copilot"><img src="svgs/logos/githubcopilot.svg" alt="">Copilot</button>
+        <button class="filter-btn" data-category="logos"><img src="svgs/logos/github.svg" alt="">Logos</button>
+        <button class="filter-btn" data-category="badges">Badges</button>
+        <button class="filter-btn" data-category="banners">Banners</button>
       </div>
 
       <div class="search-box">
@@ -79,8 +76,8 @@
     <section class="builder-section" id="custom-builder">
       <div class="builder-card">
         <div class="builder-header">
-          <h2>⚡ Interactive Custom Badge Generator</h2>
-          <p>Create your own animated vibe coding badge with real-time SVG preview!</p>
+          <h2>Interactive Custom Badge Generator</h2>
+          <p>Create a compact animated badge with a real-time SVG preview.</p>
         </div>
 
         <div class="builder-body">
@@ -92,7 +89,7 @@
 
             <div class="form-group">
               <label for="badge-status">Status Text (Right)</label>
-              <input type="text" id="badge-status" value="100% UNCHECKED 🚀" />
+              <input type="text" id="badge-status" value="100% UNCHECKED" />
             </div>
 
             <div class="form-group">
@@ -114,8 +111,8 @@
             </div>
 
             <div class="preview-actions">
-              <button id="copy-custom-markdown" class="btn btn-primary">📋 Copy Markdown</button>
-              <button id="download-custom-svg" class="btn btn-secondary">📥 Download SVG</button>
+              <button id="copy-custom-markdown" class="btn btn-primary">Copy SVG Code</button>
+              <button id="download-custom-svg" class="btn btn-secondary">Download SVG</button>
             </div>
           </div>
         </div>
@@ -124,11 +121,11 @@
   </main>
 
   <footer class="app-footer">
-    <p>Built with ❤️ by AI Engineers for the Vibe Coding Community • Released under MIT License</p>
+    <p>Community-created SVG assets. Platform logos remain the property of their respective owners. Released under MIT for the surrounding code and artwork.</p>
   </footer>
 
   <!-- Notification Toast -->
-  <div id="toast" class="toast">Copied to Clipboard! 📋</div>
+  <div id="toast" class="toast">Copied to clipboard.</div>
 
   <script src="src/app.js"></script>
 </body>

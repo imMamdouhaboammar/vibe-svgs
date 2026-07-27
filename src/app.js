@@ -1,3 +1,17 @@
+const categoryMeta = {
+  claude: { label: 'Claude', logo: 'svgs/logos/claudecode-color.svg' },
+  'claude-code': { label: 'Claude Code', logo: 'svgs/logos/claudecode-color.svg' },
+  openai: { label: 'OpenAI', logo: 'svgs/logos/openai.svg' },
+  codex: { label: 'Codex', logo: 'svgs/logos/codex-color.svg' },
+  cursor: { label: 'Cursor', logo: 'svgs/logos/cursor.svg' },
+  gemini: { label: 'Gemini', logo: 'svgs/logos/geminicli-color.svg' },
+  deepseek: { label: 'DeepSeek', logo: 'svgs/logos/deepseek-color.svg' },
+  copilot: { label: 'GitHub Copilot', logo: 'svgs/logos/githubcopilot.svg' },
+  logos: { label: 'Official Logos', logo: 'svgs/logos/github.svg' },
+  badges: { label: 'Badges' },
+  banners: { label: 'Banners' },
+};
+
 const themePalettes = {
   green: { labelBg: '#18181b', statusBg1: '#059669', statusBg2: '#10b981', textColor: '#ffffff' },
   cyan: { labelBg: '#0f172a', statusBg1: '#0284c7', statusBg2: '#06b6d4', textColor: '#ffffff' },
@@ -36,6 +50,7 @@ function isManifestAsset(asset) {
     typeof asset.title === 'string' &&
     typeof asset.description === 'string' &&
     typeof asset.category === 'string' &&
+    typeof asset.type === 'string' &&
     (asset.contractVersion === 0 || asset.contractVersion === 1) &&
     isSafeAssetPath(asset.path);
 }
@@ -60,6 +75,7 @@ async function loadAssetManifest() {
     id: asset.id,
     title: asset.title,
     category: asset.category,
+    type: asset.type,
     path: asset.path,
     desc: asset.description,
     migrated: asset.contractVersion === 1
@@ -109,12 +125,22 @@ function createGalleryCard(item) {
 
   const category = document.createElement('span');
   category.className = 'card-category';
-  category.textContent = item.category;
+  const categoryInfo = categoryMeta[item.category] || { label: item.category };
+  if (categoryInfo.logo) {
+    const categoryLogo = document.createElement('img');
+    categoryLogo.src = categoryInfo.logo;
+    categoryLogo.alt = '';
+    categoryLogo.width = 14;
+    categoryLogo.height = 14;
+    category.append(categoryLogo, document.createTextNode(categoryInfo.label));
+  } else {
+    category.textContent = categoryInfo.label;
+  }
 
   header.append(title, category);
 
   const preview = document.createElement('div');
-  preview.className = 'card-preview';
+  preview.className = item.type === 'logo' ? 'card-preview logo-preview' : 'card-preview';
 
   const image = document.createElement('img');
   image.src = item.path;
@@ -132,7 +158,7 @@ function createGalleryCard(item) {
   qualityState.style.fontSize = '11px';
   qualityState.style.marginBottom = '16px';
   qualityState.style.color = item.migrated ? 'var(--success, #10b981)' : 'var(--text-muted)';
-  qualityState.textContent = item.migrated ? 'Phase 1 quality contract passed' : 'Legacy artwork, migration pending';
+  qualityState.textContent = item.migrated ? 'Verified SVG contract' : 'Source artwork';
 
   const actions = document.createElement('div');
   actions.className = 'card-actions';
@@ -140,13 +166,13 @@ function createGalleryCard(item) {
   const copyButton = document.createElement('button');
   copyButton.className = 'btn btn-secondary';
   copyButton.type = 'button';
-  copyButton.textContent = '📋 Markdown';
+  copyButton.textContent = 'Copy Markdown';
   copyButton.addEventListener('click', () => copyMarkdown(item.title, item.path));
 
   const downloadButton = document.createElement('button');
   downloadButton.className = 'btn btn-primary';
   downloadButton.type = 'button';
-  downloadButton.textContent = '📥 Download';
+  downloadButton.textContent = 'Download SVG';
   downloadButton.addEventListener('click', () => downloadSVG(item.path));
 
   actions.append(copyButton, downloadButton);
@@ -195,7 +221,7 @@ async function copyMarkdown(title, path) {
   const markdown = `![${title}](${rawUrl})`;
   try {
     await navigator.clipboard.writeText(markdown);
-    showToast('Markdown snippet copied to clipboard! 📋');
+    showToast('Markdown snippet copied.');
   } catch {
     showToast('Clipboard access was blocked.');
   }
@@ -230,7 +256,7 @@ function setupCustomBadgeGenerator() {
 
   const updateCustomBadge = () => {
     const labelText = labelInput.value || 'vibe coding';
-    const statusText = statusInput.value || '100% UNCHECKED 🚀';
+    const statusText = statusInput.value || '100% UNCHECKED';
     const theme = themePalettes[selectedTheme];
     const labelWidth = Math.max(80, labelText.length * 8 + 20);
     const statusWidth = Math.max(100, statusText.length * 8 + 30);
@@ -279,7 +305,7 @@ function setupCustomBadgeGenerator() {
   copyButton.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(previewBox.innerHTML);
-      showToast('Custom SVG code copied to clipboard! 📋');
+      showToast('Custom SVG code copied.');
     } catch {
       showToast('Clipboard access was blocked.');
     }
