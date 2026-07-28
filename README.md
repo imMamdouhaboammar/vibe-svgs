@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>62 commits landed: ci: refresh minimal story card after workflow changes; docs: add dynamic project story card (#3).</li>
-      <li>4 pull requests updated, led by #4: docs: add dynamic project story card.</li>
-      <li>Daily summary covers 66 public activity items from the last 7 days.</li>
+      <li>54 commits landed: feat: add mascot pack gallery and guide; fix: accept mascot pack manifest contracts.</li>
+      <li>2 pull requests updated, led by #6: feat: add animated Claude Stories motion pack.</li>
+      <li>Daily summary covers 56 public activity items from the last 1 day.</li>
   </ul>
 </details>
 <!-- project-story:end -->
