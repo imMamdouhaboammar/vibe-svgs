@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>54 commits landed: feat: add mascot pack gallery and guide; fix: accept mascot pack manifest contracts.</li>
-      <li>2 pull requests updated, led by #6: feat: add animated Claude Stories motion pack.</li>
-      <li>Daily summary covers 56 public activity items from the last 1 day.</li>
+      <li>95 commits landed: feat: add mascot pack gallery and guide; fix: accept mascot pack manifest contracts.</li>
+      <li>6 pull requests updated, led by #6: feat: add animated Claude Stories motion pack.</li>
+      <li>Daily summary covers 101 public activity items from the last 7 days.</li>
   </ul>
 </details>
 <!-- project-story:end -->
