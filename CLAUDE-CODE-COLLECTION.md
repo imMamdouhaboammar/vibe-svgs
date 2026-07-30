@@ -5,7 +5,7 @@
 <h1 align="center">Claude Code Motion Collection</h1>
 
 <p align="center">
-  Twenty community-created animated SVG stories built around the supplied Claude Code mark.
+  Thirty community-created animated SVG stories built around the supplied Claude Code mark.
 </p>
 
 ## Motion contract
@@ -42,6 +42,16 @@ The collection uses separate nested transform owners for horizontal travel, vert
 | **Agent Conductor** | <img src="svgs/scenes/claude-code-agent-conductor.svg" width="150" alt="Claude Code Agent Conductor"> | `![Claude Code Agent Conductor](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-agent-conductor.svg)` |
 | **Build Sleep** | <img src="svgs/scenes/claude-code-build-sleep.svg" width="150" alt="Claude Code Build Sleep"> | `![Claude Code Build Sleep](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-build-sleep.svg)` |
 | **Victory Dance** | <img src="svgs/scenes/claude-code-victory-dance.svg" width="150" alt="Claude Code Victory Dance"> | `![Claude Code Victory Dance](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-victory-dance.svg)` |
+| **Trampoline Bounce** | <img src="svgs/scenes/claude-code-trampoline-bounce.svg" width="150" alt="Claude Code Trampoline Bounce"> | `![Claude Code Trampoline Bounce](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-trampoline-bounce.svg)` |
+| **Skate Grind** | <img src="svgs/scenes/claude-code-skate-grind.svg" width="150" alt="Claude Code Skate Grind"> | `![Claude Code Skate Grind](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-skate-grind.svg)` |
+| **Jack-In-The-Box** | <img src="svgs/scenes/claude-code-jack-in-the-box.svg" width="150" alt="Claude Code Jack-In-The-Box"> | `![Claude Code Jack-In-The-Box](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-jack-in-the-box.svg)` |
+| **Weightlifter** | <img src="svgs/scenes/claude-code-weightlifter.svg" width="150" alt="Claude Code Weightlifter"> | `![Claude Code Weightlifter](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-weightlifter.svg)` |
+| **DJ Scratch** | <img src="svgs/scenes/claude-code-dj-scratch.svg" width="150" alt="Claude Code DJ Scratch"> | `![Claude Code DJ Scratch](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-dj-scratch.svg)` |
+| **Ninja Dash** | <img src="svgs/scenes/claude-code-ninja-dash.svg" width="150" alt="Claude Code Ninja Dash"> | `![Claude Code Ninja Dash](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-ninja-dash.svg)` |
+| **Balloon Float** | <img src="svgs/scenes/claude-code-balloon-float.svg" width="150" alt="Claude Code Balloon Float"> | `![Claude Code Balloon Float](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-balloon-float.svg)` |
+| **Magician Hat** | <img src="svgs/scenes/claude-code-magician-hat.svg" width="150" alt="Claude Code Magician Hat"> | `![Claude Code Magician Hat](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-magician-hat.svg)` |
+| **Pinball Bumper** | <img src="svgs/scenes/claude-code-pinball-bumper.svg" width="150" alt="Claude Code Pinball Bumper"> | `![Claude Code Pinball Bumper](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-pinball-bumper.svg)` |
+| **Breakdance Windmill** | <img src="svgs/scenes/claude-code-breakdance-windmill.svg" width="150" alt="Claude Code Breakdance Windmill"> | `![Claude Code Breakdance Windmill](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-breakdance-windmill.svg)` |
 
 ## Verification
 

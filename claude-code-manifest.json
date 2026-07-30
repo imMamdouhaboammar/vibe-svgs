@@ -220,6 +220,116 @@
       "contractVersion": 1,
       "title": "Claude Code Victory Dance",
       "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code performs a sampled jump with velocity-linked squash, rotation, responsive shadowing, an impact ring, and confetti that falls entirely within the frame."
+    },
+    {
+      "id": "claude-code-trampoline-bounce",
+      "path": "svgs/scenes/claude-code-trampoline-bounce.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Trampoline Bounce",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot does high elastic trampoline jumps with mid-air rotations and springy landing squash."
+    },
+    {
+      "id": "claude-code-skate-grind",
+      "path": "svgs/scenes/claude-code-skate-grind.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Skate Grind",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot grinds along a terminal rail, performs a mid-air kickflip, and lands smoothly on skateboard."
+    },
+    {
+      "id": "claude-code-jack-in-the-box",
+      "path": "svgs/scenes/claude-code-jack-in-the-box.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Jack-In-The-Box",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot springs out of a cranked prompt box on a coiled spring with joyous wobbles."
+    },
+    {
+      "id": "claude-code-weightlifter",
+      "path": "svgs/scenes/claude-code-weightlifter.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Weightlifter",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot struggles under a heavy 100K Token barbell before triumphantly pressing it overhead."
+    },
+    {
+      "id": "claude-code-dj-scratch",
+      "path": "svgs/scenes/claude-code-dj-scratch.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code DJ Scratch",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot bops to the beat while scratching a vinyl disc on a DJ console with reactive equalizers."
+    },
+    {
+      "id": "claude-code-ninja-dash",
+      "path": "svgs/scenes/claude-code-ninja-dash.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Ninja Dash",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot dashes across screen, slices a bug block in mid-air with a katana, and lands in hero pose."
+    },
+    {
+      "id": "claude-code-balloon-float",
+      "path": "svgs/scenes/claude-code-balloon-float.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Balloon Float",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot floats buoyantly upward holding code balloons, kicking feet gently before landing smoothly."
+    },
+    {
+      "id": "claude-code-magician-hat",
+      "path": "svgs/scenes/claude-code-magician-hat.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Magician Hat",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot waves a magic wand over a top hat as a glowing success checkmark pops out with magic stars."
+    },
+    {
+      "id": "claude-code-pinball-bumper",
+      "path": "svgs/scenes/claude-code-pinball-bumper.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Pinball Bumper",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot launches like a pinball, ricocheting elastically off neon bumpers with score light flashes."
+    },
+    {
+      "id": "claude-code-breakdance-windmill",
+      "path": "svgs/scenes/claude-code-breakdance-windmill.svg",
+      "category": "claude-code",
+      "type": "scene",
+      "animated": true,
+      "communityArtwork": true,
+      "contractVersion": 1,
+      "title": "Claude Code Breakdance Windmill",
+      "description": "Community-created physics-driven scene using the supplied Claude Code mark. Claude Code mascot drops into a breakdance spin, executes a windmill rotation, freezes in pose, and pops up."
     }
   ]
 }

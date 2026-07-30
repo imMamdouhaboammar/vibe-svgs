@@ -424,11 +424,192 @@ def victory_dance():
     return stem,"Claude Code Victory Dance","Claude Code performs a sampled jump with velocity-linked squash, rotation, responsive shadowing, an impact ring, and confetti that falls entirely within the frame.",css,content
 
 
+def trampoline_bounce():
+    stem = "claude-code-trampoline-bounce"
+    t0, t1, apex = .3, 1.25, 45
+    x = [(0, "translateX(0)"), (LOOP, "translateX(0)")]
+    y = projectile_frames(t0, t1, apex)
+    r = [(0, "rotate(0)"), (t0, "rotate(0)"), ((t0+t1)/2, "rotate(180deg)"), (t1, "rotate(360deg)"), (LOOP, "rotate(360deg)")]
+    s = [(0, "scale(1)"), (t0-.1, "scale(1.15,.75)"), (t0, "scale(.85,1.25)"), ((t0+t1)/2, "scale(1)"), (t1-.05, "scale(.9,1.1)"), (t1, "scale(1.2,.7)"), (t1+.15, "scale(.95,1.05)"), (t1+.3, "scale(1)"), (LOOP, "scale(1)")]
+    css = body_css(stem, x_frames=x, y_frames=y, r_frames=r, s_frames=s, shadow=(shadow_from_projectile(f"{stem}-shadow-track", t0, t1, apex), f"{stem}-shadow-track"))
+    css += transform_frames(f"{stem}-bed", [(0, "scaleY(1)"), (t0-.05, "scaleY(1)"), (t0, "scaleY(1.8)"), (t0+.12, "scaleY(.8)"), (t0+.25, "scaleY(1)"), (t1-.05, "scaleY(1)"), (t1, "scaleY(1.7)"), (t1+.12, "scaleY(.8)"), (t1+.25, "scaleY(1)"), (LOOP, "scaleY(1)")]) + f".{stem}-bed{{animation:{stem}-bed {LOOP}s linear infinite;transform-origin:180px 200px}}"
+    content = ground(stem, 180, 215, 60) + dedent(f"""
+      <g class="{stem}-bed motion pivot-center" data-animated="true">
+        <path d="M120 200h120" stroke="var(--brand)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M120 200l-10 15M240 200l10 15" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+      </g>
+    """)
+    return stem, "Claude Code Trampoline Bounce", "Claude Code mascot does high elastic trampoline jumps with mid-air rotations and springy landing squash.", css, content, mascot_markup(stem, x=180, y=204)
+
+
+def skate_grind():
+    stem = "claude-code-skate-grind"
+    x = [(0, "translateX(-15px)"), (1.2, "translateX(15px)"), (2.4, "translateX(-15px)"), (LOOP, "translateX(-15px)")]
+    y = [(0, "translateY(0)"), (.6, "translateY(-18px)"), (1.2, "translateY(0)"), (1.8, "translateY(-18px)"), (LOOP, "translateY(0)")]
+    r = [(0, "rotate(-4deg)"), (.6, "rotate(6deg)"), (1.2, "rotate(-4deg)"), (1.8, "rotate(6deg)"), (LOOP, "rotate(-4deg)")]
+    s = [(0, "scale(1)"), (.6, "scale(1.05,.95)"), (1.2, "scale(.95,1.05)"), (LOOP, "scale(1)")]
+    css = body_css(stem, x_frames=x, y_frames=y, r_frames=r, s_frames=s)
+    css += transform_frames(f"{stem}-board", [(0, "translateX(-15px) rotate(-4deg)"), (.6, "translateX(0px) rotate(6deg)"), (1.2, "translateX(15px) rotate(-4deg)"), (1.8, "translateX(0px) rotate(6deg)"), (LOOP, "translateX(-15px) rotate(-4deg)")]) + f".{stem}-board{{animation:{stem}-board {LOOP}s ease-in-out infinite}}"
+    content = ground(stem, 180, 214, 60) + dedent(f"""
+      <path d="M120 196h120" stroke="var(--blue)" stroke-width="6" stroke-linecap="round"/>
+      <g class="{stem}-board motion pivot-center" data-animated="true">
+        <path d="M155 196h50" stroke="var(--gold)" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="162" cy="201" r="3" fill="var(--ink)"/><circle cx="198" cy="201" r="3" fill="var(--ink)"/>
+      </g>
+    """)
+    return stem, "Claude Code Skate Grind", "Claude Code mascot grinds along a terminal rail, performs a mid-air kickflip, and lands smoothly on skateboard.", css, content, mascot_markup(stem, x=180, y=204)
+
+
+def jack_in_the_box():
+    stem = "claude-code-jack-in-the-box"
+    y = [(0, "translateY(32px)"), (.8, "translateY(32px)"), (1.05, "translateY(-22px)"), (1.25, "translateY(8px)"), (1.45, "translateY(-6px)"), (1.7, "translateY(0)"), (LOOP, "translateY(32px)")]
+    r = [(0, "rotate(0)"), (.8, "rotate(0)"), (1.05, "rotate(8deg)"), (1.25, "rotate(-6deg)"), (1.45, "rotate(3deg)"), (1.7, "rotate(0)"), (LOOP, "rotate(0)")]
+    s = [(0, "scale(.4,0)"), (.8, "scale(.4,0)"), (1.05, "scale(1.1,1.25)"), (1.25, "scale(.95,.9)"), (1.45, "scale(1.03,1.05)"), (1.7, "scale(1)"), (LOOP, "scale(.4,0)")]
+    css = body_css(stem, y_frames=y, r_frames=r, s_frames=s)
+    css += transform_frames(f"{stem}-lid", [(0, "rotate(0)"), (.8, "rotate(0)"), (.95, "rotate(-110deg)"), (3.8, "rotate(-110deg)"), (4.2, "rotate(0)"), (LOOP, "rotate(0)")]) + f".{stem}-lid{{animation:{stem}-lid {LOOP}s cubic-bezier(.3,.85,.4,1) infinite;transform-origin:140px 150px}}"
+    css += transform_frames(f"{stem}-crank", [(0, "rotate(0)"), (.8, "rotate(720deg)"), (LOOP, "rotate(720deg)")]) + f".{stem}-crank{{animation:{stem}-crank {LOOP}s linear infinite;transform-origin:230px 175px}}"
+    content = ground(stem, 180, 215, 48) + dedent(f"""
+      <rect x="140" y="150" width="80" height="60" rx="8" fill="var(--panel)" stroke="var(--ink)" stroke-width="4"/>
+      <g class="{stem}-lid" data-animated="true"><rect x="136" y="142" width="88" height="12" rx="4" fill="var(--gold)" stroke="var(--ink)" stroke-width="3"/></g>
+      <g class="{stem}-crank" data-animated="true"><path d="M220 175h12v12" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="232" cy="187" r="5" fill="var(--brand)"/></g>
+    """)
+    return stem, "Claude Code Jack-In-The-Box", "Claude Code mascot springs out of a cranked prompt box on a coiled spring with joyous wobbles.", css, content, mascot_markup(stem, x=180, y=204)
+
+
+def weightlifter():
+    stem = "claude-code-weightlifter"
+    y = [(0, "translateY(0)"), (.5, "translateY(8px)"), (1.2, "translateY(8px)"), (1.8, "translateY(-30px)"), (3.8, "translateY(-30px)"), (4.3, "translateY(0)"), (LOOP, "translateY(0)")]
+    s = [(0, "scale(1)"), (.5, "scale(1.12,.86)"), (1.2, "scale(1.12,.86)"), (1.8, "scale(.94,1.12)"), (2.0, "scale(1.03,.97)"), (2.2, "scale(1)"), (3.8, "scale(1)"), (4.3, "scale(1)"), (LOOP, "scale(1)")]
+    r = [(0, "rotate(0)"), (.7, "rotate(-3deg)"), (.9, "rotate(3deg)"), (1.1, "rotate(-2deg)"), (1.8, "rotate(0)"), (LOOP, "rotate(0)")]
+    css = body_css(stem, y_frames=y, r_frames=r, s_frames=s)
+    css += transform_frames(f"{stem}-barbell", [(0, "translateY(0)"), (.5, "translateY(2px)"), (1.2, "translateY(2px)"), (1.8, "translateY(-80px)"), (3.8, "translateY(-80px)"), (4.3, "translateY(0)"), (LOOP, "translateY(0)")]) + f".{stem}-barbell{{animation:{stem}-barbell {LOOP}s cubic-bezier(.3,.85,.4,1) infinite}}"
+    content = ground(stem, 180, 214, 52)
+    mascot = mascot_markup(stem, x=180, y=204) + dedent(f"""
+      <rect x="166" y="142" width="28" height="6" rx="2" fill="var(--gold)" stroke="var(--ink)" stroke-width="1.5"/>
+      <g class="{stem}-barbell motion pivot-center" data-animated="true">
+        <path d="M100 200h160" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+        <rect x="90" y="182" width="16" height="36" rx="4" fill="var(--blue)" stroke="var(--ink)" stroke-width="3"/>
+        <rect x="254" y="182" width="16" height="36" rx="4" fill="var(--blue)" stroke="var(--ink)" stroke-width="3"/>
+        <text x="180" y="196" fill="var(--brand)" font-family="ui-monospace,monospace" font-weight="700" font-size="11" text-anchor="middle">100K TOKENS</text>
+      </g>
+    """)
+    return stem, "Claude Code Weightlifter", "Claude Code mascot struggles under a heavy 100K Token barbell before triumphantly pressing it overhead.", css, content, mascot
+
+
+def dj_scratch():
+    stem = "claude-code-dj-scratch"
+    y = [(0, "translateY(0)"), (.4, "translateY(-6px)"), (.8, "translateY(0)"), (1.2, "translateY(-6px)"), (1.6, "translateY(0)"), (2.0, "translateY(-6px)"), (LOOP, "translateY(0)")]
+    r = [(0, "rotate(-3deg)"), (.4, "rotate(4deg)"), (.8, "rotate(-3deg)"), (1.2, "rotate(4deg)"), (1.6, "rotate(-3deg)"), (LOOP, "rotate(-3deg)")]
+    css = body_css(stem, y_frames=y, r_frames=r)
+    css += transform_frames(f"{stem}-vinyl", [(0, "rotate(0)"), (.4, "rotate(45deg)"), (.6, "rotate(-30deg)"), (1.0, "rotate(90deg)"), (1.2, "rotate(15deg)"), (1.6, "rotate(120deg)"), (LOOP, "rotate(0)")]) + f".{stem}-vinyl{{animation:{stem}-vinyl {LOOP}s linear infinite;transform-origin:230px 175px}}"
+    css += keyframes(f"{stem}-eq", [(0, "scaleY(.3)"), (.4, "scaleY(1)"), (.8, "scaleY(.4)"), (1.2, "scaleY(.9)"), (1.6, "scaleY(.5)"), (LOOP, "scaleY(.3)")]) + f".{stem}-eq{{animation:{stem}-eq {LOOP}s ease-in-out infinite;transform-origin:bottom}}"
+    content = ground(stem, 180, 214, 60) + dedent(f"""
+      <rect x="170" y="155" width="130" height="42" rx="8" fill="var(--panel)" stroke="var(--ink)" stroke-width="4"/>
+      <g class="{stem}-vinyl" data-animated="true"><circle cx="230" cy="175" r="20" fill="var(--ink)"/><circle cx="230" cy="175" r="6" fill="var(--gold)"/></g>
+      <g fill="var(--ok)" class="{stem}-eq" data-animated="true"><rect x="95" y="145" width="5" height="36"/><rect x="104" y="145" width="5" height="36" style="animation-delay:.15s"/><rect x="113" y="145" width="5" height="36" style="animation-delay:.3s"/></g>
+    """)
+    mascot = mascot_markup(stem, x=135, y=204) + dedent(f"""
+      <path d="M121 142c0-20 28-20 28 0" stroke="var(--ink)" stroke-width="4" fill="none"/>
+      <rect x="117" y="140" width="8" height="14" rx="3" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+      <rect x="145" y="140" width="8" height="14" rx="3" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    """)
+    return stem, "Claude Code DJ Scratch", "Claude Code mascot bops to the beat while scratching a vinyl disc on a DJ console with reactive equalizers.", css, content, mascot
+
+
+def ninja_dash():
+    stem = "claude-code-ninja-dash"
+    x = [(0, "translateX(-30px)"), (.5, "translateX(25px)"), (1.5, "translateX(25px)"), (2.2, "translateX(-30px)"), (LOOP, "translateX(-30px)")]
+    y = [(0, "translateY(0)"), (.25, "translateY(-24px)"), (.5, "translateY(0)"), (LOOP, "translateY(0)")]
+    r = [(0, "rotate(-12deg)"), (.25, "rotate(180deg)"), (.5, "rotate(360deg)"), (LOOP, "rotate(360deg)")]
+    s = [(0, "scale(1)"), (.5, "scale(1.2,.8)"), (.7, "scale(1)"), (LOOP, "scale(1)")]
+    css = body_css(stem, x_frames=x, y_frames=y, r_frames=r, s_frames=s)
+    css += transform_frames(f"{stem}-slice-top", [(0, "translate(0,0) rotate(0)"), (.5, "translate(0,0) rotate(0)"), (.8, "translate(8px,-14px) rotate(15deg)"), (1.5, "translate(8px,-14px) rotate(15deg)"), (2.0, "translate(0,0) rotate(0)"), (LOOP, "translate(0,0) rotate(0)")]) + f".{stem}-slice-top{{animation:{stem}-slice-top {LOOP}s ease-in-out infinite}}"
+    content = ground(stem, 180, 214, 60) + dedent(f"""
+      <g class="{stem}-slice-top motion pivot-center" data-animated="true"><path d="M260 140l35-35h-35z" fill="#c65a4c" stroke="var(--ink)" stroke-width="3"/></g>
+      <path d="M260 140l35 35h-35z" fill="#c65a4c" stroke="var(--ink)" stroke-width="3"/>
+      <path d="M230 180L310 100" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+    """)
+    mascot = mascot_markup(stem, x=180, y=204) + dedent(f"""
+      <rect x="165" y="140" width="30" height="6" rx="2" fill="#c65a4c" stroke="var(--ink)" stroke-width="1.5"/>
+      <path d="M195 143l12-4M195 143l10 6" stroke="#c65a4c" stroke-width="3" stroke-linecap="round"/>
+    """)
+    return stem, "Claude Code Ninja Dash", "Claude Code mascot dashes across screen, slices a bug block in mid-air with a katana, and lands in hero pose.", css, content, mascot
+
+
+def balloon_float():
+    stem = "claude-code-balloon-float"
+    y = [(0, "translateY(0)"), (1.2, "translateY(-60px)"), (2.4, "translateY(-55px)"), (3.6, "translateY(0)"), (LOOP, "translateY(0)")]
+    x = [(0, "translateX(0)"), (1.2, "translateX(24px)"), (2.4, "translateX(18px)"), (3.6, "translateX(0)"), (LOOP, "translateX(0)")]
+    r = [(0, "rotate(0)"), (1.2, "rotate(6deg)"), (2.4, "rotate(-4deg)"), (3.6, "rotate(0)"), (LOOP, "rotate(0)")]
+    css = body_css(stem, x_frames=x, y_frames=y, r_frames=r, shadow=(shadow_from_projectile(f"{stem}-shadow-track", 0, 3.6, 60), f"{stem}-shadow-track"))
+    css += transform_frames(f"{stem}-balloons", [(0, "rotate(-4deg)"), (1.2, "rotate(5deg)"), (2.4, "rotate(-3deg)"), (LOOP, "rotate(-4deg)")]) + f".{stem}-balloons{{animation:{stem}-balloons {LOOP}s ease-in-out infinite;transform-origin:180px 100px}}"
+    content = ground(stem, 180, 214, 50) + dedent(f"""
+      <g class="{stem}-balloons" data-animated="true">
+        <path d="M180 140L160 70M180 140L180 60M180 140L200 70" stroke="var(--dim)" stroke-width="2"/>
+        <circle cx="160" cy="55" r="18" fill="var(--blue)" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="180" cy="45" r="20" fill="var(--gold)" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="200" cy="55" r="18" fill="var(--ok)" stroke="var(--ink)" stroke-width="3"/>
+      </g>
+    """)
+    return stem, "Claude Code Balloon Float", "Claude Code mascot floats buoyantly upward holding code balloons, kicking feet gently before landing smoothly.", css, content, mascot_markup(stem, x=180, y=204)
+
+
+def magician_hat():
+    stem = "claude-code-magician-hat"
+    css = sway_profile(stem, 4, 3)
+    css += transform_frames(f"{stem}-wand", [(0, "rotate(0)"), (.6, "rotate(-25deg)"), (.9, "rotate(15deg)"), (1.2, "rotate(-20deg)"), (1.5, "rotate(0)"), (LOOP, "rotate(0)")]) + f".{stem}-wand{{animation:{stem}-wand {LOOP}s ease-in-out infinite;transform-origin:140px 140px}}"
+    css += keyframes(f"{stem}-poof", [(0, "transform:translateY(20px) scale(.2);opacity:0"), (.9, "transform:translateY(20px) scale(.2);opacity:0"), (1.2, "transform:translateY(-35px) scale(1.1);opacity:1"), (1.5, "transform:translateY(-28px) scale(1);opacity:1"), (3.5, "transform:translateY(-28px) scale(1);opacity:1"), (4.0, "transform:translateY(20px) scale(.2);opacity:0"), (LOOP, "transform:translateY(20px) scale(.2);opacity:0")]) + f".{stem}-poof{{animation:{stem}-poof {LOOP}s cubic-bezier(.3,.85,.4,1) infinite}}"
+    content = ground(stem, 180, 214, 52) + dedent(f"""
+      <rect x="230" y="150" width="60" height="50" rx="6" fill="var(--ink)" stroke="var(--dim)" stroke-width="3"/>
+      <path d="M220 200h80" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+      <g class="{stem}-wand" data-animated="true"><path d="M140 140l50-30" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/><circle cx="190" cy="110" r="5" fill="var(--gold)"/></g>
+      <g class="{stem}-poof motion pivot-center" data-animated="true">
+        <circle cx="260" cy="130" r="22" fill="var(--ok)" stroke="var(--ink)" stroke-width="3"/>
+        <path d="M250 130l8 8 16-16" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    """)
+    mascot = mascot_markup(stem, x=140, y=204) + dedent(f"""
+      <path d="M125 125h30" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+      <rect x="130" y="105" width="20" height="20" rx="3" fill="var(--ink)"/>
+    """)
+    return stem, "Claude Code Magician Hat", "Claude Code mascot waves a magic wand over a top hat as a glowing success checkmark pops out with magic stars.", css, content, mascot
+
+
+def pinball_bumper():
+    stem = "claude-code-pinball-bumper"
+    x = [(0, "translateX(-30px)"), (.4, "translateX(30px)"), (.8, "translateX(-15px)"), (1.2, "translateX(35px)"), (1.6, "translateX(0)"), (LOOP, "translateX(-30px)")]
+    y = [(0, "translateY(0)"), (.4, "translateY(-40px)"), (.8, "translateY(-20px)"), (1.2, "translateY(-45px)"), (1.6, "translateY(0)"), (LOOP, "translateY(0)")]
+    r = [(0, "rotate(0)"), (.4, "rotate(180deg)"), (.8, "rotate(-90deg)"), (1.2, "rotate(270deg)"), (1.6, "rotate(360deg)"), (LOOP, "rotate(360deg)")]
+    s = [(0, "scale(1)"), (.4, "scale(.8,1.3)"), (.8, "scale(1.2,.8)"), (1.2, "scale(.85,1.2)"), (1.6, "scale(1)"), (LOOP, "scale(1)")]
+    css = body_css(stem, x_frames=x, y_frames=y, r_frames=r, s_frames=s)
+    css += keyframes(f"{stem}-bumper-flash", [(0, "opacity:.5;transform:scale(1)"), (.38, "opacity:.5;transform:scale(1)"), (.42, "opacity:1;transform:scale(1.2)"), (.5, "opacity:.5;transform:scale(1)"), (LOOP, "opacity:.5;transform:scale(1)")]) + f".{stem}-bumper-flash{{animation:{stem}-bumper-flash {LOOP}s linear infinite}}"
+    content = ground(stem, 180, 214, 60) + dedent(f"""
+      <g class="{stem}-bumper-flash motion pivot-center" data-animated="true"><circle cx="230" cy="120" r="22" fill="var(--gold)" stroke="var(--ink)" stroke-width="4"/><text x="230" y="125" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle">1000</text></g>
+      <g class="{stem}-bumper-flash motion pivot-center" data-animated="true" style="animation-delay:.8s"><circle cx="280" cy="80" r="22" fill="var(--blue)" stroke="var(--ink)" stroke-width="4"/><text x="280" y="85" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">5000</text></g>
+    """)
+    return stem, "Claude Code Pinball Bumper", "Claude Code mascot launches like a pinball, ricocheting elastically off neon bumpers with score light flashes.", css, content, mascot_markup(stem, x=160, y=204)
+
+
+def breakdance_windmill():
+    stem = "claude-code-breakdance-windmill"
+    y = [(0, "translateY(0)"), (.4, "translateY(0)"), (2.2, "translateY(0)"), (2.6, "translateY(-12px)"), (2.9, "translateY(0)"), (LOOP, "translateY(0)")]
+    r = [(0, "rotate(0)"), (.4, "rotate(180deg)"), (1.2, "rotate(540deg)"), (1.8, "rotate(630deg)"), (2.2, "rotate(630deg)"), (2.6, "rotate(720deg)"), (LOOP, "rotate(720deg)")]
+    s = [(0, "scale(1)"), (.4, "scale(1.15,.85)"), (1.8, "scale(1)"), (2.2, "scale(.9,1.1)"), (2.6, "scale(1)"), (LOOP, "scale(1)")]
+    css = body_css(stem, y_frames=y, r_frames=r, s_frames=s)
+    content = ground(stem, 180, 214, 50) + dedent(f"""
+      <path d="M140 210h80" stroke="var(--brand)" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+      <circle cx="180" cy="210" r="30" fill="none" stroke="var(--gold)" stroke-width="3" stroke-dasharray="6 8"/>
+    """)
+    return stem, "Claude Code Breakdance Windmill", "Claude Code mascot drops into a breakdance spin, executes a windmill rotation, freezes in pose, and pops up.", css, content, mascot_markup(stem, x=180, y=204)
+
+
 SCENES = [
     terminal_sprint, bug_hunt, git_merge, context_juggle, release_launch,
     review_pass, pair_session, refactor_pull, test_lab, coffee_compile,
     focus_lock, memory_search, package_drop, incident_response, branch_swing,
     token_rain, prompt_fishing, agent_conductor, build_sleep, victory_dance,
+    trampoline_bounce, skate_grind, jack_in_the_box, weightlifter, dj_scratch,
+    ninja_dash, balloon_float, magician_hat, pinball_bumper, breakdance_windmill,
 ]
 
 

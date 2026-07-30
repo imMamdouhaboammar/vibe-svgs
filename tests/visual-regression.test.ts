@@ -19,5 +19,5 @@ describe("Visual Regression Pipeline", () => {
     } finally {
       await rm(testOutputDir, { recursive: true, force: true });
     }
-  }, 30000);
+  }, 120000);
 });

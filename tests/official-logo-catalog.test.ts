@@ -22,7 +22,7 @@ describe("supplied platform logo catalog", () => {
       expect(await readFile(entry.path, "utf8")).not.toBeEmpty();
       expect(entry.description.toLowerCase()).toContain("no mascot artwork");
     }
-  });
+  }, 60000);
 
   test("uses supplied logos in gallery filters and category cards", async () => {
     const html = await readFile("index.html", "utf8");

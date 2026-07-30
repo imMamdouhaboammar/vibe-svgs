@@ -87,6 +87,8 @@ Twenty physics-driven animated stories built around the supplied Claude Code mas
 | **Claude Shipping** | <img src="svgs/scenes/claude-shipping.svg" width="140" alt="Claude Shipping"> | `![Claude Shipping](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-shipping.svg)` |
 | **Claude Code Review** | <img src="svgs/scenes/claude-code-review.svg" width="140" alt="Claude Code Review"> | `![Claude Code Review](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-code-review.svg)` |
 | **Claude Coffee Break** | <img src="svgs/scenes/claude-coffee-break.svg" width="140" alt="Claude Coffee Break"> | `![Claude Coffee Break](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-coffee-break.svg)` |
+| **Claude Bug Hunting** | <img src="svgs/scenes/claude-bug-hunting.svg" width="140" alt="Claude Bug Hunting"> | `![Claude Bug Hunting](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-bug-hunting.svg)` |
+| **Claude Prompt Engineering** | <img src="svgs/scenes/claude-prompt-engineering.svg" width="140" alt="Claude Prompt Engineering"> | `![Claude Prompt Engineering](https://raw.githubusercontent.com/imMamdouhaboammar/vibe-svgs/main/svgs/scenes/claude-prompt-engineering.svg)` |
 <!-- claude-stories:end -->
 
 ---

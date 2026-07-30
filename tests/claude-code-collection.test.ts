@@ -25,16 +25,26 @@ const claudeCodeScenePaths = [
   "svgs/scenes/claude-code-prompt-fishing.svg",
   "svgs/scenes/claude-code-agent-conductor.svg",
   "svgs/scenes/claude-code-build-sleep.svg",
-  "svgs/scenes/claude-code-victory-dance.svg"
+  "svgs/scenes/claude-code-victory-dance.svg",
+  "svgs/scenes/claude-code-trampoline-bounce.svg",
+  "svgs/scenes/claude-code-skate-grind.svg",
+  "svgs/scenes/claude-code-jack-in-the-box.svg",
+  "svgs/scenes/claude-code-weightlifter.svg",
+  "svgs/scenes/claude-code-dj-scratch.svg",
+  "svgs/scenes/claude-code-ninja-dash.svg",
+  "svgs/scenes/claude-code-balloon-float.svg",
+  "svgs/scenes/claude-code-magician-hat.svg",
+  "svgs/scenes/claude-code-pinball-bumper.svg",
+  "svgs/scenes/claude-code-breakdance-windmill.svg"
 ] as const;
 
 describe("Claude Code motion collection", () => {
-  test("contains exactly twenty registered scenes", async () => {
+  test("contains registered scenes", async () => {
     const manifest = JSON.parse(
       await readFile("claude-code-manifest.json", "utf8"),
     );
 
-    expect(manifest.assets).toHaveLength(20);
+    expect(manifest.assets).toHaveLength(30);
     expect(manifest.assets.map((entry: { path: string }) => entry.path)).toEqual(
       claudeCodeScenePaths,
     );

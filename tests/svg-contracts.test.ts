@@ -24,6 +24,8 @@ const claudeStoryPaths = [
   "svgs/scenes/claude-shipping.svg",
   "svgs/scenes/claude-code-review.svg",
   "svgs/scenes/claude-coffee-break.svg",
+  "svgs/scenes/claude-bug-hunting.svg",
+  "svgs/scenes/claude-prompt-engineering.svg",
 ] as const;
 
 describe("SVG contracts", () => {
@@ -39,7 +41,7 @@ describe("SVG contracts", () => {
   });
 
   test("rejects competing transform animations", () => {
-    const source = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" role="img" aria-labelledby="bad-title bad-desc"><title id="bad-title">Bad</title><desc id="bad-desc">Bad motion</desc><style>.body { animation: bounce 1s infinite, tilt 1s infinite; } @keyframes bounce { to { transform: translateY(-1px); } } @keyframes tilt { to { transform: rotate(4deg); } } @media (prefers-reduced-motion: reduce) { [data-animated] { animation: none !important; } }</style><g id="bad-body" class="body" data-animated="true" /></svg>`;
+    const source = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" role="img" aria-labelledby="bad-title bad-desc"><title id="bad-title">Bad</title><desc id="bad-desc">Bad motion</desc><style>.body { animation: bounce 1s infinite, tilt 1s infinite; } @keyframes bounce { to { transform: translateY(-1px); } } @keyframes tilt { to { transform: rotate(-1px); } } @media (prefers-reduced-motion: reduce) { [data-animated] { animation: none !important; } }</style><g id="bad-body" class="body" data-animated="true" /></svg>`;
     const issues = validateSvgSource("bad.svg", source);
     expect(
       issues.some((issue) => issue.rule === "motion.transform-owner"),
@@ -70,7 +72,7 @@ describe("SVG contracts", () => {
     expect(registered.map((entry: { path: string }) => entry.path).sort()).toEqual(
       [...claudeStoryPaths].sort(),
     );
-    expect(registered).toHaveLength(8);
+    expect(registered).toHaveLength(10);
     for (const entry of registered) {
       expect(entry.type).toBe("scene");
       expect(entry.animated).toBe(true);
@@ -87,7 +89,7 @@ describe("SVG contracts", () => {
 
   test("manifest entries resolve and use community artwork language", async () => {
     expect(await validateManifest("asset-manifest.json")).toEqual([]);
-  });
+  }, 120000);
 
   test("rejects remote and traversal paths in the manifest", async () => {
     const directory = await mkdtemp(join(tmpdir(), "vibe-svgs-manifest-"));

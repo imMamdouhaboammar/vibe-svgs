@@ -85,10 +85,25 @@ const localReferences = (source: string): string[] => {
 
 const transformKeyframes = (source: string): Set<string> => {
   const names = new Set<string>();
-  const pattern = /@(?:-webkit-)?keyframes\s+([\w-]+)\s*\{([\s\S]*?)\}\s*\}/g;
+  const pattern = /@(?:-webkit-)?keyframes\s+([\w-]+)\s*\{/g;
+  let match: RegExpExecArray | null;
 
-  for (const match of source.matchAll(pattern)) {
-    if (/\btransform\s*:/.test(match[2] ?? "")) names.add(match[1] ?? "");
+  while ((match = pattern.exec(source)) !== null) {
+    const name = match[1];
+    const startIndex = match.index + match[0].length;
+    let depth = 1;
+    let endIndex = startIndex;
+
+    while (depth > 0 && endIndex < source.length) {
+      if (source[endIndex] === "{") depth++;
+      else if (source[endIndex] === "}") depth--;
+      endIndex++;
+    }
+
+    const body = source.slice(startIndex, endIndex - 1);
+    if (/\btransform\s*:/.test(body) && name) {
+      names.add(name);
+    }
   }
 
   return names;
@@ -109,6 +124,7 @@ const animationNames = (value: string, knownNames: Set<string>): string[] => {
 
 const competingTransformSelectors = (source: string): string[] => {
   const keyframes = transformKeyframes(source);
+  if (keyframes.size === 0) return [];
   const selectors = new Set<string>();
   const rules = /([^{}]+)\{([^{}]*)\}/g;
 
@@ -321,39 +337,29 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
   const ids = new Set<string>();
   const paths = new Set<string>();
 
-  for (const rawEntry of manifest.assets) {
+  const entryPromises = manifest.assets.map(async (rawEntry) => {
+    const entryIssues: SvgIssue[] = [];
+
     if (!isManifestEntry(rawEntry)) {
-      issues.push(
+      entryIssues.push(
         issue(manifestPath, "manifest.entry", "Every asset entry must satisfy the version 1 schema."),
       );
-      continue;
+      return entryIssues;
     }
-
-    if (ids.has(rawEntry.id)) {
-      issues.push(issue(manifestPath, "manifest.id", `Duplicate asset ID "${rawEntry.id}".`));
-    }
-    ids.add(rawEntry.id);
-
-    if (paths.has(rawEntry.path)) {
-      issues.push(
-        issue(manifestPath, "manifest.path", `Duplicate asset path "${rawEntry.path}".`),
-      );
-    }
-    paths.add(rawEntry.path);
 
     if (!SAFE_ASSET_PATH.test(rawEntry.path)) {
-      issues.push(
+      entryIssues.push(
         issue(
           manifestPath,
           "manifest.path-format",
           `Asset "${rawEntry.id}" must use a local svgs/<category>/<file>.svg path.`,
         ),
       );
-      continue;
+      return entryIssues;
     }
 
     if (/official\s+(?:3d\s+)?mascot/i.test(`${rawEntry.title} ${rawEntry.description}`)) {
-      issues.push(
+      entryIssues.push(
         issue(
           manifestPath,
           "claims.official-mascot",
@@ -363,7 +369,7 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
     }
 
     if (rawEntry.type === "mascot" && !rawEntry.communityArtwork) {
-      issues.push(
+      entryIssues.push(
         issue(
           manifestPath,
           "manifest.community-artwork",
@@ -375,10 +381,10 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
     try {
       const source = await readFile(rawEntry.path, "utf8");
       if (rawEntry.contractVersion === 1) {
-        issues.push(...validateSvgSource(rawEntry.path, source));
+        entryIssues.push(...validateSvgSource(rawEntry.path, source));
       }
     } catch (error) {
-      issues.push(
+      entryIssues.push(
         issue(
           manifestPath,
           "manifest.missing-file",
@@ -388,6 +394,28 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
         ),
       );
     }
+
+    return entryIssues;
+  });
+
+  for (const rawEntry of manifest.assets) {
+    if (!isManifestEntry(rawEntry)) continue;
+    if (ids.has(rawEntry.id)) {
+      issues.push(issue(manifestPath, "manifest.id", `Duplicate asset ID "${rawEntry.id}".`));
+    }
+    ids.add(rawEntry.id);
+
+    if (paths.has(rawEntry.path)) {
+      issues.push(
+        issue(manifestPath, "manifest.path", `Duplicate asset path "${rawEntry.path}".`),
+      );
+    }
+    paths.add(rawEntry.path);
+  }
+
+  const asyncResults = await Promise.all(entryPromises);
+  for (const result of asyncResults) {
+    issues.push(...result);
   }
 
   return issues;
