@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>92 commits landed: feat: add 10 highly expressive character-centric Claude Code mascot SVGs with real-brow…; feat: add mascot pack gallery and guide.</li>
-      <li>6 pull requests updated, led by #6: feat: add animated Claude Stories motion pack.</li>
-      <li>Daily summary covers 98 public activity items from the last 7 days.</li>
+      <li>56 commits landed: feat: add 10 highly expressive character-centric Claude Code mascot SVGs with real-brow…; feat: add mascot pack gallery and guide.</li>
+      <li>3 pull requests updated, led by #6: feat: add animated Claude Stories motion pack.</li>
+      <li>Daily summary covers 59 public activity items from the last 7 days.</li>
   </ul>
 </details>
 <!-- project-story:end -->
