@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>56 commits landed: feat: add 10 highly expressive character-centric Claude Code mascot SVGs with real-brow…; feat: add mascot pack gallery and guide.</li>
-      <li>3 pull requests updated, led by #6: feat: add animated Claude Stories motion pack.</li>
-      <li>Daily summary covers 59 public activity items from the last 7 days.</li>
+      <li>1 issue changed, including #7: enhancement: Add new community animated SVG badge/mascot templates.</li>
+      <li>Daily summary covers 1 public activity item from the last 1 day.</li>
+      <li>Documentation and project status remain aligned with the repository’s current public state.</li>
   </ul>
 </details>
 <!-- project-story:end -->
