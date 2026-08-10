@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>1 issue changed, including #7: enhancement: Add new community animated SVG badge/mascot templates.</li>
-      <li>Daily summary covers 1 public activity item from the last 7 days.</li>
-      <li>Documentation and project status remain aligned with the repository’s current public state.</li>
+      <li>No public repository changes were recorded in the last 7 days.</li>
+      <li>The project purpose and documented usage remain unchanged.</li>
+      <li>The next update will appear automatically when public activity is detected.</li>
   </ul>
 </details>
 <!-- project-story:end -->
