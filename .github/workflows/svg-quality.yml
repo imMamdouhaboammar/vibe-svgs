@@ -17,20 +17,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.3.14
-
       - name: Install Bun dependencies
         run: bun install --frozen-lockfile
-
-      - name: Run SVG contract tests
-        run: bun run test
-
-      - name: Validate migrated SVG assets
-        run: bun run validate
-
-      - name: SVGO check
-        run: bun run svgo:check
+      - name: Install Chromium
+        run: bunx playwright install --with-deps chromium
+      - name: Verify visual model contracts
+        run: bun test tests/visual-snapshot-model.test.ts
+      - name: Verify browser visual QA contracts
+        run: bun test tests/visual-regression.test.ts
