@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { captureVisualSnapshots } from "../scripts/visual-snapshots";
-import { readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 
@@ -9,6 +9,7 @@ describe("Visual Regression Pipeline", () => {
     const testRoot = join(tmpdir(), `vibe-snapshots-${Date.now()}`);
     const manifestPath = join(testRoot, "manifest.json");
     const outputDir = join(testRoot, "output");
+    await mkdir(testRoot, { recursive: true });
 
     await Bun.write(
       manifestPath,
@@ -58,6 +59,7 @@ describe("Visual Regression Pipeline", () => {
     const svgPath = join(testRoot, "network-fixture.svg");
     const manifestPath = join(testRoot, "manifest.json");
     const outputDir = join(testRoot, "output");
+    await mkdir(testRoot, { recursive: true });
 
     await Bun.write(
       svgPath,
