@@ -1,5 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import {
+  assertSafeSvgForBrowser,
   buildCaptureProfiles,
   deriveSnapshotViewport,
   parseSvgViewBox,
@@ -50,5 +51,28 @@ describe("visual capture profiles", () => {
     expect(buildCaptureProfiles(false, ["normal", "reduce"])).toEqual([
       "normal",
     ]);
+  });
+});
+
+describe("browser render safety", () => {
+  test("accepts ordinary declarative SVG markup", () => {
+    expect(() =>
+      assertSafeSvgForBrowser(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4"/></svg>',
+      ),
+    ).not.toThrow();
+  });
+
+  test("rejects scripts and inline event handlers before Chromium sees them", () => {
+    expect(() =>
+      assertSafeSvgForBrowser(
+        '<svg viewBox="0 0 10 10"><script>alert(1)</script></svg>',
+      ),
+    ).toThrow("script");
+    expect(() =>
+      assertSafeSvgForBrowser(
+        '<svg viewBox="0 0 10 10"><circle onload="alert(1)"/></svg>',
+      ),
+    ).toThrow("event handler");
   });
 });
