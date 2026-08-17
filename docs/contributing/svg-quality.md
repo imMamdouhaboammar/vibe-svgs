@@ -93,6 +93,8 @@ Reusable assets may not include:
 - browser-specific transform assumptions;
 - misleading claims that community artwork is an official mascot.
 
+The browser visual QA runner also blocks HTTP and HTTPS requests while rendering. A blocked request fails the capture instead of silently depending on a remote font, image, stylesheet, or other resource.
+
 Avoid live `<text>` where exact typography matters. Prefer vector geometry for fixed badges, icons, and visual equations.
 
 ## File budgets
@@ -108,17 +110,35 @@ A justified exception must be documented during review.
 
 ## Validation
 
-Run:
+Run the contract and static checks:
 
 ```bash
 bun run check
 ```
 
+Run a bounded browser smoke review covering a mascot, scene, banner, and badge:
+
+```bash
+bun run visual:smoke
+```
+
+Run the full migrated-asset snapshot matrix when changing shared rendering behavior or several visual families:
+
+```bash
+bun run snapshots
+```
+
+Browser snapshots use each SVG's native `viewBox` aspect ratio instead of forcing a square canvas. Animated assets are captured in both normal and `prefers-reduced-motion: reduce` modes. Static assets are captured once to avoid duplicate work.
+
+Each snapshot directory includes `visual-report.json`. The report records the source asset path, requested width, actual viewport dimensions, background, motion profile, screenshot filename, and blocked-request diagnostics. Screenshot paths are stored as relative filenames so CI artifacts remain portable.
+
 The validator should report the asset path, rule, and a concise repair instruction. Do not bypass a failing contract by changing the test unless the design specification itself has changed.
 
 ## Human visual review
 
-Automation cannot approve artistic quality. Review at minimum:
+Automation cannot approve artistic quality. Review the generated PNGs, not only the source markup or a passing test run.
+
+Review at minimum:
 
 - balance and silhouette;
 - connected anatomy;
@@ -127,5 +147,9 @@ Automation cannot approve artistic quality. Review at minimum:
 - shadow timing;
 - clipping throughout the loop;
 - readability on light, dark, and transparent backgrounds;
+- native aspect-ratio composition for scenes and banners;
+- normal and reduced-motion captures for animated assets;
 - resemblance and trademark risk;
 - static reduced-motion composition.
+
+The `SVG Quality` GitHub Actions workflow uploads the representative smoke captures as the `visual-smoke` artifact for review.
