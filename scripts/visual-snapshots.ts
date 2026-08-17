@@ -95,6 +95,20 @@ export function buildCaptureProfiles(
   return [...new Set(requested)];
 }
 
+export function assertSafeSvgForBrowser(source: string): void {
+  if (/<\s*script\b/i.test(source)) {
+    throw new Error("SVG browser render safety rejected script content.");
+  }
+
+  if (/<[^>]*\son[a-z][\w:-]*\s*=/i.test(source)) {
+    throw new Error("SVG browser render safety rejected inline event handler.");
+  }
+
+  if (/\b(?:href|xlink:href)\s*=\s*["']\s*javascript:/i.test(source)) {
+    throw new Error("SVG browser render safety rejected javascript URL.");
+  }
+}
+
 function selectAssets(
   manifest: AssetManifest,
   assetIds?: readonly string[],
@@ -148,6 +162,7 @@ export async function captureVisualSnapshots(
   try {
     for (const asset of assets) {
       const svgSource = await readFile(asset.path, "utf8");
+      assertSafeSvgForBrowser(svgSource);
       const profiles = buildCaptureProfiles(asset.animated, motionModes);
 
       for (const targetWidth of sizes) {
