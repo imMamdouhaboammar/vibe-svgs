@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - "feat/**"
+      - "daily/**"
 
 permissions:
   contents: read
@@ -13,7 +14,7 @@ permissions:
 jobs:
   contracts:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -29,8 +30,26 @@ jobs:
       - name: Run SVG contract tests
         run: bun run test
 
+      - name: Run visual snapshot model tests
+        run: bun test tests/visual-snapshot-model.test.ts tests/visual-smoke.test.ts
+
       - name: Validate migrated SVG assets
         run: bun run validate
 
       - name: SVGO check
         run: bun run svgo:check
+
+      - name: Install Chromium
+        run: bunx playwright install --with-deps chromium
+
+      - name: Run representative visual smoke
+        run: bun run visual:smoke
+
+      - name: Upload visual smoke artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-smoke
+          path: tests/visual-smoke
+          if-no-files-found: error
+          retention-days: 7
