@@ -75,7 +75,7 @@ describe("Visual Regression Pipeline", () => {
             type: "scene",
             animated: false,
             communityArtwork: true,
-            contractVersion: 0,
+            contractVersion: 1,
             title: "Network fixture",
             description: "Test-only network fixture.",
           },
