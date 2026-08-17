@@ -3,3 +3,5 @@ dist/
 *.bun-build
 .dokion/
 HARDENING.md
+__pycache__/
+*.py[cod]
