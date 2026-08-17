@@ -3,6 +3,65 @@ import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { AssetManifest } from "./svg-contracts";
 
+export type SvgViewBox = {
+  minX: number;
+  minY: number;
+  width: number;
+  height: number;
+};
+
+export type SnapshotViewport = {
+  width: number;
+  height: number;
+};
+
+export type MotionMode = "normal" | "reduce";
+
+export function parseSvgViewBox(source: string): SvgViewBox {
+  const match = source.match(/\bviewBox\s*=\s*["']([^"']+)["']/i);
+  if (!match?.[1]) {
+    throw new Error("SVG viewBox is missing.");
+  }
+
+  const values = match[1]
+    .trim()
+    .split(/[\s,]+/)
+    .map((value) => Number(value));
+
+  if (values.length !== 4 || values.some((value) => !Number.isFinite(value))) {
+    throw new Error(`SVG viewBox must contain four finite numbers: ${match[1]}`);
+  }
+
+  const [minX, minY, width, height] = values;
+  if (width <= 0 || height <= 0) {
+    throw new Error(`SVG viewBox dimensions must be positive: ${match[1]}`);
+  }
+
+  return { minX, minY, width, height };
+}
+
+export function deriveSnapshotViewport(
+  source: string,
+  targetWidth: number,
+): SnapshotViewport {
+  if (!Number.isFinite(targetWidth) || targetWidth <= 0) {
+    throw new Error("Snapshot target width must be a positive finite number.");
+  }
+
+  const viewBox = parseSvgViewBox(source);
+  const width = Math.max(1, Math.round(targetWidth));
+  const height = Math.max(1, Math.round(width * (viewBox.height / viewBox.width)));
+  return { width, height };
+}
+
+export function buildCaptureProfiles(
+  animated: boolean,
+  requested: readonly MotionMode[] = ["normal", "reduce"],
+): MotionMode[] {
+  if (!animated) return ["normal"];
+  return [...new Set(requested)];
+}
+
 export async function captureVisualSnapshots(
   manifestPath: string = "asset-manifest.json",
   outputDir: string = "tests/snapshots"
