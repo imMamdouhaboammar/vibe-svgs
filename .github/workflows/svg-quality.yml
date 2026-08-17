@@ -29,6 +29,9 @@ jobs:
       - name: Run SVG contract tests
         run: bun run test
 
+      - name: Prove visual QA contracts are red
+        run: bun test tests/visual-regression.test.ts
+
       - name: Validate migrated SVG assets
         run: bun run validate
 
