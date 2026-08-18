@@ -6,6 +6,7 @@ on:
       - main
       - "feat/**"
       - "fix/**"
+      - "daily/**"
   pull_request:
     branches:
       - main

@@ -11,6 +11,7 @@
     "test": "bun test tests/svg-contracts.test.ts tests/svg-safety.test.ts tests/claude-code-collection.test.ts tests/official-logo-catalog.test.ts",
     "test:all": "bun test",
     "snapshots": "bun run scripts/visual-snapshots.ts",
+    "visual:smoke": "bun run scripts/visual-smoke.ts",
     "svgo:check": "bun run scripts/svgo-check.ts",
     "svgo:write": "bun run scripts/svgo-check.ts --write",
     "validate": "bun run scripts/validate-svg.ts",
