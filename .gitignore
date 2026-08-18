@@ -5,3 +5,4 @@ dist/
 HARDENING.md
 __pycache__/
 *.py[cod]
+tests/visual-smoke/
