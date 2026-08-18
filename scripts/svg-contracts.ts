@@ -1,5 +1,6 @@
 import { basename } from "node:path";
 import { readFile } from "node:fs/promises";
+import { validateSvgSafety } from "./svg-safety";
 
 export type SvgIssue = {
   path: string;
@@ -245,12 +246,8 @@ export function validateSvgSource(path: string, source: string): SvgIssue[] {
     );
   }
 
-  if (/<script\b/i.test(source)) {
-    issues.push(issue(path, "security.script", "Remove script elements from reusable SVG assets."));
-  }
-
-  if (/(?:href|xlink:href)\s*=\s*["']https?:\/\//i.test(source)) {
-    issues.push(issue(path, "security.remote-image", "Embed no remote images or resources."));
+  for (const safety of validateSvgSafety(source)) {
+    issues.push(issue(path, safety.rule, safety.message));
   }
 
   for (const reference of localReferences(source)) {
