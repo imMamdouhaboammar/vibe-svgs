@@ -65,7 +65,10 @@ export function parseSvgViewBox(source: string): SvgViewBox {
     throw new Error(`SVG viewBox must contain four finite numbers: ${match[1]}`);
   }
 
-  const [minX, minY, width, height] = values;
+  const minX = values[0]!;
+  const minY = values[1]!;
+  const width = values[2]!;
+  const height = values[3]!;
   if (width <= 0 || height <= 0) {
     throw new Error(`SVG viewBox dimensions must be positive: ${match[1]}`);
   }
