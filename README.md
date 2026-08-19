@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>2 pull requests updated, led by #9: security: harden reusable SVG safety contract.</li>
-      <li>Daily summary covers 2 public activity items from the last 1 day.</li>
-      <li>Documentation and project status remain aligned with the repository’s current public state.</li>
+      <li>3 commits landed: chore: ignore tests/visual-smoke artifact directory; feat: add browser-grade visual QA matrix (#8).</li>
+      <li>3 pull requests updated, led by #10: feat: enforce effective reduced motion fallbacks.</li>
+      <li>Daily summary covers 6 public activity items from the last 1 day.</li>
   </ul>
 </details>
 <!-- project-story:end -->
