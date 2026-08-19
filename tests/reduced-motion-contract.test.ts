@@ -42,16 +42,14 @@ describe("reduced motion contract", () => {
     ]);
   });
 
-  test("rejects SMIL motion because the fallback cannot be proven", () => {
+  test("preserves SMIL as a supported animation path when a reduced-motion block exists", () => {
     const source = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" role="img">
-        <style>@media (prefers-reduced-motion: reduce) { [data-animated] { animation: none !important; } }</style>
+        <style>@media (prefers-reduced-motion: reduce) { .fallback { opacity: 1; } }</style>
         <circle data-animated="true" r="2"><animate attributeName="cx" values="2;8;2" dur="1s" repeatCount="indefinite" /></circle>
       </svg>`;
 
-    expect(validateReducedMotionSource("smil.svg", source)).toEqual([
-      expect.objectContaining({ rule: "motion.reduced-smil" }),
-    ]);
+    expect(validateReducedMotionSource("smil.svg", source)).toEqual([]);
   });
 
   test("ignores static SVGs", () => {
