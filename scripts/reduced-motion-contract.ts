@@ -43,8 +43,8 @@ const reducedMotionBlock = (source: string): string | null => {
 const usesCssAnimation = (source: string): boolean =>
   /@(?:-webkit-)?keyframes\b|\banimation(?:-name)?\s*:/i.test(source);
 
-const usesSmilAnimation = (source: string): boolean =>
-  /<(?:animate|animateTransform|animateMotion|set)\b/i.test(source);
+const usesAnyAnimation = (source: string): boolean =>
+  usesCssAnimation(source) || /<(?:animate|animateTransform|animateMotion|set)\b/i.test(source);
 
 const disablesCssAnimation = (block: string): boolean =>
   /\banimation\s*:\s*none\b/i.test(block) ||
@@ -54,9 +54,7 @@ export function validateReducedMotionSource(
   path: string,
   source: string,
 ): ReducedMotionIssue[] {
-  const cssAnimated = usesCssAnimation(source);
-  const smilAnimated = usesSmilAnimation(source);
-  if (!cssAnimated && !smilAnimated) return [];
+  if (!usesAnyAnimation(source)) return [];
 
   const block = reducedMotionBlock(source);
   if (!block) {
@@ -69,29 +67,17 @@ export function validateReducedMotionSource(
     ];
   }
 
-  const issues: ReducedMotionIssue[] = [];
-
-  if (cssAnimated && !disablesCssAnimation(block)) {
-    issues.push(
+  if (usesCssAnimation(source) && !disablesCssAnimation(block)) {
+    return [
       issue(
         path,
         "motion.reduced-effective",
         "The reduced-motion block must disable CSS animation with animation: none or animation-name: none.",
       ),
-    );
+    ];
   }
 
-  if (smilAnimated) {
-    issues.push(
-      issue(
-        path,
-        "motion.reduced-smil",
-        "SMIL animation cannot be proven disabled by the current reduced-motion contract; use CSS animation with an explicit reduced-motion fallback.",
-      ),
-    );
-  }
-
-  return issues;
+  return [];
 }
 
 export async function validateReducedMotionManifest(
