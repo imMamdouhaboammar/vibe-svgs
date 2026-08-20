@@ -1,14 +1,5 @@
 import { readFile } from "node:fs/promises";
-
-type ManifestEntry = {
-  path: string;
-  animated?: boolean;
-  contractVersion?: number;
-};
-
-type Manifest = {
-  assets?: ManifestEntry[];
-};
+import { isManifestEntry, isSafeAssetPath, type AssetManifest } from "./svg-contracts";
 
 export type ReducedMotionIssue = {
   path: string;
@@ -46,9 +37,58 @@ const usesCssAnimation = (source: string): boolean =>
 const usesAnyAnimation = (source: string): boolean =>
   usesCssAnimation(source) || /<(?:animate|animateTransform|animateMotion|set)\b/i.test(source);
 
-const disablesCssAnimation = (block: string): boolean =>
-  /\banimation\s*:\s*none\b/i.test(block) ||
-  /\banimation-name\s*:\s*none\b/i.test(block);
+const cssRuleBodies = (block: string): Array<{ selector: string; body: string }> => {
+  const rules: Array<{ selector: string; body: string }> = [];
+  for (const match of block.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    const selector = (match[1] ?? "").trim();
+    const body = match[2] ?? "";
+    if (!selector || selector.startsWith("@")) continue;
+    rules.push({ selector, body });
+  }
+  return rules;
+};
+
+const bodyDisablesAnimation = (body: string): boolean =>
+  /\banimation\s*:\s*none\b/i.test(body) ||
+  /\banimation-name\s*:\s*none\b/i.test(body);
+
+const animatedCssSelectors = (source: string): Set<string> => {
+  const selectors = new Set<string>();
+  const withoutMedia = source.replace(
+    /@media\s*\(\s*prefers-reduced-motion\s*:\s*reduce\s*\)\s*\{[\s\S]*?\}\s*\}/gi,
+    "",
+  );
+
+  for (const match of withoutMedia.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    const selector = (match[1] ?? "").trim();
+    const body = match[2] ?? "";
+    if (!selector || selector.startsWith("@")) continue;
+    if (/\banimation(?:-name)?\s*:/i.test(body)) selectors.add(selector);
+  }
+  return selectors;
+};
+
+const disablesCssAnimation = (source: string, block: string): boolean => {
+  const shutdownRules = cssRuleBodies(block).filter(({ body }) => bodyDisablesAnimation(body));
+  if (shutdownRules.length === 0) return false;
+
+  if (/\bdata-animated\b/i.test(source)) {
+    return shutdownRules.some(({ selector }) =>
+      selector
+        .split(",")
+        .map((part) => part.trim())
+        .includes("[data-animated]"),
+    );
+  }
+
+  const animatedSelectors = animatedCssSelectors(source);
+  if (animatedSelectors.size === 0) return true;
+
+  const shutdownSelectors = new Set(
+    shutdownRules.flatMap(({ selector }) => selector.split(",").map((part) => part.trim())),
+  );
+  return [...animatedSelectors].every((selector) => shutdownSelectors.has(selector));
+};
 
 export function validateReducedMotionSource(
   path: string,
@@ -67,12 +107,12 @@ export function validateReducedMotionSource(
     ];
   }
 
-  if (usesCssAnimation(source) && !disablesCssAnimation(block)) {
+  if (usesCssAnimation(source) && !disablesCssAnimation(source, block)) {
     return [
       issue(
         path,
         "motion.reduced-effective",
-        "The reduced-motion block must disable CSS animation with animation: none or animation-name: none.",
+        "The reduced-motion block must disable the animated target with animation: none or animation-name: none.",
       ),
     ];
   }
@@ -83,17 +123,25 @@ export function validateReducedMotionSource(
 export async function validateReducedMotionManifest(
   manifestPath: string,
 ): Promise<ReducedMotionIssue[]> {
-  const manifest = JSON.parse(await readFile(manifestPath, "utf8")) as Manifest;
+  let manifest: AssetManifest;
+  try {
+    manifest = JSON.parse(await readFile(manifestPath, "utf8")) as AssetManifest;
+  } catch {
+    return [];
+  }
+
   if (!Array.isArray(manifest.assets)) return [];
 
   const issues: ReducedMotionIssue[] = [];
 
-  for (const entry of manifest.assets) {
-    if (!entry?.path || entry.contractVersion !== 1 || entry.animated !== true) continue;
+  for (const rawEntry of manifest.assets) {
+    if (!isManifestEntry(rawEntry)) continue;
+    if (rawEntry.contractVersion !== 1 || rawEntry.animated !== true) continue;
+    if (!isSafeAssetPath(rawEntry.path)) continue;
 
     try {
-      const source = await readFile(entry.path, "utf8");
-      issues.push(...validateReducedMotionSource(entry.path, source));
+      const source = await readFile(rawEntry.path, "utf8");
+      issues.push(...validateReducedMotionSource(rawEntry.path, source));
     } catch {
       // Missing files are reported by the primary manifest validator.
     }
