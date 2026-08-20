@@ -41,6 +41,8 @@ const ASSET_TYPES = new Set([
 const SAFE_ASSET_PATH =
   /^(?:svgs\/(?:badges|banners|logos|mascots|scenes)\/[a-z0-9][a-z0-9._-]*\.svg|svgs\/packs\/[a-z0-9-]+\/[a-z0-9][a-z0-9._-]*\.svg)$/;
 
+export const isSafeAssetPath = (path: string): boolean => SAFE_ASSET_PATH.test(path);
+
 const issue = (path: string, rule: string, message: string): SvgIssue => ({
   path,
   rule,
@@ -344,7 +346,7 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
       return entryIssues;
     }
 
-    if (!SAFE_ASSET_PATH.test(rawEntry.path)) {
+    if (!isSafeAssetPath(rawEntry.path)) {
       entryIssues.push(
         issue(
           manifestPath,
