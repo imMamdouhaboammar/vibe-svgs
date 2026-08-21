@@ -40,8 +40,8 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>1 pull request updated, led by #10: feat: enforce effective reduced motion fallbacks.</li>
-      <li>Daily summary covers 1 public activity item from the last 1 day.</li>
+      <li>2 pull requests updated, led by #11: fix: make reduced motion CSS validation selector-aware.</li>
+      <li>Daily summary covers 2 public activity items from the last 1 day.</li>
       <li>Documentation and project status remain aligned with the repository’s current public state.</li>
   </ul>
 </details>
