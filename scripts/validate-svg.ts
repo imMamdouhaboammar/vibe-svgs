@@ -1,12 +1,12 @@
 import type { SvgIssue } from "./svg-contracts";
 import { validateManifest } from "./svg-contracts";
+import { validateReducedMotionManifest } from "./reduced-motion-contract";
 
 const manifestPath = process.argv[2] ?? "asset-manifest.json";
 const issues: SvgIssue[] = [];
 
 issues.push(...(await validateManifest(manifestPath)));
-
-
+issues.push(...(await validateReducedMotionManifest(manifestPath)));
 
 const uniqueIssues = [...new Map(
   issues.map((entry) => [
