@@ -3,6 +3,7 @@ import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
+  hasSvgAnimation,
   namespaceSvg,
   validateManifest,
   validateSvgSource,
@@ -29,6 +30,27 @@ const claudeStoryPaths = [
 ] as const;
 
 describe("SVG contracts", () => {
+  test("detects animation syntax without matching custom properties or prose", () => {
+    const animatedSources = [
+      `<svg><style>.actor { animation: pulse 1s infinite; }</style></svg>`,
+      `<svg><style>.actor { animation-name: pulse; }</style></svg>`,
+      `<svg><g style="animation: pulse 1s infinite" /></svg>`,
+      `<svg><style>@keyframes pulse { to { opacity: .5; } }</style></svg>`,
+      `<svg><animate attributeName="opacity" values="0;1" /></svg>`,
+      `<svg><animateTransform attributeName="transform" type="rotate" /></svg>`,
+      `<svg><animateMotion path="M0 0L1 1" /></svg>`,
+      `<svg><set attributeName="opacity" to="1" /></svg>`,
+    ];
+    const staticSources = [
+      `<svg><style>.actor { --animation: pulse 1s infinite; }</style></svg>`,
+      `<svg><desc>Use animation: pulse for the animated variant.</desc></svg>`,
+      `<svg data-animation="pulse"><g /></svg>`,
+    ];
+
+    for (const source of animatedSources) expect(hasSvgAnimation(source)).toBe(true);
+    for (const source of staticSources) expect(hasSvgAnimation(source)).toBe(false);
+  });
+
   test("namespaces duplicate IDs and every local reference", () => {
     const source = `<svg aria-labelledby="sample-title"><title id="sample-title">Sample</title><defs><linearGradient id="sample-gradient" /></defs><rect fill="url(#sample-gradient)" /></svg>`;
     const first = namespaceSvg(source, "card-one");
@@ -90,6 +112,38 @@ describe("SVG contracts", () => {
   test("manifest entries resolve and use community artwork language", async () => {
     expect(await validateManifest("asset-manifest.json")).toEqual([]);
   }, 120000);
+
+  test("rejects manifest animation metadata that disagrees with SVG source", async () => {
+    const directory = await mkdtemp(join(tmpdir(), "vibe-svgs-manifest-animation-"));
+    const manifestPath = join(directory, "asset-manifest.json");
+
+    try {
+      await writeFile(
+        manifestPath,
+        JSON.stringify({
+          version: 1,
+          assets: [{
+            id: "claude-orchestrating-static-metadata",
+            path: "svgs/scenes/claude-orchestrating.svg",
+            category: "claude",
+            type: "scene",
+            animated: false,
+            communityArtwork: true,
+            contractVersion: 1,
+            title: "Claude Orchestrating",
+            description: "Animated scene intentionally mislabeled as static for validation."
+          }],
+        }),
+      );
+
+      const issues = await validateManifest(manifestPath);
+      expect(
+        issues.some((issue) => issue.rule === "manifest.animated"),
+      ).toBe(true);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
 
   test("rejects remote and traversal paths in the manifest", async () => {
     const directory = await mkdtemp(join(tmpdir(), "vibe-svgs-manifest-"));

@@ -155,6 +155,27 @@ const competingTransformSelectors = (source: string): string[] => {
   return [...selectors];
 };
 
+const hasCssAnimationDeclaration = (css: string, inline = false): boolean =>
+  (inline
+    ? /(?:^|;)\s*(?:-webkit-)?animation(?:-name)?\s*:/i
+    : /(?:^|[;{])\s*(?:-webkit-)?animation(?:-name)?\s*:/i
+  ).test(css);
+
+export const hasSvgAnimation = (source: string): boolean => {
+  if (/@(?:-webkit-)?keyframes\b/i.test(source)) return true;
+  if (/<(?:animate|animateTransform|animateMotion|set)\b/i.test(source)) return true;
+
+  for (const match of source.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)) {
+    if (hasCssAnimationDeclaration(match[1] ?? "")) return true;
+  }
+
+  for (const match of source.matchAll(/\bstyle\s*=\s*(["'])([\s\S]*?)\1/gi)) {
+    if (hasCssAnimationDeclaration(match[2] ?? "", true)) return true;
+  }
+
+  return false;
+};
+
 export function namespaceSvg(source: string, instanceId: string): string {
   const safeInstance = instanceId
     .toLowerCase()
@@ -258,7 +279,7 @@ export function validateSvgSource(path: string, source: string): SvgIssue[] {
     }
   }
 
-  const animated = /@(?:-webkit-)?keyframes\b|\banimation\s*:|<(?:animate|animateTransform)\b/i.test(source);
+  const animated = hasSvgAnimation(source);
   if (animated && !/@media\s*\(prefers-reduced-motion:\s*reduce\)/.test(source)) {
     issues.push(
       issue(path, "motion.reduced", "Add a prefers-reduced-motion fallback."),
@@ -377,6 +398,16 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
 
     try {
       const source = await readFile(rawEntry.path, "utf8");
+      const sourceAnimated = hasSvgAnimation(source);
+      if (rawEntry.animated !== sourceAnimated) {
+        entryIssues.push(
+          issue(
+            manifestPath,
+            "manifest.animated",
+            `Asset "${rawEntry.id}" declares animated=${rawEntry.animated} but its SVG source is ${sourceAnimated ? "animated" : "static"}.`,
+          ),
+        );
+      }
       if (rawEntry.contractVersion === 1) {
         entryIssues.push(...validateSvgSource(rawEntry.path, source));
       }
