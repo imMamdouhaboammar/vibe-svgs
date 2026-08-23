@@ -155,6 +155,9 @@ const competingTransformSelectors = (source: string): string[] => {
   return [...selectors];
 };
 
+const hasSvgAnimation = (source: string): boolean =>
+  /@(?:-webkit-)?keyframes\b|\banimation\s*:|<(?:animate|animateTransform)\b/i.test(source);
+
 export function namespaceSvg(source: string, instanceId: string): string {
   const safeInstance = instanceId
     .toLowerCase()
@@ -258,7 +261,7 @@ export function validateSvgSource(path: string, source: string): SvgIssue[] {
     }
   }
 
-  const animated = /@(?:-webkit-)?keyframes\b|\banimation\s*:|<(?:animate|animateTransform)\b/i.test(source);
+  const animated = hasSvgAnimation(source);
   if (animated && !/@media\s*\(prefers-reduced-motion:\s*reduce\)/.test(source)) {
     issues.push(
       issue(path, "motion.reduced", "Add a prefers-reduced-motion fallback."),
@@ -377,6 +380,16 @@ export async function validateManifest(manifestPath: string): Promise<SvgIssue[]
 
     try {
       const source = await readFile(rawEntry.path, "utf8");
+      const sourceAnimated = hasSvgAnimation(source);
+      if (rawEntry.animated !== sourceAnimated) {
+        entryIssues.push(
+          issue(
+            manifestPath,
+            "manifest.animated",
+            `Asset "${rawEntry.id}" declares animated=${rawEntry.animated} but its SVG source is ${sourceAnimated ? "animated" : "static"}.`,
+          ),
+        );
+      }
       if (rawEntry.contractVersion === 1) {
         entryIssues.push(...validateSvgSource(rawEntry.path, source));
       }
