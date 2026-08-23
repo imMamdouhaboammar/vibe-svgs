@@ -91,6 +91,38 @@ describe("SVG contracts", () => {
     expect(await validateManifest("asset-manifest.json")).toEqual([]);
   }, 120000);
 
+  test("rejects manifest animation metadata that disagrees with SVG source", async () => {
+    const directory = await mkdtemp(join(tmpdir(), "vibe-svgs-manifest-animation-"));
+    const manifestPath = join(directory, "asset-manifest.json");
+
+    try {
+      await writeFile(
+        manifestPath,
+        JSON.stringify({
+          version: 1,
+          assets: [{
+            id: "claude-orchestrating-static-metadata",
+            path: "svgs/scenes/claude-orchestrating.svg",
+            category: "claude",
+            type: "scene",
+            animated: false,
+            communityArtwork: true,
+            contractVersion: 1,
+            title: "Claude Orchestrating",
+            description: "Animated scene intentionally mislabeled as static for validation."
+          }],
+        }),
+      );
+
+      const issues = await validateManifest(manifestPath);
+      expect(
+        issues.some((issue) => issue.rule === "manifest.animated"),
+      ).toBe(true);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+
   test("rejects remote and traversal paths in the manifest", async () => {
     const directory = await mkdtemp(join(tmpdir(), "vibe-svgs-manifest-"));
     const manifestPath = join(directory, "asset-manifest.json");
