@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>2 pull requests updated, led by #11: fix: make reduced motion CSS validation selector-aware.</li>
+      <li>1 commit landed: fix: enforce manifest animation metadata integrity (#12).</li>
+      <li>1 pull request updated, led by #12: fix: enforce manifest animation metadata integrity.</li>
       <li>Daily summary covers 2 public activity items from the last 1 day.</li>
-      <li>Documentation and project status remain aligned with the repository’s current public state.</li>
   </ul>
 </details>
 <!-- project-story:end -->
