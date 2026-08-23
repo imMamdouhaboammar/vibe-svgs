@@ -155,8 +155,26 @@ const competingTransformSelectors = (source: string): string[] => {
   return [...selectors];
 };
 
-const hasSvgAnimation = (source: string): boolean =>
-  /@(?:-webkit-)?keyframes\b|\banimation\s*:|<(?:animate|animateTransform)\b/i.test(source);
+const hasCssAnimationDeclaration = (css: string, inline = false): boolean =>
+  (inline
+    ? /(?:^|;)\s*(?:-webkit-)?animation(?:-name)?\s*:/i
+    : /(?:^|[;{])\s*(?:-webkit-)?animation(?:-name)?\s*:/i
+  ).test(css);
+
+export const hasSvgAnimation = (source: string): boolean => {
+  if (/@(?:-webkit-)?keyframes\b/i.test(source)) return true;
+  if (/<(?:animate|animateTransform|animateMotion|set)\b/i.test(source)) return true;
+
+  for (const match of source.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)) {
+    if (hasCssAnimationDeclaration(match[1] ?? "")) return true;
+  }
+
+  for (const match of source.matchAll(/\bstyle\s*=\s*(["'])([\s\S]*?)\1/gi)) {
+    if (hasCssAnimationDeclaration(match[2] ?? "", true)) return true;
+  }
+
+  return false;
+};
 
 export function namespaceSvg(source: string, instanceId: string): string {
   const safeInstance = instanceId
