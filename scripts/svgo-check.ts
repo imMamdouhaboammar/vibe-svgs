@@ -20,8 +20,9 @@ const preserveClaudeCodePath = (filePath: string): boolean =>
 export const configForFile = (filePath: string) => ({
   ...svgoConfig,
   plugins: (svgoConfig.plugins ?? []).map((plugin: any) => {
+    const preserveAnimationSelectors = preserveAnimatedPackPath(filePath);
     if (
-      (!preserveClaudeCodePath(filePath) && !preserveAnimatedPackPath(filePath)) ||
+      (!preserveClaudeCodePath(filePath) && !preserveAnimationSelectors) ||
       typeof plugin === "string" ||
       plugin.name !== "preset-default"
     ) {
@@ -41,6 +42,7 @@ export const configForFile = (filePath: string) => ({
           moveGroupAttrsToElems: false,
           removeHiddenElems: false,
           removeEmptyContainers: false,
+          ...(preserveAnimationSelectors ? { inlineStyles: false } : {}),
         },
       },
     };
