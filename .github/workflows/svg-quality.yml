@@ -42,6 +42,9 @@ jobs:
       - name: Install Chromium
         run: bunx playwright install --with-deps chromium
 
+      - name: Run reduced-motion browser regressions
+        run: bun test tests/reduced-motion-browser.test.ts
+
       - name: Prove reduced-motion behavior in Chromium
         run: bun run motion:reduced:runtime
 
