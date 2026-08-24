@@ -49,17 +49,18 @@ export const selectRuntimeAuditAssets = (
     (asset) => asset.contractVersion === 1 && asset.animated === true,
   );
 
-const describeTarget = (element: Element | null): string => {
-  if (!element) return "unknown";
-  const id = element.getAttribute("id");
-  if (id) return `#${id}`;
-  const classes = element.getAttribute("class")?.trim().split(/\s+/).filter(Boolean) ?? [];
-  if (classes.length > 0) return `${element.tagName.toLowerCase()}.${classes.join(".")}`;
-  if (element.hasAttribute("data-animated")) return `${element.tagName.toLowerCase()}[data-animated]`;
-  return element.tagName.toLowerCase();
-};
+export async function probeReducedMotionSource(
+  page: Page,
+  source: string,
+): Promise<ReducedMotionRuntimeAnimation[]> {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setContent(`<!doctype html><html><body>${source}</body></html>`, {
+    waitUntil: "load",
+  });
+  await page.evaluate(() => new Promise<void>((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+  }));
 
-async function activeBrowserAnimations(page: Page): Promise<ReducedMotionRuntimeAnimation[]> {
   return page.evaluate(() => {
     const svg = document.querySelector("svg");
     if (!svg) return [];
@@ -116,8 +117,6 @@ export async function auditReducedMotionRuntime(
   });
 
   try {
-    await page.emulateMedia({ reducedMotion: "reduce" });
-
     for (const asset of assets) {
       const source = await readFile(asset.path, "utf8");
       assertSafeSvgForBrowser(source);
@@ -128,12 +127,7 @@ export async function auditReducedMotionRuntime(
       }
 
       blockedRequests = [];
-      await page.setContent(`<!doctype html><html><body>${source}</body></html>`, {
-        waitUntil: "load",
-      });
-      await page.evaluate(() => new Promise<void>((resolve) => {
-        requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
-      }));
+      const animations = await probeReducedMotionSource(page, source);
 
       if (blockedRequests.length > 0) {
         throw new Error(
@@ -142,7 +136,6 @@ export async function auditReducedMotionRuntime(
       }
 
       checked += 1;
-      const animations = await activeBrowserAnimations(page);
       if (animations.length > 0) {
         issues.push({
           assetId: asset.id,
