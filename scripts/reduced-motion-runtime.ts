@@ -27,17 +27,34 @@ export type ReducedMotionRuntimeReport = {
   issues: ReducedMotionRuntimeIssue[];
 };
 
-export const hasCssAnimationSource = (source: string): boolean => {
-  for (const match of source.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)) {
-    if (/(?:^|[;{])\s*(?:-webkit-)?animation(?:-name)?\s*:\s*(?!none\b)/i.test(match[1] ?? "")) {
+const hasActiveAnimationDeclaration = (
+  css: string,
+  inline: boolean,
+): boolean => {
+  const pattern = inline
+    ? /(?:^|;)\s*(?:-webkit-)?animation(?:-name)?\s*:\s*([^;}]+)/gi
+    : /(?:^|[;{])\s*(?:-webkit-)?animation(?:-name)?\s*:\s*([^;}]+)/gi;
+
+  for (const match of css.matchAll(pattern)) {
+    const value = (match[1] ?? "")
+      .replace(/!important\b/gi, "")
+      .trim();
+    if (!value) continue;
+    if (value.split(",").some((segment) => !/\bnone\b/i.test(segment))) {
       return true;
     }
   }
 
+  return false;
+};
+
+export const hasCssAnimationSource = (source: string): boolean => {
+  for (const match of source.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)) {
+    if (hasActiveAnimationDeclaration(match[1] ?? "", false)) return true;
+  }
+
   for (const match of source.matchAll(/\bstyle\s*=\s*(["'])([\s\S]*?)\1/gi)) {
-    if (/(?:^|;)\s*(?:-webkit-)?animation(?:-name)?\s*:\s*(?!none\b)/i.test(match[2] ?? "")) {
-      return true;
-    }
+    if (hasActiveAnimationDeclaration(match[2] ?? "", true)) return true;
   }
 
   return false;
