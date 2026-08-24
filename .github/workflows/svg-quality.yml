@@ -42,8 +42,20 @@ jobs:
       - name: Install Chromium
         run: bunx playwright install --with-deps chromium
 
+      - name: Prove reduced-motion behavior in Chromium
+        run: bun run motion:reduced:runtime
+
       - name: Run representative visual smoke
         run: bun run visual:smoke
+
+      - name: Upload reduced-motion evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reduced-motion-runtime
+          path: tests/reduced-motion-runtime
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Upload visual smoke artifacts
         if: always()
