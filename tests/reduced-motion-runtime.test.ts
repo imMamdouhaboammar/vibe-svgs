@@ -37,6 +37,14 @@ describe("reduced-motion runtime audit model", () => {
     )).toBe(true);
   });
 
+  test("detects an active animation name after a none entry", () => {
+    expect(hasCssAnimationSource(`
+      <svg><style>
+        .actor { animation-name: none, bob; animation-duration: 1s, 1s }
+      </style></svg>
+    `)).toBe(true);
+  });
+
   test("does not treat unused keyframes or animation none as active CSS animation", () => {
     expect(hasCssAnimationSource(`
       <svg><style>
