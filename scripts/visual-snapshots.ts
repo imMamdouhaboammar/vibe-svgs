@@ -2,6 +2,7 @@ import { chromium } from "playwright";
 import { basename, join } from "node:path";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import type { AssetManifest } from "./svg-contracts";
+import { validateSvgSafety } from "./svg-safety";
 
 export type SvgViewBox = {
   minX: number;
@@ -49,6 +50,11 @@ const DEFAULT_BACKGROUNDS = [
   { name: "dark", color: "#0F172A" },
 ] as const;
 const DEFAULT_MOTION_MODES = ["normal", "reduce"] as const;
+const EXTERNAL_RESOURCE_RULES = new Set([
+  "security.remote-reference",
+  "security.css-url",
+  "security.css-import",
+]);
 
 export function parseSvgViewBox(source: string): SvgViewBox {
   const match = source.match(/\bviewBox\s*=\s*["']([^"']+)["']/i);
@@ -99,17 +105,17 @@ export function buildCaptureProfiles(
 }
 
 export function assertSafeSvgForBrowser(source: string): void {
-  if (/<\s*script\b/i.test(source)) {
-    throw new Error("SVG browser render safety rejected script content.");
-  }
+  const issues = validateSvgSafety(source);
+  if (issues.length === 0) return;
 
-  if (/<[^>]*\son[a-z][\w:-]*\s*=/i.test(source)) {
-    throw new Error("SVG browser render safety rejected inline event handler.");
-  }
-
-  if (/\b(?:href|xlink:href)\s*=\s*["']\s*javascript:/i.test(source)) {
-    throw new Error("SVG browser render safety rejected javascript URL.");
-  }
+  const diagnostics = issues
+    .map((entry) => `${entry.rule}: ${entry.message.replace(/event-handler/gi, "event handler")}`)
+    .join("; ");
+  const externalResource = issues.some((entry) => EXTERNAL_RESOURCE_RULES.has(entry.rule));
+  const reason = externalResource
+    ? `blocked external request before Chromium: ${diagnostics}`
+    : diagnostics;
+  throw new Error(`SVG browser render safety rejected ${reason}.`);
 }
 
 function selectAssets(

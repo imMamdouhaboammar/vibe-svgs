@@ -75,4 +75,30 @@ describe("browser render safety", () => {
       ),
     ).toThrow("event handler");
   });
+
+  test("enforces the full reusable SVG safety contract before browser rendering", () => {
+    const unsafe = [
+      '<svg viewBox="0 0 10 10"><foreignObject><div>html</div></foreignObject></svg>',
+      '<svg viewBox="0 0 10 10"><image href="data:image/png;base64,AA"/></svg>',
+      '<svg viewBox="0 0 10 10"><style>@import "https://fonts.example.com/css";</style></svg>',
+      '<svg viewBox="0 0 10 10"><rect style="fill:url(/tracker.svg)"/></svg>',
+      '<svg viewBox="0 0 10 10"><use href="sub/asset.svg#shape"/></svg>',
+    ];
+
+    for (const source of unsafe) {
+      expect(() => assertSafeSvgForBrowser(source)).toThrow("SVG browser render safety rejected");
+    }
+  });
+
+  test("does not describe embedded data URLs as external requests", () => {
+    try {
+      assertSafeSvgForBrowser(
+        '<svg viewBox="0 0 10 10"><image href="data:image/png;base64,AA"/></svg>',
+      );
+      throw new Error("expected data URL safety rejection");
+    } catch (error) {
+      expect(String(error)).toContain("security.data-url");
+      expect(String(error)).not.toContain("blocked external request");
+    }
+  });
 });
