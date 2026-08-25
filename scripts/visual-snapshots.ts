@@ -52,7 +52,6 @@ const DEFAULT_BACKGROUNDS = [
 const DEFAULT_MOTION_MODES = ["normal", "reduce"] as const;
 const EXTERNAL_RESOURCE_RULES = new Set([
   "security.remote-reference",
-  "security.data-url",
   "security.css-url",
   "security.css-import",
 ]);
