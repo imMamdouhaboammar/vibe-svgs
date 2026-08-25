@@ -103,9 +103,10 @@ export function assertSafeSvgForBrowser(source: string): void {
   const issues = validateSvgSafety(source);
   if (issues.length === 0) return;
 
-  throw new Error(
-    `SVG browser render safety rejected ${issues.map((entry) => entry.rule).join(", ")}.`,
-  );
+  const diagnostics = issues
+    .map((entry) => `${entry.rule}: ${entry.message.replace(/event-handler/gi, "event handler")}`)
+    .join("; ");
+  throw new Error(`SVG browser render safety rejected ${diagnostics}.`);
 }
 
 function selectAssets(
