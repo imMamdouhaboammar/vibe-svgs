@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>2 pull requests updated, led by #13: qa: prove reduced-motion behavior in Chromium.</li>
-      <li>Daily summary covers 2 public activity items from the last 1 day.</li>
-      <li>Documentation and project status remain aligned with the repository’s current public state.</li>
+      <li>6 commits landed: Merge pull request #13 from imMamdouhaboammar/daily/2026-08-24-browser-reduced-motion-p…; chore: sync reduced-motion branch with main.</li>
+      <li>2 pull requests updated, led by #14: qa: unify browser render safety with SVG contract.</li>
+      <li>Daily summary covers 8 public activity items from the last 1 day.</li>
   </ul>
 </details>
 <!-- project-story:end -->
