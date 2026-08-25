@@ -2,6 +2,7 @@ import { chromium } from "playwright";
 import { basename, join } from "node:path";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import type { AssetManifest } from "./svg-contracts";
+import { validateSvgSafety } from "./svg-safety";
 
 export type SvgViewBox = {
   minX: number;
@@ -99,17 +100,12 @@ export function buildCaptureProfiles(
 }
 
 export function assertSafeSvgForBrowser(source: string): void {
-  if (/<\s*script\b/i.test(source)) {
-    throw new Error("SVG browser render safety rejected script content.");
-  }
+  const issues = validateSvgSafety(source);
+  if (issues.length === 0) return;
 
-  if (/<[^>]*\son[a-z][\w:-]*\s*=/i.test(source)) {
-    throw new Error("SVG browser render safety rejected inline event handler.");
-  }
-
-  if (/\b(?:href|xlink:href)\s*=\s*["']\s*javascript:/i.test(source)) {
-    throw new Error("SVG browser render safety rejected javascript URL.");
-  }
+  throw new Error(
+    `SVG browser render safety rejected ${issues.map((entry) => entry.rule).join(", ")}.`,
+  );
 }
 
 function selectAssets(
