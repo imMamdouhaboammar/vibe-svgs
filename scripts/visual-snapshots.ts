@@ -50,6 +50,12 @@ const DEFAULT_BACKGROUNDS = [
   { name: "dark", color: "#0F172A" },
 ] as const;
 const DEFAULT_MOTION_MODES = ["normal", "reduce"] as const;
+const EXTERNAL_RESOURCE_RULES = new Set([
+  "security.remote-reference",
+  "security.data-url",
+  "security.css-url",
+  "security.css-import",
+]);
 
 export function parseSvgViewBox(source: string): SvgViewBox {
   const match = source.match(/\bviewBox\s*=\s*["']([^"']+)["']/i);
@@ -106,7 +112,11 @@ export function assertSafeSvgForBrowser(source: string): void {
   const diagnostics = issues
     .map((entry) => `${entry.rule}: ${entry.message.replace(/event-handler/gi, "event handler")}`)
     .join("; ");
-  throw new Error(`SVG browser render safety rejected ${diagnostics}.`);
+  const externalResource = issues.some((entry) => EXTERNAL_RESOURCE_RULES.has(entry.rule));
+  const reason = externalResource
+    ? `blocked external request before Chromium: ${diagnostics}`
+    : diagnostics;
+  throw new Error(`SVG browser render safety rejected ${reason}.`);
 }
 
 function selectAssets(
