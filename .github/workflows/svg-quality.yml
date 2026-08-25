@@ -33,6 +33,23 @@ jobs:
       - name: Run visual snapshot model tests
         run: bun test tests/visual-snapshot-model.test.ts tests/visual-smoke.test.ts
 
+      - name: Regenerate mascot packs from canonical sources
+        run: |
+          bun run generate:mascot-packs
+          bun run svgo:write
+
+      - name: Upload regenerated mascot packs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regenerated-mascot-packs
+          path: svgs/packs
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Check generated mascot pack drift
+        run: git diff --exit-code -- svgs/packs asset-manifest.json
+
       - name: Validate migrated SVG assets
         run: bun run validate
 
@@ -42,8 +59,23 @@ jobs:
       - name: Install Chromium
         run: bunx playwright install --with-deps chromium
 
+      - name: Run reduced-motion browser regressions
+        run: bun test tests/reduced-motion-browser.test.ts
+
+      - name: Prove reduced-motion behavior in Chromium
+        run: bun run motion:reduced:runtime
+
       - name: Run representative visual smoke
         run: bun run visual:smoke
+
+      - name: Upload reduced-motion evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reduced-motion-runtime
+          path: tests/reduced-motion-runtime
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Upload visual smoke artifacts
         if: always()
