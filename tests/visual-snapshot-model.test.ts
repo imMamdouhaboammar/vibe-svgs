@@ -89,4 +89,16 @@ describe("browser render safety", () => {
       expect(() => assertSafeSvgForBrowser(source)).toThrow("SVG browser render safety rejected");
     }
   });
+
+  test("does not describe embedded data URLs as external requests", () => {
+    try {
+      assertSafeSvgForBrowser(
+        '<svg viewBox="0 0 10 10"><image href="data:image/png;base64,AA"/></svg>',
+      );
+      throw new Error("expected data URL safety rejection");
+    } catch (error) {
+      expect(String(error)).toContain("security.data-url");
+      expect(String(error)).not.toContain("blocked external request");
+    }
+  });
 });
