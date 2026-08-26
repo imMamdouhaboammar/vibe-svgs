@@ -100,6 +100,20 @@ describe("browser reduced-motion behavior", () => {
     expect(poses[0]).toMatchObject({ target: "rect.actor", reason: "hidden", opacity: 0 });
   });
 
+  test("samples beyond the startup frame before deciding a target was never visible", async () => {
+    const source = scene(`
+      @keyframes reveal { 0% { opacity: 0 } 50%,100% { opacity: 1 } }
+      .actor { animation: reveal 1s linear infinite }
+      @media (prefers-reduced-motion: reduce) {
+        .actor { animation: none !important; opacity: 0 }
+      }
+    `, '<rect class="actor" x="4" y="4" width="8" height="8"/>');
+
+    const poses = await probeReducedMotionFinalPose(page, source);
+    expect(poses).toHaveLength(1);
+    expect(poses[0]).toMatchObject({ target: "rect.actor", reason: "hidden" });
+  });
+
   test("rejects a frozen target moved outside the SVG", async () => {
     const source = scene(`
       .actor { animation: bob 1s infinite }
@@ -111,6 +125,31 @@ describe("browser reduced-motion behavior", () => {
     const poses = await probeReducedMotionFinalPose(page, source);
     expect(poses).toHaveLength(1);
     expect(poses[0]).toMatchObject({ target: "rect.actor", reason: "outside-svg" });
+  });
+
+  test("preserves an intentional reduced-motion sprite frame selection", async () => {
+    const source = scene(`
+      @keyframes frame0 { 0%,30% { opacity: 1 } 31%,100% { opacity: 0 } }
+      @keyframes frame1 { 0%,30%,70%,100% { opacity: 0 } 31%,69% { opacity: 1 } }
+      @keyframes frame2 { 0%,69% { opacity: 0 } 70%,100% { opacity: 1 } }
+      [data-frame] { opacity: 0 }
+      .frame-0 { animation: frame0 1s steps(1,end) infinite }
+      .frame-1 { animation: frame1 1s steps(1,end) infinite }
+      .frame-2 { animation: frame2 1s steps(1,end) infinite }
+      @media (prefers-reduced-motion: reduce) {
+        [data-frame] { animation: none !important }
+        .frame-0,.frame-1 { opacity: 0 !important }
+        .frame-2 { opacity: 1 !important }
+      }
+    `, `
+      <g>
+        <g class="frame-0" data-frame="0"><rect x="4" y="4" width="8" height="8"/></g>
+        <g class="frame-1" data-frame="1"><rect x="4" y="4" width="8" height="8"/></g>
+        <g class="frame-2" data-frame="2"><rect x="4" y="4" width="8" height="8"/></g>
+      </g>
+    `);
+
+    expect(await probeReducedMotionFinalPose(page, source)).toEqual([]);
   });
 
   test("allows an explicitly intentional reduced-motion hide", async () => {
