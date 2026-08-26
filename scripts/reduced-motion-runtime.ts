@@ -160,6 +160,7 @@ export async function probeReducedMotionFinalPose(
   const baseline = await page.evaluate(() => {
     const svg = document.querySelector("svg");
     if (!svg) return [];
+    const rootRect = svg.getBoundingClientRect();
 
     const opacityThroughAncestors = (element: Element): number => {
       let opacity = 1;
@@ -176,11 +177,16 @@ export async function probeReducedMotionFinalPose(
     const isVisible = (element: Element): boolean => {
       const rect = element.getBoundingClientRect();
       const style = getComputedStyle(element);
+      const intersectsRoot = rect.right > rootRect.left
+        && rect.left < rootRect.right
+        && rect.bottom > rootRect.top
+        && rect.top < rootRect.bottom;
       return style.display !== "none"
         && style.visibility !== "hidden"
         && opacityThroughAncestors(element) > 0.01
         && rect.width > 0.5
-        && rect.height > 0.5;
+        && rect.height > 0.5
+        && intersectsRoot;
     };
 
     const animations = svg.getAnimations({ subtree: true });
@@ -234,11 +240,16 @@ export async function probeReducedMotionFinalPose(
     const isVisible = (element: Element): boolean => {
       const rect = element.getBoundingClientRect();
       const style = getComputedStyle(element);
+      const intersectsRoot = rect.right > rootRect.left
+        && rect.left < rootRect.right
+        && rect.bottom > rootRect.top
+        && rect.top < rootRect.bottom;
       return style.display !== "none"
         && style.visibility !== "hidden"
         && opacityThroughAncestors(element) > 0.01
         && rect.width > 0.5
-        && rect.height > 0.5;
+        && rect.height > 0.5
+        && intersectsRoot;
     };
 
     const isIntentionalSpriteFrameHide = (element: Element): boolean => {
