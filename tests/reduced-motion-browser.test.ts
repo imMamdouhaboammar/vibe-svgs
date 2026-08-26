@@ -118,7 +118,7 @@ describe("browser reduced-motion behavior", () => {
     const source = scene(`
       .actor { animation: bob 1s infinite }
       @media (prefers-reduced-motion: reduce) {
-        .actor { animation: none !important; transform: translateX(100px) }
+        .actor { animation: none !important; transform: translateX(200px) }
       }
     `, '<rect class="actor" x="4" y="4" width="8" height="8"/>');
 
