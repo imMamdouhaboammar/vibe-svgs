@@ -173,18 +173,37 @@ export async function probeReducedMotionFinalPose(
       return opacity;
     };
 
-    return Array.from(svg.querySelectorAll("[data-vibe-motion-probe]")).map((element) => {
+    const isVisible = (element: Element): boolean => {
       const rect = element.getBoundingClientRect();
       const style = getComputedStyle(element);
-      return {
-        probe: element.getAttribute("data-vibe-motion-probe") ?? "",
-        visible: style.display !== "none"
-          && style.visibility !== "hidden"
-          && opacityThroughAncestors(element) > 0.01
-          && rect.width > 0.5
-          && rect.height > 0.5,
-      };
-    });
+      return style.display !== "none"
+        && style.visibility !== "hidden"
+        && opacityThroughAncestors(element) > 0.01
+        && rect.width > 0.5
+        && rect.height > 0.5;
+    };
+
+    const animations = svg.getAnimations({ subtree: true });
+    const visibility = new Map<string, boolean>();
+    const targets = Array.from(svg.querySelectorAll("[data-vibe-motion-probe]"));
+    for (const target of targets) {
+      visibility.set(target.getAttribute("data-vibe-motion-probe") ?? "", false);
+    }
+
+    for (const fraction of [0, 0.25, 0.5, 0.75]) {
+      for (const animation of animations) {
+        animation.pause();
+        const timing = animation.effect?.getTiming();
+        const duration = timing && typeof timing.duration === "number" ? timing.duration : 0;
+        if (duration > 0) animation.currentTime = duration * fraction;
+      }
+      for (const target of targets) {
+        const probe = target.getAttribute("data-vibe-motion-probe") ?? "";
+        if (!visibility.get(probe) && isVisible(target)) visibility.set(probe, true);
+      }
+    }
+
+    return Array.from(visibility, ([probe, visible]) => ({ probe, visible }));
   });
 
   const visibleBaseline = new Set(
@@ -212,6 +231,25 @@ export async function probeReducedMotionFinalPose(
       return opacity;
     };
 
+    const isVisible = (element: Element): boolean => {
+      const rect = element.getBoundingClientRect();
+      const style = getComputedStyle(element);
+      return style.display !== "none"
+        && style.visibility !== "hidden"
+        && opacityThroughAncestors(element) > 0.01
+        && rect.width > 0.5
+        && rect.height > 0.5;
+    };
+
+    const isIntentionalSpriteFrameHide = (element: Element): boolean => {
+      if (!element.hasAttribute("data-frame")) return false;
+      const parent = element.parentElement;
+      if (!parent) return false;
+      return Array.from(parent.children).some(
+        (sibling) => sibling !== element && sibling.hasAttribute("data-frame") && isVisible(sibling),
+      );
+    };
+
     const targetLabel = (element: Element): string => {
       const id = element.getAttribute("id");
       if (id) return `#${id}`;
@@ -224,6 +262,7 @@ export async function probeReducedMotionFinalPose(
     return Array.from(svg.querySelectorAll("[data-vibe-motion-probe]"))
       .filter((element) => baselineProbes.includes(element.getAttribute("data-vibe-motion-probe") ?? ""))
       .filter((element) => element.getAttribute("data-reduced-motion-hidden") !== "true")
+      .filter((element) => !isIntentionalSpriteFrameHide(element))
       .flatMap((element) => {
         const rect = element.getBoundingClientRect();
         const style = getComputedStyle(element);
