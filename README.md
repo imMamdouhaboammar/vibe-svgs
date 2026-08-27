@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>6 commits landed: Merge pull request #13 from imMamdouhaboammar/daily/2026-08-24-browser-reduced-motion-p…; chore: sync reduced-motion branch with main.</li>
-      <li>2 pull requests updated, led by #14: qa: unify browser render safety with SVG contract.</li>
-      <li>Daily summary covers 8 public activity items from the last 1 day.</li>
+      <li>4 commits landed: Merge pull request #14 from imMamdouhaboammar/daily/2026-08-25-browser-safety-contract; fix(safety): classify browser resource failures precisely.</li>
+      <li>2 pull requests updated, led by #15: qa: verify reduced-motion final pose in Chromium.</li>
+      <li>Daily summary covers 6 public activity items from the last 1 day.</li>
   </ul>
 </details>
 <!-- project-story:end -->
