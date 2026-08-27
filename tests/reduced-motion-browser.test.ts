@@ -136,16 +136,17 @@ describe("browser reduced-motion behavior", () => {
       .frame-0 { animation: frame0 1s steps(1,end) infinite }
       .frame-1 { animation: frame1 1s steps(1,end) infinite }
       .frame-2 { animation: frame2 1s steps(1,end) infinite }
+      .sprite-child { animation: bob 1s infinite }
       @media (prefers-reduced-motion: reduce) {
-        [data-frame] { animation: none !important }
+        [data-frame],.sprite-child { animation: none !important }
         .frame-0,.frame-1 { opacity: 0 !important }
         .frame-2 { opacity: 1 !important }
       }
     `, `
       <g>
-        <g class="frame-0" data-frame="0"><rect x="4" y="4" width="8" height="8"/></g>
-        <g class="frame-1" data-frame="1"><rect x="4" y="4" width="8" height="8"/></g>
-        <g class="frame-2" data-frame="2"><rect x="4" y="4" width="8" height="8"/></g>
+        <g class="frame-0" data-frame="0"><rect class="sprite-child" x="4" y="4" width="8" height="8"/></g>
+        <g class="frame-1" data-frame="1"><rect class="sprite-child" x="4" y="4" width="8" height="8"/></g>
+        <g class="frame-2" data-frame="2"><rect class="sprite-child" x="4" y="4" width="8" height="8"/></g>
       </g>
     `);
 
