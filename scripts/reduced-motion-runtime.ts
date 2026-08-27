@@ -253,11 +253,12 @@ export async function probeReducedMotionFinalPose(
     };
 
     const isIntentionalSpriteFrameHide = (element: Element): boolean => {
-      if (!element.hasAttribute("data-frame")) return false;
-      const parent = element.parentElement;
+      const frame = element.closest("[data-frame]");
+      if (!frame || !svg.contains(frame) || isVisible(frame)) return false;
+      const parent = frame.parentElement;
       if (!parent) return false;
       return Array.from(parent.children).some(
-        (sibling) => sibling !== element && sibling.hasAttribute("data-frame") && isVisible(sibling),
+        (sibling) => sibling !== frame && sibling.hasAttribute("data-frame") && isVisible(sibling),
       );
     };
 
