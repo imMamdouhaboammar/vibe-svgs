@@ -51,6 +51,16 @@ Every animated SVG must include:
 }
 ```
 
+The Chromium reduced-motion audit checks both sides of that contract. It verifies that animations stop and that a target which is visible under normal motion does not become hidden, collapse to zero size, or move completely outside the SVG when reduced motion is enabled.
+
+If an animated decorative element is intentionally removed in the reduced-motion composition, mark that target explicitly:
+
+```xml
+<g data-animated="true" data-reduced-motion-hidden="true">...</g>
+```
+
+Use this exception only when the reduced-motion frame remains complete without that element. It is not a bypass for an accidental invisible pose.
+
 ## Accessibility
 
 Meaningful reusable assets must include:
