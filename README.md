@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>4 commits landed: Merge pull request #14 from imMamdouhaboammar/daily/2026-08-25-browser-safety-contract; fix(safety): classify browser resource failures precisely.</li>
-      <li>2 pull requests updated, led by #15: qa: verify reduced-motion final pose in Chromium.</li>
-      <li>Daily summary covers 6 public activity items from the last 1 day.</li>
+      <li>4 commits landed: Merge pull request #15 from imMamdouhaboammar/daily/2026-08-26-reduced-motion-final-pose; Merge remote-tracking branch &#39;origin/main&#39; into daily/2026-08-26-reduced-motion-final-p….</li>
+      <li>1 pull request updated, led by #15: qa: verify reduced-motion final pose in Chromium.</li>
+      <li>Daily summary covers 5 public activity items from the last 1 day.</li>
   </ul>
 </details>
 <!-- project-story:end -->
