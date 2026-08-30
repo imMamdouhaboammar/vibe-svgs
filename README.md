@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>37 commits landed: Merge pull request #15 from imMamdouhaboammar/daily/2026-08-26-reduced-motion-final-pose; Merge remote-tracking branch &#39;origin/main&#39; into daily/2026-08-26-reduced-motion-final-p….</li>
-      <li>5 pull requests updated, led by #15: qa: verify reduced-motion final pose in Chromium.</li>
-      <li>Daily summary covers 42 public activity items from the last 7 days.</li>
+      <li>36 commits landed: Merge pull request #15 from imMamdouhaboammar/daily/2026-08-26-reduced-motion-final-pose; Merge remote-tracking branch &#39;origin/main&#39; into daily/2026-08-26-reduced-motion-final-p….</li>
+      <li>4 pull requests updated, led by #15: qa: verify reduced-motion final pose in Chromium.</li>
+      <li>Daily summary covers 40 public activity items from the last 7 days.</li>
   </ul>
 </details>
 <!-- project-story:end -->
