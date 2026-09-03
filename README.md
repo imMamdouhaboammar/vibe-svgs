@@ -40,9 +40,9 @@
   </table>
   <p><strong>Daily build pulse</strong></p>
   <ul>
-      <li>4 commits landed: Merge pull request #15 from imMamdouhaboammar/daily/2026-08-26-reduced-motion-final-pose; Merge remote-tracking branch &#39;origin/main&#39; into daily/2026-08-26-reduced-motion-final-p….</li>
-      <li>1 pull request updated, led by #15: qa: verify reduced-motion final pose in Chromium.</li>
-      <li>Daily summary covers 5 public activity items from the last 7 days.</li>
+      <li>No public repository changes were recorded in the last 7 days.</li>
+      <li>The project purpose and documented usage remain unchanged.</li>
+      <li>The next update will appear automatically when public activity is detected.</li>
   </ul>
 </details>
 <!-- project-story:end -->
