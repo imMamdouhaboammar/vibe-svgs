@@ -41,7 +41,7 @@
   <p><strong>Daily build pulse</strong></p>
   <ul>
       <li>5 issues changed, including #20: Establish maintainer, release, and contributor governance.</li>
-      <li>Daily summary covers 5 public activity items from the last 1 day.</li>
+      <li>Daily summary covers 5 public activity items from the last 7 days.</li>
       <li>Documentation and project status remain aligned with the repository’s current public state.</li>
   </ul>
 </details>
